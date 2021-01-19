@@ -1,0 +1,24 @@
+
+svg {
+  width: 100px;
+  height: 100px;
+  path {
+    opacity: 0;
+    transform-origin: center;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+  &.animated {
+    path {
+      opacity: 1;
+      animation-name: line;
+      animation-delay: 2s;
+    }
+  }
+}
+
+@keyframes line {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

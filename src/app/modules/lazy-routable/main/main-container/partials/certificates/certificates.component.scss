@@ -1,0 +1,59 @@
+
+@import '_core-colors.scss';
+@import 'mixins/bem';
+
+$total-items: 5;
+
+.cert-bg {
+  &:after {
+    content: '';
+    position: absolute; top: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: .5;
+    background: linear-gradient(90deg, #fff 2px, transparent 1%) center, linear-gradient(#fff 2px, transparent 1%) center, #ccc;
+    background-size: 5px 5px;
+  }
+}
+
+.cert-list {
+  background-color: rgba(125, 201, 189, .5);
+}
+
+.cert-item {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 2s cubic-bezier(0,1,.3,1), opacity .3s cubic-bezier(0,1,.3,1);
+  @include m('is-visible') {
+    opacity: 1;
+    transform: translateX(0) !important;
+  }
+}
+
+.cert-item-button {
+  opacity: 0;
+  will-change: opacity;
+  transition: .5s 1.5s;
+  @include m('is-visible') {
+    opacity: 1;
+  }
+}
+
+.cert-carousel {
+  transform: translateX(-3rem);
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: transform 2s cubic-bezier(0,1,.3,1), opacity .3s cubic-bezier(0,1,.3,1);
+  @include m('is-visible') {
+    opacity: 1;
+    transform: translateX(0) !important;
+  }
+}
+
+@for $i from 1 through $total-items {
+  .cert-item:nth-child(#{$i}) {
+    transform: translateX($i * 2rem);
+    animation-delay: .3s * $i;
+  }
+}

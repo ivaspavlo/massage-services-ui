@@ -1,0 +1,8 @@
+
+<button *ngIf="type === buttonTypes.flat" mat-button mat-flat-button [ngClass]="size" [color]="color">{{ name }}</button>
+
+<button *ngIf="type === buttonTypes.raised" mat-button mat-raised-button [ngClass]="size" mat-flat-button [color]="color">{{ name }}</button>
+
+<button *ngIf="type === buttonTypes.stroked" mat-button mat-stroked-button [ngClass]="size" mat-flat-button [color]="color">{{ name }}</button>
+
+<button *ngIf="type === buttonTypes.icon" mat-button mat-icon-button [ngClass]="size" mat-flat-button [color]="color">{{ name }}</button>

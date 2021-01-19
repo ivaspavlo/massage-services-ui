@@ -1,0 +1,9 @@
+
+@import 'core-z-index';
+@import 'core-colors';
+
+
+:host {
+  z-index: $footer;
+  background-color: $white;
+}

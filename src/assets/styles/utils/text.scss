@@ -1,0 +1,16 @@
+
+@import 'mixins/_all';
+
+.text-transform-uppercase { text-transform: uppercase; }
+
+.text-align-center { text-align: center; }
+
+.text-decoration-underline { text-decoration: underline; };
+
+@include sm { }
+
+@include md { }
+
+@include lg { }
+
+@include xl { }

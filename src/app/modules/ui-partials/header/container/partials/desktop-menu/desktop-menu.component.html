@@ -1,0 +1,29 @@
+
+<div class="container-fluid menu width-100 d-flex justify-content-center transition-1" [ngClass]="{ 'menu--is-shrinked': isShrinked$ | async }">
+  <div class="row no-gutters width-100 max-width-992">
+    
+    <div class="col-3">
+      <div class="d-flex justify-content-start">
+        <app-logo [size]="(isShrinked$ | async) ? 'sm': 'md'"></app-logo>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <ul class="width-100 height-100 d-flex align-items-center justify-content-center">
+        <li *ngFor="let item of items" class="d-flex align-items-center">
+          <a href="#" class="px-rem-1_5 py-rem-1 color-grey-300 hover-color-primary transition-1">{{ item }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-3">
+      <div class="d-flex height-100 justify-content-end align-items-center">
+        <button class="transition-1 d-flex font-16 align-items-center bg-primary-500 border-0 color-white p-rem-0_5 b-radius-4 cursor-pointer hover-box-shadow">
+          <span class="mr-px-5">CONTACT US</span>
+          <app-phone-animation></app-phone-animation>
+        </button>
+      </div>
+    </div>
+  
+  </div>
+</div>

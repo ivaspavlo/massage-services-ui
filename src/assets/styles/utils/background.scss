@@ -1,0 +1,22 @@
+
+@import 'mixins/_all';
+@import '../core-colors';
+
+.bg-center-norepeat { background: center no-repeat; }
+
+.bg-white { background-color: $white; }
+.bg-black { background-color: $black; }
+.bg-transparent { background-color: $transparent; }
+
+.bg-grey-100 { background-color: $grey-100; }
+.bg-grey-200 { background-color: $grey-200; }
+
+.bg-primary-500 { background-color: $primary-500; }
+
+@include sm { }
+
+@include md { }
+
+@include lg { }
+
+@include xl { }

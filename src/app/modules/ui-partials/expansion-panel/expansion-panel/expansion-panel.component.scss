@@ -1,0 +1,47 @@
+
+@import 'mixins/_all';
+@import '_core-colors';
+
+:host {
+  width: 100%;
+  position: relative;
+}
+
+.panel {
+  height: 0;
+  transform: scaleY(0);
+  transform-origin: top left;
+  transition-duration: 0.3s;
+  @include m('is-open') {
+    height: auto;
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+  }
+  @include e('list-item') {
+    &:hover {
+      .panel__text {
+        color: $primary-900;
+        &:before {
+          transform: scaleX(1);
+          -webkit-transform: scaleX(1);
+        }
+      }
+    }
+  }
+  @include e('text') {
+    color: $primary-400;
+    transition-duration: 0.5s;
+    &:before {
+      content: '';
+      height: 100%; width: 100%;
+      position: absolute; top: 0; left: 0;
+      display: block;
+      transition-duration: 0.2s;
+      transform-origin: top left;
+      transform: scaleX(0);
+      background-color: $grey-100;
+      transition-duration: 0.5s;
+      z-index: -1;
+    }
+  }
+}

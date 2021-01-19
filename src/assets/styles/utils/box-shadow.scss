@@ -1,0 +1,14 @@
+
+@import 'mixins/bem';
+
+.box-shadow-1 { box-shadow: 0px 2px 5px 0px lightgrey; }
+
+.box-shadow-2 { box-shadow: 0px 3px 9px 3px rgba(0, 0, 0, .5); }
+
+@include sm { }
+
+@include md { }
+
+@include lg { }
+
+@include xl { }

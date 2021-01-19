@@ -1,0 +1,17 @@
+
+@import 'mixins/bem';
+@import '_core-z-index';
+
+@mixin parallax {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  @include e('back') {
+    width: 100%;
+    position: absolute;
+    transform: translateZ(-0.9px) scale(1.9);
+    z-index: $parallax;
+  }
+}

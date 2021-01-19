@@ -1,0 +1,21 @@
+
+@import 'mixins/_all';
+@import '../core-colors';
+
+.hover-opacity { &:hover { opacity: .6; } }
+
+.hover-black { &:hover { color: rgba(0,0,0,.6); } }
+
+.hover-scale { &:hover { transform: scale(1.1); } }
+
+.hover-box-shadow { &:hover { box-shadow: 0px 2px 5px 0px lightgrey; } }
+
+.hover-color-primary { &:hover { color: $primary-500; } }
+
+@include sm { }
+
+@include md { }
+
+@include lg { }
+
+@include xl { }

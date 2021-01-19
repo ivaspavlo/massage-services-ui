@@ -1,0 +1,34 @@
+
+@import 'mixins/bem';
+
+.button-size-sm {
+  min-width: 35px;
+  height: 25px;
+  font-size: 12px;
+}
+
+.button-size-md {
+  min-width: 50px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.button-size-lg {
+  min-width: 100px;
+  height: 45px;
+  font-size: 16px;
+}
+
+.button-size-xl {
+  min-width: 200px;
+  height: 60px;
+  font-size: 20px;
+}
+
+@include sm { }
+
+@include md { }
+
+@include lg { }
+
+@include xl { }

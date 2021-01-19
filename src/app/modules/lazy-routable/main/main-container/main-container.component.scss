@@ -1,0 +1,10 @@
+
+@import 'mixins/_all';
+
+.parallax {
+  @include parallax;
+  @include e('back') {
+    &:nth-child(1) { top: 0; }
+    &:nth-child(2) { top: 200vh; }
+  }
+}

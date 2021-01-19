@@ -1,0 +1,51 @@
+
+@import 'mixins/bem';
+
+.btn {
+  display: inline-block;
+  color: green;
+  padding: 32px;
+  position: relative;
+  letter-spacing: 1px;
+  @include e('svg') {
+    width: 24px;
+    height: 24px;
+    margin: auto;
+  }
+  @include e('circle') {
+    position: absolute; top: 0; left: 0;
+    height: 100%;
+    border-radius: 100%;
+    width: 100%;
+    box-shadow: 0 0 1px 1px green;
+    transition: 0.3s linear;
+  }
+  @include e('white-circle') {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    background: #fff;
+    display: flex;
+    transition: 0.3s ease-in-out;
+  }
+  @include e('text') {
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    z-index: 2;
+    transition: 0.3s linear;
+  }
+  &:hover {
+    .btn__circle {
+      transform: scale(0);
+    }
+    .btn__white-circle {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .btn__text {
+      transform: translate(40px, -50%);
+    }
+  }
+}

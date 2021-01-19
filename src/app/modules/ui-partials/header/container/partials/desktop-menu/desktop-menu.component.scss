@@ -1,0 +1,15 @@
+
+@import 'mixins/_all';
+@import '_core-colors';
+
+:host {
+  width: 100%;
+  position: fixed; top: 0; left: 0;
+}
+
+.menu {
+  background-color: rgba(36, 36, 36, 0.3);
+  @include m('is-shrinked') {
+    background-color: rgba(36, 36, 36, 0.7);
+  }
+}
