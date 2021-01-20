@@ -6,7 +6,7 @@
   border: 0;
   z-index: 2;
   display: inline-block;
-  color: $white;
+  color: $primary-500;
   opacity: 0;
   transition: .3s;
   cursor: default;
@@ -14,14 +14,14 @@
     position: absolute; top: 0; left: 50%;
     width: 30px; height: 50px;
     margin-left: -15px;
-    border: 2px solid $white;
+    border: 2px solid $primary-500;
     border-radius: 20px;
     box-sizing: border-box;
     &::before {
       position: absolute; top: 10px; left: 50%;
       width: 6px; height: 6px;
       margin-left: -3px;
-      background-color: $white;
+      background-color: $primary-500;
       border-radius: 100%;
       animation: float 2s infinite;
       box-sizing: border-box;
@@ -30,9 +30,8 @@
   }
   @include m('visible') {
     padding-top: 60px;
-    opacity: .4;
+    opacity: 1;
     cursor: pointer;
-    &:hover { opacity: 1; }
   }
 }
 

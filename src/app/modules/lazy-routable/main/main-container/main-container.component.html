@@ -15,10 +15,14 @@
   
     <app-certificates></app-certificates>
 
-    <app-brand-services></app-brand-services>
+    <app-brand-services [scrollElement]="parallax"></app-brand-services>
 
     <app-footer [socialButtons]="socialButtons" [footerItems]="footerItems"></app-footer>
 
   </div>
 
 </section>
+
+<div class="scroll-btn pos-fixed bottom-0">
+  <app-scroll-down [scrollElement]="parallax"></app-scroll-down>
+</div>
