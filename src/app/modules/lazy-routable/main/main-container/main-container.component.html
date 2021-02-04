@@ -1,28 +1,22 @@
 
 <section class="container-fluid">
 
-  <div #parallax class="parallax width-100 height-vh-100">
+  <div #parallax class="width-100 height-vh-100">
 
-    <figure class="parallax__back height-100 overflow-hidden">
-      <img src="/assets/img/png/main-bg-1.png" class="width-100" alt="Main Background Image">
+    <figure class="parallax parallax__layer-1">
+      <app-desktop-branding></app-desktop-branding>
     </figure>
 
-    <figure class="parallax__back height-100 overflow-hidden">
-      <img src="/assets/img/png/main-bg-2.png" class="width-100" alt="Main Background Image">
-    </figure>
-    
-    <app-desktop-branding></app-desktop-branding>
-  
     <app-certificates></app-certificates>
+    
+    <figure class="parallax parallax__layer-2"></figure>
 
-    <app-brand-services [scrollElement]="parallax"></app-brand-services>
-
-    <app-footer [socialButtons]="socialButtons" [footerItems]="footerItems"></app-footer>
+    <app-footer class="parallax parallax__layer-3" [socialButtons]="socialButtons" [footerItems]="footerItems"></app-footer>
 
   </div>
 
 </section>
 
 <div class="scroll-btn pos-fixed bottom-0">
-  <app-scroll-down [scrollElement]="parallax"></app-scroll-down>
+  <app-scroll-down [scrollBaseElement]="parallax"></app-scroll-down>
 </div>

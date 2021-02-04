@@ -1,27 +1,24 @@
 
-<div *appResizeToggle="['md', 'lg']" [visibilityObserver]="{ threshold: 0.3 }" (visible)="isVisible = $event" class="height-vh-100 width-100 pos-relative d-flex justify-content-center align-items-center">
+<div [visibilityObserver]="{ threshold: 0.3 }" (visible)="onVisibilityToggle($event)" class="height-vh-100 width-100 pos-relative d-flex justify-content-center align-items-end">
+  <div class="width-100 max-width-992 d-flex">
 
-  <div class="row no-gutters max-width-992">
-
-    <div class="col-5 offset-1">
-      <div class="brand height-100 d-flex flex-column align-items-start justify-content-end" [ngClass]="{ 'brand--is-visible': isVisible }">
-        <h1 class="brand__name font-58 color-white">Sergiy Tkachuk</h1>
-        <p class="font-14 color-primary-400 my-rem-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, eum officiis! Nam, inventore quo animi est sint dolores necessitatibus cupiditate. Quos soluta reiciendis sint debitis mollitia totam? Tempore, nisi recusandae.</p>
-        <button class="brand__button button-size-lg b-radius-4 color-white bg-transparent border-2 font-16 hover-box-shadow border-color-white cursor-pointer">Book Now</button>
+    <div class="branding height-vh-100 width-100 px-rem-1 d-flex flex-column justify-content-center align-items-center" [ngClass]="{ 'branding--is-visible': isVisible }">
+      
+      <div class="branding-image d-flex justify-content-center align-items-center" [ngClass]="{ 'branding-image--is-visible': isVisible }">
+        <div class="branding-image__wrapper d-inline-flex justify-content-center p-rem-1">
+          <figure class="branding-layer-2 width-100 d-flex align-items-end pos-relative">
+            <img class="width-100" src="/assets/img/png/profile.png" alt="Profile Picture">
+            <figcaption class="branding__signature pos-absolute top-0 width-100 z-index-1">
+              <app-brand-signature></app-brand-signature>
+            </figcaption>
+          </figure>
+        </div>
       </div>
-    </div>
 
-    <div class="branding-image col-4 offset-1" [ngClass]="{ 'branding-image--is-visible': isVisible }">
-      <div class="branding-layer-1 d-inline-flex justify-content-center p-rem-1 b-radius-4">
-        <figure class="branding-layer-2 width-100 d-flex align-items-end pos-relative">
-          <img class="width-100" src="/assets/img/png/profile.png" alt="Profile Picture">
-          <figcaption class="branding__signature pos-absolute top-0 width-100 z-index-1">
-            <app-brand-signature></app-brand-signature>
-          </figcaption>
-        </figure>
-      </div>
+      <h1 class="branding__title font-58 color-primary-400 my-rem-1">Sergiy Tkachuk</h1>
+      <h3 class="branding__subtitle font-14 color-white">massotherapy</h3>
+
     </div>
 
   </div>
-
 </div>

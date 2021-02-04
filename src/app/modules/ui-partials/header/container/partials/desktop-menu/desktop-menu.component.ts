@@ -1,8 +1,5 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input, Inject, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { fromEvent, Observable, Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, pairwise, shareReplay, skip, takeUntil, tap } from 'rxjs/operators';
-import { WINDOW } from '@app/core/providers';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 
 @Component({
@@ -11,41 +8,13 @@ import { WINDOW } from '@app/core/providers';
   styleUrls: ['./desktop-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DesktopMenuComponent implements OnInit, OnDestroy {
+export class DesktopMenuComponent implements OnInit {
 
   @Input() items: string[];
-  public isShrinked$: Observable<boolean>;
-  private windowInnerheight: number;
-  private componentDestroyed$: Subject<void> = new Subject();
+  @Input() isShrinked = false;
 
-  constructor(
-    @Inject(WINDOW) private window: Window,
-    private cdr: ChangeDetectorRef
-  ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.windowInnerheight = this.window.innerHeight;
-    this.isShrinked$ = this.initIsShrinkedObservable();
-    this.initIsShrinkedObservable();
-  }
-
-  private initIsShrinkedObservable(): Observable<boolean> {
-    return fromEvent(this.window, 'scroll').pipe(
-      skip(1),
-      debounceTime(50),
-      map(_ => this.window.scrollY),
-      pairwise(),
-      distinctUntilChanged(),
-      map(([prev, curr]) => curr > this.windowInnerheight && prev < curr),
-      tap(_ => this.cdr.detectChanges()),
-      takeUntil(this.componentDestroyed$),
-      shareReplay(1)
-    );
-  }
-
-  ngOnDestroy() {
-    this.componentDestroyed$.next();
-    this.componentDestroyed$.unsubscribe();
-  }
+  ngOnInit(): void { }
 
 }

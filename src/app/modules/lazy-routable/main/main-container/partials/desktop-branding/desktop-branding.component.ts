@@ -1,5 +1,5 @@
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 
 @Component({
@@ -8,12 +8,14 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop-branding.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DesktopBrandingComponent implements OnInit {
+export class DesktopBrandingComponent {
 
   public isVisible = false;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  public onVisibilityToggle(isVisible: boolean): void {
+    this.isVisible = isVisible;
+  }
 
 }

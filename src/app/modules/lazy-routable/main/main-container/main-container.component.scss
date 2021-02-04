@@ -2,10 +2,23 @@
 @import 'mixins/_all';
 
 .parallax {
-  @include parallax;
-  @include e('back') {
-    &:nth-child(1) { top: 0; }
-    &:nth-child(2) { top: 200vh; }
+  width: 100%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include e('layer-1') {
+    background-image: url('/assets/img/png/main-bg-1.png');
+  }
+  @include e('layer-2') {
+    top: 100vh;
+    background-image: url('/assets/img/png/main-bg-2.png');
+    z-index: 1;
+  }
+  @include e('layer-3') {
+    bottom: 0;
+    z-index: -1;
   }
 }
 

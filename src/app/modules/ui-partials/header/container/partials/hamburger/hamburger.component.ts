@@ -19,7 +19,9 @@ export class HamburgerComponent implements OnInit, OnDestroy {
   public _isOn: boolean;
   private componentDestroyed$: Subject<void> = new Subject();
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(
+    @Inject(DOCUMENT) private document: Document
+  ) { }
 
   ngOnInit(): void {
     this._isOn = this.init || false;
