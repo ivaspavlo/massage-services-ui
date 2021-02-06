@@ -1,8 +1,8 @@
 
 <button 
   (click)="onClick()"
-  [disabled]="!isVisible"
-  [ngClass]="{ 'scroll-down--visible': isVisible }"
+  [disabled]="!(isVisible$ | async)"
+  [ngClass]="{ 'scroll-down--visible': isVisible$ | async }"
   class="scroll-down">
     <span class="scroll-down__icon"></span>
 </button>

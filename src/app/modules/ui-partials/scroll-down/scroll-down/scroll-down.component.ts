@@ -1,5 +1,8 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Inject } from '@angular/core';
+import { fromEvent, Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, startWith } from 'rxjs/operators';
 
 
 @Component({
@@ -10,16 +13,31 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 })
 export class ScrollDownComponent implements OnInit {
 
-  @Input() scrollBaseElement: HTMLElement;
-  @Input() scrollTo: number = null;
-  @Input() isVisible = true;
+  @Input() scrollTo: number = 0;
+  @Input() hideOnHeight = 200;
+  @Input() startValue = true;
 
-  constructor() { }
+  public isVisible$: Observable<boolean>;
 
-  ngOnInit() { }
+  constructor(
+    @Inject(DOCUMENT) private document: Document
+  ) { }
+
+  ngOnInit() {
+    this.isVisible$ = this.toggleVisiblityOnScroll();
+  }
 
   public onClick(): void {
-    this.scrollBaseElement.scrollTo(0, this.scrollTo || this.scrollBaseElement.clientHeight);
+    this.document.documentElement.scrollTo(0, this.scrollTo);
   }
+
+  private toggleVisiblityOnScroll(): Observable<boolean> {
+    return fromEvent(this.document, 'scroll').pipe(
+      debounceTime(100),
+      map(_ => this.document.documentElement.scrollTop < this.hideOnHeight),
+      distinctUntilChanged(),
+      startWith(this.startValue)
+    );
+  };
 
 }

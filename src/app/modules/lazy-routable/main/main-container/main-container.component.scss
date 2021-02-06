@@ -9,20 +9,15 @@
   background-repeat: no-repeat;
   background-size: cover;
   @include e('layer-1') {
-    background-image: url('/assets/img/png/main-bg-1.png');
+    background-image: url('/assets/img/png/main-bg-3.png');
   }
   @include e('layer-2') {
     top: 100vh;
     background-image: url('/assets/img/png/main-bg-2.png');
-    z-index: 1;
-  }
-  @include e('layer-3') {
-    bottom: 0;
-    z-index: -1;
   }
 }
 
-.scroll-btn {
+.scroll-button {
   left: 50%;
   transform: translateX(-50%);
 }

@@ -43,9 +43,15 @@ export class MainContainerComponent implements OnInit {
 
   public socialButtons = SOCIAL_BUTTONS;
   public footerItems = FOOTER_MENU_ITEMS;
+  public isScrollBtnVisible = true;
 
   constructor() { }
 
   ngOnInit(): void { }
+
+  public toggleScrollBtn(isNextSectionVisible: boolean): void {
+    console.log(isNextSectionVisible);
+    this.isScrollBtnVisible = isNextSectionVisible;
+  }
 
 }

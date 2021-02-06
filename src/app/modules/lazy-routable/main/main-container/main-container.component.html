@@ -1,22 +1,22 @@
 
 <section class="container-fluid">
 
-  <div #parallax class="width-100 height-vh-100">
+  <div #parallaxContainer class="width-100 height-vh-100">
 
-    <figure class="parallax parallax__layer-1">
+    <div class="parallax parallax__layer-1">
       <app-desktop-branding></app-desktop-branding>
-    </figure>
+    </div>
 
     <app-certificates></app-certificates>
     
-    <figure class="parallax parallax__layer-2"></figure>
+    <div class="parallax parallax__layer-2"></div>
 
-    <app-footer class="parallax parallax__layer-3" [socialButtons]="socialButtons" [footerItems]="footerItems"></app-footer>
+    <app-footer [socialButtons]="socialButtons" [footerItems]="footerItems"></app-footer>
 
   </div>
 
 </section>
 
-<div class="scroll-btn pos-fixed bottom-0">
-  <app-scroll-down [scrollBaseElement]="parallax"></app-scroll-down>
+<div class="scroll-button pos-fixed bottom-0">
+  <app-scroll-down [scrollTo]="parallaxContainer.clientHeight"></app-scroll-down>
 </div>

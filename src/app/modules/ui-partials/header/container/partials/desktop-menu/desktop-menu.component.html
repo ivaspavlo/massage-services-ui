@@ -1,10 +1,10 @@
 
-<div class="container-fluid menu width-100 d-flex justify-content-center transition-1" [ngClass]="{ 'menu--is-shrinked': isShrinked }">
+<div class="container-fluid menu width-100 d-flex justify-content-center transition-1" [ngClass]="{ 'menu--is-shrinked': isShrinked$ | async }">
   <div class="row no-gutters width-100 max-width-992">
     
     <div class="col-3">
       <div class="d-flex justify-content-start">
-        <app-logo [size]="isShrinked ? 'sm': 'md'"></app-logo>
+        <app-logo [size]="(isShrinked$ | async) ? 'sm': 'md'"></app-logo>
       </div>
     </div>
 
