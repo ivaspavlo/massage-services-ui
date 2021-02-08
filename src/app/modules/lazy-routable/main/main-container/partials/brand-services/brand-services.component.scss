@@ -1,0 +1,17 @@
+
+$bp-md: 600px;
+$bp-lg: 800px;
+
+.page-content {
+  display: grid;
+  grid-gap: 1rem;
+  padding: 1rem;
+  
+  @media (min-width: $bp-md) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  @media (min-width: $bp-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
