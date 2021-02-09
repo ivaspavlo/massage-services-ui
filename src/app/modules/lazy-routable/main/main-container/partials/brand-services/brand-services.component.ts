@@ -1,5 +1,5 @@
 
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class BrandServicesComponent implements OnInit {
 
-  public isVisible: boolean = false;
+  @Input() items: { background: string; title: string; info: string; button?: string; }[];
 
   constructor() { }
 

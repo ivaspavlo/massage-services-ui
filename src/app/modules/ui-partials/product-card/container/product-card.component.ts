@@ -1,6 +1,13 @@
 
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
+
+interface ICard {
+  background: string;
+  title: string;
+  info: string;
+  button?: string;
+}
 
 @Component({
   selector: 'app-product-card',
@@ -9,6 +16,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductCardComponent implements OnInit {
+
+  @Input() card: ICard;
 
   constructor() { }
 
