@@ -1,19 +1,13 @@
 
-<div class="card">
+<div class="card" [ngStyle]="{'background-image': ''}">
   <div class="content">
     <h2 class="title">TITLE</h2>
-    <p class="copy">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    <button class="btn">BUTTON</button>
+    <p class="info-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="ng-content-button-wrap">
+      <ng-content></ng-content>
+    </div>
+    <div class="default-button">
+      <button class="btn">BUTTON</button>
+    </div>
   </div>
 </div>
-
-
-<!-- <div class="card d-flex overflow-hidden pos-relative">
-  <div class="card__button width-100 pos-absolute">
-    <button>TEST</button>
-  </div>
-  <div class="card__info width-100 height-100 color-white">
-    <h2>Header</h2>
-    <p class="copy">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis nemo suscipit reiciendis</p>
-  </div>
-</div> -->
