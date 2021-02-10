@@ -20,13 +20,12 @@ const FOOTER_MENU_ITEMS = [
   }
 ];
 
-const SERVICES = [
-  { background: 'string', title: 'CARD1', info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', button: 'TEST' },
-  { background: 'string', title: 'CARD1', info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', button: 'TEST' },
-  { background: 'string', title: 'CARD1', info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', button: 'TEST' },
-  { background: 'string', title: 'CARD1', info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', button: 'TEST' }
+const PRODUCTS = [
+  { background: '/assets/img/png/service-bg.png', title: 'CARD1', info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', button: 'TEST' },
+  { background: '/assets/img/png/service-bg.png', title: 'CARD1', info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', button: 'TEST' },
+  { background: '/assets/img/png/service-bg.png', title: 'CARD1', info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', button: 'TEST' },
+  { background: '/assets/img/png/service-bg.png', title: 'CARD1', info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', button: 'TEST' }
 ];
-
 
 @Component({
   selector: 'app-main-container',
@@ -38,7 +37,7 @@ export class MainContainerComponent implements OnInit {
 
   public socialButtons = SOCIAL_BUTTONS;
   public footerItems = FOOTER_MENU_ITEMS;
-  public services = SERVICES;
+  public productCards = PRODUCTS;
 
   public isScrollBtnVisible = true;
 
