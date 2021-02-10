@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '@app/shared/shared.module';
-import { NgButtonModule, NgExpansionPanelModule, BrandSignatureModule, ScrollDownModule, FooterModule, CarouselModule, ArrowAnimatedButtonModule, ProductCardModule } from '@app/modules/ui-partials';
+import { NgButtonModule, NgExpansionPanelModule, BrandSignatureModule, ScrollDownModule, FooterModule, CarouselModule, ArrowAnimatedButtonModule, ProductCardModule, CarouselSingleItemModule } from '@app/modules/ui-partials';
 
 import { MainRoutingModule } from './main-routing.module';
 
@@ -25,7 +25,8 @@ import { COMPONENTS } from './main-container';
     FooterModule,
     CarouselModule,
     ArrowAnimatedButtonModule,
-    ProductCardModule
+    ProductCardModule,
+    CarouselSingleItemModule
   ]
 })
 export class MainModule { }
