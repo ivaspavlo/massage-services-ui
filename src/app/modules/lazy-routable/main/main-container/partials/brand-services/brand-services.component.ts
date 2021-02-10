@@ -10,7 +10,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 })
 export class BrandServicesComponent implements OnInit {
 
-  @Input() items: { background: string; title: string; info: string; button?: string; }[];
+  @Input() productCards: { background: string; title: string; info: string; button?: string; }[];
 
   constructor() { }
 

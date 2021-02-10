@@ -1,13 +1,14 @@
 
-<div class="card" [ngStyle]="{'background-image': ''}">
+<div *ngIf="card" class="card">
+  <img class="bg-image" [src]="card.background" alt="Card Image">
   <div class="content">
-    <h2 class="title">TITLE</h2>
-    <p class="info-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <h2 class="title">{{ card.title }}</h2>
+    <p class="info-text">{{ card.info }}</p>
     <div class="ng-content-button-wrap">
       <ng-content></ng-content>
     </div>
     <div class="default-button">
-      <button class="btn">BUTTON</button>
+      <button class="btn">{{ card.button }}</button>
     </div>
   </div>
 </div>
