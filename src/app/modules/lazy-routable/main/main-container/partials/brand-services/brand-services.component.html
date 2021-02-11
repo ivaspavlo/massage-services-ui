@@ -1,12 +1,14 @@
 
-<section class="container-fluid d-flex flex-column justify-content-center height-vh-100 py-rem-3 pos-relative overflow-hidden">
+<section class="container-fluid d-flex flex-column justify-content-center pos-relative overflow-hidden">
+
+  <div class="row">
+    <app-slider-quote></app-slider-quote>
+  </div>
 
   <div class="row page-content width-100 max-width-992">
     <div *ngFor="let card of productCards" class="col-3">
       <app-product-card [card]="card"></app-product-card>
     </div>
   </div>
-
-  <app-carousel-single-item></app-carousel-single-item>
 
 </section>

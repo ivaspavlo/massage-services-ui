@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarouselSingleItemComponent } from './carousel-single-item.component';
+import { SliderQuoteComponent } from './slider-quote.component';
 
-describe('CarouselSingleItemComponent', () => {
-  let component: CarouselSingleItemComponent;
-  let fixture: ComponentFixture<CarouselSingleItemComponent>;
+describe('SliderQuoteComponent', () => {
+  let component: SliderQuoteComponent;
+  let fixture: ComponentFixture<SliderQuoteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CarouselSingleItemComponent ]
+      declarations: [ SliderQuoteComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CarouselSingleItemComponent);
+    fixture = TestBed.createComponent(SliderQuoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
