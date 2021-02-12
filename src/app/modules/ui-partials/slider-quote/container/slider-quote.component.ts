@@ -27,6 +27,7 @@ export class SliderQuoteComponent implements OnInit {
 
   @Input() quotes: IQuote[];
   @Input() colours: IQuoteHexColors;
+  @Input() hideControls = true;
 
   constructor() { }
 
