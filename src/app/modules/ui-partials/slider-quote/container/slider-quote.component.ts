@@ -1,5 +1,8 @@
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { interval, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 
 interface IQuote {
   id: string;
@@ -29,8 +32,35 @@ export class SliderQuoteComponent implements OnInit {
   @Input() colours: IQuoteHexColors;
   @Input() hideControls = true;
 
-  constructor() { }
+  @ViewChild('slide') slide: ElementRef;
 
-  ngOnInit(): void { }
+  public quoteWidthRem = 25;
+  private currentQuoteIndex = 0;
+  private componentDestroyed$: Subject<void> = new Subject();
+
+  constructor(
+    private renderer: Renderer2
+  ) { }
+
+  ngOnInit(): void {
+    this.animateSlider();
+  }
+
+  private animateSlider(): void {
+    interval(4000).pipe(
+      takeUntil(this.componentDestroyed$)
+    ).subscribe(_ => {
+      this.currentQuoteIndex++;
+      if (this.currentQuoteIndex > 1) {
+        this.currentQuoteIndex = 0;
+      }
+      this.renderer.setStyle(this.slide.nativeElement, 'transform', `translateX(-${this.currentQuoteIndex * this.quoteWidthRem}rem)`);
+    });
+  }
+
+  ngOnDestroy() {
+    this.componentDestroyed$.next();
+    this.componentDestroyed$.unsubscribe();
+  }
 
 }

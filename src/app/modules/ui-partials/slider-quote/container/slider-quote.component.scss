@@ -17,11 +17,18 @@ $font-color--dark: #999;
   background-color: $bg-color;
 }
 
-.quotes-container {
-  width: 100%;
+.visible-width {
+  width: 25rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  width: 500rem;
+  position: relative;
   display: flex;
-  justify-content: center;
-  transition: .5s;
+  justify-content: flex-start;
+  transition: .3s;
 }
 
 .quote {
@@ -33,27 +40,27 @@ $font-color--dark: #999;
 
   i {
     position: absolute;
-    height: 2rem; width: 2rem;
+    height: 24px; width: 24px;
     background-image: url('../constants/quote.svg');
     z-index: 1;
   }
 
   &__icon-1 {
-    top: -20px; left: -10px;
+    top: -4px; left: 1px;
     transform: rotate(180deg);
   }
 
   &__icon-2 {
-    bottom: 25px; right: -10px;
+    bottom: 40px; right: 0px;
   }
   
   &__text {
-    padding: 1rem;
+    padding: 1rem 2rem;
     border: 2px solid $primary-color;
     font-size: 1rem;
     font-weight: 500;
     word-spacing: 2px;
-    letter-spacing: .5px;
+    letter-spacing: .3px;
     display: inline-block;
     position: relative;
     border-radius: 1rem;
@@ -76,7 +83,7 @@ $font-color--dark: #999;
     color: $font-color--dark;
     font-size: .8rem;
     font-weight: 800;
-    word-spacing: 2px;
+    word-spacing: 1px;
     letter-spacing: .5px;
   }
 }
