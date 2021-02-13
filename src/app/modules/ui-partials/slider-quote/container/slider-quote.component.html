@@ -3,32 +3,28 @@
 
   <div class="visible-width">
     <div #slide class="slide">
-      <div class="quote">
+      <div *ngFor="let quote of quotes" class="quote">
+        <a [href]="quote.socialLink" class="social">
+          <i class="social__icon" [ngClass]="'social__icon--' + quote.socialNetwork"></i>
+          <figure class="social__image-container">
+            <img class="social__image" [src]="quote.socialImg" alt="Image of quote's author">
+          </figure>
+        </a>
         <i class="quote__icon-1"></i>
         <i class="quote__icon-2"></i>
-        <h3 class="quote__text">Spread love everywhere you go. Let no one ever come to you without leaving happier</h3>
-        <h4 class="quote__person">
-          <span class="quote__name">— Mother Teresa</span><br>
-          <span class="quote__about">Nobel Peace Prize winner</span>
-        </h4>
-      </div>
-      <div class="quote">
-        <i class="quote__icon-1"></i>
-        <i class="quote__icon-2"></i>
-        <h3 class="quote__text">Spread love everywhere you go. Let no one ever come to you without leaving happier</h3>
-        <h4 class="quote__person">
-          <span class="quote__name">— Mother Teresa</span><br>
-          <span class="quote__about">Nobel Peace Prize winner</span>
-        </h4>
+        <h3 class="quote__text">{{ quote.text }}</h3>
+        <div class="quote-person">
+          <p class="quote-person__author">
+            <span class="quote-person__name">— {{ quote.name }}</span>
+            <span class="quote-person__about">{{ quote.about }}</span>
+          </p>
+        </div>
       </div>
     </div>
   </div>
 
   <div *ngIf="!hideControls" class="controls">
-    <span class="controls__btn controls__btn--active"></span>
-    <span class="controls__btn"></span>
-    <span class="controls__btn"></span>
-    <span class="controls__btn"></span>
+    <a *ngFor="let quote of quotes; let index = index;" (click)="onBtnClick(index)" [ngClass]="{'controls__btn--active': index === currentQuoteIndex}" class="controls__btn"></a>
   </div>
 
 </div>
