@@ -11,6 +11,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 export class BrandServicesComponent implements OnInit {
 
   @Input() productCards: { background: string; title: string; info: string; button?: string; }[];
+  @Input() quotes: object;
 
   constructor() { }
 

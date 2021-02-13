@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { interval, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -7,18 +7,12 @@ import { takeUntil } from 'rxjs/operators';
 interface IQuote {
   id: string;
   text: string;
-  author: string;
   name: string;
   about: string;
-}
-
-interface IQuoteHexColors {
-  background: string;
-  border: string;
-  text: string;
-  author: string;
-  about: string;
-  controls: string;
+  img: string;
+  socialLink: string;
+  socialImg: string;
+  socialNetwork: 'facebook' | 'instagram' | 'linkedin',
 }
 
 @Component({
@@ -29,33 +23,43 @@ interface IQuoteHexColors {
 export class SliderQuoteComponent implements OnInit {
 
   @Input() quotes: IQuote[];
-  @Input() colours: IQuoteHexColors;
   @Input() hideControls = true;
-
+  @Input() intervalMs = 4000;
   @ViewChild('slide') slide: ElementRef;
 
-  public quoteWidthRem = 25;
-  private currentQuoteIndex = 0;
+  public currentQuoteIndex = 0;
+  private quoteWidth = 400;
   private componentDestroyed$: Subject<void> = new Subject();
 
   constructor(
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
     this.animateSlider();
   }
 
+  public onBtnClick(index: number): void {
+    this.currentQuoteIndex = index;
+    this.moveSlide();
+  }
+
   private animateSlider(): void {
-    interval(4000).pipe(
+    interval(this.intervalMs).pipe(
       takeUntil(this.componentDestroyed$)
     ).subscribe(_ => {
       this.currentQuoteIndex++;
-      if (this.currentQuoteIndex > 1) {
+      if (this.currentQuoteIndex > this.quotes.length - 1) {
         this.currentQuoteIndex = 0;
       }
-      this.renderer.setStyle(this.slide.nativeElement, 'transform', `translateX(-${this.currentQuoteIndex * this.quoteWidthRem}rem)`);
+      this.moveSlide();
     });
+  }
+
+  private moveSlide() {
+    this.renderer.setStyle(this.slide.nativeElement, 'transform', `translateX(-${this.currentQuoteIndex * this.quoteWidth}px)`);
+    this.cdr.detectChanges();
   }
 
   ngOnDestroy() {
