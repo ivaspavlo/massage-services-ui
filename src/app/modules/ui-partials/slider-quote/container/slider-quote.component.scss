@@ -4,7 +4,7 @@ $bg-color: rgba(46, 49, 49, 0.7);
 $font-color--light: ivory;
 $font-color--dark: #999;
 $border-radius: 15px;
-$transition: .3s;
+$transition: .5s;
 
 
 @mixin quote-mark {
@@ -107,7 +107,7 @@ $transition: .3s;
 
 .social {
   position: absolute; top: 5px; right: 5px;
-  transition: $transition;
+  transition: .3s;
   z-index: 1;
 
   &:hover {
