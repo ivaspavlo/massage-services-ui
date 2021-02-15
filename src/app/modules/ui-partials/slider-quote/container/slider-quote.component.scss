@@ -23,8 +23,8 @@ $transition: .5s;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 0 20px;
-  background-color: $bg-color;
+  // padding: 40px 0 30px;
+  // background-color: $bg-color;
 }
 
 .visible-width {
@@ -118,7 +118,7 @@ $transition: .5s;
     height: 45px;
     width: 45px;
     overflow: hidden;
-    border-radius: $border-radius;
+    border-radius: 100%;
   }
 
   &__image {
