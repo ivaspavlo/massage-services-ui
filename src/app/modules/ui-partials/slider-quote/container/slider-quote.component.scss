@@ -1,10 +1,10 @@
 
-$primary-color: #7d6caf;
+$primary-color: #7dc9bd;
 $bg-color: rgba(46, 49, 49, 0.7);
 $font-color--light: ivory;
 $font-color--dark: #999;
 $border-radius: 15px;
-$transition: .3s;
+$transition: .5s;
 
 
 @mixin quote-mark {
@@ -23,8 +23,8 @@ $transition: .3s;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 0 20px;
-  background-color: $bg-color;
+  // padding: 40px 0 30px;
+  // background-color: $bg-color;
 }
 
 .visible-width {
@@ -107,7 +107,7 @@ $transition: .3s;
 
 .social {
   position: absolute; top: 5px; right: 5px;
-  transition: $transition;
+  transition: .3s;
   z-index: 1;
 
   &:hover {
@@ -118,7 +118,7 @@ $transition: .3s;
     height: 45px;
     width: 45px;
     overflow: hidden;
-    border-radius: $border-radius;
+    border-radius: 100%;
   }
 
   &__image {
