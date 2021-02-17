@@ -13,6 +13,8 @@ export class BrandServicesComponent implements OnInit {
   @Input() productCards: { background: string; title: string; info: string; button?: string; }[];
   @Input() quotes: object;
 
+  public isVisible = false;
+
   constructor() { }
 
   ngOnInit() { }
