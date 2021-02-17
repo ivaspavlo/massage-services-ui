@@ -1,15 +1,15 @@
 
-<section class="section-wrap d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden height-100">
+<section class="services-wrap d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden height-100">
 
-  <div class="slider-wrap width-100 mt-rem-4 pos-relative">
-    <div class="max-width-992 pos-relative">
-      <div class="quote-header width-100">
+  <div class="services width-100 mt-rem-4 pos-relative d-flex justify-content-center">
+    <div class="max-width-992 pos-relative width-100">
+      <div class="services__title width-100">
         <p class="font-22">We bring the best of our skills to meet specific needs</p>
-        <i class="quote-shevron"></i>
+        <i class="services__tripple-shevron"></i>
         <p class="font-34">Our services</p>
       </div>
+      <app-slider-quote [quotes]="quotes"></app-slider-quote>
     </div>
-    <app-slider-quote [quotes]="quotes"></app-slider-quote>
   </div>
 
   <div class="d-flex flex-grow-1 align-items-center justify-content-center width-100">
