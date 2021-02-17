@@ -2,7 +2,7 @@
 @import '_core-colors.scss';
 @import 'mixins/bem';
 
-$total-items: 5;
+$items-qty: 5;
 
 .cert-bg {
   &:after {
@@ -50,7 +50,7 @@ $total-items: 5;
   }
 }
 
-@for $i from 1 through $total-items {
+@for $i from 1 through $items-qty {
   .cert-item:nth-child(#{$i}) {
     transform: translateX($i * 2rem);
     animation-delay: .3s * $i;

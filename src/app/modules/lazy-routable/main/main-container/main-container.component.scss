@@ -1,13 +1,11 @@
 
-@import 'mixins/bem';
+@import 'mixins/_all';
 
 .parallax {
   width: 100%;
   height: 100vh;
   background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  @include background-image-center;
   @include e('layer-1') {
     background-image: url('/assets/img/png/main-bg-3.png');
   }

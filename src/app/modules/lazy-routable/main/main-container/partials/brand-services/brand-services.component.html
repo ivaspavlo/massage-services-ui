@@ -1,18 +1,20 @@
 
-<section class="services-wrap d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden height-100">
+<section [visibilityObserver]="{threshold: 0.1}" (visible)="isVisible = $event" class="services-wrap d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden height-100">
 
-  <div class="services width-100 mt-rem-4 pos-relative d-flex justify-content-center">
+  <div class="services width-100 mt-rem-4 py-rem-1 pos-relative d-flex justify-content-center">
     <div class="max-width-992 pos-relative width-100">
-      <div class="services__title width-100">
+      <div class="services__title width-100 pos-absolute font-24 b-radius-4" [ngClass]="{'services__title--is-visible': isVisible}">
         <p class="font-22">We bring the best of our skills to meet specific needs</p>
-        <i class="services__tripple-shevron"></i>
+        <div class="d-flex flex-column py-rem-0_75">
+          <i *ngFor="let i of 3 | fill" class="services__shevron" [ngClass]="{'services__shevron--is-visible': isVisible}"></i>
+        </div>
         <p class="font-34">Our services</p>
       </div>
       <app-slider-quote [quotes]="quotes"></app-slider-quote>
     </div>
   </div>
 
-  <div class="d-flex flex-grow-1 align-items-center justify-content-center width-100">
+  <div class="product-cards d-flex flex-grow-1 align-items-center justify-content-center width-100" [ngClass]="{'product-cards--is-visible': isVisible}">
     <div class="row width-100 max-width-992">
       <div *ngFor="let card of productCards" class="col-3 px-rem-1">
         <app-product-card [card]="card"></app-product-card>
