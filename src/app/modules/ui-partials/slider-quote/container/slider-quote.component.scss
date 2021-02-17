@@ -1,15 +1,16 @@
 
 $primary-color: #7dc9bd;
-$bg-color: rgba(46, 49, 49, 0.7);
 $font-color--light: ivory;
 $font-color--dark: #999;
 $border-radius: 15px;
 $transition: .5s;
 
-
 @mixin quote-mark {
   position: absolute;
   height: 24px; width: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-image: url('../icons/quote.svg');
   z-index: 1;
 }
@@ -23,8 +24,6 @@ $transition: .5s;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // padding: 40px 0 30px;
-  // background-color: $bg-color;
 }
 
 .visible-width {
