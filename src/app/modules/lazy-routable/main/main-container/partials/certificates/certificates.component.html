@@ -2,8 +2,8 @@
 <section class="height-vh-100 bg-white" [visibilityObserver]="{ threshold: 0.1 }" (visible)="isVisible = $event" class="d-flex flex-column container-fluid height-vh-100 py-rem-3 pos-relative overflow-hidden">
 
   <div class="row no-gutters width-100 height-100 pos-absolute bottom-0 z-index-minus-1">
-    <figure class="cert-bg width-100">
-      <img src="/assets/img/png/cert-bg.jpeg" class="width-100 pos-relative" alt="Certificates Section Background">
+    <figure class="width-100">
+      <img src="/assets/img/png/cert-bg.jpeg" class="cert-bg width-100 pos-relative" [ngClass]="{ 'cert-bg--is-visible': isVisible }" alt="Certificates Section Background">
     </figure>
   </div>
 
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="col-3 offset-1 py-rem-1">
-        <div class="d-flex width-100 height-100 align-items-center justify-content-center flex-column">
+        <div class="cert-info p-rem-1 b-radius-4 d-flex width-100 height-100 align-items-center justify-content-center flex-column">
           <h3 class="cert-title mb-rem-0_5 width-100 color-secondary-500 font-30">Some seo text</h3>
           <p class="line-height-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque excepturi non maiores velit id temporibus? Quo inventore optio mollitia sed numquam itaque necessitatibus praesentium at, perferendis molestiae, repellat corporis.</p>
           <div class="width-100 d-flex justify-content-end">
