@@ -1,11 +1,20 @@
 
-<section class="container-fluid d-flex justify-content-center height-vh-75 bg-white width-100">
+<section class="container-fluid d-flex justify-content-center height-vh-50 bg-white width-100">
 
   <div class="row no-gutters height-100 width-100 max-width-992">
 
-    <div class="col-4" style="background-color: red;"></div>
-    <div class="col-4" style="background-color: aqua;"></div>
-    <div class="col-4" style="background-color: green;"></div>
+    <div class="col-3 py-rem-4" style="background-color: red;">
+      <div class="bg-white width-100 height-100"></div>
+    </div>
+    <div class="col-6" style="background-color: lightgray;">
+      <h5>CONTACT US</h5>
+      <form [formGroup]="form">
+        <app-input></app-input>
+      </form>
+    </div>
+    <div class="col-3 py-rem-4" style="background-color: green;">
+      <div class="bg-white width-100 height-100"></div>
+    </div>
 
   </div>
 
