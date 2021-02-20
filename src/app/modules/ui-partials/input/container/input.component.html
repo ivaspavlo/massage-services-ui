@@ -1,6 +1,6 @@
 
-<div class="input-floating-label">
-  <input class="input" type="text" id="input" name="input" placeholder="username" value="">
-  <label for="input">Username</label>
+<div class="input-container">
+  <input class="input" [type]="inputType" [id]="inputId" name="input" [placeholder]="placeholder" [value]="value">
+  <label [for]="inputId">{{ label }}</label>
   <span class="focus-bg"></span>
 </div>

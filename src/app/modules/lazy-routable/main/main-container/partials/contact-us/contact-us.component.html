@@ -9,7 +9,7 @@
     <div class="col-6" style="background-color: lightgray;">
       <h5>CONTACT US</h5>
       <form [formGroup]="form">
-        <app-input></app-input>
+        <app-input [formControl]="form.get('name')" [config]="{label: 'User name', placeholder: 'User placeholder', id: 'user'}"></app-input>
       </form>
     </div>
     <div class="col-3 py-rem-4" style="background-color: green;">
