@@ -12,6 +12,7 @@ export * from './arrow-animated-button/arrow-animated-button.module';
 export * from './goto-animated-button/goto-animated-button.module';
 export * from './product-card/product-card.module';
 export * from './slider-quote/slider-quote.module';
+export * from './input/input.module';
 
 export * from './ng-expansion-panel/ng-expansion-panel.module';
 export * from './ng-menu/ng-menu.module';

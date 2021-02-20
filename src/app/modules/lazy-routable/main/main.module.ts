@@ -1,9 +1,10 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '@app/shared/shared.module';
-import { NgButtonModule, NgExpansionPanelModule, BrandSignatureModule, ScrollDownModule, FooterModule, CarouselModule, ArrowAnimatedButtonModule, ProductCardModule, SliderQuoteModule } from '@app/modules/ui-partials';
+import { NgButtonModule, NgExpansionPanelModule, BrandSignatureModule, ScrollDownModule, FooterModule, CarouselModule, ArrowAnimatedButtonModule, ProductCardModule, SliderQuoteModule, InputModule } from '@app/modules/ui-partials';
 
 import { MainRoutingModule } from './main-routing.module';
 
@@ -16,6 +17,7 @@ import { COMPONENTS } from './main-container';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     SharedModule,
     MainRoutingModule,
     NgButtonModule,
@@ -26,7 +28,8 @@ import { COMPONENTS } from './main-container';
     CarouselModule,
     ArrowAnimatedButtonModule,
     ProductCardModule,
-    SliderQuoteModule
+    SliderQuoteModule,
+    InputModule
   ]
 })
 export class MainModule { }
