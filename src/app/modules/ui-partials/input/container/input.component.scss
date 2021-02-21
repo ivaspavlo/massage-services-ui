@@ -5,8 +5,9 @@ $border-radius: 4px;
 $input-color: #fff7;
 
 .input-container {
-  position: relative;
   width: 100%;
+  margin-top: 15px;
+  position: relative;
 
   .input {
     width: 100%;
@@ -56,7 +57,7 @@ $input-color: #fff7;
     border-width: 1px;
     border-color: $primary-color;
     ~ label {
-      transform: translateY(-12px);
+      transform: translateY(-15px);
       color: $primary-color;
       padding: 0px 4px;
       font-size: 12px;

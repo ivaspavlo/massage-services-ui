@@ -6,7 +6,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 interface IInputConfig {
   label?: string;
   placeholder?: string;
-  inputType?: string;
+  inputType?: 'text' | 'number' | 'textarea';
   id?: string;
 }
 
@@ -28,13 +28,18 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.placeholder = value?.placeholder || '';
     this.inputType = value?.inputType || 'text';
     this.inputId = value?.id || this.getRandomId();
+    this.isTextArea = this.inputType === 'textarea';
   };
+
   public label: string;
   public placeholder: string;
   public inputType: string;
   public inputId: string;
+  public isTextArea: boolean;
+  public errorMessage: string;
   public value: unknown;
 
+  // ControlValueAccessor
   private onChange;
   private onTouched;
 

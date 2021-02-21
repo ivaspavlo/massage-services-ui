@@ -1,6 +1,7 @@
 
 <div class="input-container">
-  <input class="input" [type]="inputType" [id]="inputId" name="input" [placeholder]="placeholder" [value]="value">
+  <input *ngIf="!isTextArea" class="input" [id]="inputId" name="input" [placeholder]="placeholder" [value]="value" [type]="inputType">
+  <textarea *ngIf="isTextArea" class="input" [id]="inputId" name="textarea" [placeholder]="placeholder" [value]="value" rows="4" cols="50" [ngStyle]="{resize: 'none'}"></textarea>
   <label [for]="inputId">{{ label }}</label>
   <span class="focus-bg"></span>
 </div>

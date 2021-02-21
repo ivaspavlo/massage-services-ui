@@ -7,10 +7,14 @@
       <div class="bg-white width-100 height-100"></div>
     </div>
     <div class="col-6" style="background-color: lightgray;">
-      <h5>CONTACT US</h5>
-      <form [formGroup]="form">
-        <app-input [formControl]="form.get('name')" [config]="{label: 'User name', placeholder: 'User placeholder', id: 'user'}"></app-input>
-      </form>
+      <div class="width-100 height-100 p-rem-3">
+        <h5 class="mb-rem-2">CONTACT US</h5>
+        <form [formGroup]="form">
+          <app-input [formControl]="form.get('name')" [config]="{label: 'User name', placeholder: 'User placeholder', id: 'user'}"></app-input>
+          <app-input [formControl]="form.get('email')" [config]="{label: 'User email', placeholder: 'User placeholder', id: 'email'}"></app-input>
+          <app-input [formControl]="form.get('msg')" [config]="{label: 'User msg', placeholder: 'User placeholder', id: 'msg', inputType: 'textarea'}"></app-input>
+        </form>
+      </div>
     </div>
     <div class="col-3 py-rem-4" style="background-color: green;">
       <div class="bg-white width-100 height-100"></div>
