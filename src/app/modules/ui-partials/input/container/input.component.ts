@@ -1,14 +1,7 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Optional } from '@angular/core';
+import { ControlContainer, ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-
-interface IInputConfig {
-  label?: string;
-  placeholder?: string;
-  inputType?: 'text' | 'number' | 'textarea';
-  id?: string;
-}
 
 @Component({
   selector: 'app-input',
@@ -23,27 +16,31 @@ interface IInputConfig {
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
 
-  @Input() set config(value: IInputConfig) {
-    this.label = value?.label || '';
-    this.placeholder = value?.placeholder || '';
-    this.inputType = value?.inputType || 'text';
-    this.inputId = value?.id || this.getRandomId();
-    this.isTextArea = this.inputType === 'textarea';
+  @Input() controlName: string = 'name';
+  @Input() errorsMap: { [key:string]: string; }
+  @Input() label: string;
+  @Input() placeholder: string;
+  @Input() set type(value: 'text' | 'number' | 'textarea') {
+    this._type = value;
+    this.isTextArea = value === 'textarea';
   };
-
-  public label: string;
-  public placeholder: string;
-  public inputType: string;
-  public inputId: string;
+  get type() { return this._type; }
+  
   public isTextArea: boolean;
-  public errorMessage: string;
   public value: unknown;
+  public canShowError = false;
+
+  // ControlContainer
+  public get form(): FormGroup { return this.controlContainer.control as FormGroup; }
+  public get control(): FormControl { return this.form.get(this.controlName) as FormControl; }
 
   // ControlValueAccessor
   private onChange;
   private onTouched;
 
-  constructor() { }
+  private _type: 'text' | 'number' | 'textarea' = 'text';
+
+  constructor(@Optional() private controlContainer: ControlContainer) { }
 
   ngOnInit(): void { }
 
@@ -51,12 +48,8 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   public registerOnChange(fn): void { this.onChange = fn; }
   public registerOnTouched(fn): void { this.onChange = fn; }
 
-  /**
-   * Return string with randomly generated number
-   * @returns {string}
-   */
-  private getRandomId(): string {
-    return `input_id_${Math.floor(Math.random() * 6) + 1}`;
+  public onFocus(): void {
+    this.canShowError = true;
   }
 
 }

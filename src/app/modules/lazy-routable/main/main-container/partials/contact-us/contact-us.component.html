@@ -9,10 +9,10 @@
     <div class="col-6" style="background-color: lightgray;">
       <div class="width-100 height-100 p-rem-3">
         <h5 class="mb-rem-2">CONTACT US</h5>
-        <form [formGroup]="form">
-          <app-input [formControl]="form.get('name')" [config]="{label: 'User name', placeholder: 'User placeholder', id: 'user'}"></app-input>
-          <app-input [formControl]="form.get('email')" [config]="{label: 'User email', placeholder: 'User placeholder', id: 'email'}"></app-input>
-          <app-input [formControl]="form.get('msg')" [config]="{label: 'User msg', placeholder: 'User placeholder', id: 'msg', inputType: 'textarea'}"></app-input>
+        <form [formGroup]="form" class="d-flex flex-column">
+          <app-input [formControl]="form.get('name')" controlName="name" label="User name" placeholder="Name placeholder"></app-input>
+          <app-input [formControl]="form.get('email')" controlName="email" label="User email" placeholder="Email placeholder"></app-input>
+          <app-input [formControl]="form.get('msg')" controlName="msg" label="User msg" placeholder="Msg placeholder" type="textarea"></app-input>
         </form>
       </div>
     </div>
