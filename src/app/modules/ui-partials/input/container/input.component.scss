@@ -1,67 +1,81 @@
 
-$primary-color:coral;
-$color-input-text:#111;
-$color-border:#fff5;
-$bg-color:#14213d;
-$form-bg:#0e1629;
-$border-radius:4px;
+$primary-color: #7dc9bd;
+$secondary-color:#fff5;
+$warn-color: red;
+$border-radius: 4px;
 
-.input-floating-label {
-  position: relative;
-  width: 100%;
-
-  .input {
-    font-family: inherit;
-    width: 100%;
-    display:block;
-    border: 0;
-    border: 1px solid $primary-color;
-    border-radius:$border-radius;
-    outline: 0;
-    font-size: 1rem;
-    color: #fff7;
-    padding: 18px 12px;
-    background: transparent;
-    transition: border-color 0.2s;
-  
-    &:required,&:invalid { box-shadow:none; }
-  
-    &::placeholder {
-      color: transparent;
-    }
-    &:placeholder-shown {
-      border-color:$color-border;
-     }
-
-    &:placeholder-shown ~ label {
-      font-size: 1rem;
-      cursor: text;
-      transform:translatey(17px);
-      padding:0px 0px;
-     }
-
-     }
-    label {
-      position: absolute;
-      left:12px;
-      display: block;
-      transform:translatey(-7px);
-      transition: 0.3s;
-      font-size: 0.75rem;
-      padding:0px 4px;
-      color: #fff6;
-      top:0;
-    }
-
-    .input:focus {
-      ~ label {
-        position: absolute;
-        transform:translatey(-12px);
-        color: $primary-color;
-        padding: 0px 4px;
-        font-size: 0.7rem;
-      } 
-      border-width: 1px;
-      border-color:$primary-color;
+:host {
+  display: flex;
+  margin: 15px 0;
 }
+
+.input-container {
+  width: 100%;
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 18px 12px;
+  font-size: 16px;
+  border: 1px solid $primary-color;
+  border-radius: $border-radius;
+  font-family: inherit;
+  display: block;
+  color: $secondary-color;
+  background-color: transparent;
+  transition: border-color .2s;
+  outline: 0;
+
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown {
+    border-color: $secondary-color;
+  }
+
+  &:placeholder-shown ~ label {
+    font-size: 16px;
+    transform: translateY(17px);
+    padding: 0px 0px;
+    cursor: text;
+  }
+}
+
+label {
+  position: absolute; left: 12px; top: 0;
+  transform: translatey(-7px);
+  padding: 0px 4px;
+  font-size: 12px;
+  display: block;
+  transition: .3s;
+  color: $secondary-color;
+}
+
+.input:focus {
+  border-width: 1px;
+  border-color: $primary-color;
+  ~ label {
+    transform: translateY(-15px);
+    color: $primary-color;
+    padding: 0px 4px;
+    font-size: 12px;
+  }
+}
+
+.error {
+  opacity: 0;
+  font-size: 10px;
+  margin: 5px 5px 0 5px;
+  color: $warn-color;
+  transition: opacity .3s;
+  &--visible {
+    opacity: 1;
+  }
 }

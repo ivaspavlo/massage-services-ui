@@ -1,6 +1,8 @@
 
-<div class="input-floating-label">
-  <input class="input" type="text" id="input" name="input" placeholder="username" value="">
-  <label for="input">Username</label>
+<div class="input-container">
+  <input *ngIf="!isTextArea" class="input" [id]="controlName" name="input" [placeholder]="placeholder" [value]="value" [type]="inputType" (focus)="onFocus()">
+  <textarea *ngIf="isTextArea" class="input" [id]="controlName" name="textarea" [placeholder]="placeholder" [value]="value" rows="4" cols="50" [ngStyle]="{resize: 'none'}" (focus)="onFocus()"></textarea>
+  <label [for]="controlName">{{label}}</label>
   <span class="focus-bg"></span>
+  <p class="error" [ngClass]="{'error--visible': canShowError}">{{ control.errors | firstError:errorsMap }}</p>
 </div>
