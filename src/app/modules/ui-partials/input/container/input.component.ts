@@ -29,6 +29,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   public isTextArea: boolean;
   public value: unknown;
   public canShowError = false;
+  public hasFocus = false;
 
   // ControlContainer
   public get form(): FormGroup { return this.controlContainer.control as FormGroup; }
@@ -46,10 +47,19 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   public writeValue(value: unknown): void { this.value = value; }
   public registerOnChange(fn): void { this.onChange = fn; }
-  public registerOnTouched(fn): void { this.onChange = fn; }
+  public registerOnTouched(fn): void { this.onTouched = fn; }
 
   public onFocus(): void {
     this.canShowError = true;
+    this.hasFocus = true;
+  }
+
+  public onBlur(): void {
+    this.hasFocus = false;
+  }
+
+  public onInput(value: unknown): void {
+    this.onChange(value);
   }
 
 }

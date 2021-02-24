@@ -10,12 +10,15 @@
       <div class="contactus-form width-100 height-100 p-rem-3 b-radius-4 pos-absolute">
         <div class="contactus-header mb-rem-1 d-flex flex-column justify-content-center">
           <h4 class="font-26 text-align-center">CONTACT US</h4>
-          <p class="font-14 mt-rem-0_5 text-align-center">We would love to help</p>
+          <p class="font-14 mt-rem-0_5 mx-rem-2 pt-rem-0_5 text-align-center border-top-1">We would love to help <span class="font-12 color-warn-500">&hearts;</span></p>
         </div>
-        <form [formGroup]="form" class="d-flex flex-column">
+        <form [formGroup]="form" class="d-flex flex-column" (ngSubmit)="onSubmit()">
           <app-input [formControl]="form.get('name')" controlName="name" label="User name" placeholder="Name placeholder"></app-input>
           <app-input [formControl]="form.get('email')" controlName="email" label="User email" placeholder="Email placeholder"></app-input>
           <app-input [formControl]="form.get('msg')" controlName="msg" label="User msg" placeholder="Msg placeholder" type="textarea"></app-input>
+          <div class="width-100 d-flex justify-content-center">
+            <app-button-main title="send" [isValid]="!form.valid"></app-button-main>
+          </div>
         </form>
       </div>
     </div>

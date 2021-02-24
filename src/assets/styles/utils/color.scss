@@ -39,6 +39,17 @@
 .color-secondary-800 { color: $secondary-800; }
 .color-secondary-900 { color: $secondary-900; }
 
+.color-warn-50 { color: $warn-50; }
+.color-warn-100 { color: $warn-100; }
+.color-warn-200 { color: $warn-200; }
+.color-warn-300 { color: $warn-300; }
+.color-warn-400 { color: $warn-400; }
+.color-warn-500 { color: $warn-500; }
+.color-warn-600 { color: $warn-600; }
+.color-warn-700 { color: $warn-700; }
+.color-warn-800 { color: $warn-800; }
+.color-warn-900 { color: $warn-900; }
+
 @include sm { }
 
 @include md { }

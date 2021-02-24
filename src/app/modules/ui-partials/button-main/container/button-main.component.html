@@ -1,0 +1,4 @@
+
+<button type="submit" #button (click)="onClick()" [ngClass]="{'is-filled': filled, 'not-filled': !filled, 'invalid': isValid}">
+  <span>{{title}}</span>
+</button>
