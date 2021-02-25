@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input, Renderer2, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Renderer2, ViewChild, ElementRef } from '@angular/core';
 
 
 @Component({
@@ -26,10 +26,12 @@ export class ButtonMainComponent implements OnInit {
   }
 
   public onClick(): void {
-    this.renderer.addClass(this.button.nativeElement, this.invalidClassName);
-    setTimeout(() => {
-      this.renderer.removeClass(this.button.nativeElement, this.invalidClassName);
-    }, 1000);
+    if (!this.button.nativeElement.classList.contains(this.invalidClassName)) {
+      this.renderer.addClass(this.button.nativeElement, this.invalidClassName);
+      setTimeout(() => {
+        this.renderer.removeClass(this.button.nativeElement, this.invalidClassName);
+      }, 1000);
+    }
   }
 
 }

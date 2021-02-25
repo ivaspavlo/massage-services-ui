@@ -1,5 +1,5 @@
 
-<div class="input" [ngClass]="{'input--invalid': control.errors && canShowError}">
+<div class="input" [ngClass]="{'input--invalid': control.errors && control.touched}">
   <input *ngIf="!isTextArea" class="input__field" [ngClass]="{'input__field--has-value': !!(control.valueChanges | async)}" [id]="controlName" name="input" [placeholder]="placeholder" [value]="value" [type]="inputType" (input)="onInput($event.target.value)" (focus)="onFocus()" (blur)="onBlur()">
   <textarea *ngIf="isTextArea" class="input__text-area" [ngClass]="{'input__field--has-value': !!(control.valueChanges | async)}" [id]="controlName" name="textarea" [placeholder]="placeholder" [value]="value" rows="4" cols="50" (input)="onInput($event.target.value)" (focus)="onFocus()" (blur)="onBlur()"></textarea>
   <label [for]="controlName" class="input__label">{{label}}</label>

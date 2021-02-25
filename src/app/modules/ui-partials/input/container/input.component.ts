@@ -11,8 +11,7 @@ import { ControlContainer, ControlValueAccessor, FormControl, FormGroup, NG_VALU
     provide: NG_VALUE_ACCESSOR,
     useExisting: InputComponent,
     multi: true
-  }],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  }]
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
 
@@ -28,7 +27,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   
   public isTextArea: boolean;
   public value: unknown;
-  public canShowError = false;
   public hasFocus = false;
 
   // ControlContainer
@@ -50,7 +48,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   public registerOnTouched(fn): void { this.onTouched = fn; }
 
   public onFocus(): void {
-    this.canShowError = true;
+    this.onTouched();
     this.hasFocus = true;
   }
 

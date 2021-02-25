@@ -4,15 +4,14 @@ import { ControlContainer } from '@angular/forms';
 
 
 @Directive({
-  selector: 'markTouched'
+  selector: '[markTouched]'
 })
 export class MarkTouchedDirective {
   @HostListener('submit') onSubmit() {
-    debugger;
     this.container.control.markAllAsTouched();
   }
 
   constructor(
     @Self() private container: ControlContainer
-  ) { debugger; }
+  ) { }
 }

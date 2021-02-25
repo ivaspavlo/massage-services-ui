@@ -28,7 +28,7 @@ export class ContactUsComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    console.log('SUBMITTED');
+    console.log('CONTACT FORM SUBMITTED');
   }
 
 }
