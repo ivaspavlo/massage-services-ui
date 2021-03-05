@@ -1,11 +1,14 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlogComponent } from './container/blog.component';
+
+import { COMPONENTS } from './container';
 
 
 @NgModule({
-  declarations: [BlogComponent],
+  declarations: [
+    ...COMPONENTS
+  ],
   imports: [
     CommonModule
   ]
