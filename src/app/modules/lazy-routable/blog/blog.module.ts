@@ -2,6 +2,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { BlogRoutingModule } from './blog-routing.module';
+
 import { COMPONENTS } from './container';
 
 
@@ -10,6 +12,7 @@ import { COMPONENTS } from './container';
     ...COMPONENTS
   ],
   imports: [
+    BlogRoutingModule,
     CommonModule
   ]
 })

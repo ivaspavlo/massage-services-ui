@@ -16,10 +16,10 @@ import { COMPONENTS } from './main-container';
     ...COMPONENTS
   ],
   imports: [
+    MainRoutingModule,
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
-    MainRoutingModule,
     NgButtonModule,
     NgExpansionPanelModule,
     BrandSignatureModule,
