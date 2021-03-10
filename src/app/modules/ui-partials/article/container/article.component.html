@@ -1,0 +1,23 @@
+
+<div class="article">
+  <div class="post">
+    
+    <img class="post__image" [src]="config.main_img" alt="Article image"/>
+    
+    <div class="post__content">
+      <p class="post__header">
+        <a [href]="config.url">{{config.title}}</a>
+      </p>
+      <p class="post__text">{{config.text}}</p>
+    </div>
+    
+    <div class="author">
+      <img [src]="config.author_img" alt="Author image" class="author__image">
+      <div class="author__content">
+        <p class="author__name">{{config.author}}</p>
+        <p class="author__date">{{config.date}}</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
