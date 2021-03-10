@@ -9,11 +9,19 @@
   margin-left: 5%;
   margin-top: 30px;
   transition: .5s;
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1.0, 1.0);
+  @media only screen and (min-width: 992px) {
+    width: 700px;
+  }
   &:hover {
     height: 350px;
     width: 600px;
     background-color: #fff;
     box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3);
+    @media only screen and (min-width: 992px) {
+      width: 800px;
+    }
     .author {
       background-color: rgba(242, 245, 248, .9);
     }
