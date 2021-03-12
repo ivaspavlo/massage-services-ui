@@ -1,4 +1,6 @@
+
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+
 
 @Component({
   selector: 'app-blog-article',
@@ -10,7 +12,6 @@ export class BlogArticleComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

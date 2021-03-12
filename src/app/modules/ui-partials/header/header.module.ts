@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { ExpansionPanelModule } from '@app/modules/ui-partials/expansion-panel/expansion-panel.module';
 import { TitleModule } from '@app/modules/ui-partials/title/title.module';
@@ -22,6 +23,7 @@ import { DesktopMenuComponent } from './container/partials/desktop-menu/desktop-
   ],
   imports: [
     CommonModule,
+    RouterModule,
     ExpansionPanelModule,
     TitleModule,
     LogoModule,

@@ -8,15 +8,15 @@
         <div class="d-flex flex-column py-rem-0_75">
           <i *ngFor="let i of 3 | fill" class="services__shevron" [ngClass]="{'services__shevron--is-visible': isVisible}"></i>
         </div>
-        <p class="font-34">Our services</p>
+        <p class="font-42">Our services</p>
       </div>
       <app-slider-quote [quotes]="quotes"></app-slider-quote>
     </div>
   </div>
 
-  <div class="product-cards d-flex flex-grow-1 align-items-center justify-content-center width-100" [ngClass]="{'product-cards--is-visible': isVisible}">
+  <div class="d-flex flex-grow-1 align-items-center justify-content-center width-100">
     <div class="row width-100 max-width-992">
-      <div *ngFor="let card of productCards" class="col-3 px-rem-1">
+      <div *ngFor="let card of productCards" class="card col-3 px-rem-1" [ngClass]="{'card--is-visible': isVisible}">
         <app-product-card [card]="card"></app-product-card>
       </div>
     </div>

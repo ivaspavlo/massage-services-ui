@@ -13,7 +13,8 @@ import { WINDOW } from '@app/core/providers';
 })
 export class DesktopMenuComponent implements OnInit, OnDestroy {
 
-  @Input() items: string[];
+  @Input() items: { name: string; href: string; }[];
+  
   public isShrinked$: Observable<boolean>;
   private windowInnerheight: number;
   private componentDestroyed$: Subject<void> = new Subject();
