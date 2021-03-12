@@ -11,6 +11,7 @@
   }
   @include e('layer-2') {
     top: 100vh;
+    height: 110vh;
     background-image: url('/assets/img/png/main-bg-2.png');
   }
 }
