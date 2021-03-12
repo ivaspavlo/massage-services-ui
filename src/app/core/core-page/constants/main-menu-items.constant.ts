@@ -1,7 +1,7 @@
 
 export const MAIN_MENU_ITEMS = [
-  'About us',
-  'Pricing',
-  'Service',
-  'Blog'
+  { name: 'About us', href: '#' },
+  { name: 'Pricing', href: '#' },
+  { name: 'Service', href: '#' },
+  { name: 'Blog', href: '/blog' }
 ];

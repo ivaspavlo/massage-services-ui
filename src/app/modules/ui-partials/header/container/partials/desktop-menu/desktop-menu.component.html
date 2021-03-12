@@ -11,7 +11,7 @@
     <div class="col-6">
       <ul class="width-100 height-100 d-flex align-items-center justify-content-center">
         <li *ngFor="let item of items" class="d-flex align-items-center">
-          <a href="#" class="px-rem-1_5 py-rem-1 color-grey-300 hover-color-primary transition-1">{{ item }}</a>
+          <a [routerLink]="item.href" class="px-rem-1_5 py-rem-1 color-grey-300 hover-color-primary transition-1 cursor-pointer">{{item.name}}</a>
         </li>
       </ul>
     </div>

@@ -10,7 +10,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 })
 export class MobileMenuComponent implements OnInit {
 
-  @Input() items: string[];
+  @Input() items: { name: string; href: string; }[];
 
   public isOpen = false;
 
