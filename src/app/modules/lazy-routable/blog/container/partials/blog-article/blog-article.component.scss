@@ -46,17 +46,16 @@
 	background-color : #FFF;
 	box-shadow: 10px 10px 93px 0px rgba(0,0,0,0.75);
 	&__left {
-		padding: 30px 0 80px 30px;
+		width: 500px;
 		display: flex;
+		flex-shrink: 0;
 		justify-content: center;
 		align-items: center;
-		flex-direction: column;
 		position: relative;
 	}
 	&__right {
-		width: auto;
 		flex-grow: 1;
-		padding: 30px 20px;
+		padding: 30px 20px 30px 40px;
 	}
 	&__title {
 		font-size: 26px;
@@ -75,20 +74,18 @@
 }
 
 .thumbnail {
-	width: 500px;
+	width: 100%;
 	height: 300px;
 	position: relative;
 	box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.75);
 	overflow: hidden;
 	@media only screen and (min-width: 992px) {
-		transform: translateY(-60px);
+		transform: translate(20px, -70px);
 	}
 	&__img {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		height: auto;
+		position: absolute; left: 50%; top: 50%;
 		width: 100%;
+		height: auto;
 		transform: translate(-50%, -50%);
 	}
 }
@@ -104,9 +101,10 @@
   border-radius: 20px;
 	background-color: #9ECAFF;
 	&__img {
-		margin-right: 10px;
 		height: 20px;
 		width: 20px;
+		margin-right: 10px;
+		padding: 30px 20px 30px 40px;
 		border-radius: 50%;
 	}
 	&__name {
@@ -117,7 +115,9 @@
 }
 
 .date {
-	position: absolute; bottom: 15px;
+	position: absolute; bottom: 0;
+	width: 100%;
+	padding: 0 0 10px 20px;
 	display: flex;
 	flex-direction: column;
 	& > * {
@@ -129,6 +129,21 @@
 	}
 	&__month {
 		font-size: 32px;
+	}
+}
+
+.control {
+	&__heart {
+		
+	}
+	&__eye {
+		
+	}
+	&__envelope {
+		
+	}
+	&__link {
+		
 	}
 }
 
