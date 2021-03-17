@@ -1,6 +1,6 @@
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { MOCK_ARTICLES } from '../constants/mock-artcles';
+import { MOCK_ARTICLES } from '../../constants/mock-artcles';
 
 
 @Component({

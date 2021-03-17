@@ -54,7 +54,6 @@
 		position: relative;
 	}
 	&__right {
-		flex-grow: 1;
 		padding: 30px 20px 30px 40px;
 	}
 	&__title {
@@ -90,6 +89,67 @@
 	}
 }
 
+.info {
+	position: absolute; bottom: 0;
+	width: 100%;
+	display: flex;
+	padding: 0 0 10px 20px;
+}
+
+.date {
+	display: flex;
+	flex-direction: column;
+	& > * {
+		color: #C3C3C3;
+		line-height: 100%;
+	}
+	&__day {
+		font-size: 96px;
+	}
+	&__month {
+		font-size: 32px;
+	}
+}
+
+.control {
+	padding: 10px;
+	display: flex;
+	flex-grow: 1;
+	align-items: flex-end;
+	justify-content: flex-end;
+	li {
+		width: 40px;
+		height: 40px;
+		margin-left: 20px;
+		position: relative;
+	}
+	a {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		cursor: pointer;
+	}
+	&__eye {
+		background-image: url('../icons/eye.svg');
+	}
+	&__heart {
+		background-image: url('../icons/heart.svg');
+		&:hover { opacity: .5; }
+	}
+	&__link {
+		background-image: url('../icons/link.svg');
+		&:hover { opacity: .5; }
+	}
+	&__count {
+		position: absolute; bottom: -10px; right: 0;
+		width: 15px;
+		height: 15px;
+		display: flex;
+		opacity: 1;
+		background-color: red;
+	}
+}
+
 .author {
 	height: 30px;
 	width: 50%;
@@ -112,67 +172,4 @@
 		font-size: 0.8rem;
 		color: white;
 	}
-}
-
-.date {
-	position: absolute; bottom: 0;
-	width: 100%;
-	padding: 0 0 10px 20px;
-	display: flex;
-	flex-direction: column;
-	& > * {
-		color: #C3C3C3;
-		line-height: 100%;
-	}
-	&__day {
-		font-size: 96px;
-	}
-	&__month {
-		font-size: 32px;
-	}
-}
-
-.control {
-	&__heart {
-		
-	}
-	&__eye {
-		
-	}
-	&__envelope {
-		
-	}
-	&__link {
-		
-	}
-}
-
-/* Those futur buttons */
-ul {
-  margin-left : 250px
-}
-
-li {
-	display: inline;
-	list-style: none;
-	padding-right: 40px;
-  color : #7B7B7B;
-}
-
-/* Floating action button */
-.fab {
-	position : absolute;
-	right : 50px;
-	bottom : -40px;
-	box-sizing: border-box;
-	padding-top: 18px;
-	background-color : #1875D0;
-	width : 80px;
-	height : 80px;
-	color : white;
-	text-align : center;
-	border-radius : 50%;
-	-webkit-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
-	-moz-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
-  box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
 }
