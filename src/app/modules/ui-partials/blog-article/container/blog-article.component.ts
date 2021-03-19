@@ -1,5 +1,6 @@
 
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { IBlogArticle } from '../interfaces';
 
 
 @Component({
@@ -9,6 +10,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogArticleComponent implements OnInit {
+  
+  @Input() config: IBlogArticle;
 
   constructor() { }
 
