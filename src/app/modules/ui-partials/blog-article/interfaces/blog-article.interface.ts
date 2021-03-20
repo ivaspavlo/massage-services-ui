@@ -1,5 +1,6 @@
 
 export interface IBlogArticle {
+  id: string;
   bg_title_1: string;
   bg_title_2: string;
   title: string;
@@ -12,4 +13,5 @@ export interface IBlogArticle {
   content: string;
   watched_times: number;
   hearts: number;
+  clipboard_link: string;
 }

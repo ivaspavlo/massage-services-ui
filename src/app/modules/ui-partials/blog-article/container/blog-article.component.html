@@ -22,10 +22,10 @@
             </li>
             <li>
               <i class="control__count">{{config.hearts}}</i>
-              <a class="control__heart"></a>
+              <a class="control__heart" (click)="onLike()"></a>
             </li>
             <li>
-              <a class="control__link"></a>
+              <a class="control__link" (click)="onCopyToClipboard()"></a>
             </li>
           </ul>
         </div>
