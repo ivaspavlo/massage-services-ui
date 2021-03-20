@@ -1,55 +1,45 @@
 
 <div class="wrapper">
   
-  <p class="wrapper__bg-1">Tkachuk</p>
-  <p class="wrapper__bg-2">Blog</p>
+  <p class="wrapper__bg-1">{{config.bg_title_1}}</p>
+  <p class="wrapper__bg-2">{{config.bg_title_2}}</p>
   
   <div class="article">
     <div class="article__header">
       <div class="article__left">
         <figure class="thumbnail">
-          <img src="https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg" alt="Main image" class="thumbnail__img">
+          <img [src]="config.title_img" alt="Main image" class="thumbnail__img">
         </figure>
         <div class="info">
           <div class="date">
-            <p class="date__day">12</p>
-            <p class="date__month">JANUARY</p>
+            <p class="date__day">{{config.day}}</p>
+            <p class="date__month">{{config.month}}</p>
           </div>
           <ul class="control">
             <li>
-              <i class="control__count">1</i>
+              <i class="control__count">{{config.watched_times}}</i>
               <a class="control__eye"></a>
             </li>
             <li>
-              <i class="control__count">2</i>
-              <a class="control__heart"></a>
+              <i class="control__count">{{config.hearts}}</i>
+              <a class="control__heart" (click)="onLike()"></a>
             </li>
             <li>
-              <a class="control__link"></a>
+              <a class="control__link" (click)="onCopyToClipboard()"></a>
             </li>
           </ul>
         </div>
       </div>
       <div class="article__right">
-        <h1 class="article__title">Why you Need More Magnesium in Your Daily Diet</h1>
+        <h1 class="article__title">{{config.title}}</h1>
         <div class="author">
-          <img class="author__img" src="https://randomuser.me/api/portraits/men/95.jpg" alt="Author image">
-          <h2 class="author__name">Sergiy Tkachuk</h2>
+          <img class="author__img" [src]="config.author_img" alt="Author image">
+          <h2 class="author__name">{{config.author_name}}</h2>
         </div>
-        <p class="article__intro">Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...</p>
+        <p class="article__intro">{{config.intro}}</p>
       </div>
     </div>
-    <div class="article__content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam rem modi atque, quae dolor perspiciatis similique totam debitis ipsum ratione cumque, ducimus a inventore? Magnam nulla numquam odit est et.
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error officia quam corrupti, alias laborum voluptatem nemo provident, deserunt quis quae nobis similique voluptates ipsa doloremque? Repudiandae dolorem recusandae eveniet culpa?
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta a minima recusandae tenetur dolores nulla, veniam itaque natus vel fuga possimus error similique aspernatur, impedit quis iusto eius molestias ipsa.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error ea quae recusandae nam sequi exercitationem ipsum eius magnam nostrum odio, laboriosam doloremque, adipisci harum officia reprehenderit quo, id maiores deserunt?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus rerum corporis fuga qui perspiciatis ratione porro accusantium, autem quis, recusandae cumque voluptatibus. Quidem magnam molestias cupiditate maxime nam quos assumenda.
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi ipsam animi eos, veniam consectetur fugiat id et dolores numquam quibusdam deserunt soluta, nisi reprehenderit natus, pariatur vero reiciendis! Architecto, voluptatum?
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit a natus quam sequi itaque ducimus doloremque corrupti? Cupiditate similique quas itaque, velit perferendis quidem ducimus accusamus aspernatur, odio nihil numquam!
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error dicta repellendus itaque aliquam nihil eius quod, possimus et consequatur suscipit corrupti, harum sed nam quia! Quia expedita repellendus at fugiat.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum repudiandae quo libero omnis rerum accusamus? Vero aut doloribus repellat magni nihil sunt alias accusantium quaerat, laboriosam libero non voluptatibus magnam?
-    </div>
+    <div class="article__content">{{config.content}}</div>
   </div>
   
 </div>

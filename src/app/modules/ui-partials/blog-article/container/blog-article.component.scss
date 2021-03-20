@@ -40,9 +40,16 @@ $grey-4: #353B3F;
 		column-count: 3;
 		column-width: 33%;
 	}
-	// figure.thumbnail {
-	// 	transform: translate(20px, -70px);
-	// }
+	div.article__left {
+		transform: translate(20px, -20px);
+	}
+	div.article {
+		margin: 100px auto;
+		border-radius: 4px;
+	}
+	figure.thumbnail {
+		border-radius: 4px;
+	}
 }
 
 .wrapper {
@@ -62,11 +69,10 @@ $grey-4: #353B3F;
 
 .article {
 	max-width: 992px;
-	margin: 100px auto;
+	margin: 100px auto 0;
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	border-radius: 4px;
 	box-shadow: 10px 10px 93px 0px rgba(0,0,0,.75);
 	z-index: 1;
 	@include article-bg;
@@ -79,9 +85,8 @@ $grey-4: #353B3F;
 	&__left {
 		width: 100%;
 		display: flex;
+		flex-direction: column;
 		flex-shrink: 0;
-		justify-content: center;
-		align-items: center;
 		position: relative;
 	}
 	&__right {
@@ -113,23 +118,18 @@ $grey-4: #353B3F;
 	position: relative;
 	overflow: hidden;
 	box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.75);
-	border-radius: 4px;
-	@media only screen and (min-width: 992px) {
-		transform: translate(20px, -70px);
-	}
 	&__img {
 		position: absolute; left: 50%; top: 50%;
-		width: 100%;
+		width: 105%;
 		height: auto;
 		transform: translate(-50%, -50%);
 	}
 }
 
 .info {
-	position: absolute; bottom: 0;
 	width: 100%;
 	display: flex;
-	padding: 0 0 10px 20px;
+	padding: 0 40px;
 }
 
 .date {
@@ -146,14 +146,14 @@ $grey-4: #353B3F;
 	&__month {
 		font-size: 32px;
 		text-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+		text-transform: uppercase;
 	}
 }
 
 .control {
-	padding: 10px;
 	display: flex;
 	flex-grow: 1;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: flex-end;
 	li {
 		width: 40px;
