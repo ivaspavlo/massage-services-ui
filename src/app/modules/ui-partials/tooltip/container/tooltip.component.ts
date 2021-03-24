@@ -1,6 +1,5 @@
 
-import { ChangeDetectionStrategy, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
-import { TooltipDirective } from '../directives/tooltip.directive';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 
 
 @Component({
@@ -9,18 +8,28 @@ import { TooltipDirective } from '../directives/tooltip.directive';
   styleUrls: ['./tooltip.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TooltipComponent implements OnInit {
+export class TooltipComponent implements OnInit, AfterViewInit {
   
-  @ViewChild(TooltipDirective, {read: ElementRef}) private tooltipContainer;
+  @ViewChild('container', {read: ElementRef}) private container;
   
   public top: string;
+  public left: string;
 
-  constructor(@Inject('tooltipConfig') private config) { }
+  constructor(
+    @Inject('tooltipConfig') private config,
+    private cdr: ChangeDetectorRef
+  ) { }
 
-  ngOnInit(): void {
-    const { top } = this.config.host.getBoundingClientRect();
-    const { height } = this.tooltipContainer.nativeElement.getBoundingClientRect();
-    this.top = `${top - height}px`;
+  ngOnInit(): void { debugger; }
+  
+  ngAfterViewInit(): void {
+    debugger;
+    const { offsetTop: hostTop, offsetLeft: hostLeft } = this.config.host;
+    const { width: hostWidth } = this.config.host.getBoundingClientRect();
+    const { height } = this.container.nativeElement.getBoundingClientRect();
+    this.top = `${hostTop - height}px`;
+    this.left = `${hostLeft + hostWidth}px`;
+    this.cdr.detectChanges();
   }
 
 }
