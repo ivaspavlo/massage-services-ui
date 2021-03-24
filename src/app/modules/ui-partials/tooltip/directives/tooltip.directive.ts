@@ -1,5 +1,5 @@
 
-import { ComponentFactoryResolver, ComponentRef, Directive, ElementRef, HostListener, Injector, Input, ReflectiveInjector, Renderer2, TemplateRef, Type, ViewContainerRef } from '@angular/core';
+import { ComponentFactoryResolver, ComponentRef, Directive, ElementRef, HostListener, Injector, Input, Renderer2, TemplateRef, Type, ViewContainerRef } from '@angular/core';
 import { TooltipComponent } from '../container/tooltip.component';
 
 
@@ -12,20 +12,22 @@ export class TooltipDirective {
   
   @HostListener('mouseenter')
   mouseenter() {
-    if ( this.componentRef ) return;
+    debugger;
+    if (this.componentRef) {
+      return;
+    };
     const factory = this.resolver.resolveComponentFactory(TooltipComponent);
-    const injector = ReflectiveInjector.resolveAndCreate([
-      {
-        provide: 'tooltipConfig',
-        useValue: {
-          host: this.element.nativeElement
-        }
-      }
-    ]);
+    const injector = Injector.create({
+      providers: [{provide: 'tooltipConfig', useValue: { host: this.element.nativeElement }}]
+    });
     this.componentRef = this.vcr.createComponent(factory, 0, injector, this.generateNgContent());
   }
+  @HostListener('mouseout')
+  mouseout() {
+    this.destroy();
+  }
   
-  private componentRef : ComponentRef<TooltipComponent>;
+  private componentRef: ComponentRef<TooltipComponent>;
 
   constructor(
     private element: ElementRef,
@@ -33,13 +35,30 @@ export class TooltipDirective {
     private injector: Injector,
     private resolver: ComponentFactoryResolver,
     private vcr: ViewContainerRef
-  ) { }
-  
+  ) { debugger; }
+
   generateNgContent() {
-    if ( typeof this.content === 'string' ) {
+    if (typeof this.content === 'string') {
       const element = this.renderer.createText(this.content);
       return [ [ element ] ];
+    } else if (this.content instanceof TemplateRef) {
+      const context = {};
+      const viewRef = this.content.createEmbeddedView(context);
+      return [ viewRef.rootNodes ];
+    } else {
+      const factory = this.resolver.resolveComponentFactory(this.content);
+      const componentRef = factory.create(this.injector);
+      return [ [ componentRef.location.nativeElement ] ];
     }
+  }
+  
+  destroy() {
+    this.componentRef && this.componentRef.destroy();
+    this.componentRef = null;
+  }
+
+  ngOnDestroy() {
+    this.destroy();
   }
 
 }

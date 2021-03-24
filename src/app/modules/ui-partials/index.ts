@@ -16,6 +16,7 @@ export * from './input/input.module';
 export * from './button-main/button-main.module';
 export * from './article/article.module';
 export * from './blog-article/blog-article.module';
+export * from './tooltip/tooltip.module';
 
 export * from './ng-expansion-panel/ng-expansion-panel.module';
 export * from './ng-menu/ng-menu.module';

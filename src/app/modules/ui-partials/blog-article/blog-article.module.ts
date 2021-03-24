@@ -4,13 +4,17 @@ import { CommonModule } from '@angular/common';
 
 import { BlogArticleComponent } from './container/blog-article.component';
 
+// For testing purposes only, remove after
+import { TooltipModule } from '../tooltip/tooltip.module';
+
 
 @NgModule({
   declarations: [
     BlogArticleComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    TooltipModule
   ],
   exports: [
     BlogArticleComponent
