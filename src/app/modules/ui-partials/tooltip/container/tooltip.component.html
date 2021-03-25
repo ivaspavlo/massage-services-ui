@@ -1,4 +1,4 @@
 
-<div #container class="tooltip-container" [ngStyle]="{top: top, left: left}">
-  <ng-content></ng-content>
+<div #container class="tooltip" [ngStyle]="{top: top, left: left}">
+  <span [ngClass]="{'tooltip__default': !hasTemplate}"><ng-content></ng-content></span>
 </div>

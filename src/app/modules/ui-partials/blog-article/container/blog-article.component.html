@@ -13,7 +13,7 @@
         <div class="info">
           <div class="date">
             <p class="date__day">{{config.day}}</p>
-            <p class="date__month" appTooltip="Test">{{config.month}}</p>
+            <p class="date__month">{{config.month}}</p>
           </div>
           <ul class="control">
             <li>
@@ -24,7 +24,7 @@
               <i class="control__count">{{config.hearts}}</i>
               <a class="control__heart" (click)="onLike()"></a>
             </li>
-            <li appTooltip="Test">
+            <li appTooltip="Copy link to the clipboard">
               <a class="control__link" (click)="onCopyToClipboard()"></a>
             </li>
           </ul>
