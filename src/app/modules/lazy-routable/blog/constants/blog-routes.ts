@@ -1,13 +1,13 @@
 
 import { Routes } from '@angular/router';
+import { BlogComponent, BlogItemComponent } from '../pages';
 
-import { BlogComponent } from '../pages/blog/blog.component';
-import { ArticleComponent } from '../pages/article/article.component';
 
+export const BlogItemParamName = 'id';
 
 export enum BLOG_ROUTE_NAMES {
   BLANK = '',
-  ARTICLE = 'article/:id'
+  ITEM = '/:id'
 }
 
 export const BLOG_ROUTES: Routes = [
@@ -15,7 +15,7 @@ export const BLOG_ROUTES: Routes = [
     path: BLOG_ROUTE_NAMES.BLANK,
     component: BlogComponent
   }, {
-    path: BLOG_ROUTE_NAMES.ARTICLE,
-    component: ArticleComponent
+    path: BLOG_ROUTE_NAMES.ITEM,
+    component: BlogItemComponent
   }
 ];

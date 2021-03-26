@@ -1,9 +1,12 @@
 
 import { BlogComponent } from './blog/blog.component';
-import { ArticleComponent } from './article/article.component';
+import { BlogItemComponent } from './blog-item/blog-item.component';
+
+export * from './blog/blog.component';
+export * from './blog-item/blog-item.component';
 
 
 export const COMPONENTS = [
   BlogComponent,
-  ArticleComponent
+  BlogItemComponent
 ];

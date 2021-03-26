@@ -16,17 +16,5 @@ export class BlogComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void { }
-  
-  public onCopied(): void {
-    // to be implemented
-  }
-  
-  public onArticleLoaded(id: string): void {
-    // to be implemented
-  }
-  
-  public onLiked(id: string): void {
-    // to be implemented
-  }
 
 }
