@@ -2,8 +2,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { BlogRoutingModule } from './blog-routing.module';
 import { ArticleModule, BlogArticleModule } from '@app/modules/ui-partials';
+import { BlogRoutingModule } from './blog-routing.module';
 
 import { COMPONENTS } from './pages';
 
