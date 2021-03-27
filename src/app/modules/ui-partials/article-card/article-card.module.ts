@@ -3,19 +3,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { ArticleComponent } from './container/article.component';
+import { ArticleCardComponent } from './container/article-card.component';
 
 
 @NgModule({
   declarations: [
-    ArticleComponent
+    ArticleCardComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    ArticleComponent
+    ArticleCardComponent
   ]
 })
-export class ArticleModule { }
+export class ArticleCardModule { }

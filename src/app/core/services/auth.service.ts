@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { API_URL } from '@env/environment';
-import { IUserProfile } from '@app/interfaces';
+// import { IUserProfile } from '@app/interfaces';
 
 
 export interface ILoginReq { email_address: string; password: string; }
-export interface ILoginRes { user: IUserProfile; token: string; }
+// export interface ILoginRes { user: IUserProfile; token: string; }
 export interface IValidateResetTokenReq { password_reset_token: string; }
 export interface IValidateResetTokenRes { password_reset_token: string; user_id: string; valid: boolean; }
 export interface IRemindPasswordReq { email_address: string; }
@@ -32,9 +32,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  public login(data: ILoginReq): Observable<ILoginRes> {
-    return this.http.post<ILoginRes>(`${ API_URL }/login`, data);
-  }
+  // public login(data: ILoginReq): Observable<ILoginRes> {
+  //   return this.http.post<ILoginRes>(`${ API_URL }/login`, data);
+  // }
 
   public forgot(data: IRemindPasswordReq): Observable<IRemindPasswordRes> {
     return this.http.post<IRemindPasswordRes>(`${ API_URL }/forgotten/password`, data);
@@ -54,8 +54,8 @@ export class AuthService {
     return this.http.post<ICheckIfEmailAddressInUseRes>(`${ API_URL }/check/email`, data);
   }
 
-  public signin(data: IUserRegisterReq): Observable<ILoginRes> {
-    return this.http.post<ILoginRes>(`${ API_URL }/register`, data);
-  }
+  // public signin(data: IUserRegisterReq): Observable<ILoginRes> {
+  //   return this.http.post<ILoginRes>(`${ API_URL }/register`, data);
+  // }
 
 }

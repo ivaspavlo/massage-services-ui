@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ArticleModule, BlogArticleModule } from '@app/modules/ui-partials';
+import { ArticleCardModule, BlogArticleModule } from '@app/modules/ui-partials';
 import { BlogRoutingModule } from './blog-routing.module';
 
 import { COMPONENTS } from './pages';
@@ -15,7 +15,7 @@ import { COMPONENTS } from './pages';
   imports: [
     BlogRoutingModule,
     CommonModule,
-    ArticleModule,
+    ArticleCardModule,
     BlogArticleModule
   ]
 })
