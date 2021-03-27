@@ -1,8 +1,8 @@
 
-<div [visibilityObserver]="{ threshold: 0.3 }" (visible)="onVisibilityToggle($event)" class="height-vh-100 width-100 pos-relative d-flex justify-content-center align-items-end">
-  <div class="width-100 max-width-992 d-flex">
+<div [visibilityObserver]="{ threshold: 0.3 }" (visible)="onVisibilityToggle($event)" class="width-100 height-100 pos-relative d-flex justify-content-center align-items-end">
+  <div class="width-100 height-100 max-width-992 d-flex">
 
-    <div class="branding height-vh-100 width-100 px-rem-1 d-flex flex-column justify-content-center align-items-center" [ngClass]="{ 'branding--is-visible': isVisible }">
+    <div class="branding width-100 px-rem-1 d-flex flex-column justify-content-center align-items-center" [ngClass]="{ 'branding--is-visible': isVisible }">
       
       <div class="branding-image d-flex justify-content-center align-items-center" [ngClass]="{ 'branding-image--is-visible': isVisible }">
         <div class="branding-image__wrapper d-inline-flex justify-content-center p-rem-1">
