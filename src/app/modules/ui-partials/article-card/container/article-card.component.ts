@@ -2,7 +2,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 
-interface IArticleConfig {
+interface IArticleCardConfig {
   title: string;
   url: string;
   main_img: string;
@@ -13,14 +13,14 @@ interface IArticleConfig {
 }
 
 @Component({
-  selector: 'app-article',
-  templateUrl: './article.component.html',
-  styleUrls: ['./article.component.scss'],
+  selector: 'app-article-card',
+  templateUrl: './article-card.component.html',
+  styleUrls: ['./article-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ArticleComponent implements OnInit {
+export class ArticleCardComponent implements OnInit {
   
-  @Input() config: IArticleConfig;
+  @Input() config: IArticleCardConfig;
 
   constructor() { }
 

@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { IBlogArticle } from '@app/interfaces';
-import { BlogItemParamName } from '../../constants';
 
 
 @Component({
@@ -18,14 +17,15 @@ export class BlogItemComponent implements OnInit {
   
   public config$: Observable<IBlogArticle>
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private activeRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.route.queryParams.pipe(
+    this.activeRoute.params.pipe(
       switchMap(params => {
         // TODO: refactor when api is ready
-        debugger;
-        return of(params[BlogItemParamName])
+        return of(params.id)
       })
     ).subscribe(_ => undefined);
   }
