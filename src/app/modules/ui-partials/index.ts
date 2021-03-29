@@ -17,6 +17,7 @@ export * from './button-main/button-main.module';
 export * from './article-card/article-card.module';
 export * from './blog-article/blog-article.module';
 export * from './tooltip/tooltip.module';
+export * from './dialog/dialog.module';
 
 export * from './ng-expansion-panel/ng-expansion-panel.module';
 export * from './ng-menu/ng-menu.module';
