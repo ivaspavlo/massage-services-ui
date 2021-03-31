@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { HeaderModule } from '@app/modules/ui-partials';
+import { DialogModule, HeaderModule } from '@app/modules/ui-partials';
 
 import { CorePageContainerComponent } from './core-page-container/core-page-container.component';
 
@@ -15,7 +15,8 @@ import { CorePageContainerComponent } from './core-page-container/core-page-cont
   imports: [
     CommonModule,
     RouterModule,
-    HeaderModule
+    HeaderModule,
+    DialogModule
   ]
 })
 export class CorePageModule { }
