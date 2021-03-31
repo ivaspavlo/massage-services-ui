@@ -1,7 +1,7 @@
 
-<section class="container-fluid">
+<section #parallaxContainer class="container-fluid">
 
-  <div #parallaxContainer class="width-100 height-vh-100">
+  <div class="width-100 height-vh-100">
 
     <div class="parallax parallax__layer-1">
       <app-desktop-branding></app-desktop-branding>
@@ -22,5 +22,5 @@
 </section>
 
 <div class="scroll-button pos-fixed bottom-0">
-  <app-scroll-down [scrollTo]="parallaxContainer.clientHeight"></app-scroll-down>
+  <app-scroll-down [scrollTo]="parallaxContainer.clientHeight" [scrollContainer]="parallaxContainer"></app-scroll-down>
 </div>
