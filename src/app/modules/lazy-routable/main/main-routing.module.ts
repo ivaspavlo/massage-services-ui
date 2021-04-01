@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { MAIN_ROUTES } from './constants';
+import { MAIN_ROUTES } from './constants/main-routes';
 
 
 @NgModule({

@@ -1,6 +1,6 @@
 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { DialogService } from '@app/modules/ui-partials/dialog/services';
+import { DialogService } from '@app/modules/ui/dialog/services';
 import { MOCK_ARTICLES } from '../../constants/mock-artcles';
 import { BlogItemComponent } from '../blog-item/blog-item.component';
 

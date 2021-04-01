@@ -1,30 +1,17 @@
 
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
-import { CoreRoutingModule } from './core-routing.module';
-
-import { CORE_MATERIAL_MODULES } from './constants/core-material-modules';
 import { CORE_PROVIDERS } from './providers';
-
-import { CorePageModule } from './core-page/core-page.module';
+import { CORE_GUARDS } from './guards';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    CorePageModule,
-    CoreRoutingModule,
-    ...CORE_MATERIAL_MODULES
-  ],
+  imports: [ ],
   providers: [
-    ...CORE_PROVIDERS
+    ...CORE_PROVIDERS,
+    ...CORE_GUARDS
   ],
-  exports: [
-    CoreRoutingModule
-  ]
+  exports: [ ]
 })
 export class CoreModule {
   constructor(

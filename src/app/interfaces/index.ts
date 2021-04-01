@@ -1,3 +1,3 @@
 
-// ui partials
-export * from '@app/modules/ui-partials/blog-article/interfaces';
+// ui
+export * from '@app/modules/ui/blog-article/interfaces';
