@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { CanActivate, CanLoad, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { AppStorageService } from '@app/core/services/app-storage.service';
-import { TOKEN_KEY, LOGIN_URL } from '@app/shared/constants';
+import { AppStorageService } from '@app/core/services';
+import { TOKEN_KEY, LOGIN_URL } from '@app/core/constants';
 
 
 @Injectable()

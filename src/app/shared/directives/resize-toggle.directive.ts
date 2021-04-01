@@ -4,7 +4,7 @@ import { fromEvent, Subject } from 'rxjs';
 import { distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
 
 import { WINDOW } from '@app/core/providers';
-import { BootstrapBreakpoints } from '@app/shared/constants';
+import { BootstrapBreakpoints } from '@app/core/constants';
 
 
 type Breakpoint = 'sm' | 'md' | 'lg' | 'xl';

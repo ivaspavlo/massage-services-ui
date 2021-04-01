@@ -1,0 +1,7 @@
+
+@import '_core-z-index';
+
+:host {
+  position: fixed;
+  z-index: $header;
+}
