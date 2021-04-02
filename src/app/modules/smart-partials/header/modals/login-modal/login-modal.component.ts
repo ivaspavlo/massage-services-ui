@@ -1,5 +1,6 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { DialogConfig, DialogRef } from '@app/modules/ui/dialog';
 
 
 @Component({
@@ -10,8 +11,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class LoginModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public config: DialogConfig,
+    public dialog: DialogRef
+  ) { }
 
   ngOnInit(): void { }
+  
+  public onClose(): void {
+    this.dialog.close('some value');
+  }
 
 }
