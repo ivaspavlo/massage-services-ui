@@ -25,7 +25,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void { }
   
   public onShowLoginModal(): void {
-    this.dialogService.open(LoginModalComponent);
+    this.dialogService.open(LoginModalComponent).afterClosed.subscribe(
+      result => console.log('Dialog closed', result)
+    );
   }
 
 }

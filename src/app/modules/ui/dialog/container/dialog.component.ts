@@ -1,7 +1,9 @@
 
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentRef, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { Subject } from 'rxjs';
+
 import { DialogConfig } from '../dialog-config';
+import { DialogRef } from '../dialog-ref';
 import { InsertionDirective } from '../directives/insertion.directive';
 
 
@@ -19,6 +21,7 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private dialogConfig: DialogConfig,
+    public dialogRef: DialogRef,
     private cdr: ChangeDetectorRef
   ) { }
   
@@ -30,7 +33,8 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public onOverlayClicked(event: MouseEvent): void {
-    // close the dialog
+    this.componentRef.destroy();
+    this.dialogRef.close();
   }
 
   public onDialogClicked(event: MouseEvent): void {
