@@ -13,6 +13,7 @@ $z-index-overlay: 1e10;
   align-items: center;
   justify-content: center;
   z-index: $z-index-overlay;
+  animation: overlayIn .3s;
 }
 
 .dialog {
@@ -24,4 +25,23 @@ $z-index-overlay: 1e10;
   flex-direction: column;
   padding: 8px;
   overflow: auto;
+  animation: dialogIn .3s;
+}
+
+@keyframes dialogIn {
+  from {
+    transform: scale(.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
