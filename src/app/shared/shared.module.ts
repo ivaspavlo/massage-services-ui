@@ -8,12 +8,14 @@ import { MATERIAL_MODULES } from '@app/core/constants';
 
 import { APP_DIRECTIVES } from './directives';
 import { APP_PIPES } from './pipes';
+import { APP_COMPONENTS } from './components';
 
 
 @NgModule({
   declarations: [
     ...APP_DIRECTIVES,
-    ...APP_PIPES
+    ...APP_PIPES,
+    ...APP_COMPONENTS
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { APP_PIPES } from './pipes';
   ],
   exports: [
     ...APP_DIRECTIVES,
-    ...APP_PIPES
+    ...APP_PIPES,
+    ...APP_COMPONENTS
   ]
 })
 export class SharedModule { }

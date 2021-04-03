@@ -1,7 +1,5 @@
 
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ComponentRef, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { Subject } from 'rxjs';
-
 import { DialogConfig } from '../dialog-config';
 import { DialogRef } from '../dialog-ref';
 import { InsertionDirective } from '../directives/insertion.directive';
@@ -17,7 +15,6 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
   
   @ViewChild(InsertionDirective, {read: ViewContainerRef}) insertionPoint: ViewContainerRef;
   public componentRef: ComponentRef<any>
-  private readonly _onClose = new Subject<any>();
 
   constructor(
     private dialogConfig: DialogConfig,
@@ -33,7 +30,8 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public onOverlayClicked(event: MouseEvent): void {
-    this.componentRef.destroy();
+    event.stopPropagation();
+    this.clearComponentRef();
     this.dialogRef.close();
   }
 
@@ -46,10 +44,14 @@ export class DialogComponent implements OnInit, AfterViewInit, OnDestroy {
     this.componentRef = this.insertionPoint.createComponent(factory);
   }
   
-  ngOnDestroy() {
+  private clearComponentRef(): void {
     if (this.componentRef) {
       this.componentRef.destroy();
     }
+  }
+  
+  ngOnDestroy() {
+    this.clearComponentRef();
   }
 
 }
