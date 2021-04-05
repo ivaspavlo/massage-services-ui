@@ -7,3 +7,4 @@ export * from './toast-types.constant';
 export * from './messages.constant';
 export * from './bootstrap-breakpoints.constant';
 export * from './material-modules.constant';
+export * from './dialog-sizes.constant';
