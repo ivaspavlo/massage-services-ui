@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input, Optional } from '@angular/core';
+import { Component, OnInit, Input, Optional } from '@angular/core';
 import { ControlContainer, ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
@@ -24,6 +24,12 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.isTextArea = value === 'textarea';
   };
   get type() { return this._type; }
+  @Input() set color(value: 'primary' | 'secondary') {
+    this._color = value;
+  }
+  get color() {
+    return this._color;
+  }
   
   public isTextArea: boolean;
   public value: unknown;
@@ -38,6 +44,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   private onTouched;
 
   private _type: 'text' | 'number' | 'textarea' = 'text';
+  private _color: 'primary' | 'secondary' = 'primary'
 
   constructor(@Optional() private controlContainer: ControlContainer) { }
 
