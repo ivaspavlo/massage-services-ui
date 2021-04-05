@@ -5,8 +5,7 @@ $grey: #656565;
   position: absolute;
   animation: tooltipIn 0.4s;
   &__default {
-    min-width: 100px;
-    max-width: 200px;
+    min-width: 200px;
     padding: 5px 8px;
     font-size: 10px;
     text-align: center;
