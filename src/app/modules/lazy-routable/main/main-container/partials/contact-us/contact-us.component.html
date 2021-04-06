@@ -14,9 +14,9 @@
           <p class="font-14 mt-rem-0_5 mx-rem-2 pt-rem-0_5 text-align-center border-top-1 color-grey-700">We would love to help <span class="font-12 color-warn-500">&hearts;</span></p>
         </div>
         <form [formGroup]="form" markTouched class="d-flex flex-column" (ngSubmit)="onSubmit()">
-          <app-input [formControl]="form.get('name')" controlName="name" label="User name" placeholder="Name placeholder"></app-input>
-          <app-input [formControl]="form.get('email')" controlName="email" label="User email" placeholder="Email placeholder"></app-input>
-          <app-input [formControl]="form.get('msg')" controlName="msg" label="User msg" placeholder="Msg placeholder" type="textarea"></app-input>
+          <app-input [formControl]="form.get('name')" controlName="name" label="User name" color="secondary" placeholder="Name placeholder"></app-input>
+          <app-input [formControl]="form.get('email')" controlName="email" label="User email" color="secondary" placeholder="Email placeholder"></app-input>
+          <app-input [formControl]="form.get('msg')" controlName="msg" label="User msg" color="secondary" placeholder="Msg placeholder" type="textarea"></app-input>
           <div class="width-100 d-flex justify-content-center mt-rem-2">
             <app-button-main title="send" [isValid]="!form.valid"></app-button-main>
           </div>
