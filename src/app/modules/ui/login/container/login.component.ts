@@ -21,9 +21,7 @@ export class LoginComponent implements OnInit {
     this.form = this.createForm();
   }
   
-  public onSubmit(): void {
-    
-  }
+  public onSubmit(): void { }
   
   private createForm(): FormGroup {
     return this.fb.group({

@@ -1,8 +1,18 @@
 
-$primary-color: #7d6caf;
+@import '~@angular/material/theming';
+
+$accent-color: #7d6caf;
 $secondary-color: #cccccc;
 $warn-color: #ff6363;
 $border-radius: 4px;
+
+@mixin input-color {
+  
+}
+
+@mixin input-color-theme {
+  $color: mat-get-color-config($theme);
+}
 
 :host {
   display: flex;
@@ -24,7 +34,7 @@ $border-radius: 4px;
     padding: 18px 12px;
     font-size: 16px;
     border: 1px solid;
-    border-color: $primary-color;
+    border-color: $accent-color;
     border-radius: $border-radius;
     font-family: inherit;
     display: block;
@@ -50,10 +60,10 @@ $border-radius: 4px;
     }
     &:focus, &--has-value {
       border-width: 1px;
-      border-color: $primary-color;
+      border-color: $accent-color;
       ~ label {
         transform: translateY(-15px);
-        color: $primary-color;
+        color: $accent-color;
         font-size: 12px;
       }
     }

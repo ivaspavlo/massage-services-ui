@@ -5,8 +5,8 @@
 @include mat-core(); // Important: to be included only once per project
 
 $app-primary: mat-palette($app-primary);
-$app-accent: mat-palette($app-primary, A200, A100, A400);
-$app-warn: mat-palette($app-warn, 400);
+$app-accent: mat-palette($app-accent);
+$app-warn: mat-palette($app-warn);
 
 $app-theme: mat-light-theme(
   $app-primary,

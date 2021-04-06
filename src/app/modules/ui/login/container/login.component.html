@@ -1,8 +1,8 @@
 
 <div class="wrapper">
   <form [formGroup]="form" markTouched (ngSubmit)="onSubmit()">
-    <app-input [formControl]="form.get('login')" controlName="login" label="Login" placeholder="Login placeholder"></app-input>
-    <app-input [formControl]="form.get('password')" controlName="password" label="Password" placeholder="Password placeholder"></app-input>
+    <app-input [formControl]="form.get('login')" color="primary" controlName="login" label="Login" placeholder="Login placeholder"></app-input>
+    <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Password placeholder"></app-input>
     <app-button-main title="send" [isValid]="!form.valid"></app-button-main>
   </form>
 </div>
