@@ -1,7 +1,9 @@
 
 <app-dialog-content size="lg">
-  <div class="wrapper">
-    <form [formGroup]="form" markTouched (ngSubmit)="onSubmit()">
+  <div class="login d-flex justify-content-center">
+    <div class="login__left"></div>
+    <form [formGroup]="form" markTouched (ngSubmit)="onSubmit()" class="login__right">
+      <h4>Login</h4>
       <app-input [formControl]="form.get('login')" color="primary" controlName="login" label="Login" placeholder="Login placeholder"></app-input>
       <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Password placeholder"></app-input>
       <app-button-main title="send" [isValid]="!form.valid"></app-button-main>

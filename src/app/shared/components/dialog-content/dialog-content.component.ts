@@ -1,7 +1,7 @@
 
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { DIALOG_SIZES } from '@app/core/constants';
 import { DialogRef } from '@app/modules/ui/dialog';
+import { DIALOG_SIZES } from '@app/core/constants';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class DialogContentComponent implements OnInit {
   get size() {
     return this._size;
   }
-  private _size: string;
+  private _size: string = '0px';
 
   constructor(
     public dialog: DialogRef

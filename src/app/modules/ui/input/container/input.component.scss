@@ -1,18 +1,8 @@
 
-@import '~@angular/material/theming';
-
 $accent-color: #7d6caf;
-$secondary-color: #cccccc;
+$secondary-color: #656565;
 $warn-color: #ff6363;
 $border-radius: 4px;
-
-@mixin input-color {
-  
-}
-
-@mixin input-color-theme {
-  $color: mat-get-color-config($theme);
-}
 
 :host {
   display: flex;
@@ -22,6 +12,7 @@ $border-radius: 4px;
 .input {
   width: 100%;
   position: relative;
+  text-align: left;
 
   &--invalid {
     .input__field, .input__text-area { border-color: $warn-color !important; }

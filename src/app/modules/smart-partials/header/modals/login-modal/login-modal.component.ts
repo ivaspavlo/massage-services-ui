@@ -1,6 +1,6 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DialogConfig, DialogRef } from '@app/modules/ui/dialog';
 
 
@@ -20,7 +20,9 @@ export class LoginModalComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.form = this.createForm();
+  }
   
   public onClose(): void {
     this.dialog.close('some value');
@@ -30,8 +32,8 @@ export class LoginModalComponent implements OnInit {
   
   private createForm(): FormGroup {
     return this.fb.group({
-      password: '',
-      login: ''
+      password: ['', Validators.required],
+      login: ['', Validators.required]
     });
   }
 
