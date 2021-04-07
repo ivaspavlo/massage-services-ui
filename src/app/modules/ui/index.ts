@@ -17,7 +17,6 @@ export * from './dialog/dialog.module';
 
 export * from './title/title.module';
 export * from './logo/logo.module';
-export * from './login/login.module';
 
 export * from './ng-expansion-panel/ng-expansion-panel.module';
 export * from './ng-menu/ng-menu.module';

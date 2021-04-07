@@ -1,7 +1,12 @@
 
 <app-dialog-content size="lg">
-  <!-- <p>login-modal works!</p>
-  <button class="button" (click)="onClose()">CANCEL</button>
-  <button class="button" (click)="onClose()">OK</button> -->
-  <app-login></app-login>
+  <div class="login d-flex justify-content-center">
+    <div class="login__left"></div>
+    <form [formGroup]="form" markTouched (ngSubmit)="onSubmit()" class="login__right">
+      <h4>Login</h4>
+      <app-input [formControl]="form.get('login')" color="primary" controlName="login" label="Login" placeholder="Login placeholder"></app-input>
+      <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Password placeholder"></app-input>
+      <app-button-main title="send" [isValid]="!form.valid"></app-button-main>
+    </form>
+  </div>
 </app-dialog-content>

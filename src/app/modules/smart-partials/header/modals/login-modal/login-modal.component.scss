@@ -1,0 +1,18 @@
+
+@import 'mixins/bem';
+
+.login {
+  width: 100%;
+  max-width: 700px;
+  min-width: 400px;
+  @include e('left') {
+    width: 40%;
+    background-color: #60b5a6;
+  }
+  @include e('right') {
+    width: 60%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+}
