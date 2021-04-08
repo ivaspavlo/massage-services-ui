@@ -14,6 +14,7 @@ export * from './article-card/article-card.module';
 export * from './blog-article/blog-article.module';
 export * from './tooltip/tooltip.module';
 export * from './dialog/dialog.module';
+export * from './button-secondary/button-secondary.module';
 
 export * from './title/title.module';
 export * from './logo/logo.module';

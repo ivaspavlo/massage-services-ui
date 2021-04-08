@@ -1,6 +1,6 @@
 
-@import 'mixins/_all';
-@import '../core-colors';
+@import 'mixins/bem';
+@import '_core-colors';
 
 .hover-opacity { &:hover { opacity: .6; } }
 
