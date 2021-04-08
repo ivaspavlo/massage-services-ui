@@ -7,16 +7,19 @@
       <div class="branding-image d-flex justify-content-center align-items-center" [ngClass]="{ 'branding-image--is-visible': isVisible }">
         <div class="branding-image__wrapper d-inline-flex justify-content-center p-rem-1">
           <figure class="branding-layer-2 width-100 d-flex align-items-end pos-relative">
+            
             <img class="width-100" src="/assets/img/png/profile.png" alt="Profile Picture">
+            
             <figcaption class="branding__signature pos-absolute top-0 width-100 z-index-1">
               <app-brand-signature></app-brand-signature>
             </figcaption>
+            
           </figure>
         </div>
       </div>
 
-      <h1 class="text-shadow-primary font-58 color-white my-rem-1">Sergiy Tkachuk</h1>
-      <h3 class="text-shadow-primary font-14 color-primary-500">massotherapy</h3>
+      <h1 class="branding__title text-shadow-primary font-58 color-white my-rem-1 spacing-px-1">Sergiy Tkachuk</h1>
+      <h3 class="branding__subtitle text-shadow-primary font-14 color-primary-500">massotherapy</h3>
 
     </div>
 
