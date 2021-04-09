@@ -2,6 +2,6 @@
 @import '_core-z-index';
 
 :host {
-  position: fixed;
+  width: 100%;
   z-index: $header;
 }

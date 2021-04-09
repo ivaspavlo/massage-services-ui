@@ -1,5 +1,5 @@
 
-<section #parallaxContainer class="container-fluid">
+<!-- <section #parallaxContainer class="container-fluid">
   
   <app-header></app-header>
 
@@ -21,8 +21,21 @@
 
   </div>
 
-</section>
+</section> -->
+
+<div data-scroll-container>
+  <nav>
+    <ul>
+      <li>
+        <a [routerLink]="'page-a'">Page A</a>
+      </li>
+      <li>
+        <a [routerLink]="'page-b'">Page B</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 
 <div class="scroll-button pos-fixed bottom-0">
-  <app-scroll-down [scrollTo]="parallaxContainer.clientHeight" [scrollContainer]="parallaxContainer"></app-scroll-down>
+  <app-scroll-down></app-scroll-down>
 </div>
