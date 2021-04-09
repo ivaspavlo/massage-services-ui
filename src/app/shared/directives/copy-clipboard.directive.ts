@@ -20,7 +20,6 @@ export class CopyClipboardDirective {
     }
 
     const listener = (e: ClipboardEvent) => {
-      debugger;
       const clipboard = e.clipboardData || window['clipboardData'];
       clipboard.setData('text', this.payload.toString());
       e.preventDefault();

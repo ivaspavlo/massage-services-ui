@@ -1,5 +1,7 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import LocomotiveScroll from 'locomotive-scroll';
+
 import { MOCK_PRODUCTS, MOCK_QUOTES } from '../constants';
 
 
@@ -13,11 +15,17 @@ export class MainContainerComponent implements OnInit {
 
   public productCards = MOCK_PRODUCTS;
   public quotes = MOCK_QUOTES;
+  public scroll: LocomotiveScroll;
 
   public isScrollBtnVisible = true;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true
+    });
+  }
 
 }
