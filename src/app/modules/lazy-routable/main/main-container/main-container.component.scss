@@ -1,33 +1,29 @@
 
-@import 'mixins/_all';
-@import '_core-sizes';
+// @import 'mixins/_all';
+// @import '_core-sizes';
 
-@media only screen and (min-width: 992px) {
-  div.parallax__layer-1 {
-    height: 100vh;
-  }
-  div.scroll-button {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
+// @media only screen and (min-width: 992px) {
+//   div.parallax__layer-1 {
+//     height: 100vh;
+//   }
+//   div.scroll-button {
+//     right: auto;
+//     left: 50%;
+//     transform: translateX(-50%);
+//   }
+// }
 
-.parallax {
-  width: 100%;
-  background-attachment: fixed;
-  @include background-image-center;
-  @include e('layer-1') {
-    height: calc(100vh - #{$header-full-heigth});
-    background-image: url('/assets/img/png/main-bg-3.png');
-  }
-  @include e('layer-2') {
-    top: 100vh;
-    height: 110vh;
-    background-image: url('/assets/img/png/main-bg-2.png');
-  }
-}
-
-.scroll-button {
-  right: 40px;
-}
+// .parallax {
+//   width: 100%;
+//   background-attachment: fixed;
+//   @include background-image-center;
+//   @include e('layer-1') {
+//     height: calc(100vh - #{$header-full-heigth});
+//     background-image: url('/assets/img/png/main-bg-3.png');
+//   }
+//   @include e('layer-2') {
+//     top: 100vh;
+//     height: 110vh;
+//     background-image: url('/assets/img/png/main-bg-2.png');
+//   }
+// }
