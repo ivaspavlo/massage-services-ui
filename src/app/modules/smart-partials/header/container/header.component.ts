@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 import { DialogService } from '@app/modules/ui/dialog/services';
 
@@ -17,6 +17,7 @@ import { LoginModalComponent } from '../modals/login-modal/login-modal.component
 export class HeaderComponent implements OnInit {
 
   public menuItems: IHeaderMenuItem[] = MAIN_MENU_ITEMS;
+  public isShrinked = false;
 
   constructor(
     private dialogService: DialogService
