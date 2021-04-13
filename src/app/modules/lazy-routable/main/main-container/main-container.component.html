@@ -27,7 +27,7 @@
   <app-scroll-down></app-scroll-down>
 </div> -->
 
-<app-header [isShrinked]="isShrinked"></app-header>
+<app-header [isShrinked]="isBelowTreshold$ | async"></app-header>
 
 <div #scrollContent id="scrollContent" data-scroll-container>
 
