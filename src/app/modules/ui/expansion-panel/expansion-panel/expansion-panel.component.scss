@@ -3,7 +3,6 @@
 @import '_core-colors';
 
 :host {
-  width: 100%;
   position: relative;
 }
 
@@ -11,7 +10,7 @@
   height: 0;
   transform: scaleY(0);
   transform-origin: top left;
-  transition-duration: 0.3s;
+  transition: all .3s;
   @include m('is-open') {
     height: auto;
     transform: scaleX(1);

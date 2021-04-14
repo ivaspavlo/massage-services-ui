@@ -4,7 +4,7 @@ import { DOCUMENT } from '@angular/common';
 import LocomotiveScroll from 'locomotive-scroll';
 
 import { Observable, Subject } from 'rxjs';
-import { map, throttleTime } from 'rxjs/operators';
+import { map, tap, throttleTime } from 'rxjs/operators';
 
 import { MOCK_PRODUCTS, MOCK_QUOTES } from '../constants';
 
@@ -37,11 +37,12 @@ export class MainContainerComponent implements OnInit {
   ngOnInit(): void {
     this.initLocomotiveScroll();
     this.initIsBelowTreshold();
+    this.initResizeObserver();
   }
   
   ngAfterViewInit(): void {
     this.listenToScroll();
-    // this.listenToResize();
+    this.listenToResize();
   }
   
   private listenToScroll(): void {
@@ -50,23 +51,25 @@ export class MainContainerComponent implements OnInit {
   
   private initIsBelowTreshold(): void {
     this.isBelowTreshold$ = this.scrollListener$.pipe(
-      map((res: any) => res.scroll.y > this.document.documentElement.clientHeight),
-      throttleTime(200)
+      map((res: any) => res.scroll.y > this.document.documentElement.clientHeight / 2),
+      throttleTime(200),
+      tap(res => console.log(res))
     );
   }
   
   private initLocomotiveScroll(): void {
     this.scroll = new LocomotiveScroll({
       el: this.document.querySelector(this.locomotiveScrollContainerSelector),
-      smooth: true,
-      getDirection: true
+      smooth: true
     });
   }
   
   private initResizeObserver(): void {
     // @ts-ignore: https://github.com/ant-design/ant-design/issues/13405
     this.resizeObserver = new ResizeObserver((entries, observer) => {
+      console.log(entries);
       entries.forEach((entry, index) => {
+        debugger;
         const { inlineSize: width, blockSize: height } = entry.contentBoxSize[0];
         if (this.scroll) {
           this.scroll.update();

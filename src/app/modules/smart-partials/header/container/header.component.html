@@ -1,8 +1,38 @@
 
-<section class="container-fluid">
+<section class="menu container-fluid pos-fixed" [ngClass]="{ 'menu--is-shrinked': isShrinked }">
   
-  <app-desktop-menu [items]="menuItems" class="d-none d-lg-flex" (showLoginModal)="onShowLoginModal()"></app-desktop-menu>
+  <div class="menu__desktop width-100 d-none d-lg-flex justify-content-center transition-1">
+    <div class="row no-gutters width-100 max-width-992">
+      
+      <div class="col-3">
+        <div class="d-flex justify-content-start align-items-center">
+          <app-logo [size]="isShrinked ? 'sm' : 'md'"></app-logo>
+        </div>
+      </div>
   
-  <app-mobile-menu [items]="menuItems" class="d-flex d-lg-none"></app-mobile-menu>
+      <div class="col-6">
+        <ul class="width-100 height-100 d-flex align-items-center justify-content-center">
+          <li *ngFor="let item of menuItems" class="d-flex align-items-center">
+            <a [routerLink]="item.href" class="px-rem-1_5 py-rem-1 color-grey-300 hover-color-primary transition-1 cursor-pointer">{{item.name}}</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="col-3">
+        <div class="d-flex height-100 justify-content-end align-items-center pr-rem-1">
+          <app-button-main (click)="onShowLoginModal()" title="LOGIN"></app-button-main>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+  
+  <div class="menu__mobile width-100 d-flex d-lg-none flex-column border-bottom-1 border-color-lightgrey box-shadow-1">
+    <div class="width-100 d-flex justify-content-between align-items-center p-rem-1">
+      <app-logo size="sm"></app-logo>
+      <app-hamburger (isOn)="isOpen = $event" class="my-px-10"></app-hamburger>
+    </div>
+    <app-expansion-panel [items]="menuItems" [isOpen]="isOpen"></app-expansion-panel>
+  </div>
 
 </section>

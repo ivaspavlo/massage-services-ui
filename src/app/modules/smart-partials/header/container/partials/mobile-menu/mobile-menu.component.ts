@@ -12,7 +12,7 @@ export class MobileMenuComponent implements OnInit {
 
   @Input() public items: { name: string; href: string; }[];
 
-  public isOpen = false;
+  
 
   constructor() { }
 
