@@ -69,7 +69,6 @@ export class MainContainerComponent implements OnInit {
     this.resizeObserver = new ResizeObserver((entries, observer) => {
       console.log(entries);
       entries.forEach((entry, index) => {
-        debugger;
         const { inlineSize: width, blockSize: height } = entry.contentBoxSize[0];
         if (this.scroll) {
           this.scroll.update();
