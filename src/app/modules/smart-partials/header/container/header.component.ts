@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() public isShrinked = false;
   public menuItems: IHeaderMenuItem[] = MAIN_MENU_ITEMS;
+  public isOpen = false;
 
   constructor(
     private dialogService: DialogService

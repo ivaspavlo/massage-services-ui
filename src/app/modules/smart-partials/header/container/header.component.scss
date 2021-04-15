@@ -1,7 +1,25 @@
 
+@import 'mixins/bem';
 @import '_core-z-index';
+@import '_core-sizes';
 
 :host {
   width: 100%;
-  z-index: $header;
+}
+
+.menu {
+  z-index: $z-header;
+  @include m('is-shrinked') {
+    .menu__desktop {
+      background-color: rgba(36, 36, 36, .7);
+      padding: 0.25rem 0;
+    }
+  }
+  @include e('desktop') {
+    padding: 1rem 0;
+    background-color: rgba(46, 49, 49, .2);
+  }
+  @include e('mobile') {
+    background-color: white;
+  }
 }

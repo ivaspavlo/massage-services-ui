@@ -27,6 +27,7 @@ export class MainContainerComponent implements OnInit {
   private scrollListener$: Subject<any> = new Subject();
   private locomotiveScrollEventName = 'scroll';
   private locomotiveScrollContainerSelector = '[data-scroll-container]';
+
   // @ts-ignore: https://github.com/ant-design/ant-design/issues/13405
   private resizeObserver: ResizeObserver;
 
@@ -37,11 +38,12 @@ export class MainContainerComponent implements OnInit {
   ngOnInit(): void {
     this.initLocomotiveScroll();
     this.initIsBelowTreshold();
+    this.initResizeObserver();
   }
   
   ngAfterViewInit(): void {
     this.listenToScroll();
-    // this.listenToResize();
+    this.listenToResize();
   }
   
   private listenToScroll(): void {
@@ -50,7 +52,7 @@ export class MainContainerComponent implements OnInit {
   
   private initIsBelowTreshold(): void {
     this.isBelowTreshold$ = this.scrollListener$.pipe(
-      map((res: any) => res.scroll.y > this.document.documentElement.clientHeight),
+      map((res: any) => res.scroll.y > this.document.documentElement.clientHeight / 2),
       throttleTime(200)
     );
   }
@@ -58,8 +60,7 @@ export class MainContainerComponent implements OnInit {
   private initLocomotiveScroll(): void {
     this.scroll = new LocomotiveScroll({
       el: this.document.querySelector(this.locomotiveScrollContainerSelector),
-      smooth: true,
-      getDirection: true
+      smooth: true
     });
   }
   

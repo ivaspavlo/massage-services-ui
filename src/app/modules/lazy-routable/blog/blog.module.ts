@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ArticleCardModule, BlogArticleModule } from '@app/modules/ui';
+import { HeaderModule } from '@app/modules/smart-partials';
 import { BlogRoutingModule } from './blog-routing.module';
 
 import { COMPONENTS } from './pages';
@@ -16,7 +17,8 @@ import { COMPONENTS } from './pages';
     BlogRoutingModule,
     CommonModule,
     ArticleCardModule,
-    BlogArticleModule
+    BlogArticleModule,
+    HeaderModule
   ]
 })
 export class BlogModule { }
