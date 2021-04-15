@@ -3,21 +3,26 @@
 @import '_core-colors';
 
 :host {
-  position: relative;
   height: 0;
+  position: relative;
 }
 
 .panel {
-  
+  position: relative;
   transform: scaleY(0);
   transform-origin: top left;
   transition: all .3s;
+  background-color: white;
+  z-index: 1;
   @include m('is-open') {
-    // height: auto;
     transform: scaleX(1);
     -webkit-transform: scaleX(1);
   }
+  @include e('list') {
+    box-shadow: 0 4px 6px -6px #222;
+  }
   @include e('list-item') {
+    position: relative;
     &:hover {
       .panel__text {
         color: $primary-900;
@@ -28,9 +33,24 @@
       }
     }
   }
+  @include e('link') {
+    padding: 1rem;
+    display: block;
+    position: relative;
+    background-color: #fff;
+    z-index: 1;
+    @include m('last') {
+      border-bottom: 1px solid lightgrey;
+    }
+    @include m('odd') {
+      background-color: #FBFBFD;
+    }
+  }
   @include e('text') {
     color: $primary-400;
-    transition-duration: 0.5s;
+    transition-duration: .5s;
+    font-weight: 600;
+    z-index: 1;
     &:before {
       content: '';
       height: 100%; width: 100%;
@@ -40,7 +60,7 @@
       transform-origin: top left;
       transform: scaleX(0);
       background-color: $grey-100;
-      transition-duration: 0.5s;
+      transition-duration: .5s;
       z-index: -1;
     }
   }

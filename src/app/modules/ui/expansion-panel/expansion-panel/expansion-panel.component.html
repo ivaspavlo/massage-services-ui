@@ -1,9 +1,9 @@
 
-<div class="panel pos-relative z-index-1 bg-white" [ngClass]="{'panel--is-open': isOpen}">
-  <ul class="box-shadow-3">
-    <li *ngFor="let item of items; let first = first; let last = last; let odd = odd;" class="panel__list-item pos-relative">
-      <a [href]="item.href" [ngClass]="{ 'border-color-lightgrey border-bottom-1': last, 'bg-grey-200': odd }" class="d-block pos-relative p-rem-1 bg-white z-index-1">
-        <span class="panel__text font-weight-600 z-index-1">{{ item.name }}</span>
+<div class="panel" [ngClass]="{'panel--is-open': isOpen}">
+  <ul class="panel__list">
+    <li *ngFor="let item of items; let first = first; let last = last; let odd = odd;" class="panel__list-item">
+      <a [href]="item.href" [ngClass]="{ 'panel__link--last': last, 'panel__link--odd': odd }" class="panel__link">
+        <span class="panel__text">{{ item.name }}</span>
       </a>
     </li>
   </ul>
