@@ -14,19 +14,16 @@ export class ButtonMainComponent implements OnInit {
 
   @Input() filled = false;
   @Input() title = 'button';
-  @Input() isValid: boolean | null = null;
+  @Input() invalid: boolean = false;
 
-  public shakeIfInvalid = false;
   private invalidClassName = 'invalid';
 
   constructor(private renderer: Renderer2) { }
 
-  ngOnInit(): void {
-    this.shakeIfInvalid = this.isValid !== null;
-  }
+  ngOnInit(): void { }
 
   public onClick(): void {
-    if (!this.button.nativeElement.classList.contains(this.invalidClassName)) {
+    if (this.invalid && !this.button.nativeElement.classList.contains(this.invalidClassName)) {
       this.renderer.addClass(this.button.nativeElement, this.invalidClassName);
       setTimeout(() => {
         this.renderer.removeClass(this.button.nativeElement, this.invalidClassName);
