@@ -1,6 +1,6 @@
 
 <button 
-  (click)="onClick()"
+  (click)="scrollDown.emit()"
   [disabled]="!isVisible"
   [ngClass]="{ 'scroll-down--visible': isVisible }"
   class="scroll-down">

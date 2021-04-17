@@ -13,13 +13,13 @@
       <div class="col-6">
         <ul class="width-100 height-100 d-flex align-items-center justify-content-center">
           <li *ngFor="let item of menuItems" class="d-flex align-items-center">
-            <a [routerLink]="item.href" class="px-rem-1_5 py-rem-1 color-grey-300 hover-color-primary transition-1 cursor-pointer">{{item.name}}</a>
+            <a [routerLink]="item.href" class="px-rem-1_5 py-rem-1 color-grey-300 hover-color-accent transition-1 cursor-pointer">{{item.name}}</a>
           </li>
         </ul>
       </div>
   
       <div class="col-3">
-        <div class="d-flex height-100 justify-content-end align-items-center pr-rem-1">
+        <div class="d-flex height-100 justify-content-end align-items-center">
           <app-button-main (click)="onShowLoginModal()" title="LOGIN"></app-button-main>
         </div>
       </div>

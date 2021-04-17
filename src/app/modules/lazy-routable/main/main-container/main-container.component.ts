@@ -7,6 +7,7 @@ import { Observable, Subject } from 'rxjs';
 import { map, throttleTime } from 'rxjs/operators';
 
 import { MOCK_PRODUCTS, MOCK_QUOTES } from '../constants';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -17,12 +18,13 @@ import { MOCK_PRODUCTS, MOCK_QUOTES } from '../constants';
 })
 export class MainContainerComponent implements OnInit {
   
-  @ViewChild('scrollContent') scrollContent: ElementRef;
+  @ViewChild('scrollContainer') scrollContainer: ElementRef;
   
   public productCards = MOCK_PRODUCTS;
   public quotes = MOCK_QUOTES;
   public scroll: LocomotiveScroll;
   public isBelowTreshold$: Observable<boolean>;
+  public form: FormGroup;
   
   private scrollListener$: Subject<any> = new Subject();
   private locomotiveScrollEventName = 'scroll';
@@ -32,18 +34,36 @@ export class MainContainerComponent implements OnInit {
   private resizeObserver: ResizeObserver;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private fb: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.initLocomotiveScroll();
     this.initIsBelowTreshold();
     this.initResizeObserver();
+    this.initForm();
   }
   
   ngAfterViewInit(): void {
     this.listenToScroll();
     this.listenToResize();
+  }
+
+  public onSubmit(): void {
+    console.log('CONTACT FORM SUBMITTED');
+  }
+  
+  public onScrollDown(): void {
+    this.scroll.scrollTo(this.document.documentElement.clientHeight);
+  }
+  
+  private initForm(): void {
+    this.form = this.fb.group({
+      name: this.fb.control('', [Validators.required]),
+      email: this.fb.control('', [Validators.required]),
+      msg: this.fb.control('')
+    });
   }
   
   private listenToScroll(): void {
@@ -77,7 +97,7 @@ export class MainContainerComponent implements OnInit {
   }
   
   private listenToResize(): void {
-    this.resizeObserver.observe(this.scrollContent.nativeElement);
+    this.resizeObserver.observe(this.scrollContainer.nativeElement);
   }
   
   ngOnDestroy(): void {

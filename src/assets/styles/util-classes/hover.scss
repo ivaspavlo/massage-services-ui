@@ -12,6 +12,8 @@
 
 .hover-color-primary { &:hover { color: $primary-500; } }
 
+.hover-color-accent { &:hover { color: $accent-500; } }
+
 @include sm { }
 
 @include md { }
