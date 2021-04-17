@@ -19,6 +19,8 @@
 
 @include md { }
 
-@include lg { }
+@include lg {
+  .width-lg-100 { width: 100% !important; }
+}
 
 @include xl { }

@@ -54,6 +54,10 @@ export class MainContainerComponent implements OnInit {
     console.log('CONTACT FORM SUBMITTED');
   }
   
+  public onScrollDown(): void {
+    this.scroll.scrollTo(this.document.documentElement.clientHeight);
+  }
+  
   private initForm(): void {
     this.form = this.fb.group({
       name: this.fb.control('', [Validators.required]),

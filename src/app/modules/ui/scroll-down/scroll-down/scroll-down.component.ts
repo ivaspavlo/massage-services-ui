@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -11,11 +11,10 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 export class ScrollDownComponent implements OnInit {
 
   @Input() isVisible: boolean = true;
+  @Output() scrollDown: EventEmitter<void> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() { }
-
-  public onClick(): void { }
 
 }
