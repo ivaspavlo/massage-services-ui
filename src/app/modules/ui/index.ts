@@ -16,6 +16,7 @@ export * from './tooltip/tooltip.module';
 export * from './dialog/dialog.module';
 export * from './button-secondary/button-secondary.module';
 export * from './hamburger/hamburger.module';
+export * from './slider/slider.module';
 
 export * from './title/title.module';
 export * from './logo/logo.module';

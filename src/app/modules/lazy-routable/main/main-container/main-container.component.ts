@@ -6,7 +6,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 import { Observable, Subject } from 'rxjs';
 import { map, throttleTime } from 'rxjs/operators';
 
-import { MOCK_PRODUCTS, MOCK_QUOTES } from '../constants';
+import { MOCK_PRODUCTS, MOCK_QUOTES, MOCK_CERTIFICATES, MOCK_SLIDES } from '../constants';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -22,6 +22,9 @@ export class MainContainerComponent implements OnInit {
   
   public productCards = MOCK_PRODUCTS;
   public quotes = MOCK_QUOTES;
+  public certificates = MOCK_CERTIFICATES;
+  public slides = MOCK_SLIDES;
+
   public scroll: LocomotiveScroll;
   public isBelowTreshold$: Observable<boolean>;
   public form: FormGroup;
