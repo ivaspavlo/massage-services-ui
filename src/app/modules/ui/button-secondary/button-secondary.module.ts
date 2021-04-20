@@ -5,9 +5,14 @@ import { ButtonSecondaryComponent } from './container/button-secondary.component
 
 
 @NgModule({
-  declarations: [ButtonSecondaryComponent],
+  declarations: [
+    ButtonSecondaryComponent
+  ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ButtonSecondaryComponent
   ]
 })
 export class ButtonSecondaryModule { }
