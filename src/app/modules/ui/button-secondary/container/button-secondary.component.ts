@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-button-secondary',
@@ -7,10 +9,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonSecondaryComponent implements OnInit {
+  
+  @Input() filled = false;
+  @Input() title = 'button';
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
