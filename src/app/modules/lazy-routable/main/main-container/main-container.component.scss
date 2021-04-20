@@ -41,9 +41,14 @@
     background-color: rgba(125, 201, 189, .5);
   }
   @include e('info') {
+    opacity: 0;
     transform: translate(-20px, -55px);
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0px 3px 9px 3px rgb(0 0 0 / 50%);
+    transition: opacity 1s;
+    @include m('visible') {
+      opacity: 1;
+    }
   }
   @for $i from 1 through $items-qty {
     .cert__item:nth-child(#{$i}) {
