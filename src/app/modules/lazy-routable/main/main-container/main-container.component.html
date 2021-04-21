@@ -3,7 +3,7 @@
   
   <app-header [isShrinked]="isBelowTreshold$ | async"></app-header>
   
-  <div #scrollContainer id="scrollContainer" data-scroll-container>
+  <div #scrollContainer data-scroll-container>
     
     <div data-scroll-section class="width-100 pos-relative d-flex flex-column justify-content-end align-items-center">
       <div class="branding width-100 height-vh-100 max-width-992 d-flex justify-content-center align-items-center">
@@ -12,7 +12,7 @@
           <img src="/assets/img/png/main-bg-3.png" alt="Background image #1" class="width-lg-100">
         </figure>
         
-        <div class="branding__right width-50 height-100 d-flex flex-column align-items-end justify-content-center z-index-1 pos-relative">
+        <div class="branding__right width-100 height-100 d-flex flex-column align-items-end justify-content-center z-index-1 pos-relative">
           <div data-scroll data-scroll-speed="-3">
             <h1 data-scroll data-scroll-class="branding__title--visible" data-scroll-repeat="true" class="branding__title text-align-right text-shadow-primary font-58 color-white m-rem-1 spacing-px-1">SERGIY TKACHUK</h1>
             <h3 class="branding__subtitle color-accent-600 text-align-right font-14 color-primary-500 text-transform-uppercase">massotherapy</h3>
@@ -22,7 +22,7 @@
           </div>
         </div>
         
-        <div class="branding__left d-flex align-items-center width-50 height-100 z-index-1">
+        <div class="branding__left width-100 height-100 d-flex align-items-center z-index-1">
           <figure class="branding__image width-100 d-flex align-items-end pos-relative">
             <img class="width-100" src="/assets/img/png/profile.png" alt="Brand image">
             <figcaption class="branding__signature pos-absolute top-0 width-100 z-index-1">
@@ -34,33 +34,33 @@
       </div>
     </div>
     
-    <div data-scroll-section class="height-vh-100 py-rem-3 d-flex flex-column pos-relative overflow-hidden bg-white">
+    <div data-scroll-section class="width-100 height-vh-100 py-rem-3 d-flex flex-column pos-relative overflow-hidden">
       
-      <div class="width-100 height-100 pos-absolute bottom-0 z-index-minus-1">
-        <figure class="width-100">
-          <img src="/assets/img/png/cert-bg.jpeg" class="width-100 pos-relative" alt="Background image #2">
-        </figure>
+      <figure class="width-100 pos-absolute top-0">
+        <img src="/assets/img/png/cert-bg.jpeg" class="width-lg-100" alt="Background image #2">
+      </figure>
+      
+      <div id="cert-list" class="cert__list py-rem-2 width-100 d-flex justify-content-center z-index-1">
+        <app-horizontal-menu class="max-width-992">
+          <li horMenuItem class="cert__item pr-rem-1" *ngFor="let cert of certificates; let idx = index;">
+            <figure><img class="width-100 p-rem-1 box-shadow-4 b-radius-4" [src]="cert.src" alt="Certificate #{{ idx }}"></figure>
+          </li>
+        </app-horizontal-menu>
+        
+        <!-- <div class="d-none d-md-flex align-items-center">
+          <app-arrow-animated-button></app-arrow-animated-button>
+        </div> -->
+        
       </div>
     
-      <div class="cert__list py-rem-2 d-flex justify-content-center align-items-center">
-        <ul class="width-100 max-width-992 d-flex justify-content-between">
-          <li class="px-rem-1 d-flex" *ngFor="let cert of certificates; let idx = index;">
-            <figure><img [src]="cert.src" class="width-100 p-rem-1 box-shadow-2 b-radius-4" alt="Certificate #{{ idx }}"></figure>
-          </li>
-          <li class="d-flex align-items-center pl-rem-1">
-            <app-arrow-animated-button></app-arrow-animated-button>
-          </li>
-        </ul>
-      </div>
-    
-      <div class="mt-rem-3 py-rem-1 border-x-2 d-flex flex-grow-1 justify-content-center border-color-secondary-500">
+      <!-- <div class="mt-rem-1 py-rem-1 border-x-2 d-flex flex-grow-1 justify-content-center border-color-secondary-500">
         <div class="row no-gutters max-width-992">
-          <div class="col-7">
+          <div class="col-12 col-md-7">
             <div class="width-100 height-100">
               <app-slider [slides]="slides"></app-slider>
             </div>
           </div>
-          <div class="col-4 offset-1 py-rem-1">
+          <div class="col-12 col-md-4 offset-md-1 py-rem-1">
             <div class="cert__info p-rem-2 b-radius-4 d-flex align-items-center justify-content-center flex-column" data-scroll data-scroll-speed="-1" data-scroll-class="cert__info--visible">
               <h3 class="width-100 mb-rem-0_5 text-shadow-primary color-secondary-500 font-30">Some seo text</h3>
               <p class="line-height-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque excepturi non maiores velit id temporibus? Quo inventore optio mollitia sed numquam itaque necessitatibus praesentium at, perferendis molestiae, repellat corporis.</p>
@@ -70,13 +70,41 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       
     </div>
     
-    <!-- <div class="d-flex flex-column container-fluid height-vh-100 pos-relative overflow-hidden">
-      <div style="background-color: bisque; height: 100vh; width: 100%;"></div>
-    </div> -->
+    <div id="services-section" data-scroll-section class="services py-rem-lg-2 d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden">
+      
+      <div data-scroll data-scroll-speed="-4" class="width-100 height-100 d-none d-lg-flex pos-absolute top-0">
+        <figure class="width-100">
+          <img src="/assets/img/png/main-bg-1.png" class="width-lg-100" alt="Background image #2">
+        </figure>
+      </div>
+      
+      <div class="services__quotes-wrapper width-100 py-rem-1 pos-relative d-flex justify-content-center">
+        <app-slider-quote [quotes]="quotes"></app-slider-quote>
+      </div>
+      
+      <div class="width-100 max-width-992">
+        <div data-scroll data-scroll-class="services__title--visible" data-scroll-repeat="true" data-scroll-target="#services-section" class="services__title width-100 font-24 b-radius-4 text-shadow-primary">
+          <p class="width-25 font-22 font-family-nexa">We bring the best of our skills to meet specific needs</p>
+          <div class="d-flex flex-column py-rem-0_75">
+            <i *ngFor="let i of 3 | fill" data-scroll data-scroll-class="services__shevron--visible" data-scroll-repeat="true" data-scroll-target="#services-section" class="services__shevron"></i>
+          </div>
+          <p class="font-42 font-family-nexa spacing-px-1">OUR SERVICES</p>
+        </div>
+      </div>
+    
+      <div class="d-flex flex-grow-1 align-items-center justify-content-center width-100">
+        <div class="row width-100 max-width-992">
+          <div data-scroll data-scroll-class="services__card--visible" data-scroll-repeat="true" data-scroll-target="#services-section" *ngFor="let card of productCards" class="services__card col-3 px-rem-1">
+            <app-product-card [card]="card"></app-product-card>
+          </div>
+        </div>
+      </div>
+      
+    </div>
     
     <footer class="footer" data-scroll-section>
       <div class="footer_container">

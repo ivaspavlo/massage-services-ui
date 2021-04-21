@@ -113,7 +113,7 @@
 }
 
 @include lg {
-  
+  .py-rem-lg-2 { padding-top: 2rem; padding-bottom: 2rem; }
 }
 
 @include xl {
