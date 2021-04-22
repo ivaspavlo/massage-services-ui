@@ -44,7 +44,12 @@ $services-qty: 4;
   @include e('item') {
     width: 200px;
   }
+  @include e('slider') {
+    width: 70%;
+  }
   @include e('info') {
+    width: 30%;
+    height: 105%;
     opacity: 0;
     transform: translate(-20px, -55px);
     background-color: rgba(255, 255, 255, 0.7);
