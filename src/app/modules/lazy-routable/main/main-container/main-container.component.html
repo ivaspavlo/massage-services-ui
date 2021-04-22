@@ -42,15 +42,10 @@
       
       <div id="cert-list" class="cert__list py-rem-2 width-100 d-flex justify-content-center z-index-1">
         <app-horizontal-menu class="max-width-992">
-          <li horMenuItem class="cert__item pr-rem-1" *ngFor="let cert of certificates; let idx = index;">
+          <li horMenuItem class="cert__item px-rem-1" *ngFor="let cert of certificates; let idx = index;">
             <figure><img class="width-100 p-rem-1 box-shadow-4 b-radius-4" [src]="cert.src" alt="Certificate #{{ idx }}"></figure>
           </li>
         </app-horizontal-menu>
-        
-        <!-- <div class="d-none d-md-flex align-items-center">
-          <app-arrow-animated-button></app-arrow-animated-button>
-        </div> -->
-        
       </div>
     
       <!-- <div class="mt-rem-1 py-rem-1 border-x-2 d-flex flex-grow-1 justify-content-center border-color-secondary-500">

@@ -12,6 +12,7 @@ import { HorizontalMenuItemDirective } from '../directives';
 export class HorizontalMenuComponent implements OnInit {
   
   @ViewChild('container', { static: true }) container: ElementRef;
+  @ViewChild('menu', { static: true }) menu: ElementRef;
   @ContentChildren(HorizontalMenuItemDirective, {read: ElementRef}) queryList: QueryList<ContentChild>;
   
   @Input() set (value) {
@@ -20,7 +21,7 @@ export class HorizontalMenuComponent implements OnInit {
     }
   };
   get style() {
-    return { 'min-width.px': this._minWidth };
+    return {'min-width.px': this._minWidth};
   }
   get items() {
     return Array.from(this.queryList, (i: any) => i.nativeElement);
@@ -32,7 +33,7 @@ export class HorizontalMenuComponent implements OnInit {
     return this.items.length * this.itemWidth;
   }
   get showButtons() {
-    return this._minWidth > this.totalWidth;
+    return this.container.nativeElement.offsetWidth < this.menu.nativeElement.offsetWidth;
   }
 
   private _minWidth = 992;
