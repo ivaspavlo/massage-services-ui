@@ -104,18 +104,13 @@
 .pb-rem-4_5 { padding-bottom: 4.5rem; }
 .pb-rem-4_75 { padding-bottom: 4.75rem; }
 
-@include sm {
-  
-}
+@include sm { }
 
-@include md {
-  
-}
+@include md { }
 
 @include lg {
   .py-rem-lg-2 { padding-top: 2rem; padding-bottom: 2rem; }
+  .px-rem-lg-2 { padding-left: 2rem; padding-right: 2rem; }
 }
 
-@include xl {
-  
-}
+@include xl { }

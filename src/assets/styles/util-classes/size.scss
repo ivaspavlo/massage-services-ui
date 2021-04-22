@@ -2,16 +2,19 @@
 @import 'mixins/_all';
 
 .height-auto { height: auto; }
+.height-25 { height: 25%; }
 .height-50 { height: 50%; }
+.height-75 { height: 75%; }
 .height-100 { height: 100%; }
+.height-vh-25 { height: 25vh; }
 .height-vh-50 { height: 50vh; }
 .height-vh-75 { height: 75vh; }
 .height-vh-100 { height: 100vh; }
-.min-height-vh-100 { min-height: 100vh; }
 
 .width-auto { width: auto; }
 .width-25 { width: 25%; }
 .width-50 { width: 50%; }
+.width-75 { width: 75%; }
 .width-100 { width: 100%; }
 .max-width-992 { max-width: 992px; }
 .max-width-1200 { max-width: 1200px; }
@@ -21,6 +24,8 @@
 @include md { }
 
 @include lg {
+  .width-lg-35 { width: 35% !important; }
+  .width-lg-75 { width: 75% !important; }
   .width-lg-100 { width: 100% !important; }
 }
 
