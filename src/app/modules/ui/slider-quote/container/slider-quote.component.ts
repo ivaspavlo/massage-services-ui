@@ -24,7 +24,7 @@ export class SliderQuoteComponent implements OnInit {
 
   @Input() quotes: IQuote[];
   @Input() hideControls = true;
-  @Input() intervalMs = 4000;
+  @Input() intervalMs = 5000;
   @ViewChild('slide') slide: ElementRef;
 
   public currentQuoteIndex = 0;
