@@ -1,5 +1,5 @@
 
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef } from '@angular/core';
 import { transition, trigger, useAnimation } from '@angular/animations';
 
 import { AnimationType, fadeIn, fadeOut, scaleIn, scaleOut } from './slider.animations';
@@ -22,31 +22,40 @@ export class SliderComponent {
   
   @Input() slides: ISlide[];
   @Input() animationType = scaleIn;
+  @Input() intervalMs = 3000;
+  @Input() autoChangeOff = false;
 
-  currentSlide = 0;
+  public currentSlide = 0;
 
-  constructor() {}
+  constructor(private cdr: ChangeDetectorRef) { }
+  
+  ngOnInit(): void {
+    this.preloadImages();
+    this.autoChange();
+  }
 
-  onPreviousClick() {
+  public onPreviousClick(): void {
+    console.log('prev')
     const previous = this.currentSlide - 1;
     this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
   }
 
-  onNextClick() {
+  public onNextClick(): void {
     const next = this.currentSlide + 1;
     this.currentSlide = next === this.slides.length ? 0 : next;
+    this.cdr.detectChanges();
   }
 
-  ngOnInit() {
-    this.preloadImages();
-  }
-
-  preloadImages() {
+  public preloadImages(): void {
     for (const slide of this.slides) {
       new Image().src = slide.src;
     }
   }
+  
+  private autoChange(): void {
+    if (!this.autoChangeOff) {
+      setInterval(this.onNextClick.bind(this), this.intervalMs);
+    }
+  }
 
 }
-
-// https://medium.com/showpad-engineering/angular-animations-lets-create-a-carousel-with-reusable-animations-81c0dd8847e8

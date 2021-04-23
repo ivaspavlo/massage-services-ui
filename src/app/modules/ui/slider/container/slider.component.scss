@@ -33,13 +33,13 @@
   z-index: 1;
   cursor: pointer;
   &--prev {
-    right: 0;
+    left: 0;
     &:hover {
       button.ctrl__arrow { transform: translateX(5px); }
     }
   }
   &--next {
-    left: 0;
+    right: 0;
     &:hover {
       button.ctrl__arrow { transform: translateX(-5px); }
     }
