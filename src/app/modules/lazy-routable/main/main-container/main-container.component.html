@@ -8,13 +8,9 @@
     <div id="branding-section" data-scroll-section class="pos-relative d-flex flex-column justify-content-end align-items-center">
       <div class="branding width-100 height-vh-100 max-width-992 d-flex justify-content-center align-items-center">
         
-        <figure data-scroll data-scroll-speed="-4" class="width-100 height-vh-100 position-fixed top-0">
-          <img src="/assets/img/png/main-bg-3.png" alt="Background image #1" class="width-lg-100">
-        </figure>
-        
         <div class="branding__right width-100 height-100 d-flex flex-column align-items-end justify-content-center z-index-1 pos-relative">
           <div data-scroll data-scroll-speed="-3">
-            <h1 data-scroll data-scroll-class="branding__title--visible" data-scroll-repeat="true" class="branding__title text-align-right text-shadow-primary font-58 color-white m-rem-1 spacing-px-1">SERGIY TKACHUK</h1>
+            <h1 class="branding__title font-family-nexa text-align-right text-shadow-primary font-58 color-white m-rem-1 spacing-px-1" data-scroll data-scroll-class="branding__title--visible" data-scroll-repeat="true">SERGIY TKACHUK</h1>
             <h3 class="branding__subtitle color-accent-600 text-align-right font-14 color-primary-500 text-transform-uppercase">massotherapy</h3>
           </div>
           <div class="branding__scroll pos-absolute bottom-0 d-none d-lg-flex">
@@ -31,14 +27,14 @@
           </figure>
         </div>
         
+        <figure data-scroll data-scroll-speed="-4" class="width-100 height-vh-100 position-fixed top-0 z-index-minus-1">
+          <img src="/assets/img/png/main-bg-3.png" alt="Background image #1" class="width-lg-100">
+        </figure>
+        
       </div>
     </div>
     
     <div id="cert-section" data-scroll-section class="height-vh-100 py-rem-3 d-flex flex-column pos-relative overflow-hidden">
-      
-      <figure class="width-100 pos-absolute top-0">
-        <img src="/assets/img/png/cert-bg.jpeg" class="width-lg-100" alt="Background image #2">
-      </figure>
       
       <div id="cert-list" class="cert__list py-rem-2 mb-rem-2 width-100 d-flex justify-content-center z-index-1">
         <app-horizontal-menu class="max-width-992">
@@ -55,7 +51,7 @@
             <app-slider [slides]="slides"></app-slider>
           </div>
           
-          <div class="cert__info pos-absolute right-0 p-rem-2 b-radius-4 d-none d-lg-flex align-items-center justify-content-center flex-column overflow-auto" data-scroll data-scroll-speed="-1" data-scroll-class="cert__info--visible">
+          <div class="cert__info pos-absolute right-0 px-rem-2 py-rem-1_5 b-radius-4 d-none d-lg-flex align-items-center justify-content-center flex-column" data-scroll data-scroll-speed="-1" data-scroll-class="cert__info--visible">
             <h3 class="mb-rem-0_5 text-shadow-primary color-secondary-500 font-30">Some seo text</h3>
             <p class="line-height-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque excepturi non maiores velit id temporibus? Quo inventore optio mollitia sed numquam itaque necessitatibus praesentium at, perferendis molestiae, repellat corporis.</p>
             <div class="mt-rem-2 d-flex justify-content-end">
@@ -65,56 +61,49 @@
           
         </div>
       </div>
-    
-      <!-- <div class="mt-rem-1 py-rem-1 border-x-2 d-flex flex-grow-1 justify-content-center border-color-secondary-500">
-        <div class="row no-gutters max-width-992">
-          <div class="col-12 col-md-7">
-            <div class="width-100 height-100">
-              <app-slider [slides]="slides"></app-slider>
-            </div>
-          </div>
-          <div class="col-12 col-md-4 offset-md-1 py-rem-1">
-            <div class="cert__info p-rem-2 b-radius-4 d-flex align-items-center justify-content-center flex-column" data-scroll data-scroll-speed="-1" data-scroll-class="cert__info--visible">
-              <h3 class="width-100 mb-rem-0_5 text-shadow-primary color-secondary-500 font-30">Some seo text</h3>
-              <p class="line-height-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque excepturi non maiores velit id temporibus? Quo inventore optio mollitia sed numquam itaque necessitatibus praesentium at, perferendis molestiae, repellat corporis.</p>
-              <div class="width-100 pt-rem-2 d-flex justify-content-end">
-                <app-button-secondary title="Read more" [filled]="true"></app-button-secondary>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
+      
+      <figure class="width-100 pos-absolute top-0">
+        <img src="/assets/img/png/cert-bg.jpeg" class="width-lg-100" alt="Background image #2">
+      </figure>
       
     </div>
     
     <div id="services-section" data-scroll-section class="services py-rem-lg-2 d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden">
-      
-      <div data-scroll data-scroll-speed="-4" class="width-100 height-100 d-none d-lg-flex pos-absolute top-0">
-        <figure class="width-100">
-          <img src="/assets/img/png/main-bg-1.png" class="width-lg-100" alt="Background image #2">
-        </figure>
-      </div>
-      
       <div class="services__quotes-wrapper width-100 py-rem-1 pos-relative d-flex justify-content-center">
         <app-slider-quote [quotes]="quotes"></app-slider-quote>
       </div>
       
-      <div class="width-100 max-width-992">
-        <div data-scroll data-scroll-class="services__title--visible" data-scroll-repeat="true" data-scroll-target="#services-section" class="services__title width-100 font-24 b-radius-4 text-shadow-primary">
-          <p class="width-25 font-22 font-family-nexa">We bring the best of our skills to meet specific needs</p>
+      <div class="width-100 max-width-992 py-rem-2 p-lg-0 py-rem d-flex flex-column flex-grow-1">
+        <div class="px-rem-2 pb-rem-2 d-flex d-lg-none">
+          <ng-container *ngTemplateOutlet="servicesTitle"></ng-container>
+        </div>
+        
+        <div class="services__title d-none d-lg-flex flex-column width-100 font-24 b-radius-4 text-shadow-primary" data-scroll data-scroll-class="services__title--visible" data-scroll-repeat="true" data-scroll-target="#services-section">
+          <p class="width-25 font-22 font-family-nexa color-white">We bring the best of our skills to meet specific needs</p>
           <div class="d-flex flex-column py-rem-0_75">
-            <i *ngFor="let i of 3 | fill" data-scroll data-scroll-class="services__shevron--visible" data-scroll-repeat="true" data-scroll-target="#services-section" class="services__shevron"></i>
+            <i *ngFor="let i of 3 | fill" class="services__shevron" data-scroll data-scroll-class="services__shevron--visible" data-scroll-repeat="true" data-scroll-target="#services-section"></i>
           </div>
-          <p class="font-42 font-family-nexa spacing-px-1">OUR SERVICES</p>
+          <ng-container *ngTemplateOutlet="servicesTitle"></ng-container>
         </div>
+        
+        <div class="py-rem-1 p-lg-0 d-flex flex-column justify-content-center align-items-center flex-lg-row flex-grow-1 border-x-2 border-x-lg-0 border-color-secondary-500">
+          <div *ngFor="let card of productCards" class="services__card width-100 width-lg-25 p-rem-1">
+            <app-product-card [card]="card">
+              <app-button-secondary title="Book"></app-button-secondary>
+            </app-product-card>
+          </div>
+        </div>
+        
+        <ng-template #servicesTitle>
+          <h3 class="font-42 spacing-px-1 font-family-nexa text-shadow-primary color-white">OUR SERVICES</h3>
+        </ng-template>
       </div>
-    
-      <div class="d-flex flex-grow-1 align-items-center justify-content-center width-100">
-        <div class="row width-100 max-width-992">
-          <div data-scroll data-scroll-class="services__card--visible" data-scroll-repeat="true" data-scroll-target="#services-section" *ngFor="let card of productCards" class="services__card col-3 px-rem-1">
-            <app-product-card [card]="card"></app-product-card>
-          </div>
-        </div>
+      
+      <div class="width-100 height-100 d-flex pos-absolute top-0 z-index-minus-1" data-scroll data-scroll-speed="-4">
+        <div class="services__image-plh width-100 height-100 d-flex d-lg-none"></div>
+        <figure class="width-100 d-none d-lg-flex">
+          <img src="/assets/img/png/main-bg-1.png" class="width-lg-100" alt="Background image #2">
+        </figure>
       </div>
       
     </div>
