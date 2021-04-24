@@ -7,7 +7,7 @@ import { Observable, Subject } from 'rxjs';
 import { map, throttleTime } from 'rxjs/operators';
 
 import { MOCK_PRODUCTS, MOCK_QUOTES, MOCK_CERTIFICATES, MOCK_SLIDES } from '../constants';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -27,7 +27,6 @@ export class MainContainerComponent implements OnInit {
 
   public scroll: LocomotiveScroll;
   public isBelowTreshold$: Observable<boolean>;
-  public form: FormGroup;
   
   private scrollListener$: Subject<any> = new Subject();
   private locomotiveScrollEventName = 'scroll';
@@ -45,28 +44,15 @@ export class MainContainerComponent implements OnInit {
     this.initLocomotiveScroll();
     this.initIsBelowTreshold();
     this.initResizeObserver();
-    this.initForm();
   }
   
   ngAfterViewInit(): void {
     this.listenToScroll();
     this.listenToResize();
   }
-
-  public onSubmit(): void {
-    console.log('CONTACT FORM SUBMITTED');
-  }
   
   public onScrollDown(): void {
     this.scroll.scrollTo(this.document.documentElement.clientHeight);
-  }
-  
-  private initForm(): void {
-    this.form = this.fb.group({
-      name: this.fb.control('', [Validators.required]),
-      email: this.fb.control('', [Validators.required]),
-      msg: this.fb.control('')
-    });
   }
   
   private listenToScroll(): void {

@@ -8,7 +8,7 @@ import { NgButtonModule, NgExpansionPanelModule, BrandSignatureModule, ScrollDow
 import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
 
 import { MainRoutingModule } from './main-routing.module';
-import { COMPONENTS } from './main-container';
+import { COMPONENTS } from './container';
 
 
 @NgModule({

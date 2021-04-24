@@ -4,6 +4,7 @@ import { DesktopBrandingComponent } from './partials/desktop-branding/desktop-br
 import { CertificatesComponent } from './partials/certificates/certificates.component';
 import { BrandServicesComponent } from './partials/brand-services/brand-services.component';
 import { ContactUsComponent } from './partials/contact-us/contact-us.component';
+import { NewsletterComponent } from './partials/newsletter/newsletter.component';
 
 
 export const COMPONENTS = [
@@ -11,5 +12,6 @@ export const COMPONENTS = [
   DesktopBrandingComponent,
   CertificatesComponent,
   BrandServicesComponent,
-  ContactUsComponent
+  ContactUsComponent,
+  NewsletterComponent
 ]
