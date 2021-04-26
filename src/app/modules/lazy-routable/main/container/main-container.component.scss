@@ -2,15 +2,6 @@
 @import 'mixins/_all';
 @import '_core-colors';
 
-$services-qty: 4;
-
-@for $i from 1 through $services-qty {
-  .services__shevron:nth-child(#{$i}) {
-    transform: translateY($i * -3rem);
-    animation-delay: .3s * $i;
-  }
-}
-
 .branding {
   @include e('right') {
     background-color: rgba(125, 201, 189, .5);

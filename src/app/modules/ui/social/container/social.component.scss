@@ -1,0 +1,15 @@
+
+.social {
+  width: 20px;
+  height: 20px;
+  background: no-repeat center;
+  &.facebook {
+    background: no-repeat center url('/assets/img/svg/facebook.svg');
+  }
+  &.linkedin {
+    background: no-repeat center url('/assets/img/svg/linkedin.svg');
+  }
+  &.instagram {
+    background: no-repeat center url('/assets/img/svg/instagram.svg');
+  }
+}

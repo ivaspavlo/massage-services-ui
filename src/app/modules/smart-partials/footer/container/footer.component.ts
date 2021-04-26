@@ -1,7 +1,7 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FOOTER_MENU_ITEMS, SOCIAL_BUTTONS } from '../constants';
-import { IFooterItem, ISocialButton } from '../interfaces';
+import { FOOTER_MENU_ITEMS } from '../constants';
+import { IFooterItem } from '../interfaces';
 
 
 @Component({
@@ -12,7 +12,6 @@ import { IFooterItem, ISocialButton } from '../interfaces';
 })
 export class FooterComponent implements OnInit {
 
-  public socialButtons: ISocialButton[] = SOCIAL_BUTTONS;
   public footerItems: IFooterItem[] = FOOTER_MENU_ITEMS;
 
   constructor() { }
