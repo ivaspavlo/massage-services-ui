@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '@app/shared/shared.module';
-import { NgButtonModule, NgExpansionPanelModule, BrandSignatureModule, ScrollDownModule, CarouselModule, ArrowAnimatedButtonModule, ProductCardModule, SliderQuoteModule, InputModule, ButtonMainModule, SliderModule, ButtonSecondaryModule, HorizontalMenuModule } from '@app/modules/ui';
+import { NgExpansionPanelModule, BrandSignatureModule, ScrollDownModule, CarouselModule, ArrowAnimatedButtonModule, ProductCardModule, SliderQuoteModule, InputModule, ButtonMainModule, SliderModule, ButtonSecondaryModule, HorizontalMenuModule, SocialModule, LogoModule } from '@app/modules/ui';
 import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
 
 import { MainRoutingModule } from './main-routing.module';
@@ -20,7 +20,6 @@ import { COMPONENTS } from './container';
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
-    NgButtonModule,
     NgExpansionPanelModule,
     HeaderModule,
     BrandSignatureModule,
@@ -34,7 +33,9 @@ import { COMPONENTS } from './container';
     ButtonMainModule,
     SliderModule,
     ButtonSecondaryModule,
-    HorizontalMenuModule
+    HorizontalMenuModule,
+    SocialModule,
+    LogoModule
   ]
 })
 export class MainModule { }

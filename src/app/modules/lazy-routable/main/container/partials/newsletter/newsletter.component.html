@@ -1,8 +1,8 @@
 
 <div class="newsletter width-75 py-rem-3 px-rem-4 d-flex justify-content-between pos-relative bg-white z-index-1" data-scroll data-scroll-speed="5">
-  <h3 class="width-50 font-40 font-weight-bold font-family-nexa color-grey-800">Subscribe To Our Newsletter</h3>
+  <h3 class="width-50 font-40 font-weight-bold font-family-nexa d-flex align-items-center color-grey-800">Subscribe To Our Newsletter</h3>
   <form [formGroup]="newsletterForm" markTouched (ngSubmit)="onSubmit()" class="width-50">
     <app-input [formControl]="newsletterForm.get('newsletter')" controlName="newsletter" label="Email" color="secondary" placeholder="Email placeholder"></app-input>
-    <app-button-secondary title="Subscribe"></app-button-secondary>
+    <app-button-main title="Subscribe" filled="true"></app-button-main>
   </form>
 </div>

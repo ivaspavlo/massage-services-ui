@@ -1,0 +1,6 @@
+
+<ul class="d-flex align-space-between">
+  <li *ngFor="let btn of socialButtons" [ngClass]="btn.name" class="social hover-scale transition-1 cursor-pointer mx-rem-0_5">
+    <a [href]="btn.link" class="d-flex width-100 height-100"></a>
+  </li>
+</ul>

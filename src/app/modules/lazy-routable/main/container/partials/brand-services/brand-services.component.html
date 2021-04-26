@@ -1,25 +1,40 @@
 
-<section [visibilityObserver]="{threshold: 0.1}" (visible)="isVisible = $event" class="services-wrap d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden height-100">
-
-  <div class="services width-100 mt-rem-4 py-rem-1 pos-relative d-flex justify-content-center">
-    <div class="max-width-992 pos-relative width-100">
-      <div class="services__title width-100 pos-absolute font-24 b-radius-4 text-shadow-primary" [ngClass]="{'services__title--is-visible': isVisible}">
-        <p class="font-22">We bring the best of our skills to meet specific needs</p>
-        <div class="d-flex flex-column py-rem-0_75">
-          <i *ngFor="let i of 3 | fill" class="services__shevron" [ngClass]="{'services__shevron--is-visible': isVisible}"></i>
-        </div>
-        <p class="font-42">Our services</p>
-      </div>
-      <app-slider-quote [quotes]="quotes"></app-slider-quote>
-    </div>
+<div id="services" class="services py-rem-lg-2 d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden" data-scroll-section>
+  <div class="services__quotes-wrapper width-100 py-rem-1 pos-relative d-flex justify-content-center">
+    <app-slider-quote [quotes]="quotes"></app-slider-quote>
   </div>
-
-  <div class="d-flex flex-grow-1 align-items-center justify-content-center width-100">
-    <div class="row width-100 max-width-992">
-      <div *ngFor="let card of productCards" class="card col-3 px-rem-1" [ngClass]="{'card--is-visible': isVisible}">
-        <app-product-card [card]="card"></app-product-card>
+  
+  <div class="width-100 max-width-992 py-rem-2 p-lg-0 py-rem d-flex flex-column flex-grow-1">
+    <div class="px-rem-2 pb-rem-2 d-flex d-lg-none">
+      <ng-container *ngTemplateOutlet="servicesTitle"></ng-container>
+    </div>
+    
+    <div class="services__title d-none d-lg-flex flex-column width-100 font-24 b-radius-4 text-shadow-primary" data-scroll data-scroll-class="services__title--visible" data-scroll-repeat="true" data-scroll-target="#services">
+      <p class="width-25 font-22 font-family-nexa color-white">We bring the best of our skills to meet specific needs</p>
+      <div class="d-flex flex-column py-rem-0_75">
+        <i *ngFor="let i of 3 | fill" class="services__shevron" data-scroll data-scroll-class="services__shevron--visible" data-scroll-repeat="true" data-scroll-target="#services"></i>
+      </div>
+      <ng-container *ngTemplateOutlet="servicesTitle"></ng-container>
+    </div>
+    
+    <div class="py-rem-1 p-lg-0 d-flex flex-column justify-content-center align-items-center flex-lg-row flex-grow-1 border-x-2 border-x-lg-0 border-color-secondary-500">
+      <div *ngFor="let card of productCards" class="services__card width-100 width-lg-25 p-rem-1">
+        <app-product-card [card]="card">
+          <app-button-secondary title="Book"></app-button-secondary>
+        </app-product-card>
       </div>
     </div>
+    
+    <ng-template #servicesTitle>
+      <h3 class="font-42 spacing-px-1 font-family-nexa text-shadow-primary color-white">OUR SERVICES</h3>
+    </ng-template>
   </div>
-
-</section>
+  
+  <div class="width-100 height-100 d-flex pos-absolute top-0 z-index-minus-1" data-scroll data-scroll-speed="-4">
+    <div class="services__image-plh width-100 height-100 d-flex d-lg-none"></div>
+    <figure class="width-100 d-none d-lg-flex">
+      <img src="/assets/img/png/main-bg-1.png" class="width-lg-100" alt="Background image #2">
+    </figure>
+  </div>
+  
+</div>

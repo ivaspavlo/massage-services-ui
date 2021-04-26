@@ -7,7 +7,6 @@ import { Observable, Subject } from 'rxjs';
 import { map, throttleTime } from 'rxjs/operators';
 
 import { MOCK_PRODUCTS, MOCK_QUOTES, MOCK_CERTIFICATES, MOCK_SLIDES } from '../constants';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -36,8 +35,7 @@ export class MainContainerComponent implements OnInit {
   private resizeObserver: ResizeObserver;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document,
-    private fb: FormBuilder
+    @Inject(DOCUMENT) private document: Document
   ) { }
 
   ngOnInit(): void {

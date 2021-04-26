@@ -18,10 +18,10 @@ export * from './button-secondary/button-secondary.module';
 export * from './hamburger/hamburger.module';
 export * from './slider/slider.module';
 export * from './horizontal-menu/horizontal-menu.module';
+export * from './social/social.module';
 
 export * from './title/title.module';
 export * from './logo/logo.module';
 
 export * from './ng-expansion-panel/ng-expansion-panel.module';
 export * from './ng-menu/ng-menu.module';
-export * from './ng-button/ng-button.module';
