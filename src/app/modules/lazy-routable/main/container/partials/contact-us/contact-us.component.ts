@@ -11,16 +11,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactUsComponent implements OnInit {
 
-  public form: FormGroup;
+  public contacUsForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.form = this.getForm();
+    this.initForm();
   }
 
-  private getForm(): FormGroup {
-    return this.fb.group({
+  private initForm(): void {
+    this.contacUsForm = this.fb.group({
       name: this.fb.control('', [Validators.required]),
       email: this.fb.control('', [Validators.required]),
       msg: this.fb.control('')

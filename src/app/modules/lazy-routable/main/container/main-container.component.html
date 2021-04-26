@@ -5,7 +5,7 @@
   
   <div #scrollContainer data-scroll-container>
     
-    <div id="branding-section" data-scroll-section class="pos-relative d-flex flex-column justify-content-end align-items-center">
+    <div id="branding-section" class="pos-relative d-flex flex-column justify-content-end align-items-center" data-scroll-section>
       <div class="branding width-100 height-vh-100 max-width-992 d-flex justify-content-center align-items-center">
         
         <div class="branding__right width-100 height-100 d-flex flex-column align-items-end justify-content-center z-index-1 pos-relative">
@@ -34,7 +34,7 @@
       </div>
     </div>
     
-    <div id="cert-section" data-scroll-section class="height-vh-100 py-rem-3 d-flex flex-column pos-relative overflow-hidden">
+    <div id="cert-section" class="height-vh-100 py-rem-3 d-flex flex-column pos-relative overflow-hidden" data-scroll-section>
       
       <div id="cert-list" class="cert__list py-rem-2 mb-rem-2 width-100 d-flex justify-content-center z-index-1">
         <app-horizontal-menu class="max-width-992">
@@ -68,7 +68,7 @@
       
     </div>
     
-    <div id="services-section" data-scroll-section class="services py-rem-lg-2 d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden">
+    <div id="services-section" class="services py-rem-lg-2 d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden" data-scroll-section>
       <div class="services__quotes-wrapper width-100 py-rem-1 pos-relative d-flex justify-content-center">
         <app-slider-quote [quotes]="quotes"></app-slider-quote>
       </div>
@@ -108,15 +108,17 @@
       
     </div>
     
-    <footer class="footer" data-scroll-section>
-      <div class="footer_container">
-        <div class="newsletter" data-scroll data-scroll-speed="5">
-            <h1>Subscribe To Our Newsletter</h1>
-            <div class="newsletter_form">
-                <input type="email" placeholder="enter your email here">
-                <button class="">Subscribe</button>
-            </div>
-        </div>
+    <footer class="contactus width-100 d-flex flex-column align-items-center pos-relative" data-scroll-section>
+
+      <app-contact-us></app-contact-us>
+      
+      <app-newsletter></app-newsletter>
+      
+      <figure class="width-100 height-100 pos-absolute top-0 z-index-minus-1">
+        <img src="/assets/img/png/contactus-bg.png" class="height-100" alt="Background image #2">
+      </figure>
+      
+      <div class="footer_container width-100">
         <div class="footer_content_container">
             <div class="footer_content">
                 <div class="contact">
@@ -155,6 +157,7 @@
             </div>
         </div>
       </div>
+      
     </footer>
     
   </div>

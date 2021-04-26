@@ -1,6 +1,6 @@
 
 import { Routes } from '@angular/router';
-import { MainContainerComponent } from '../main-container/main-container.component';
+import { MainContainerComponent } from '../container/main-container.component';
 
 
 export enum MAIN_ROUTE_NAMES {
