@@ -23,4 +23,19 @@
       border-radius: 0 10px 10px 0;
     }
   }
+  @include e('icon') {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    @include background-image-center;
+    @include m('phone') {
+      background-image: url('/assets/img/svg/phone.svg');
+    }
+    @include m('location') {
+      background-image: url('/assets/img/svg/location.svg');
+    }
+    @include m('email') {
+      background-image: url('/assets/img/svg/email.svg');
+    }
+  }
 }
