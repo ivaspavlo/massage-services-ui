@@ -1,4 +1,6 @@
 
+@import 'mixins/bem';
+
 :host {
   width: 100%;
   display: flex;
@@ -6,7 +8,11 @@
 }
 
 .newsletter {
-  top: 3rem;
   border-radius: 25px;
   box-shadow: -2px -5px 10px 8px rgba(37,52,57,.2);
+  @include e('promo-link') {
+    width: 18px;
+    height: 18px;
+    background: center no-repeat url('/assets/img/svg/link.svg');
+  }
 }
