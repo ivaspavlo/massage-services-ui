@@ -1,49 +1,56 @@
 
-<div class="footer width-100 d-flex justify-content-center">
-  <div class="width-100 max-width-992 pos-relative d-flex flex-wrap justify-content-between">
-    <div class="width-100 width-lg-25 d-flex flex-column">
-      <app-logo size="sm"></app-logo>
-      <h2 class="font-22 font-weight-bold font-family-nexa">TKACHUK MASSOTHERRAPY</h2>
+<div class="footer width-100 pt-rem-4 d-flex justify-content-center bg-grey-700">
+  <div class="width-100 max-width-992 border-top-1 border-color-primary-500 pos-relative d-flex flex-wrap justify-content-between">
+    <div class="width-100 width-md-50 d-flex flex-wrap">
+      <div class="width-100 d-flex align-items-center flex-column py-rem-1 border-bottom-1 border-color-primary-500">
+        <app-logo size="sm"></app-logo>
+        <h2 class="font-22 font-weight-bold font-family-nexa">TKACHUK MASSOTHERRAPY</h2>
+      </div>
+      <ul class="width-50 py-rem-1 d-flex flex-column">
+        <div class="width-100 mb-rem-0_5 d-flex flex-column align-items-center justify-content-start">
+          <i class="footer__contact-icon footer__contact-icon--phone mb-rem-2"></i>
+          <p class="mb-rem-0_5 color-white">+380 111 333 2222</p>
+          <p class="mb-rem-0_5 color-white">+380 111 333 2222</p>
+        </div>
+        <div class="width-100 mb-rem-0_5 d-flex flex-column align-items-center justify-content-start">
+          <i class="footer__contact-icon footer__contact-icon--email mb-rem-2"></i>
+          <p class="mb-rem-0_5 color-white">tkachuk@masseur.com</p>
+        </div>
+      </ul>
+      <ul class="width-50 py-rem-1">
+        <div class="width-100 mb-rem-0_5 d-flex flex-column align-items-center justify-content-start">
+          <i class="footer__contact-icon footer__contact-icon--location mb-rem-2"></i>
+          <p class="mb-rem-0_5 color-white">Kyiv, Saratovska str. 10</p>
+        </div>
+        <div class="width-100 mb-rem-0_5 d-flex flex-column align-items-center justify-content-start">
+          <i class="footer__contact-icon footer__contact-icon--timetable mb-rem-2"></i>
+          <p class="mb-rem-0_5 color-white">Mo - Fr: 09:00 - 20:00</p>
+          <p class="mb-rem-0_5 color-white">Sa: 09:00 - 12:00</p>
+        </div>
+        <div class="width-100 mt-rem-2 d-flex justify-content-center align-items-center">
+          <app-social></app-social>
+        </div>
+      </ul>
     </div>
-    <ul class="width-25 d-flex flex-column">
-      <li><a class="color-white" href="#">Discounts & promotions</a></li>
-      <li><a class="color-white" href="#">Loyalty programm</a></li>
-      <li><a class="color-white" href="#">Payment methods</a></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+    <ul class="width-50 width-md-25 py-rem-2 pl-rem-1 d-flex flex-column">
+      <li class="pb-rem-1_5"><a class="color-white font-18 hover-opacity transition-1" href="#">Discounts & promotions</a></li>
+      <li class="pb-rem-1_5"><a class="color-white font-18 hover-opacity transition-1" href="#">Loyalty programm</a></li>
+      <li class="pb-rem-1"><p class="color-white font-18" href="#">Payment methods:</p></li>
+      <li>
+        <figure class="footer__payment-method width-50"><img class="width-100" src="/assets/img/png/payment-methods.png" alt="Payment Methods"></figure>
+      </li>
     </ul>
-    <ul class="width-25 d-flex flex-column">
-      <div class="width-100 mb-rem-0_5 d-flex flex-column align-items-center justify-content-start">
-        <i class="contactus__icon contactus__icon--phone mb-rem-2"></i>
-        <p class="mb-rem-0_5 color-grey-700">+380 111 333 2222</p>
-        <p class="mb-rem-0_5 color-grey-700">+380 111 333 2222</p>
-      </div>
-      <div class="width-100 mb-rem-0_5 d-flex flex-column align-items-center justify-content-start">
-        <i class="contactus__icon contactus__icon--email mb-rem-2"></i>
-        <p class="mb-rem-0_5 color-grey-700">tkachuk@masseur.com</p>
-      </div>
-      <div class="width-100 mb-rem-0_5 d-flex flex-column align-items-center justify-content-start">
-        <i class="contactus__icon contactus__icon--location mb-rem-2"></i>
-        <p class="mb-rem-0_5 color-grey-700">Kyiv, Saratovska str. 10</p>
-      </div>
-      <div class="width-100 mb-rem-0_5 d-flex flex-column align-items-center justify-content-start">
-        <i class="contactus__icon contactus__icon--timetable mb-rem-2"></i>
-        <p class="mb-rem-0_5 color-grey-700">Mo - Fr: 09:00 - 20:00</p>
-        <p class="mb-rem-0_5 color-grey-700">Sa: 09:00 - 12:00</p>
-      </div>
-      <div class="width-100 mt-rem-2 d-flex justify-content-center align-items-center">
-        <app-social></app-social>
-      </div>
+    <ul class="width-50 width-md-25 py-rem-2 pl-rem-1 d-flex flex-column">
+      <li class="pb-rem-1_5"><a class="color-white font-18 hover-opacity transition-1" href="#">Service statements</a></li>
+      <li class="pb-rem-1_5"><a class="color-white font-18 hover-opacity transition-1" href="#">Privacy policy</a></li>
+      <li class="pb-rem-1_5"><a class="color-white font-18 hover-opacity transition-1" href="#">Contradictions</a></li>
     </ul>
-    <ul class="width-25 d-flex flex-column">
-      <li><a class="color-white" href="#">Service statements</a></li>
-      <li><a class="color-white" href="#">Privacy policy</a></li>
-      <li><a class="color-white" href="#">Contradictions</a></li>
-    </ul>
-    <div class="width-100">
-      bottom panel goes here
+    <div class="width-100 py-rem-1 border-top-1 border-color-primary-500 d-flex justify-content-between">
+      <p class="font-12 color-white cursor-default">Copyright &copy; 2021 All Rights Reserverd by m1</p>
+      <a class="d-flex align-items-center font-14 color-primary-500 cursor-pointer hover-opacity">
+        <i class="footer__bottom-icon mx-px-5"></i>
+        <span>Site Map</span>
+      </a>
     </div>
   </div>
 </div>
