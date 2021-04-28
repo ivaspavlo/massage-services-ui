@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TitleModule, LogoModule, NgMenuModule } from '@app/modules/ui';
+import { TitleModule, LogoModule, NgMenuModule, SocialModule } from '@app/modules/ui';
 
 import { FooterComponent } from './container/footer.component';
 import { MobileFooterMenuComponent } from './container/partials/mobile-footer-menu/mobile-footer-menu.component';
@@ -21,6 +21,7 @@ import { BottomPanelComponent } from './container/partials/bottom-panel/bottom-p
     CommonModule,
     TitleModule,
     LogoModule,
+    SocialModule,
     NgMenuModule
   ],
   exports: [

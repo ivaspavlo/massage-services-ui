@@ -1,0 +1,17 @@
+
+<app-dialog-content size="md">
+  <div class="width-100 p-rem-3 b-radius-4 bg-primary-500">
+    <div class="contactus-header mb-rem-1 d-flex flex-column justify-content-center">
+      <h4 class="font-26 color-white text-align-center">FEEDBACK FORM</h4>
+      <p class="font-14 mt-rem-0_5 mx-rem-2 pt-rem-0_5 text-align-center border-top-1 color-accent-600">We appreciate every opinion <span class="font-12 color-warn-500">&hearts;</span></p>
+    </div>
+    <form [formGroup]="contacUsForm" markTouched (ngSubmit)="onSubmit()" class="d-flex flex-column">
+      <app-input [formControl]="contacUsForm.get('name')" controlName="name" label="Name" color="secondary" placeholder="Name placeholder"></app-input>
+      <app-input [formControl]="contacUsForm.get('email')" controlName="email" label="Email" color="secondary" placeholder="Email placeholder"></app-input>
+      <app-input [formControl]="contacUsForm.get('msg')" controlName="msg" label="Message" color="secondary" placeholder="Msg placeholder" type="textarea"></app-input>
+      <div class="width-100 d-flex justify-content-center mt-rem-2">
+        <app-button-main title="send" [invalid]="!contacUsForm.valid"></app-button-main>
+      </div>
+    </form>
+  </div>
+</app-dialog-content>

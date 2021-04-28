@@ -7,6 +7,8 @@ import { Observable, Subject } from 'rxjs';
 import { map, throttleTime } from 'rxjs/operators';
 
 import { MOCK_PRODUCTS, MOCK_QUOTES, MOCK_CERTIFICATES, MOCK_SLIDES } from '../constants';
+import { DialogService } from '@app/modules/ui/dialog/services';
+import { QuoteModalComponent } from '../modals/quote-modal/quote-modal.component';
 
 
 @Component({
@@ -35,7 +37,8 @@ export class MainContainerComponent implements OnInit {
   private resizeObserver: ResizeObserver;
 
   constructor(
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
+    private dialogService: DialogService
   ) { }
 
   ngOnInit(): void {
@@ -51,6 +54,12 @@ export class MainContainerComponent implements OnInit {
   
   public onScrollDown(): void {
     this.scroll.scrollTo(this.document.documentElement.clientHeight);
+  }
+  
+  public onShowQuoteModal(): void {
+    this.dialogService.open(QuoteModalComponent).afterClosed.subscribe(
+      result => console.log('Dialog closed', result)
+    );
   }
   
   private listenToScroll(): void {
