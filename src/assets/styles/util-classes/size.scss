@@ -21,7 +21,10 @@
 
 @include sm { }
 
-@include md { }
+@include md {
+  .width-md-25 { width: 25% !important; }
+  .width-md-50 { width: 50% !important; }
+}
 
 @include lg {
   .width-lg-25 { width: 25% !important; }

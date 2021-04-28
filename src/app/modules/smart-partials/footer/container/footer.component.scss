@@ -1,5 +1,5 @@
 
-@import 'mixins/bem';
+@import 'mixins/_all';
 @import 'core-colors';
 
 :host {
@@ -7,6 +7,35 @@
 }
 
 .footer {
-  background-color: $grey-700;
-  padding: 3em 0 4em 0;
+  @media only screen and (min-width: 992px) {
+    background: rgb(38,39,43);
+    background: linear-gradient(90deg, rgba(38,39,43,1) 0%, rgba(101,101,101,1) 15%, rgba(101,101,101,1) 85%, rgba(38,39,43,1) 100%);
+  }
+  background: $grey-700;
+  @include e('bottom-icon') {
+    width: 12px;
+    height: 12px;
+    background: center no-repeat url('/assets/img/svg/footer-link.svg');
+  }
+  @include e('contact-icon') {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    @include background-image-center;
+    @include m('phone') {
+      background-image: url('/assets/img/svg/phone.svg');
+    }
+    @include m('location') {
+      background-image: url('/assets/img/svg/location.svg');
+    }
+    @include m('email') {
+      background-image: url('/assets/img/svg/email.svg');
+    }
+    @include m('timetable') {
+      background-image: url('/assets/img/svg/timetable.svg');
+    }
+  }
+  @include e('payment-method') {
+    max-width: 100px;
+  }
 }
