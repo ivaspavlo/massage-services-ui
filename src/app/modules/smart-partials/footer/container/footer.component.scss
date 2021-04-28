@@ -9,8 +9,4 @@
 .footer {
   background-color: $grey-700;
   padding: 3em 0 4em 0;
-  @include e('content') {
-    top: 3em;
-    width: 80%;
-  }
 }

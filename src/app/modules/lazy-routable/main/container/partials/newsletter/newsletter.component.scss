@@ -1,5 +1,6 @@
 
 @import 'mixins/bem';
+@import '_core-colors';
 
 :host {
   width: 100%;
@@ -8,8 +9,8 @@
 }
 
 .newsletter {
-  border-radius: 25px;
   box-shadow: -2px -5px 10px 8px rgba(37,52,57,.2);
+  background-color: rgba(125,201,189,.7);
   @include e('promo-link') {
     width: 18px;
     height: 18px;

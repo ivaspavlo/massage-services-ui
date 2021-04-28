@@ -70,7 +70,7 @@
     color: #fff;
     @include m('visible') {
       opacity: 1;
-      transform: translateY(-20px);
+      transform: translateY(-35px);
     }
   }
   @include e('shevron') {
