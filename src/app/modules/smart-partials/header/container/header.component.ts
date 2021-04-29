@@ -5,7 +5,7 @@ import { DialogService } from '@app/modules/ui/dialog/services';
 
 import { MAIN_MENU_ITEMS } from '../constants';
 import { IHeaderMenuItem } from '../interfaces';
-import { LoginModalComponent } from '../modals/login-modal/login-modal.component';
+import { LoginModalComponent } from '../modals';
 
 
 @Component({

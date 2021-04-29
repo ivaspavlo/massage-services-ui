@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '@app/shared/shared.module';
-import { TitleModule, ExpansionPanelModule, LogoModule, PhoneAnimationModule, InputModule, ButtonMainModule, HamburgerModule } from '@app/modules/ui';
+import { TitleModule, ExpansionPanelModule, LogoModule, PhoneAnimationModule, InputModule, ButtonMainModule, HamburgerModule, DropdownModule } from '@app/modules/ui';
 
 import { HeaderComponent } from './container/header.component';
 import { MODALS } from './modals';
@@ -28,7 +28,8 @@ import { MODALS } from './modals';
     PhoneAnimationModule,
     InputModule,
     ButtonMainModule,
-    HamburgerModule
+    HamburgerModule,
+    DropdownModule
   ],
   exports: [
     HeaderComponent
