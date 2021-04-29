@@ -2,18 +2,8 @@
 import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { interval, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { IQuote } from '../interfaces';
 
-
-interface IQuote {
-  id: string;
-  text: string;
-  name: string;
-  about: string;
-  img: string;
-  socialLink: string;
-  socialImg: string;
-  socialNetwork: 'facebook' | 'instagram' | 'linkedin',
-}
 
 @Component({
   selector: 'app-slider-quote',

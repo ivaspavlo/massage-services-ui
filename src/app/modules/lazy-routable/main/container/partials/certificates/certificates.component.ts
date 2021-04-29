@@ -1,5 +1,7 @@
 
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { ISlide } from '@app/interfaces';
+import { ICertificate } from '../../../interfaces';
 
 
 @Component({
@@ -10,19 +12,11 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 })
 export class CertificatesComponent implements OnInit {
 
-  @Input() certificates: any[] = [
-    { src: '/assets/img/png/cert-1.jpg' },
-    { src: '/assets/img/png/cert-2.jpg' },
-    { src: '/assets/img/png/cert-1.jpg' },
-    { src: '/assets/img/png/cert-2.jpg' },
-    { src: '/assets/img/png/cert-1.jpg' }
-  ];
-  public isVisible = false;
+  @Input() certificates: ICertificate[];
+  @Input() slides: ISlide[];
 
   constructor() { }
 
   ngOnInit(): void { }
-
-  ngAfterViewInit(): void { }
 
 }

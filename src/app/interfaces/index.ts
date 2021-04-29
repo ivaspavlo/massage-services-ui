@@ -1,3 +1,6 @@
 
 // ui
 export * from '@app/modules/ui/blog-article/interfaces';
+export * from '@app/modules/ui/slider/interfaces';
+export * from '@app/modules/ui/product-card/interfaces';
+export * from '@app/modules/ui/slider-quote/interfaces';

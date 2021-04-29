@@ -1,0 +1,59 @@
+
+:host {
+  width: 100%;
+}
+
+.sub-menu {
+	position: absolute; top: 100%;
+	padding-left: 0;
+	margin: 0;
+	background-color: #3AACE9;
+	transition: .3s ease;
+	transform-origin: 0 0;
+	transform: scale(0);
+	opacity: 0;
+	.menu-item {
+		float: none;
+		transition: .3s ease;
+		transform: translateY(-20px);
+		opacity: 0;
+		a {
+			white-space: nowrap;
+			color: white;
+			padding: 15px 20px;
+		}
+    $delay: 100;
+		@for $i from 1 through 10{
+			&:nth-child(#{$i}){
+				transition-delay: #{$delay}ms;
+				$delay: $delay + 50;
+			}
+		}
+	}
+	.sub-menu{
+		left: 100%;
+		top: 0;
+	}
+}
+
+.menu-item {
+  position: relative;
+  float: left;
+  a {
+    display: block;
+    padding: 10px 20px;
+    transition: .3s ease;
+  }
+  &:hover > .sub-menu{
+    transform: scale(1);
+    opacity: 1;
+  }
+  &:hover > a { background-color: rgba(255,255,255,.3) }
+}
+
+.css-transform {
+	.menu-item:hover > .sub-menu > .menu-item {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

@@ -1,14 +1,8 @@
 
-@import '_core-colors';
 @import 'mixins/_all';
 
-$services-qty: 4;
-
-@for $i from 1 through $services-qty {
-  .services__shevron:nth-child(#{$i}) {
-    transform: translateY($i * -3rem);
-    animation-delay: .3s * $i;
-  }
+:host {
+  width: 100%;
 }
 
 .services {
@@ -24,7 +18,7 @@ $services-qty: 4;
     color: #fff;
     @include m('visible') {
       opacity: 1;
-      transform: translateY(-20px);
+      transform: translateY(-35px);
     }
   }
   @include e('shevron') {

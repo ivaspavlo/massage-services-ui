@@ -1,13 +1,7 @@
 
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { IProductCard } from '../interfaces';
 
-
-interface ICard {
-  background: string;
-  title: string;
-  info: string;
-  button?: string;
-}
 
 @Component({
   selector: 'app-product-card',
@@ -17,7 +11,7 @@ interface ICard {
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input() card: ICard;
+  @Input() card: IProductCard;
 
   constructor() { }
 

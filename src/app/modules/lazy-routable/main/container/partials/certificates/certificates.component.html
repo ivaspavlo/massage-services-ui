@@ -1,40 +1,34 @@
 
-<section class="height-vh-100 bg-white" [visibilityObserver]="{ threshold: 0.1 }" (visible)="isVisible = $event" class="d-flex flex-column container-fluid height-vh-100 py-rem-3 pos-relative overflow-hidden">
-
-  <div class="row no-gutters width-100 height-100 pos-absolute bottom-0 z-index-minus-1">
-    <figure class="width-100">
-      <img src="/assets/img/png/cert-bg.jpeg" class="cert-bg width-100 pos-relative" [ngClass]="{ 'cert-bg--is-visible': isVisible }" alt="Certificates Section Background">
-    </figure>
-  </div>
-
-  <div class="row no-gutters d-flex justify-content-center align-items-center cert-list py-rem-2">
-    <ul class="d-flex justify-content-between width-100 max-width-992">
-      <li class="cert-item d-flex px-rem-1" *ngFor="let cert of certificates; let idx = index;" [ngClass]="{ 'cert-item--is-visible': isVisible }">
-        <figure><img [src]="cert.src" class="width-100 box-shadow-2 p-rem-1 b-radius-4" alt="Certificate #{{ idx }}"></figure>
+<div id="cert-section" class="height-vh-100 py-rem-3 d-flex flex-column pos-relative overflow-hidden" data-scroll-section>
+  
+  <div id="cert-list" class="cert__list py-rem-2 mb-rem-2 width-100 d-flex justify-content-center z-index-1">
+    <app-horizontal-menu class="max-width-992">
+      <li horMenuItem class="cert__item px-rem-1" *ngFor="let cert of certificates; let idx = index;">
+        <figure><img class="width-100 p-rem-1 box-shadow-4 b-radius-4" [src]="cert.src" alt="Certificate #{{ idx }}"></figure>
       </li>
-      <li class="cert-item-button d-flex align-items-center pl-rem-1" [ngClass]="{ 'cert-item-button--is-visible': isVisible }">
-        <app-arrow-animated-button></app-arrow-animated-button>
-      </li>
-    </ul>
+    </app-horizontal-menu>
   </div>
-
-  <div class="row no-gutters d-flex border-color-secondary-500 flex-grow-1 justify-content-center mt-rem-3 border-x-2">
-    <div class="row no-gutters max-width-992">
-      <div class="col-8">
-        <div class="cert-carousel width-100 height-100 border-y-1 border-color-secondary-500" [ngClass]="{ 'cert-carousel--is-visible': isVisible }">
-          <app-carousel></app-carousel>
+  
+  <div class="width-100 py-rem-1 d-flex flex-grow-1 justify-content-center border-x-2 border-color-secondary-500 z-index-1">
+    <div class="width-100 max-width-992 d-flex justify-content-center justify-content-lg-start pos-relative">
+      
+      <div class="cert__slider height-100 px-rem-lg-2">
+        <app-slider [slides]="slides"></app-slider>
+      </div>
+      
+      <div class="cert__info pos-absolute right-0 px-rem-2 py-rem-1_5 b-radius-4 d-none d-lg-flex align-items-center justify-content-center flex-column" data-scroll data-scroll-speed="-1" data-scroll-class="cert__info--visible">
+        <h3 class="mb-rem-0_5 text-shadow-primary color-secondary-500 font-30">Some seo text</h3>
+        <p class="line-height-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque excepturi non maiores velit id temporibus? Quo inventore optio mollitia sed numquam itaque necessitatibus praesentium at, perferendis molestiae, repellat corporis.</p>
+        <div class="mt-rem-2 d-flex justify-content-end">
+          <app-button-secondary title="Read more" [filled]="true"></app-button-secondary>
         </div>
       </div>
-      <div class="col-3 offset-1 py-rem-1">
-        <div class="cert-info p-rem-1 b-radius-4 d-flex width-100 height-100 align-items-center justify-content-center flex-column">
-          <h3 class="text-shadow-primary mb-rem-0_5 width-100 color-secondary-500 font-30">Some seo text</h3>
-          <p class="line-height-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque excepturi non maiores velit id temporibus? Quo inventore optio mollitia sed numquam itaque necessitatibus praesentium at, perferendis molestiae, repellat corporis.</p>
-          <div class="width-100 d-flex justify-content-end">
-            <button class="button-size-lg b-radius-4 color-secondary-500 bg-transparent border-2 font-16 hover-box-shadow cursor-pointer mt-rem-1">Read More</button>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
-
-</section>
+  
+  <figure class="width-100 pos-absolute top-0">
+    <img src="/assets/img/png/cert-bg.jpeg" class="width-lg-100" alt="Background image #2">
+  </figure>
+  
+</div>
