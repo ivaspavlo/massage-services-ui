@@ -29,18 +29,15 @@ a {
   transition: all $delay ease-in-out;
 }
 
-/* The arrow body */
 .arrow::before {
   width: 0%;
   height: 2px;
   left: -25px;
   top: 50%;
-  
-  background: $colour;
   transform: translate(0, -50%);
+  background: $colour;
 }
 
-/* The arrow head */
 .arrow::after {
   width: 10px;
   height: 10px;
@@ -65,8 +62,6 @@ a {
 }
 
 .arrow:hover::after {
-  width: 15px;
-  height: 15px;
   left: calc(50px - 24px/2);
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: scale(1.5) translate(-30%, -35%) rotate(45deg);
 }
