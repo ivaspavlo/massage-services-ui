@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DesktopBrandingComponent } from './desktop-branding.component';
+import { BrandingComponent } from './branding.component';
 
-describe('DesktopBrandingComponent', () => {
-  let component: DesktopBrandingComponent;
-  let fixture: ComponentFixture<DesktopBrandingComponent>;
+describe('BrandingComponent', () => {
+  let component: BrandingComponent;
+  let fixture: ComponentFixture<BrandingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DesktopBrandingComponent ]
+      declarations: [ BrandingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DesktopBrandingComponent);
+    fixture = TestBed.createComponent(BrandingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
