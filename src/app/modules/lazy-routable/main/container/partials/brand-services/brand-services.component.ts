@@ -1,5 +1,6 @@
 
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IProductCard, IQuote } from '@app/interfaces';
 
 
 @Component({
@@ -10,8 +11,8 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 })
 export class BrandServicesComponent implements OnInit {
 
-  @Input() productCards: any[];
-  @Input() quotes: any[];
+  @Input() productCards: IProductCard[];
+  @Input() quotes: IQuote[];
   @Output() showQuoteModal: EventEmitter<void> = new EventEmitter();
 
   constructor() { }

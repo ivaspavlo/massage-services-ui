@@ -1,5 +1,7 @@
 
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { ISlide } from '@app/interfaces';
+import { ICertificate } from '../../../interfaces';
 
 
 @Component({
@@ -10,8 +12,8 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 })
 export class CertificatesComponent implements OnInit {
 
-  @Input() certificates: any[];
-  @Input() slides: any[];
+  @Input() certificates: ICertificate[];
+  @Input() slides: ISlide[];
 
   constructor() { }
 
