@@ -1,5 +1,5 @@
 
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -10,10 +10,9 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 })
 export class BrandServicesComponent implements OnInit {
 
-  @Input() productCards: { background: string; title: string; info: string; button?: string; }[];
-  @Input() quotes: object;
-
-  public isVisible = false;
+  @Input() productCards: any[];
+  @Input() quotes: any[];
+  @Output() showQuoteModal: EventEmitter<void> = new EventEmitter();
 
   constructor() { }
 

@@ -1,18 +1,25 @@
 
-<div id="services" class="services py-rem-lg-2 d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden" data-scroll-section>
-  <div class="services__quotes-wrapper width-100 py-rem-1 pos-relative d-flex justify-content-center">
+<div id="services-section" class="services py-rem-lg-2 d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden" data-scroll-section>
+  <div class="services__quotes-wrapper width-100 py-rem-1 pos-relative d-flex flex-column align-items-center justify-content-center">
     <app-slider-quote [quotes]="quotes"></app-slider-quote>
   </div>
   
-  <div class="width-100 max-width-992 py-rem-2 p-lg-0 py-rem d-flex flex-column flex-grow-1">
+  <div class="width-100 my-rem-1 d-flex justify-content-center bg-dark-transparent">
+    <div class="width-100 max-width-992 py-rem-1 d-flex flex-column align-items-center">
+      <p class="pb-rem-0_5 font-18 color-white spacing-px-1">Please share your feedback with us <span class="font-14 color-warn-500">&hearts;</span></p>
+      <app-button-secondary title="Quote" (click)="showQuoteModal.emit()"></app-button-secondary>
+    </div>
+  </div>
+  
+  <div class="width-100 max-width-992 py-rem-2 p-lg-0 py-rem d-flex flex-column flex-grow-1"> 
     <div class="px-rem-2 pb-rem-2 d-flex d-lg-none">
       <ng-container *ngTemplateOutlet="servicesTitle"></ng-container>
     </div>
     
-    <div class="services__title d-none d-lg-flex flex-column width-100 font-24 b-radius-4 text-shadow-primary" data-scroll data-scroll-class="services__title--visible" data-scroll-repeat="true" data-scroll-target="#services">
+    <div class="services__title d-none d-lg-flex flex-column width-100 font-24 b-radius-4 text-shadow-primary" data-scroll data-scroll-class="services__title--visible" data-scroll-repeat="true" data-scroll-target="#services-section">
       <p class="width-25 font-22 font-family-nexa color-white">We bring the best of our skills to meet specific needs</p>
       <div class="d-flex flex-column py-rem-0_75">
-        <i *ngFor="let i of 3 | fill" class="services__shevron" data-scroll data-scroll-class="services__shevron--visible" data-scroll-repeat="true" data-scroll-target="#services"></i>
+        <i *ngFor="let i of 3 | fill" class="services__shevron" data-scroll data-scroll-class="services__shevron--visible" data-scroll-repeat="true" data-scroll-target="#services-section"></i>
       </div>
       <ng-container *ngTemplateOutlet="servicesTitle"></ng-container>
     </div>
