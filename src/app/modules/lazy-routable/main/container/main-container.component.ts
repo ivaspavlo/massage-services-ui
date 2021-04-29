@@ -83,8 +83,8 @@ export class MainContainerComponent implements OnInit {
   private initResizeObserver(): void {
     // @ts-ignore: https://github.com/ant-design/ant-design/issues/13405
     this.resizeObserver = new ResizeObserver((entries, observer) => {
+      console.log('resize')
       entries.forEach((entry, index) => {
-        const { inlineSize: width, blockSize: height } = entry.contentBoxSize[0];
         if (this.scroll) {
           this.scroll.update();
         }
