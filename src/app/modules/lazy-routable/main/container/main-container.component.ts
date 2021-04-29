@@ -43,7 +43,7 @@ export class MainContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.initLocomotiveScroll();
-    this.initIsBelowTreshold();
+    this.initTresholds();
     this.initResizeObserver();
   }
   
@@ -62,11 +62,15 @@ export class MainContainerComponent implements OnInit {
     );
   }
   
+  public onScrollTop(): void {
+    this.scroll.scrollTo(0);
+  }
+  
   private listenToScroll(): void {
     this.scroll.on(this.locomotiveScrollEventName, (res: any) => this.scrollListener$.next(res));
   }
   
-  private initIsBelowTreshold(): void {
+  private initTresholds(): void {
     this.isBelowTreshold$ = this.scrollListener$.pipe(
       map((res: any) => res.scroll.y > this.document.documentElement.clientHeight / 2),
       throttleTime(200)
@@ -83,7 +87,6 @@ export class MainContainerComponent implements OnInit {
   private initResizeObserver(): void {
     // @ts-ignore: https://github.com/ant-design/ant-design/issues/13405
     this.resizeObserver = new ResizeObserver((entries, observer) => {
-      console.log('resize')
       entries.forEach((entry, index) => {
         if (this.scroll) {
           this.scroll.update();

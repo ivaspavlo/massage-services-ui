@@ -19,6 +19,10 @@ a {
   border: 2px solid $colour;
   box-sizing: border-box;
   transition: all $delay ease;
+  &.top { transform: rotate(-90deg); }
+  &.bottom { transform: rotate(90deg); }
+  &.left { transform: rotate(180deg); }
+  &.right { transform: rotate(0); }
 }
 
 .arrow::before, .arrow::after {

@@ -11,7 +11,7 @@ import { Direction } from '../interfaces';
 })
 export class ArrowAnimatedButtonComponent implements OnInit {
   
-  @Input() direction: Direction = 'bottom';
+  @Input() direction: Direction = 'right';
 
   constructor() { }
 

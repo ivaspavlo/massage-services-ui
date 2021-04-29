@@ -93,3 +93,11 @@
     background-color: rgb(117,195,183,.5);
   }
 }
+
+.scroll-top-button {
+  bottom: 70px;
+  right: -100px;
+  @include m('visible') {
+    right: 20px;
+  }
+}
