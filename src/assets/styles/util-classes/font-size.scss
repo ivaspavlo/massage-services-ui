@@ -25,7 +25,9 @@
 
 @include sm { }
 
-@include md { }
+@include md {
+  .font-md-58 { font-size: 58px; }
+}
 
 @include lg { }
 
