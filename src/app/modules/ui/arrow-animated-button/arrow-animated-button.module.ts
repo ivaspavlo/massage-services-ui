@@ -1,5 +1,6 @@
 
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ArrowAnimatedButtonComponent } from './container/arrow-animated-button.component';
 
 
@@ -7,7 +8,9 @@ import { ArrowAnimatedButtonComponent } from './container/arrow-animated-button.
   declarations: [
     ArrowAnimatedButtonComponent
   ],
-  imports: [ ],
+  imports: [
+    CommonModule
+  ],
   exports: [
     ArrowAnimatedButtonComponent
   ]
