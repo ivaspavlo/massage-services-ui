@@ -24,6 +24,7 @@
 @include md {
   .width-md-25 { width: 25% !important; }
   .width-md-50 { width: 50% !important; }
+  .height-vh-md-100 { height: 100vh; }
 }
 
 @include lg {
