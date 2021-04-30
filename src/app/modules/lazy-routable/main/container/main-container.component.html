@@ -1,7 +1,9 @@
 
-<section>
+<section class="pos-relative">
   
-  <app-header [isShrinked]="isBelowTreshold$ | async"></app-header>
+  <header class="width-100 pos-sticky pos-lg-fixed top-0 z-index-2">
+    <app-header [isShrinked]="isBelowTreshold$ | async"></app-header>
+  </header>
   
   <div #scrollContainer data-scroll-container>
     
