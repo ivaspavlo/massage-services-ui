@@ -19,11 +19,14 @@
 .max-width-992 { max-width: 992px; }
 .max-width-1200 { max-width: 1200px; }
 
-@include sm { }
+@include sm {
+  .width-sm-50 { width: 50% !important; }
+}
 
 @include md {
   .width-md-25 { width: 25% !important; }
   .width-md-50 { width: 50% !important; }
+  .height-md-auto { height: auto; }
   .height-vh-md-100 { height: 100vh; }
 }
 

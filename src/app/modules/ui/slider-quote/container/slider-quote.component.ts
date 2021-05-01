@@ -18,7 +18,7 @@ export class SliderQuoteComponent implements OnInit {
   @ViewChild('slide') slide: ElementRef;
 
   public currentQuoteIndex = 0;
-  private quoteWidth = 400;
+  private quoteWidthPx = 350;
   private componentDestroyed$: Subject<void> = new Subject();
 
   constructor(
@@ -48,7 +48,7 @@ export class SliderQuoteComponent implements OnInit {
   }
 
   private moveSlide() {
-    this.renderer.setStyle(this.slide.nativeElement, 'transform', `translateX(-${this.currentQuoteIndex * this.quoteWidth}px)`);
+    this.renderer.setStyle(this.slide.nativeElement, 'transform', `translateX(-${this.currentQuoteIndex * this.quoteWidthPx}px)`);
     this.cdr.detectChanges();
   }
 
