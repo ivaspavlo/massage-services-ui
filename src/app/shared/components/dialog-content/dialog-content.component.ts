@@ -13,12 +13,12 @@ import { DIALOG_SIZES } from '@app/core/constants';
 export class DialogContentComponent implements OnInit {
   
   @Input() set size(value: string) {
-    this._size = value && DIALOG_SIZES[value] ? DIALOG_SIZES[value] : DIALOG_SIZES.md;
+    this._size = value && DIALOG_SIZES[value] ? DIALOG_SIZES[value] : DIALOG_SIZES.auto;
   }
   get size() {
     return this._size;
   }
-  private _size: string = '0px';
+  private _size: string = DIALOG_SIZES.auto;
 
   constructor(
     public dialog: DialogRef
