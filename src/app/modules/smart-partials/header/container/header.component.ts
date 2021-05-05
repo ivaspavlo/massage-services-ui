@@ -1,10 +1,10 @@
 
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { IHeaderDropdownMenu } from '@app/interfaces';
 
-import { DialogService } from '@app/modules/ui/dialog/services';
+import { DialogService } from '@app/modules/ui/dialog';
 
 import { MAIN_MENU_ITEMS } from '../constants';
-import { IHeaderMenuItem } from '../interfaces';
 import { LoginModalComponent } from '../modals';
 
 
@@ -17,7 +17,7 @@ import { LoginModalComponent } from '../modals';
 export class HeaderComponent implements OnInit {
 
   @Input() public isShrinked = false;
-  public menuItems: IHeaderMenuItem[] = MAIN_MENU_ITEMS;
+  public menuItems: IHeaderDropdownMenu[] = MAIN_MENU_ITEMS;
   public isOpen = false;
 
   constructor(
