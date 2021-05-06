@@ -1,0 +1,4 @@
+
+<button [routerLink]="routerLink" type="submit" #button (click)="onClick($event)" [ngClass]="{'filled': filled, 'not-filled': !filled}">
+  <span>{{title}}</span>
+</button>

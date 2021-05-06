@@ -15,15 +15,15 @@
           <li *ngFor="let item of menuItems" class="d-flex align-items-center">
             <app-header-dropdown [menu]="item"></app-header-dropdown>
           </li>
-          <ng-container>
-            
-          </ng-container>
+          <li class="d-flex align-items-center">
+            <app-header-dropdown (click)="onUserClick()" [menu]="userMenuSettings"></app-header-dropdown>
+          </li>
         </ul>
       </div>
   
       <div class="col-2">
         <div class="d-flex height-100 justify-content-end align-items-center">
-          <app-button-main (click)="onShowLoginModal()" title="BOOK ONLINE"></app-button-main>
+          <app-button-primary title="BOOK ONLINE" routerLink="/booking"></app-button-primary>
         </div>
       </div>
     
