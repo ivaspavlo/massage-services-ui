@@ -10,7 +10,7 @@
       <app-input [formControl]="contacUsForm.get('email')" controlName="email" label="Email" color="secondary" placeholder="Email placeholder"></app-input>
       <app-input [formControl]="contacUsForm.get('msg')" controlName="msg" label="Message" color="secondary" placeholder="Msg placeholder" type="textarea"></app-input>
       <div class="width-100 d-flex justify-content-center mt-rem-2">
-        <app-button-main title="send" [invalid]="!contacUsForm.valid"></app-button-main>
+        <app-button-primary title="send" [invalid]="!contacUsForm.valid"></app-button-primary>
       </div>
     </form>
   </div>

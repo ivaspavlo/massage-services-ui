@@ -17,8 +17,16 @@ import { LoginModalComponent } from '../modals';
 export class HeaderComponent implements OnInit {
 
   @Input() public isShrinked = false;
+
   public menuItems: IHeaderDropdownMenu[] = MAIN_MENU_ITEMS;
   public isOpen = false;
+  public get userMenuSettings() {
+    return {
+      title: this.user?.name || 'User',
+      icon: '/assets/img/svg/user.svg'
+    }
+  };
+  private user = null;
 
   constructor(
     private dialogService: DialogService
@@ -26,7 +34,15 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void { }
   
-  public onShowLoginModal(): void {
+  public onUserClick(): void {
+    if (this.user) {
+      
+    } else {
+      this.showLoginModal();
+    }
+  }
+  
+  private showLoginModal(): void {
     this.dialogService.open(LoginModalComponent).afterClosed.subscribe(
       result => console.log('Dialog closed', result)
     );

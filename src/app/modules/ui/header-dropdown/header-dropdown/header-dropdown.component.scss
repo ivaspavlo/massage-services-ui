@@ -20,17 +20,15 @@
 	}
 	&__title {
 		display: flex;
+		align-items: flex-end;
     padding: 10px 20px;
     transition: .3s ease;
 		border-top-left-radius: 4px;
 		border-top-right-radius: 4px;
 		color: #fff;
-		cursor: default;
+		cursor: pointer;
 		&--no-items {
 			border-radius: 4px;
-		}
-		&--has-link {
-			cursor: pointer;
 		}
 	}
 	&__list {
@@ -67,5 +65,13 @@
 				$delay: $delay + 50;
 			}
 		}
+	}
+	&__icon {
+		width: 20px;
+		height: 20px;
+		margin: 0 3px;
+		display: inline-flex;
+		background-position: center;
+		background-size: cover;
 	}
 }
