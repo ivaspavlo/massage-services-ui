@@ -2,7 +2,7 @@
 <section class="menu container-fluid" [ngClass]="{ 'menu--is-shrinked': isShrinked }">
   
   <div class="menu__desktop width-100 d-none d-lg-flex justify-content-center transition-1">
-    <div class="row no-gutters width-100 max-width-992">
+    <div class="row no-gutters width-100 max-width-992 px-rem-1">
       
       <div class="col">
         <div class="d-flex justify-content-start align-items-center">
@@ -16,7 +16,7 @@
             <app-header-dropdown [menu]="item"></app-header-dropdown>
           </li>
           <li class="d-flex align-items-center">
-            <app-header-dropdown (click)="onUserClick()" [menu]="userMenuSettings"></app-header-dropdown>
+            <app-header-dropdown [menu]="userMenuSettings"></app-header-dropdown>
           </li>
         </ul>
       </div>

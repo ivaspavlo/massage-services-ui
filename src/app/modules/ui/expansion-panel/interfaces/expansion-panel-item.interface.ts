@@ -1,5 +1,5 @@
 
 export interface IExpansionPanelItem {
-  name: string;
+  title: string;
   href: string;
 }

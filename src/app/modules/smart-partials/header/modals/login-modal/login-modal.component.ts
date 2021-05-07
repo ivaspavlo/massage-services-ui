@@ -24,9 +24,7 @@ export class LoginModalComponent implements OnInit {
     this.form = this.createForm();
   }
   
-  public onClose(): void {
-    this.dialog.close('some value');
-  }
+  public onClose(): void { }
   
   public onSubmit(): void { }
   
