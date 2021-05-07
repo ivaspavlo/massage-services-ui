@@ -27,8 +27,6 @@ export class QuoteModalComponent implements OnInit {
     });
   }
 
-  public onSubmit(): void {
-    console.log('CONTACT FORM SUBMITTED');
-  }
+  public onSubmit(): void { }
 
 }

@@ -1,43 +1,9 @@
 
 @import 'mixins/_all';
-@import '_core-colors';
 
-// .services {
-//   @include e('quotes-wrapper') {
-//     background: rgb(117,195,183);
-//     background: linear-gradient(90deg, rgba(117,195,183,1) 0%, rgba(101,101,101,1) 30%, rgba(101,101,101,1) 50%, rgba(101,101,101,1) 70%, rgba(117,195,183,1) 100%);
-//   }
-//   @include e('title') {
-//     transform: translateY(-100px);
-//     opacity: 0;
-//     transition: transform 2s cubic-bezier(0,1,.3,1), opacity .3s cubic-bezier(0,1,.3,1);
-//     will-change: transform, opacity;
-//     color: #fff;
-//     @include m('visible') {
-//       opacity: 1;
-//       transform: translateY(-35px);
-//     }
-//   }
-//   @include e('shevron') {
-//     width: 30px;
-//     height: 20px;
-//     opacity: 0;
-//     will-change: transform, opacity;
-//     transition: transform 2s cubic-bezier(0,1,.3,1), opacity .3s cubic-bezier(0,1,.3,1);
-//     background-image: url('/assets/img/svg/shevron-down.svg');
-//     @include background-image-center;
-//     @include m('visible') {
-//       opacity: 1;
-//       transform: translateY(0) !important;
-//     }
-//   }
-//   @include e('card') {
-//     max-width: 500px;
-//   }
-//   @include e('image-plh') {
-//     background-color: rgb(117,195,183,.5);
-//   }
-// }
+:host {
+  position: relative;
+}
 
 .scroll-top-button {
   bottom: 70px;

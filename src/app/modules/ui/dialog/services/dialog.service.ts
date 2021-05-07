@@ -2,12 +2,14 @@
 import { ApplicationRef, ComponentFactoryResolver, ComponentRef, EmbeddedViewRef, Inject, Injectable, Injector, Type } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
+import { first } from 'rxjs/operators';
+import { merge, Subject } from 'rxjs';
+
 import { DialogComponent } from '../container/dialog.component';
 import { DialogModule } from '../dialog.module';
 import { DialogInjector } from '../dialog-injector';
 import { DialogConfig } from '../dialog-config';
 import { DialogRef } from '../dialog-ref';
-import { first } from 'rxjs/operators';
 
 
 @Injectable({
@@ -15,7 +17,8 @@ import { first } from 'rxjs/operators';
 })
 export class DialogService {
   
-  private dialogComponentRef: ComponentRef<DialogComponent>
+  private dialogComponentRef: ComponentRef<DialogComponent>;
+  private forceCloseDialog$: Subject<void> = new Subject();
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -35,6 +38,8 @@ export class DialogService {
   }
   
   public open(componentType: Type<any>, data?: any): DialogRef {
+    this.forceCloseDialog$.next();
+    
     const contentFactory = this.componentFactoryResolver.resolveComponentFactory(componentType);
     
     // configure and create injector
@@ -55,7 +60,10 @@ export class DialogService {
   }
   
   private listenCloseEvent(dialogRef: DialogRef): void {
-    dialogRef.afterClosed.pipe(
+    merge(
+      this.forceCloseDialog$,
+      dialogRef.afterClosed
+    ).pipe(
       first()
     ).subscribe(() => {
       this.removeDialogComponentFromBody();

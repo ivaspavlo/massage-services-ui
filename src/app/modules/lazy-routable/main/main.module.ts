@@ -19,9 +19,9 @@ import { MODALS } from './modals';
     ...MODALS
   ],
   imports: [
-    MainRoutingModule,
     CommonModule,
     ReactiveFormsModule,
+    MainRoutingModule,
     SharedModule,
     NgExpansionPanelModule,
     HeaderModule,
