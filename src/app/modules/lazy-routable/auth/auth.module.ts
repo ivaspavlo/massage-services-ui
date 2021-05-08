@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoginFormModule } from '@app/modules/ui';
+import { ButtonPrimaryModule, ButtonSecondaryModule, LoginFormModule } from '@app/modules/ui';
 import { AuthRoutingModule } from './auth-routing.module';
 
 import { PAGES } from './pages';
@@ -15,7 +15,9 @@ import { PAGES } from './pages';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    LoginFormModule
+    LoginFormModule,
+    ButtonPrimaryModule,
+    ButtonSecondaryModule
   ]
 })
 export class AuthModule { }

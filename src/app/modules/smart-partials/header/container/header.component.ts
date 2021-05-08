@@ -1,5 +1,10 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input, ElementRef } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, OnInit, ChangeDetectionStrategy, Inject, Input } from '@angular/core';
+
+import { fromEvent, Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+
 import { IHeaderDropdownMenu } from '@app/interfaces';
 
 import { MAIN_MENU_ITEMS, USER_MENU_ITEMS, USER_ICON } from '../constants';
@@ -12,12 +17,14 @@ import { MAIN_MENU_ITEMS, USER_MENU_ITEMS, USER_ICON } from '../constants';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent implements OnInit {
-
-  @Input() scrollable: HTMLElement;
-  public isShrinked = false;
-
-  public menuItems: IHeaderDropdownMenu[] = MAIN_MENU_ITEMS;
-  public isOpen = false;
+  
+  @Input() scrollable: HTMLElement = null;
+  @Input() public set shrinked(value: boolean) {
+    this._shrinked = value;
+  };
+  public get isShrinked() {
+    return this._shrinked;
+  };
   public get userMenuSettings() {
     return {
       title: this.user?.name || 'User',
@@ -26,13 +33,36 @@ export class HeaderComponent implements OnInit {
       items: this.user ? null : USER_MENU_ITEMS
     }
   };
+  
+  private _shrinked;
   private user = null;
+  
+  public menuItems: IHeaderDropdownMenu[] = MAIN_MENU_ITEMS;
+  public isSchrinked$: Observable<boolean> = null;
+  public isOpen = false;
 
-  constructor() { }
+  
+  constructor(
+    @Inject(DOCUMENT) private document: Document
+  ) { }
 
   ngOnInit(): void {
-    this.scrollable.addEventListener('scroll', () => {
-      console.log('works');
+    if (this.shrinked === undefined) {
+      this._shrinked = false;
+      this.listenToScrollEvent(this.scrollable || this.document.body, this._shrinked);
+    }
+  }
+  
+  private listenToScrollEvent(element: HTMLElement, init?: boolean): void {
+    fromEvent(element, 'scroll').pipe(
+      startWith(init),
+      map((event) => {
+        // TODO: implement if required
+        console.log(event);
+        return false;
+      })
+    ).subscribe((res: boolean) => {
+      this._shrinked = res;
     });
   }
 
