@@ -1,12 +1,5 @@
 
-<!-- <div class="login d-flex">
-  <div class="login__left bg-primary-500">
-    <button>BOOK NOW</button>
-  </div>
-  
-</div> -->
-
-<form [formGroup]="form" markTouched (ngSubmit)="onSubmit()" class="login__right pl-px-20 py-rem-2 d-flex flex-column">
+<form [formGroup]="form" markTouched (ngSubmit)="onSubmit()" class="pl-px-20 py-rem-2 d-flex flex-column">
   <h3 class="font-32 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">Login</h3>
   <app-input [formControl]="form.get('login')" color="primary" controlName="login" label="Login" placeholder="Login placeholder"></app-input>
   <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Password placeholder"></app-input>

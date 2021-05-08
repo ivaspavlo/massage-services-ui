@@ -1,26 +1,34 @@
 
-<section #scrollContainer data-scroll-container>
-    
-  <app-branding [isVisible]="!(isBelowTreshold$ | async)" (scrollDown)="onScrollDown()"></app-branding>
-
-  <app-certificates [certificates]="certificates" [slides]="slides"></app-certificates>
-
-  <app-brand-services [quotes]="quotes" [productCards]="productCards" (showQuoteModal)="onShowQuoteModal()"></app-brand-services>
-
-  <footer id="footer" class="width-100 pt-rem-1 d-flex flex-column align-items-center pos-relative" data-scroll-section>
-    
-    <app-newsletter></app-newsletter>
-    
-    <app-footer></app-footer>
-    
-    <figure class="width-100 height-100 pos-absolute top-0 overflow-hidden z-index-minus-1">
-      <img src="/assets/img/png/contactus-bg.png" class="width-lg-100" alt="Background image #2">
-    </figure>
-    
-  </footer>
+<section>
   
-  <div (click)="onScrollTop()" class="scroll-top-button pos-fixed right-0 bottom-0 d-none d-lg-flex transition-1 z-index-1" [ngClass]="{'scroll-top-button--visible': isBelowTreshold$ | async}">
-    <app-arrow-animated-button direction="top"></app-arrow-animated-button>
+  <header class="width-100 pos-sticky pos-lg-fixed top-0 z-index-2">
+    <app-header [shrinked]="isBelowTreshold$ | async"></app-header>
+  </header>
+  
+  <div #scrollContainer data-scroll-container>
+    
+    <app-branding [isVisible]="!(isBelowTreshold$ | async)" (scrollDown)="onScrollDown()"></app-branding>
+  
+    <app-certificates [certificates]="certificates" [slides]="slides"></app-certificates>
+  
+    <app-brand-services [quotes]="quotes" [productCards]="productCards" (showQuoteModal)="onShowQuoteModal()"></app-brand-services>
+  
+    <footer id="footer" class="width-100 pt-rem-1 d-flex flex-column align-items-center pos-relative" data-scroll-section>
+      
+      <app-newsletter></app-newsletter>
+      
+      <app-footer></app-footer>
+      
+      <figure class="width-100 height-100 pos-absolute top-0 overflow-hidden z-index-minus-1">
+        <img src="/assets/img/png/contactus-bg.png" class="width-lg-100" alt="Background image #2">
+      </figure>
+      
+    </footer>
+    
+    <div (click)="onScrollTop()" class="scroll-top-button pos-fixed right-0 bottom-0 d-none d-lg-flex transition-1 z-index-1" [ngClass]="{'scroll-top-button--visible': isBelowTreshold$ | async}">
+      <app-arrow-animated-button direction="top"></app-arrow-animated-button>
+    </div>
+    
   </div>
   
 </section>

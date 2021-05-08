@@ -37,7 +37,8 @@ import { MODALS } from './modals';
     SliderModule,
     ButtonSecondaryModule,
     HorizontalMenuModule,
-    LogoModule
+    LogoModule,
+    HeaderModule
   ]
 })
 export class MainModule { }
