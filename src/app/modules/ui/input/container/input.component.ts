@@ -16,6 +16,7 @@ import { ControlContainer, ControlValueAccessor, FormControl, FormGroup, NG_VALU
 export class InputComponent implements OnInit, ControlValueAccessor {
 
   @Input() controlName: string = 'name';
+  @Input() pattern: string = '';
   @Input() errorsMap: { [key:string]: string; }
   @Input() label: string;
   @Input() placeholder: string;
