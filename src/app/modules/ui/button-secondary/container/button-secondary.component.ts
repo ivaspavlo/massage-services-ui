@@ -12,6 +12,7 @@ export class ButtonSecondaryComponent implements OnInit {
   
   @Input() filled = false;
   @Input() title = 'button';
+  @Input() routerLink = null;
 
   constructor() { }
 

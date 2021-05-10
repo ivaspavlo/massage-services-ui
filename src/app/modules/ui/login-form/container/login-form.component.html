@@ -5,7 +5,7 @@
   <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Password placeholder"></app-input>
   <app-button-primary class="mt-rem-1 mb-rem-2" title="Login" [invalid]="!form.valid"></app-button-primary>
   <div class="width-100 px-rem-1 d-flex justify-content-between">
-    <a class="font-14 color-accent-500 hover-opacity" href="">Forget password?</a>
-    <a class="font-14 color-accent-500 hover-opacity" href="">Create an account</a>
+    <a routerLink="/auth/forgot" class="font-14 color-accent-500 hover-opacity text-decoration-underline cursor-pointer">Forget password?</a>
+    <a routerLink="/auth/register" class="font-14 color-accent-500 hover-opacity text-decoration-underline cursor-pointer">Create an account</a>
   </div>
 </form>

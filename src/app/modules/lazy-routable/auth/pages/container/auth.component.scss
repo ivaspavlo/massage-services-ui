@@ -1,8 +1,10 @@
 
-@import 'mixins/bem';
+@import 'mixins/_all';
+
 
 .wrap {
   background-image: url('/assets/img/png/contactus-bg.png');
+  @include background-image-center;
 }
 
 .auth {
@@ -14,9 +16,11 @@
     clip-path: polygon(98% 17%, 100% 34%, 98% 51%, 100% 68%, 98% 84%, 100% 100%, 0 100%, 0 0, 100% 0);
     background-image: url('/assets/img/png/service-bg.png');
     backdrop-filter: blur(5px);
+    @include background-image-center;
   }
   @include e('right') {
     width: 55%;
+    max-height: 90vh;
   }
   @include e('blurred-bg') {
     backdrop-filter: blur(2px);

@@ -1,16 +1,16 @@
 
 <section class="wrap width-100 height-100 d-flex justify-content-center align-items-center bg-primary-500">
   
-  <div class="auth p-rem-1 d-flex bg-white b-radius-4">
+  <div class="auth py-rem-1 pl-rem-1 d-flex bg-white b-radius-4">
     
     <div class="auth__left width-50">
       <div class="auth__blurred-bg width-100 height-100 d-flex flex-column justify-content-end">
         <app-button-primary class="mb-rem-2" title="Book now" filled="true"></app-button-primary>
-        <app-button-secondary class="mb-rem-1" title="Back" filled="true"></app-button-secondary>
+        <app-button-secondary routerLink="/" class="mb-rem-1" title="Back" filled="true"></app-button-secondary>
       </div>
     </div>
     
-    <div class="auth__right width-50">
+    <div class="auth__right width-50 pr-rem-1 overflow-auto">
       <router-outlet></router-outlet>
     </div>
     
