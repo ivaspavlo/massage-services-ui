@@ -57,9 +57,7 @@ export class MainContainerComponent implements OnInit {
   }
   
   public onShowQuoteModal(): void {
-    this.dialogService.open(QuoteModalComponent).afterClosed.subscribe(
-      result => console.log('Dialog closed', result)
-    );
+    this.dialogService.open(QuoteModalComponent);
   }
   
   public onScrollTop(): void {

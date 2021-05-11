@@ -35,7 +35,6 @@ export class SliderComponent {
   }
 
   public onPreviousClick(): void {
-    console.log('prev')
     const previous = this.currentSlide - 1;
     this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
   }
