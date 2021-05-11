@@ -27,8 +27,6 @@ export class NewsletterComponent implements OnInit {
     });
   }
   
-  public onSubmit(): void {
-    console.log('NEWSLETTER FORM SUBMITTED');
-  }
+  public onSubmit(): void { }
 
 }

@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { InputComponent } from './container/input.component';
 import { FirstErrorPipe } from './pipes/get-first-value.pipe';
@@ -12,7 +13,8 @@ import { FirstErrorPipe } from './pipes/get-first-value.pipe';
     FirstErrorPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   exports: [
     InputComponent

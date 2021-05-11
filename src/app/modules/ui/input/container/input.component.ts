@@ -1,6 +1,9 @@
 
 import { Component, OnInit, Input, Optional } from '@angular/core';
 import { ControlContainer, ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { InputColorSchemes, InputTypes } from '../interfaces';
 
 
 @Component({
@@ -15,25 +18,25 @@ import { ControlContainer, ControlValueAccessor, FormControl, FormGroup, NG_VALU
 })
 export class InputComponent implements OnInit, ControlValueAccessor {
 
-  @Input() controlName: string = 'name';
-  @Input() pattern: string = '';
-  @Input() errorsMap: { [key:string]: string; }
-  @Input() label: string;
-  @Input() placeholder: string;
-  @Input() set type(value: 'text' | 'number' | 'textarea') {
-    this._type = value;
-    this.isTextArea = value === 'textarea';
+  @Input() controlName = '';
+  @Input() label = '';
+  @Input() placeholder = '';
+  @Input() patternFn: (value: string) => string = null;
+  @Input() errorsMap: { [key:string]: string; };
+  @Input() set type(value: InputTypes) {
+    this._type = value || 'text';
   };
-  get type() { return this._type; }
-  @Input() set color(value: 'primary' | 'secondary') {
-    this._color = value;
-  }
-  get color() {
-    return this._color;
+  @Input() set color(value: InputColorSchemes) {
+    this._color = value || 'primary';
   }
   
-  public isTextArea: boolean;
-  public value: unknown;
+  get type() { return this._type; }
+  get isTextArea() { return this._type === 'textarea'; }
+  get isPhone() { return this._type === 'phone'; }
+  get color() { return this._color; }
+  
+  // public value: unknown;
+  public innerControl = new FormControl();
   public hasFocus = false;
 
   // ControlContainer
@@ -44,16 +47,31 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   private onChange;
   private onTouched;
 
-  private _type: 'text' | 'number' | 'textarea' = 'text';
-  private _color: 'primary' | 'secondary' = 'primary'
+  private _type: InputTypes;
+  private _color: InputColorSchemes;
+  private componentDestroyed$: Subject<void> = new Subject();
 
-  constructor(@Optional() private controlContainer: ControlContainer) { }
+  constructor(
+    @Optional() private controlContainer: ControlContainer
+  ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.innerControl.valueChanges.pipe(
+      takeUntil(this.componentDestroyed$)
+    ).subscribe(this.onInput.bind(this));
+  }
 
-  public writeValue(value: unknown): void { this.value = value; }
-  public registerOnChange(fn): void { this.onChange = fn; }
-  public registerOnTouched(fn): void { this.onTouched = fn; }
+  public registerOnChange(fn): void {
+    this.onChange = fn;
+  }
+  public registerOnTouched(fn): void {
+    this.onTouched = fn;
+  }
+  public writeValue(value: unknown): void {
+    if (this.onChange) {
+      this.innerControl.patchValue(value);
+    }
+  }
 
   public onFocus(): void {
     this.onTouched();
@@ -64,8 +82,38 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.hasFocus = false;
   }
 
-  public onInput(value: unknown): void {
-    this.onChange(value);
+  public onInput(value): void {
+    let formattedValue = value;
+    if (this.isPhone) {
+      formattedValue = this.formatPhoneNumber(value);
+      const maskedValue = this.maskPhoneNumber(formattedValue);
+      this.innerControl.patchValue(maskedValue, { emitEvent: false });
+    }
+    this.onChange(formattedValue);
+  }
+  
+  private formatPhoneNumber(value: string): string {
+    return value.replace(/\D/g, '').slice(0, 10);
+  }
+  
+  private maskPhoneNumber(value: string): string {
+    if (this.patternFn) {
+      return this.patternFn(value);
+    }
+    if (value.length == 0) {
+      return '';
+    } else if (value.length <= 3) {
+      return value.replace(/^(\d{0,3})/, '($1');
+    } else if (value.length <= 6) {
+      return value.replace(/^(\d{0,3})(\d{0,3})/, '($1) $2');
+    } else {
+      return value.replace(/^(\d{0,3})(\d{0,3})(.*)/, '($1) $2-$3');
+    }
+  }
+  
+  ngOnDestroy() {
+    this.componentDestroyed$.next();
+    this.componentDestroyed$.unsubscribe();
   }
 
 }

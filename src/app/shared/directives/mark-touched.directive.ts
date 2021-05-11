@@ -7,6 +7,7 @@ import { ControlContainer } from '@angular/forms';
   selector: '[markTouched]'
 })
 export class MarkTouchedDirective {
+  
   @HostListener('submit') onSubmit() {
     this.container.control.markAllAsTouched();
   }

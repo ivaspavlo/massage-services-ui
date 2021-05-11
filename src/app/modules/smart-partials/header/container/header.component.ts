@@ -58,7 +58,6 @@ export class HeaderComponent implements OnInit {
       startWith(init),
       map((event) => {
         // TODO: implement if required
-        console.log(event);
         return false;
       })
     ).subscribe((res: boolean) => {
