@@ -4,12 +4,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-forgot',
-  templateUrl: './forgot.component.html',
-  styleUrls: ['./forgot.component.scss'],
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ForgotComponent implements OnInit {
+export class ForgotPasswordComponent implements OnInit {
 
   public form: FormGroup;
 
