@@ -1,7 +1,6 @@
 
 import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { ILoginFormValue } from '../interfaces';
 
 
@@ -31,7 +30,7 @@ export class LoginFormComponent implements OnInit {
   private createForm(): FormGroup {
     return this.fb.group({
       password: ['', Validators.required],
-      login: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]]
     });
   }
 

@@ -1,11 +1,11 @@
 
-<form [formGroup]="form" markTouched (ngSubmit)="onSubmit()" class="pl-px-20 py-rem-2 d-flex flex-column">
+<form [formGroup]="form" markTouched (ngSubmit)="onSubmit()" class="py-rem-2 d-flex flex-column">
   <h3 class="font-32 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">Login</h3>
-  <app-input [formControl]="form.get('login')" color="primary" controlName="login" label="Login" placeholder="Login placeholder"></app-input>
-  <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Password placeholder"></app-input>
+  <app-input [formControl]="form.get('email')" color="primary" controlName="email" label="Email" placeholder="Please enter email" type="email"></app-input>
+  <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Please enter password" type="password"></app-input>
   <app-button-primary class="mt-rem-1 mb-rem-2" title="Login" [invalid]="!form.valid"></app-button-primary>
   <div class="width-100 px-rem-1 d-flex justify-content-between">
-    <a routerLink="/auth/forgot" class="font-14 color-accent-500 hover-opacity text-decoration-underline cursor-pointer">Forget password?</a>
+    <a routerLink="/auth/forgot" class="font-14 color-accent-500 hover-opacity text-decoration-underline cursor-pointer">Forgot password?</a>
     <a routerLink="/auth/register" class="font-14 color-accent-500 hover-opacity text-decoration-underline cursor-pointer">Create an account</a>
   </div>
 </form>

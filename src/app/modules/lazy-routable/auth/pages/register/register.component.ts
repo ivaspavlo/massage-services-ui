@@ -1,6 +1,7 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PasswordValidators } from '@app/shared/validators';
 
 
 @Component({
@@ -12,7 +13,6 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 export class RegisterComponent implements OnInit {
   
   public form: FormGroup;
-  public phoneNumberPattern = '^((\\+91-?)|0)?[0-9]{10}$';
 
   constructor(
     private fb: FormBuilder
@@ -29,24 +29,12 @@ export class RegisterComponent implements OnInit {
       name: this.fb.control('', Validators.required),
       surname: this.fb.control('', Validators.required),
       userName: this.fb.control('', Validators.required),
-      password: this.fb.control('', Validators.required),
-      confirmPassword: this.fb.control('', [Validators.required, this.checkPasswordsValidator()]),
+      password: this.fb.control('', [Validators.required, PasswordValidators.default]),
+      confirmPassword: this.fb.control('', [Validators.required, PasswordValidators.default]),
       email: this.fb.control('', [Validators.required, Validators.email]),
       phoneNumber: this.fb.control('', Validators.required),
       consent: this.fb.control('', Validators.requiredTrue)
     });
-  }
-  
-  private checkPasswordsValidator(): ValidatorFn {
-    return (control: AbstractControl) => {
-      const formGroup = control.parent;
-      if (!formGroup) {
-        return null;
-      }
-      const passwordValue = control.parent.get('password').value;
-      const confirmPasswordValue = control.value;
-      return passwordValue !== confirmPasswordValue && (control.dirty || control.touched) ? { notSame: true } : null;
-    }
   }
 
 }

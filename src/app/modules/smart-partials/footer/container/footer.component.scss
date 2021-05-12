@@ -7,7 +7,7 @@
 }
 
 .footer {
-  @media only screen and (min-width: 992px) {
+  @include lg {
     background: rgb(38,39,43);
     background: linear-gradient(90deg, rgba(38,39,43,1) 0%, rgba(101,101,101,1) 15%, rgba(101,101,101,1) 85%, rgba(38,39,43,1) 100%);
   }
