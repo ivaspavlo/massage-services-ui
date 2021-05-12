@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { InputModule } from '../input/input.module';
@@ -16,6 +17,7 @@ import { LoginFormComponent } from './container/login-form.component';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     ReactiveFormsModule,
     InputModule,
     ButtonPrimaryModule,

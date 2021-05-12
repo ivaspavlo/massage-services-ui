@@ -10,16 +10,14 @@
 .auth {
   width: 100%;
   max-width: 700px;
-  min-width: 400px;
+  min-width: 300px;
   @include e('left') {
-    width: 45%;
     clip-path: polygon(98% 17%, 100% 34%, 98% 51%, 100% 68%, 98% 84%, 100% 100%, 0 100%, 0 0, 100% 0);
     background-image: url('/assets/img/png/service-bg.png');
     backdrop-filter: blur(5px);
     @include background-image-center;
   }
   @include e('right') {
-    width: 55%;
     max-height: 90vh;
   }
   @include e('blurred-bg') {

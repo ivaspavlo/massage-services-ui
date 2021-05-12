@@ -1,14 +1,14 @@
 
 <section>
   
-  <form [formGroup]="form" markTouched (ngSubmit)="onSubmit()" class="pl-px-20 py-rem-2 d-flex flex-column">
+  <form [formGroup]="form" markTouched (ngSubmit)="onSubmit()" class="py-rem-2 d-flex flex-column">
     
     <h3 class="font-32 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">Register</h3>
     
     <app-input [formControl]="form.get('name')" color="primary" controlName="name" label="Name" placeholder="Please enter your name"></app-input>
     <app-input [formControl]="form.get('surname')" color="primary" controlName="surname" label="Surname" placeholder="Please enter your surname"></app-input>
-    <app-input [formControl]="form.get('email')" color="primary" controlName="email" label="Email" placeholder="Please enter your email" type="email" [pattern]="phoneNumberPattern"></app-input>
-    <app-input [formControl]="form.get('phoneNumber')" color="primary" controlName="phoneNumber" label="Phone" placeholder="Phone number format XXX XXXXXXX" type="phone"></app-input>
+    <app-input [formControl]="form.get('email')" color="primary" controlName="email" label="Email" placeholder="Please enter your email" type="email"></app-input>
+    <app-input [formControl]="form.get('phoneNumber')" color="primary" controlName="phoneNumber" label="Phone" placeholder="XXX XXXXXXX" type="phone"></app-input>
     <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Please enter your password" type="password"></app-input>
     <app-input [formControl]="form.get('confirmPassword')" color="primary" controlName="confirmPassword" label="Confirm Password" placeholder="Please confirm your password" type="password"></app-input>
     
