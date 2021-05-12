@@ -1,6 +1,7 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastService } from '@app/modules/ui/toast';
 
 
 @Component({
@@ -14,14 +15,20 @@ export class ForgotPasswordComponent implements OnInit {
   public form: FormGroup;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastService: ToastService
   ) { }
 
   ngOnInit(): void {
     this.form = this.initForm();
   }
   
-  public onSubmit(): void { }
+  public onSubmit(): void {
+    this.toastService.show({
+      text: 'Toast message',
+      type: 'success'
+    });
+  }
   
   private initForm(): FormGroup {
     return this.fb.group({
@@ -30,3 +37,5 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
 }
+
+// https://stackblitz.com/edit/angular-toast-service?file=src%2Fapp%2Ftoast%2Ftoast.module.ts

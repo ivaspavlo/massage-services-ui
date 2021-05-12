@@ -11,15 +11,8 @@ import { ToastService } from '@app/modules/ui/toast';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(
-    private toastService: ToastService
-  ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.toastService.show({
-      text: 'Toast message',
-      type: 'success'
-    });
-  }
+  ngOnInit(): void { }
 
 }

@@ -1,14 +1,14 @@
 
-import { Injector, Type, InjectionToken, InjectFlags } from '@angular/core';
+import { InjectFlags, InjectionToken, Injector, Type } from '@angular/core';
 
 
-export class DialogInjector implements Injector {
+export class ToastInjector implements Injector {
   
   constructor(
     private parentInjector: Injector,
     private additionalTokens: WeakMap<any, any>
   ) { }
-
+  
   get<T>(
     token: Type<T> | InjectionToken<T>,
     notFoundValue?: T,
@@ -26,4 +26,5 @@ export class DialogInjector implements Injector {
 
     return this.parentInjector.get<any>(token, notFoundValue)
   }
+  
 }

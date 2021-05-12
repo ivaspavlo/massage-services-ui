@@ -43,7 +43,7 @@ export class DialogService {
     const contentFactory = this.componentFactoryResolver.resolveComponentFactory(componentType);
     
     // configure and create injector
-    const configMap = new Map();
+    const configMap = new WeakMap();
     const dialogRef = new DialogRef();
     this.listenCloseEvent(dialogRef);
     configMap.set(DialogConfig, new DialogConfig(contentFactory, data));
