@@ -22,7 +22,7 @@ $border-radius: 4px;
 
   &__field, &__text-area {
     width: 100%;
-    padding: 18px 12px;
+    padding: 18px 45px 18px 12px;
     font-size: 16px;
     border: 1px solid;
     border-color: $accent-color;
@@ -87,4 +87,5 @@ $border-radius: 4px;
     opacity: 0;
     transition: opacity .3s;
   }
+  
 }

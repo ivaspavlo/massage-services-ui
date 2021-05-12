@@ -35,7 +35,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   get isPhone() { return this._type === 'phone'; }
   get color() { return this._color; }
   
-  // public value: unknown;
   public innerControl = new FormControl();
   public hasFocus = false;
 
@@ -56,9 +55,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   ) { }
 
   ngOnInit(): void {
-    this.innerControl.valueChanges.pipe(
-      takeUntil(this.componentDestroyed$)
-    ).subscribe(this.onInput.bind(this));
+    this.listenToInnerControlChanges();
   }
 
   public registerOnChange(fn): void {
@@ -71,6 +68,14 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     if (this.onChange) {
       this.innerControl.patchValue(value);
     }
+  }
+  
+  public listenToInnerControlChanges(): void {
+    this.innerControl.valueChanges.pipe(
+      takeUntil(this.componentDestroyed$)
+    ).subscribe((value) => {
+      this.onInput(value);
+    });
   }
 
   public onFocus(): void {
@@ -90,6 +95,10 @@ export class InputComponent implements OnInit, ControlValueAccessor {
       this.innerControl.patchValue(maskedValue, { emitEvent: false });
     }
     this.onChange(formattedValue);
+  }
+  
+  public onPasswordToggle(isHidden: boolean): void {
+    this._type = isHidden ? 'password' : 'text';
   }
   
   private formatPhoneNumber(value: string): string {

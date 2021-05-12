@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { InputComponent } from './container/input.component';
-import { FirstErrorPipe } from './pipes/get-first-value.pipe';
+import { PARTIALS } from './partials';
+import { PIPES } from './pipes';
 
 
 @NgModule({
   declarations: [
     InputComponent,
-    FirstErrorPipe
+    ...PIPES,
+    ...PARTIALS
   ],
   imports: [
     CommonModule,
