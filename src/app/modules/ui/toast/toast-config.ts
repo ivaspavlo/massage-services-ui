@@ -1,27 +1,20 @@
 
 import { InjectionToken, TemplateRef } from '@angular/core';
+import { IToastConfig } from './interfaces';
+
+
+export type ToastType = 'warning' | 'info' | 'success';
 
 export class ToastData {
   type: ToastType;
   text?: string;
   template?: TemplateRef<any>;
   templateContext?: {};
+  href?: string;
+  linkName?: string;
 }
 
-export type ToastType = 'warning' | 'info' | 'success';
-
-export interface ToastConfig {
-  position?: {
-    top: number;
-    right: number;
-  };
-  animation?: {
-    fadeOut: number;
-    fadeIn: number;
-  };
-}
-
-export const defaultToastConfig: ToastConfig = {
+export const defaultToastConfig: IToastConfig = {
   position: {
     top: 20,
     right: 20

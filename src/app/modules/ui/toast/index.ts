@@ -1,3 +1,3 @@
 
-export * from './toast.service';
+export * from './services';
 export * from './toast.module';

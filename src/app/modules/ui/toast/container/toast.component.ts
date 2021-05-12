@@ -1,28 +1,29 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
-import { ToastConfig, ToastData, TOAST_CONFIG_TOKEN } from '../toast-config';
+import { ToastData, TOAST_CONFIG_TOKEN } from '../toast-config';
 import { ToastRef } from '../toast-ref';
 import { toastAnimations, ToastAnimationState } from '../toast.animation';
+import { IToastConfig } from '../interfaces';
 
 
 @Component({
   selector: 'app-toast',
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  animations: [toastAnimations.fadeToast]
 })
 export class ToastComponent implements OnInit {
 
-  animationState: ToastAnimationState = 'default';
-  iconType: string;
+  public animationState: ToastAnimationState = 'default';
+  public iconType: string;
 
   private intervalId;
 
   constructor(
     readonly data: ToastData,
     readonly ref: ToastRef,
-    @Inject(TOAST_CONFIG_TOKEN) public toastConfig: ToastConfig
+    @Inject(TOAST_CONFIG_TOKEN) public toastConfig: IToastConfig
   ) {
     this.iconType = data.type === 'success' ? 'done' : data.type;
   }
@@ -30,7 +31,6 @@ export class ToastComponent implements OnInit {
   ngOnInit() {
     this.intervalId = setTimeout(() => this.animationState = 'closing', 5000);
   }
-
   
   public close() {
     this.ref.close();
