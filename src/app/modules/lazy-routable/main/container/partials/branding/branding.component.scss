@@ -28,7 +28,7 @@
     height: 100px;
   }
   @include e('image') {
-    @media only screen and (min-width: 1200px) {
+    @include xl {
       width: 70%;
       max-width: 400px;
     }

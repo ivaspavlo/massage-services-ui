@@ -1,5 +1,6 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ToastService } from '@app/modules/ui/toast';
 
 
 @Component({
@@ -10,8 +11,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private toastService: ToastService
+  ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.toastService.show({
+      text: 'Toast message',
+      type: 'success'
+    });
+  }
 
 }
