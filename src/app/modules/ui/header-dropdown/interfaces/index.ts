@@ -1,6 +1,6 @@
 
 export interface IHeaderDropdownMenu {
-  title: string;
+  name: string;
   href?: string;
   icon?: string;
   items?: IHeaderMenuItem[];

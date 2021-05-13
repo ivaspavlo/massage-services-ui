@@ -1,13 +1,13 @@
 
 export const MAIN_MENU_ITEMS = [
   {
-    title: 'About us',
+    name: 'About us',
     href: '#'
   }, {
-    title: 'Pricing',
+    name: 'Pricing',
     href: '#'
   }, {
-    title: 'Discounts',
+    name: 'Discounts',
     href: '#',
     items: [
       { name: 'Massage #1', href: '#' },
@@ -16,7 +16,7 @@ export const MAIN_MENU_ITEMS = [
       { name: 'Massage #4', href: '#' },
     ]
   }, {
-    title: 'Service',
+    name: 'Service',
     href: '#',
     items: [
       { name: 'Massage #2', href: '#' },
@@ -24,7 +24,7 @@ export const MAIN_MENU_ITEMS = [
       { name: 'Massage #4', href: '#' },
     ]
   }, {
-    title: 'Blog',
+    name: 'Blog',
     href: '/blog'
   }
 ];
