@@ -3,10 +3,14 @@ import { InjectionToken, TemplateRef } from '@angular/core';
 import { IToastConfig } from './interfaces';
 
 
-export type ToastType = 'warning' | 'info' | 'success';
+export enum ToastTypes {
+  warn = 'warn',
+  info = 'info',
+  success = 'success'
+}
 
 export class ToastData {
-  type: ToastType;
+  type: string;
   text?: string;
   template?: TemplateRef<any>;
   templateContext?: {};

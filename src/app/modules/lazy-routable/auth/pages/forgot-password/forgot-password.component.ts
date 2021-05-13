@@ -26,7 +26,8 @@ export class ForgotPasswordComponent implements OnInit {
   public onSubmit(): void {
     this.toastService.show({
       text: 'Toast message',
-      type: 'success'
+      type: 'info',
+      href: 'https://www.test.com'
     });
   }
   
@@ -37,5 +38,3 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
 }
-
-// https://stackblitz.com/edit/angular-toast-service?file=src%2Fapp%2Ftoast%2Ftoast.module.ts
