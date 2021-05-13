@@ -2,10 +2,8 @@
 import { TemplateRef } from '@angular/core';
 
 
-export type ToastType = 'warning' | 'info' | 'success';
-
 export interface IToast {
-  type: ToastType;
+  type: string;
   text?: string;
   template?: TemplateRef<any>;
   templateContext?: {};

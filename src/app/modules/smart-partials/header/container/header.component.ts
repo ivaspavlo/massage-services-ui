@@ -1,12 +1,6 @@
 
-import { DOCUMENT } from '@angular/common';
-import { Component, OnInit, ChangeDetectionStrategy, Inject, Input } from '@angular/core';
-
-import { fromEvent, Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
-
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { IHeaderDropdownMenu } from '@app/interfaces';
-
 import { MAIN_MENU_ITEMS, USER_MENU_ITEMS, USER_ICON } from '../constants';
 
 
@@ -18,51 +12,31 @@ import { MAIN_MENU_ITEMS, USER_MENU_ITEMS, USER_ICON } from '../constants';
 })
 export class HeaderComponent implements OnInit {
   
-  @Input() scrollable: HTMLElement = null;
-  @Input() public set shrinked(value: boolean) {
-    this._shrinked = value;
-  };
-  public get isShrinked() {
-    return this._shrinked;
-  };
-  public get userMenuSettings() {
-    return {
-      title: this.user?.name || 'User',
-      href: this.user ? '/user' : null,
-      icon: USER_ICON,
-      items: this.user ? null : USER_MENU_ITEMS
-    }
-  };
+  @Input() shrinked: boolean = false;
   
-  private _shrinked;
+  public desktopMenuItems: IHeaderDropdownMenu[];
+  public mobileMenuItems: IHeaderDropdownMenu[];
+  public isOpen = false;
+  
   private user = null;
   
-  public menuItems: IHeaderDropdownMenu[] = MAIN_MENU_ITEMS;
-  public isSchrinked$: Observable<boolean> = null;
-  public isOpen = false;
-
-  
-  constructor(
-    @Inject(DOCUMENT) private document: Document
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    if (this.shrinked === undefined) {
-      this._shrinked = false;
-      this.listenToScrollEvent(this.scrollable || this.document.body, this._shrinked);
-    }
+    this.desktopMenuItems = this.getDesktopItems(this.user);
+    this.mobileMenuItems = this.getMobileItems(this.user);
   }
   
-  private listenToScrollEvent(element: HTMLElement, init?: boolean): void {
-    fromEvent(element, 'scroll').pipe(
-      startWith(init),
-      map((event) => {
-        // TODO: implement if required
-        return false;
-      })
-    ).subscribe((res: boolean) => {
-      this._shrinked = res;
-    });
+  private getDesktopItems(user: any): IHeaderDropdownMenu[] {
+    return user ?
+      [...MAIN_MENU_ITEMS, { name: this.user.name, href: '/user', icon: USER_ICON }] :
+      [...MAIN_MENU_ITEMS, { name: 'User', icon: USER_ICON, items: USER_MENU_ITEMS }];
+  }
+  
+  private getMobileItems(user: any): IHeaderDropdownMenu[] {
+    return user ?
+      [...MAIN_MENU_ITEMS, { name: 'User', href: '/user' }] :
+      [...MAIN_MENU_ITEMS, ...USER_MENU_ITEMS];
   }
 
 }

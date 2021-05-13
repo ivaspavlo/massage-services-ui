@@ -1,22 +1,19 @@
 
-<section class="menu container-fluid" [ngClass]="{ 'menu--is-shrinked': isShrinked }">
+<section class="menu container-fluid" [ngClass]="{ 'menu--is-shrinked': shrinked }">
   
   <div class="menu__desktop width-100 d-none d-lg-flex justify-content-center transition-1">
     <div class="row no-gutters width-100 max-width-992 px-rem-1">
   
       <div class="col">
         <div class="d-flex justify-content-start align-items-center">
-          <app-logo [size]="isShrinked ? 'sm' : 'md'"></app-logo>
+          <app-logo [size]="shrinked ? 'sm' : 'md'"></app-logo>
         </div>
       </div>
   
       <div class="col-8">
         <ul class="width-100 height-100 d-flex align-items-center justify-content-center">
-          <li *ngFor="let item of menuItems" class="d-flex align-items-center">
+          <li *ngFor="let item of desktopMenuItems" class="d-flex align-items-center">
             <app-header-dropdown [menu]="item"></app-header-dropdown>
-          </li>
-          <li class="d-flex align-items-center">
-            <app-header-dropdown [menu]="userMenuSettings"></app-header-dropdown>
           </li>
         </ul>
       </div>
@@ -35,7 +32,7 @@
       <app-logo size="sm"></app-logo>
       <app-hamburger (isOn)="isOpen = $event" class="my-px-10"></app-hamburger>
     </div>
-    <app-expansion-panel [items]="menuItems" [isOpen]="isOpen"></app-expansion-panel>
+    <app-expansion-panel [items]="mobileMenuItems" [isOpen]="isOpen"></app-expansion-panel>
   </div>
 
 </section>

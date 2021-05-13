@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.component';
 
 
@@ -9,7 +10,8 @@ import { ExpansionPanelComponent } from './expansion-panel/expansion-panel.compo
     ExpansionPanelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     ExpansionPanelComponent
