@@ -2,17 +2,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { HeaderModule } from '@app/modules/smart-partials';
+
 import { BookingRoutingModule } from './booking-routing.module';
-import { COMPONENTS } from './container';
+import { PAGES } from './pages';
 
 
 @NgModule({
   declarations: [
-    ...COMPONENTS
+    ...PAGES
   ],
   imports: [
     CommonModule,
-    BookingRoutingModule
+    BookingRoutingModule,
+    HeaderModule
   ]
 })
 export class BookingModule { }
