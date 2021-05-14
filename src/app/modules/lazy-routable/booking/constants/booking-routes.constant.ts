@@ -1,6 +1,6 @@
 
 import { Routes } from '@angular/router';
-import { BookingComponent } from '../container/booking.component';
+import { BookingComponent } from '../pages/container/booking.component';
 
 
 export enum BOOKING_ROUTE_NAMES {

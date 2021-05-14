@@ -1,12 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-booking',
-  templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.scss'],
+  selector: 'app-reservation',
+  templateUrl: './reservation.component.html',
+  styleUrls: ['./reservation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BookingComponent implements OnInit {
+export class ReservationComponent implements OnInit {
 
   constructor() { }
 
