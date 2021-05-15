@@ -1,4 +1,6 @@
+
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+
 
 @Component({
   selector: 'app-reservation',
@@ -10,7 +12,6 @@ export class ReservationComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

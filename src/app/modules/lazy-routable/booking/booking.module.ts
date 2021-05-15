@@ -2,7 +2,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HeaderModule } from '@app/modules/smart-partials';
+import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
+import { TabsModule } from '@app/modules/ui';
 
 import { BookingRoutingModule } from './booking-routing.module';
 import { PAGES } from './pages';
@@ -15,7 +16,9 @@ import { PAGES } from './pages';
   imports: [
     CommonModule,
     BookingRoutingModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule,
+    TabsModule
   ]
 })
 export class BookingModule { }
