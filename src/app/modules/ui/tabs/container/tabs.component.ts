@@ -1,5 +1,6 @@
 
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { ITab } from '../interfaces';
 
 
 @Component({
@@ -12,10 +13,7 @@ export class TabsComponent implements OnInit {
   
   @ViewChild('line') line: ElementRef;
   
-  @Input() items: any[] = [
-    { name: 'Features' },
-    { name: 'History' }
-  ];
+  @Input() items: ITab[] = [];
   @Input() current = 0;
   @Output() tabClick: EventEmitter<string> = new EventEmitter();
 
@@ -29,7 +27,7 @@ export class TabsComponent implements OnInit {
   
   public onTabClick(index: number): void {
     this.current = index;
-    this.tabClick.emit(this.items[index]);
+    this.tabClick.emit(this.items[index]?.name);
     this.moveUnderline(index);
   }
   
