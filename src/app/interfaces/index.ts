@@ -5,3 +5,4 @@ export * from '@app/modules/ui/slider/interfaces';
 export * from '@app/modules/ui/product-card/interfaces';
 export * from '@app/modules/ui/slider-quote/interfaces';
 export * from '@app/modules/ui/header-dropdown/interfaces';
+export * from '@app/modules/ui/tabs/interfaces';
