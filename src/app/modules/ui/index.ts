@@ -21,6 +21,7 @@ export * from './horizontal-menu/horizontal-menu.module';
 export * from './social/social.module';
 export * from './header-dropdown/header-dropdown.module';
 export * from './toast/toast.module';
+export * from './tabs/tabs.module';
 
 export * from './title/title.module';
 export * from './logo/logo.module';

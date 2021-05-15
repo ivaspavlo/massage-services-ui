@@ -1,0 +1,47 @@
+
+$undreline-height: 4px;
+$underline-color: #7564a8;
+$tab-color: #555;
+$tab-bg: #ccc;
+$tab-bg-selected: #f4f4f4;
+$tab-bg-hover: #e3e3e3;
+
+:host {
+  width: 100%;
+}
+
+.tabs-container {
+  width: 100%;
+  border-radius: 3px;
+  box-shadow: 0 0 100px rgba(0,0,0,.5);
+  display: flex;
+  background-color: #fff;
+}
+
+.tab {
+  height: 45px;
+  padding: $undreline-height 10px;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: .3s ease;
+  background-color: $tab-bg;
+  color: $tab-color;
+  cursor: pointer;
+  &:not(.selected):hover {
+    background-color: $tab-bg-hover;
+  }
+  &.selected {
+    background-color: $tab-bg-selected;
+  }
+  &__underline {
+    position: absolute; bottom: 0; left: 0;
+    width: 100%;
+    height: $undreline-height;
+    transition: .3s;
+    background-color: $underline-color;
+    z-index: 1;
+  }
+}
