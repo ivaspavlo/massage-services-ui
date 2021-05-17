@@ -2,6 +2,6 @@
 <ul class="tabs-container">
   <li (click)="onTabClick(index)" *ngFor="let item of items; let index = index; let first = first;" class="tab" [ngClass]="{'selected': index === current}">
     <span>{{item.name}}</span>
-    <i #line *ngIf="first" class="tab__underline"></i>
+    <i #underlines *ngIf="first" class="tab__underline"></i>
   </li>
 </ul>

@@ -5,19 +5,20 @@
     <img class="post__image" [src]="config.main_img" alt="Article image"/>
     
     <div class="post__content">
-      <h4>
-        <a class="post__link" [routerLink]="[config.url]">{{config.title}}</a>
-      </h4>
+      <h4><a class="post__link" [routerLink]="[config.url]">{{config.title}}</a></h4>
       <p class="post__text">{{config.text}}</p>
     </div>
     
-    <div class="author">
-      <img [src]="config.author_img" alt="Author image" class="author__image">
-      <div class="author__content">
-        <p class="author__name">{{config.author}}</p>
-        <p class="author__date">{{config.date}}</p>
+    <footer class="post__footer">
+      <div *ngIf="config.author" class="author">
+        <img [src]="config.author_img" alt="Author image" class="author__image">
+        <div class="author__content">
+          <p class="author__name">{{config.author}}</p>
+          <p class="author__date">{{config.date}}</p>
+        </div>
       </div>
-    </div>
+      <button *ngIf="config.url" [routerLink]="[config.url]" class="post__button">LEARN MORE</button>
+    </footer>
     
   </div>
 </div>

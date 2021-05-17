@@ -2,6 +2,7 @@
 $text-color-1: #3b3c3f;
 $text-color-2: #768CA4;
 $text-color-3: #7d6caf;
+$text-color-4: #8ac343;
 $transition: .5s;
 
 .article {
@@ -11,8 +12,6 @@ $transition: .5s;
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,245,248,1) 35%, rgba(236,236,237,1) 100%);
   box-shadow: 0 13px 15px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  margin-left: 5%;
-  margin-top: 30px;
   transition: $transition;
   backface-visibility: hidden;
   transform: translateZ(0) scale(1.0, 1.0);
@@ -20,17 +19,14 @@ $transition: .5s;
     width: 700px;
   }
   &:hover {
-    height: 350px;
+    height: 300px;
     width: 600px;
     background-color: #fff;
     box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3);
     @media only screen and (min-width: 992px) {
       width: 800px;
     }
-    .author {
-      background-color: rgba(242, 245, 248, .9);
-    }
-    .author__image {
+    .author__image, .post__button {
       opacity: 1;
       transition-delay: .7s;
     }
@@ -56,10 +52,11 @@ $transition: .5s;
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   }
   &__link {
-    margin: 10px 10px 30px 10px;
+    width: 400px;
+    padding: 10px 0 20px 30px;
     font-size: 28px;
     display: flex;
-    text-align: center;
+    text-align: start;
     color: $text-color-1;
     transition: $transition;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 60%);
@@ -70,23 +67,40 @@ $transition: .5s;
   &__text {
     padding-left: 30px;
     font-size: 15px;
-    color: $text-color-2;
     text-indent: 30px;
+    color: $text-color-2;
+  }
+  &__footer {
+    position: absolute; bottom: 0px; right: 0;
+    width: 100%;
+    min-width: 200px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    transition: $transition;
+  }
+  &__button {
+    border: 2px solid #8ac343;
+    padding: 12px 20px;
+    font-size: 16px;
+    opacity: 0;
+    border-radius: 4px;
+    transition: .3s;
+    color: #8ac343;
+    background-color: transparent;
+    transform-origin: 0 0;
+    cursor: pointer;
+    &:hover {
+      opacity: .8;
+    }
   }
 }
 
-.author{
-  position: absolute; bottom: 20px; right: 0;
-  width: 65%;
-  min-width: 200px;
-  height: 60px;
-  padding: 10px;
+.author {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
-  background-color: rgba(242, 245, 248, .6);
-  transition: $transition;
+  justify-content: flex-start;
   &__content {
     display: flex;
     flex-grow: 1;
@@ -102,12 +116,12 @@ $transition: .5s;
     transition-delay: 0s;
     will-change: opacity;
   }
-  &__name{
+  &__name {
     font-size: 16px;
     font-weight: bold;
-    color: $text-color-1;
+    color: $text-color-4;
   }
-  &__date{
+  &__date {
     font-size: 12px;
   }
 }
