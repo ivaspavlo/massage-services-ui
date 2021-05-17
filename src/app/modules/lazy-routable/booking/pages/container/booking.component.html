@@ -1,14 +1,14 @@
 
 <section class="booking pos-relative">
   
-  <app-header shrinked="true"></app-header>
+  <header class="width-100 pos-sticky top-0 z-index-2">
+    <app-header shrinked="true"></app-header>
+  </header>
   
   <div class="booking__bg width-100 height-100 pos-fixed z-index-minus-1"></div>
   
-  <div class="">
-    <app-tabs (tabClick)="onTabClick($event)" [items]="tabs"></app-tabs>
-    <router-outlet></router-outlet>
-  </div>
+  <app-tabs [items]="tabs"></app-tabs>
+  <router-outlet></router-outlet>
   
   <app-footer></app-footer>
   
