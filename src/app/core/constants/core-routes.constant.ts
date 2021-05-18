@@ -1,6 +1,6 @@
 
 import { Routes } from '@angular/router';
-import { AuthGuard } from '../guards/auth.guard';
+// import { AuthGuard } from '../guards/auth.guard';
 
 
 export enum CORE_ROUTE_NAMES {

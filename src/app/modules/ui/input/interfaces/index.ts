@@ -1,9 +1,7 @@
 
 export type InputTypes = 'text' | 'number' | 'textarea' | 'phone' | 'password' | 'date';
 
-export type InputColorSchemes = 'primary' | 'secondary';
-
-export interface IMaskInput {
+export interface IMaskNumberInput {
   blocks: number[];
   separator: string;
 }

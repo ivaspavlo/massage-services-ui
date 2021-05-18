@@ -15,8 +15,6 @@ export class LoginComponent implements OnInit {
     private http: HttpClient
   ) { }
 
-  ngOnInit(): void {
-    this.http.post('http://localhost:3000/auth/signin', { userName: 'someName', password: '222111Ass!' }).subscribe(console.log);
-  }
+  ngOnInit(): void { }
 
 }

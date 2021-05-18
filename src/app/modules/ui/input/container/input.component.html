@@ -1,8 +1,8 @@
 
 <div class="input" [ngClass]="{'input--invalid': control.errors && control.touched}">
   
-  <input *ngIf="!isTextArea" class="input__field" [ngClass]="{'input__field--has-value': !!(control.valueChanges | async)}" [id]="controlName" name="input" [placeholder]="placeholder" [type]="type" [formControl]="innerControl" (focus)="onFocus()" (blur)="onBlur()">
-  <textarea *ngIf="isTextArea" class="input__text-area" [ngClass]="{'input__field--has-value': !!(control.valueChanges | async)}" [id]="controlName" name="textarea" [placeholder]="placeholder" rows="4" cols="50" [type]="type" [formControl]="innerControl" (focus)="onFocus()" (blur)="onBlur()"></textarea>
+  <input *ngIf="innerInputType !== 'textarea'" class="input__field" [ngClass]="{'input__field--has-value': !!(control.valueChanges | async)}" [id]="controlName" name="input" [placeholder]="placeholder" [type]="innerInputType" [formControl]="innerControl" (focus)="onFocus()" (blur)="onBlur()">
+  <textarea *ngIf="innerInputType === 'textarea'" class="input__text-area" [ngClass]="{'input__field--has-value': !!(control.valueChanges | async)}" [id]="controlName" name="textarea" [placeholder]="placeholder" rows="4" cols="50" [type]="innerInputType" [formControl]="innerControl" (focus)="onFocus()" (blur)="onBlur()"></textarea>
   
   <label [for]="controlName" class="input__label">{{label}}</label>
   

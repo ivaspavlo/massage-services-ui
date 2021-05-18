@@ -22,8 +22,9 @@ export class PasswordValidators {
     return /(?=.{8,})/g.test(control.value) ? null : { minEightChar: true };
   }
   
-  static passwordsEqual(passwordControlName: string): ValidatorFn {
+  static passwordsEqual(passwordControlName = 'password'): ValidatorFn {
     return (control: AbstractControl) => {
+      debugger;
       const formGroup = control.parent;
       const passwordControl = control?.parent?.get(passwordControlName);
       if (!formGroup || !passwordControl) {
