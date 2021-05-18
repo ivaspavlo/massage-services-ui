@@ -1,4 +1,5 @@
 
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 
@@ -10,8 +11,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.http.post('http://localhost:3000/auth/signin', { userName: 'someName', password: '222111Ass!' }).subscribe(console.log);
+  }
 
 }

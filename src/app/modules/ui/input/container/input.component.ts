@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Optional } from '@angular/core';
 import { ControlContainer, ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { InputColorSchemes, InputTypes } from '../interfaces';
+import { IMaskInput, InputColorSchemes, InputTypes } from '../interfaces';
 
 
 @Component({
@@ -21,8 +21,9 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() controlName = '';
   @Input() label = '';
   @Input() placeholder = '';
-  @Input() patternFn: (value: string) => string = null;
   @Input() errorsMap: { [key:string]: string; };
+  @Input() maxCharQty: number = null;
+  @Input() maskNumber: IMaskInput = null;
   @Input() set type(value: InputTypes) {
     this._type = value || 'text';
   };
@@ -33,6 +34,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   get type() { return this._type; }
   get isTextArea() { return this._type === 'textarea'; }
   get isPhone() { return this._type === 'phone'; }
+  get isDate() { return this._type === 'date'; }
   get color() { return this._color; }
   
   public innerControl = new FormControl();
@@ -89,11 +91,13 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   public onInput(value): void {
     let formattedValue = value;
-    if (this.isPhone) {
-      formattedValue = this.formatPhoneNumber(value);
-      const maskedValue = this.maskPhoneNumber(formattedValue);
-      this.innerControl.patchValue(maskedValue, { emitEvent: false });
+    if (this.maxCharQty) {
+      formattedValue = this.trimValue(formattedValue, this.maxCharQty);
     }
+    if (this.maskNumber) {
+      formattedValue = this.maskFn(formattedValue, this.maskNumber);
+    }
+    this.innerControl.patchValue(formattedValue, { emitEvent: false, onlySelf: true });
     this.onChange(formattedValue);
   }
   
@@ -101,23 +105,42 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this._type = isHidden ? 'password' : 'text';
   }
   
-  private formatPhoneNumber(value: string): string {
-    return value.replace(/\D/g, '').slice(0, 10);
+  private forceNumberValue(value: string): string {
+    return value.replace(/\D/g, '');
   }
   
-  private maskPhoneNumber(value: string): string {
-    if (this.patternFn) {
-      return this.patternFn(value);
+  private trimValue(value: string, sliceBy: number): string {
+    return value.slice(0, sliceBy);
+  }
+  
+  private maskFn(value: string, { blocks, separator }: IMaskInput): string {
+    const stringValue = this.forceNumberValue(value);
+    let result = '';
+    for (let index = 0; index < blocks.length; index++) {
+
+      const blockSize = blocks[index];
+      
+      const isFirstBlock = index === 0;
+      const isLastBlock = index === blocks.length - 1;
+      
+      const separatorsLength = separator.length * index;
+      const resultLength = result.length - separatorsLength;
+      
+      const start = isFirstBlock ? 0 : resultLength;
+      const end = isFirstBlock ? blockSize : resultLength + blockSize;
+      
+      const stopLoop = stringValue.length <= resultLength + blockSize;
+      
+      for (let n = start; n < end; n++) {
+        result = stringValue[n] === undefined ? result : result + stringValue[n];
+      }
+      
+      if (stopLoop) {
+        break;
+      }
+      result = isLastBlock ? result : result + separator;
     }
-    if (value.length == 0) {
-      return '';
-    } else if (value.length <= 3) {
-      return value.replace(/^(\d{0,3})/, '($1');
-    } else if (value.length <= 6) {
-      return value.replace(/^(\d{0,3})(\d{0,3})/, '($1) $2');
-    } else {
-      return value.replace(/^(\d{0,3})(\d{0,3})(.*)/, '($1) $2-$3');
-    }
+    return result;
   }
   
   ngOnDestroy() {
