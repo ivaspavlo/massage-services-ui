@@ -16,7 +16,7 @@ export class AuthService {
     private http: HttpClient
   ) { }
   
-  public signin(data: IRegisterUser): Observable<IUser> {
+  public signup(data: any): Observable<IUser> {
     return this.http.post<IUser>(`${API_URL}/auth/signup`, data);
   }
 

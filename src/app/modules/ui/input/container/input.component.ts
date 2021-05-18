@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Optional } from '@angular/core';
 import { ControlContainer, ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { IMaskInput, InputColorSchemes, InputTypes } from '../interfaces';
+import { IMaskNumberInput, InputTypes } from '../interfaces';
 
 
 @Component({
@@ -22,22 +22,15 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label = '';
   @Input() placeholder = '';
   @Input() errorsMap: { [key:string]: string; };
-  @Input() maxCharQty: number = null;
-  @Input() maskNumber: IMaskInput = null;
-  @Input() set type(value: InputTypes) {
-    this._type = value || 'text';
-  };
-  @Input() set color(value: InputColorSchemes) {
-    this._color = value || 'primary';
-  }
+  @Input() maskNumber: IMaskNumberInput = null;
+  @Input() type: InputTypes;
   
-  get type() { return this._type; }
-  get isTextArea() { return this._type === 'textarea'; }
-  get isPhone() { return this._type === 'phone'; }
-  get isDate() { return this._type === 'date'; }
-  get color() { return this._color; }
+  get isText() { return this.type === 'text'; }
+  get isTextArea() { return this.type === 'textarea'; }
+  get isDate() { return this.type === 'date'; }
   
   public innerControl = new FormControl();
+  public innerInputType: InputTypes;
   public hasFocus = false;
 
   // ControlContainer
@@ -48,8 +41,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   private onChange;
   private onTouched;
 
-  private _type: InputTypes;
-  private _color: InputColorSchemes;
   private componentDestroyed$: Subject<void> = new Subject();
 
   constructor(
@@ -57,9 +48,11 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   ) { }
 
   ngOnInit(): void {
+    this.initInnerInputType();
     this.listenToInnerControlChanges();
   }
-
+  
+  // ControlValueAccessor
   public registerOnChange(fn): void {
     this.onChange = fn;
   }
@@ -91,9 +84,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   public onInput(value): void {
     let formattedValue = value;
-    if (this.maxCharQty) {
-      formattedValue = this.trimValue(formattedValue, this.maxCharQty);
-    }
     if (this.maskNumber) {
       formattedValue = this.maskFn(formattedValue, this.maskNumber);
     }
@@ -102,23 +92,20 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   }
   
   public onPasswordToggle(isHidden: boolean): void {
-    this._type = isHidden ? 'password' : 'text';
+    this.innerInputType = isHidden ? 'password' : 'text';
   }
   
   private forceNumberValue(value: string): string {
     return value.replace(/\D/g, '');
   }
   
-  private trimValue(value: string, sliceBy: number): string {
-    return value.slice(0, sliceBy);
-  }
-  
-  private maskFn(value: string, { blocks, separator }: IMaskInput): string {
-    const stringValue = this.forceNumberValue(value);
+  private maskFn(value: string, { blocks, separator }: IMaskNumberInput): string {
+    let valueString = this.forceNumberValue(value);
+    let maxLength = 0;
     let result = '';
     for (let index = 0; index < blocks.length; index++) {
-
       const blockSize = blocks[index];
+      maxLength += blockSize;
       
       const isFirstBlock = index === 0;
       const isLastBlock = index === blocks.length - 1;
@@ -129,18 +116,23 @@ export class InputComponent implements OnInit, ControlValueAccessor {
       const start = isFirstBlock ? 0 : resultLength;
       const end = isFirstBlock ? blockSize : resultLength + blockSize;
       
-      const stopLoop = stringValue.length <= resultLength + blockSize;
+      const stopLoop = valueString.length <= resultLength + blockSize;
       
       for (let n = start; n < end; n++) {
-        result = stringValue[n] === undefined ? result : result + stringValue[n];
+        result = valueString[n] === undefined ? result : result + valueString[n];
       }
       
       if (stopLoop) {
         break;
       }
+      
       result = isLastBlock ? result : result + separator;
     }
     return result;
+  }
+  
+  private initInnerInputType(): void {
+    this.innerInputType = this.maskNumber || this.isDate || !this.type ? 'text' : this.type;
   }
   
   ngOnDestroy() {

@@ -5,13 +5,13 @@
     
     <h3 class="font-32 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">Register</h3>
     
-    <app-input [formControl]="form.get('name')" color="primary" controlName="name" label="Name" placeholder="Please enter your name"></app-input>
-    <app-input [formControl]="form.get('surname')" color="primary" controlName="surname" label="Surname" placeholder="Please enter your surname"></app-input>
-    <app-input [formControl]="form.get('birthDate')" color="primary" controlName="birthDate" label="Date of Birth" placeholder="DD/MM/YYYY" [maskNumber]="{blocks: [2,2,4], separator: '/'}"></app-input>
-    <app-input [formControl]="form.get('email')" color="primary" controlName="email" label="Email" placeholder="Please enter your email" type="email"></app-input>
-    <app-input [formControl]="form.get('phoneNumber')" color="primary" controlName="phoneNumber" label="Phone" placeholder="XXX-XXX-XXXX" type="phone" [maskNumber]="{blocks: [3,3,4], separator: '-'}"></app-input>
-    <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Please enter your password" type="password"></app-input>
-    <app-input [formControl]="form.get('confirmPassword')" color="primary" controlName="confirmPassword" label="Confirm Password" placeholder="Please confirm your password" type="password"></app-input>
+    <app-input [formControl]="form.get('name')" color="primary" controlName="name" label="Name" placeholder="Please enter your name" [errorsMap]="errorMessages"></app-input>
+    <app-input [formControl]="form.get('surname')" color="primary" controlName="surname" label="Surname" placeholder="Please enter your surname" [errorsMap]="errorMessages"></app-input>
+    <app-input [formControl]="form.get('birthDate')" color="primary" controlName="birthDate" label="Date of Birth" placeholder="DD/MM/YYYY" type="date" [maskNumber]="{blocks: [2,2,4], separator: '/'}" [errorsMap]="errorMessages"></app-input>
+    <app-input [formControl]="form.get('email')" color="primary" controlName="email" label="Email" placeholder="Please enter your email" type="email" [errorsMap]="errorMessages"></app-input>
+    <app-input [formControl]="form.get('phoneNumber')" color="primary" controlName="phoneNumber" label="Phone" placeholder="XXX-XXX-XXXX" type="phone" [maskNumber]="{blocks: [3,3,4], separator: '-'}"  [errorsMap]="errorMessages"></app-input>
+    <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="Password" placeholder="Please enter your password" type="password" [errorsMap]="errorMessages"></app-input>
+    <app-input [formControl]="form.get('confirmPassword')" color="primary" controlName="confirmPassword" label="Confirm Password" placeholder="Please confirm your password" type="password" [errorsMap]="errorMessages"></app-input>
     
     <app-button-primary class="mt-rem-1 mb-rem-2" title="Register" [invalid]="!form.valid"></app-button-primary>
     
