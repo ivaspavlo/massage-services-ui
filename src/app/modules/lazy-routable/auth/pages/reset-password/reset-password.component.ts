@@ -2,6 +2,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PasswordValidators } from '@app/shared/validators';
+import { ErrorMessages } from '@app/core/constants';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { PasswordValidators } from '@app/shared/validators';
 export class ResetPasswordComponent implements OnInit {
 
   public form: FormGroup;
+  public errorMessages = ErrorMessages;
 
   constructor(
     private fb: FormBuilder
@@ -27,7 +29,7 @@ export class ResetPasswordComponent implements OnInit {
   private initForm(): FormGroup {
     return this.fb.group({
       password: this.fb.control('', [Validators.required, Validators.email]),
-      confirmPassword: this.fb.control('', [Validators.required, PasswordValidators.default]),
+      confirmPassword: this.fb.control('', [Validators.required, PasswordValidators.default, PasswordValidators.passwordsEqual()]),
     });
   }
 

@@ -1,6 +1,7 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PasswordValidators } from '@app/shared/validators';
 import { ILoginFormValue } from '../interfaces';
 
 
@@ -11,6 +12,8 @@ import { ILoginFormValue } from '../interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginFormComponent implements OnInit {
+  
+  @Input() errorsMap: {[key:string]: string;} = {};
 
   @Output() submit: EventEmitter<ILoginFormValue> = new EventEmitter();
   public form: FormGroup;
@@ -29,7 +32,7 @@ export class LoginFormComponent implements OnInit {
   
   private createForm(): FormGroup {
     return this.fb.group({
-      password: ['', Validators.required],
+      password: ['', [Validators.required, PasswordValidators.default]],
       email: ['', [Validators.required, Validators.email]]
     });
   }

@@ -1,14 +1,10 @@
 
 @import '_core-sizes';
+@import 'mixins/_all';
 
-.wrapper {
-  background: #bfd255;
-  background: -moz-linear-gradient(top,  #bfd255 0%, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
-  background: -webkit-linear-gradient(top,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
-  background: linear-gradient(to bottom,  #bfd255 0%,#8eb92a 50%,#72aa00 51%,#9ecb2d 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=0 );
-}
-
-.overflow-container {
-  padding: $header-full-heigth 0;
+.blog {
+  @include e('bg') {
+    background-image: url('/assets/img/png/contactus-bg.png');
+    @include background-image-center;
+  }
 }

@@ -1,6 +1,6 @@
 
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ErrorMessages } from '@app/core/constants';
 
 
 @Component({
@@ -10,10 +10,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
+  
+  public errorMessages = ErrorMessages;
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor() { }
 
   ngOnInit(): void { }
 

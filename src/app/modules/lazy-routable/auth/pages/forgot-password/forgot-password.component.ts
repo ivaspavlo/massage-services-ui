@@ -2,6 +2,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastService } from '@app/modules/ui/toast';
+import { ErrorMessages } from '@app/core/constants';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { ToastService } from '@app/modules/ui/toast';
 export class ForgotPasswordComponent implements OnInit {
 
   public form: FormGroup;
+  public errorMessages = ErrorMessages;
 
   constructor(
     private fb: FormBuilder,
