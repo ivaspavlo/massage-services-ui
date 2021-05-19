@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { HeaderDropdownComponent } from './header-dropdown/header-dropdown.component';
+import { HeaderDropdownComponent } from './container/header-dropdown.component';
 
 
 @NgModule({
