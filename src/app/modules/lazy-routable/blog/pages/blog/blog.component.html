@@ -1,8 +1,14 @@
 
-<section class="wrapper height-vh-100 container-fluid pos-relative">
-  <div class="overflow-container pos-absolute width-100 height-100 overflow-auto row no-gutters d-flex justify-content-center">
-    <div class="max-width-992 d-flex flex-column justify-content-center align-items-center">
-      <app-article-card *ngFor="let article of MOCK_ARTICLES" [config]="article"></app-article-card>
-    </div>
+<section class="blog height-vh-100 container-fluid pos-relative">
+  
+  <header class="width-100 pos-sticky top-0 z-index-2">
+    <app-header shrinked="true"></app-header>
+  </header>
+  
+  <div class="max-width-992 py-rem-2 d-flex flex-column justify-content-center align-items-center">
+    <app-article-card class="my-rem-1" *ngFor="let article of MOCK_ARTICLES" [config]="article"></app-article-card>
   </div>
+  
+  <div class="blog__bg width-100 height-100 pos-fixed top-0 z-index-minus-1"></div>
+
 </section>

@@ -5,6 +5,7 @@ $border-width: 2px;
 $background: #fff;
 $foreground: #7564a8;
 $foreground-off: #C2C2C2;
+$warn-color: #ff6363;
 
 .toggle {
 	display: none;
@@ -25,6 +26,12 @@ $foreground-off: #C2C2C2;
     border-radius: $height / 2;
     margin: 10px;
     position: relative;
+    &.has-error {
+      background: $warn-color;
+      &::after {
+        background: $warn-color;
+      }
+    }
     &::before {
       background: $background;
       position: absolute;

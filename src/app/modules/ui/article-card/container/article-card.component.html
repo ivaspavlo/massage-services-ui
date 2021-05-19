@@ -17,7 +17,7 @@
           <p class="author__date">{{config.date}}</p>
         </div>
       </div>
-      <button *ngIf="config.url" [routerLink]="[config.url]" class="post__button">LEARN MORE</button>
+      <button *ngIf="config.button_name && config.url" [routerLink]="[config.url]" class="post__button">{{config.button_name}}</button>
     </footer>
     
   </div>

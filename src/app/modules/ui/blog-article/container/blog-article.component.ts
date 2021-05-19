@@ -30,6 +30,7 @@ const MockArticle = {
 export class BlogArticleComponent implements AfterViewInit {
   
   @Input() config: IBlogArticle = MockArticle;
+  
   @Output() liked: EventEmitter<void> = new EventEmitter();
   @Output() copied: EventEmitter<string> = new EventEmitter();
   @Output() loaded: EventEmitter<string> = new EventEmitter();

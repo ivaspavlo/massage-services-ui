@@ -1,5 +1,5 @@
 
-import { FirstErrorPipe } from './get-first-value.pipe';
+import { FirstErrorPipe } from './first-error.pipe';
 
 
 export const PIPES = [
