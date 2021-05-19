@@ -1,0 +1,87 @@
+
+$width: 40px;
+$height: 25px;
+$border-width: 2px;
+$background: #fff;
+$foreground: #7564a8;
+$foreground-off: #C2C2C2;
+
+.toggle {
+	display: none;
+  &:checked + label::after {
+    animation: toggle-on-animation 0.5s;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+    background: $foreground;
+  }
+  &:checked + label {
+    background: $foreground;
+  }
+  & + label {
+    display: block;
+    width: $width;
+    height: $height;
+    background: $foreground-off;
+    border-radius: $height / 2;
+    margin: 10px;
+    position: relative;
+    &::before {
+      background: $background;
+      position: absolute;
+      top: $border-width;
+      left: $border-width;
+      bottom: $border-width;
+      right: $border-width;
+      border-radius: $height / 2 - $border-width;
+      transition: opacity .2s;
+      opacity: 1.0;
+      content: '';
+    }
+    &:hover::before {
+      opacity: 0.8;
+    }
+    &::after {
+      content: '';
+      background: $foreground-off;
+      position: absolute;
+      top: $border-width * 2;
+      left: $border-width * 2;
+      width: $height - $border-width * 4;
+      height: $height - $border-width * 4;
+      border-radius: $height / 2 - $border-width * 2;
+      animation: toggle-off-animation 0.5s;
+      animation-fill-mode: forwards;
+      transition: .3s;
+    }
+  }
+}
+
+@keyframes toggle-on-animation {
+	0% {
+		width: $height - $border-width * 4;
+		left: $border-width * 2;
+	}
+	50% {
+		width: $width - $border-width * 4;
+		left: $border-width * 2;
+	}
+	100% {
+		width: $height - $border-width * 4;
+		left: $width - $border-width * 2 - ($height - $border-width * 4);
+	}
+}
+
+@keyframes toggle-off-animation {
+	0% {
+		width: $height - $border-width * 4;
+		left: $width - $border-width * 2 - ($height - $border-width * 4);
+	}
+	50% {
+		width: $width - $border-width * 4;
+		left: $border-width * 2;
+	}
+	100% {
+		width: $height - $border-width * 4;
+		left: $border-width * 2;
+	}
+}
