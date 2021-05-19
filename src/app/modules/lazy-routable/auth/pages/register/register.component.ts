@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
       confirmPassword: this.fb.control('', [Validators.required, PasswordValidators.default, PasswordValidators.passwordsEqual()]),
       email: this.fb.control('', [Validators.required, Validators.email]),
       phoneNumber: this.fb.control('', [Validators.required, Validators.minLength(12)]),
-      // consent: this.fb.control('', Validators.requiredTrue)
+      consent: this.fb.control(false, Validators.requiredTrue)
     });
   }
 

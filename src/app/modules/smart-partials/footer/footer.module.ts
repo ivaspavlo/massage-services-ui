@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TitleModule, LogoModule, NgMenuModule, SocialModule } from '@app/modules/ui';
+import { TitleModule, LogoModule, SocialModule } from '@app/modules/ui';
 
 import { FooterComponent } from './container/footer.component';
 
@@ -15,8 +15,7 @@ import { FooterComponent } from './container/footer.component';
     CommonModule,
     TitleModule,
     LogoModule,
-    SocialModule,
-    NgMenuModule
+    SocialModule
   ],
   exports: [
     FooterComponent
