@@ -1,5 +1,5 @@
 
 export const Tabs = [
-  { name: 'Gift certificates' },
-  { name: 'Reservation' }
+  { name: 'Gift certificates', url: '/booking/certificates' },
+  { name: 'Reservation', url: '/booking/reservation' }
 ]

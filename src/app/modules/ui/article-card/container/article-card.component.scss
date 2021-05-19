@@ -6,26 +6,50 @@ $text-color-4: #8ac343;
 $transition: .5s;
 
 .article {
-  width: 525px;
+  @media only screen and (min-width: 576px) {
+    max-width: 650px;
+    border-radius: 10px;
+    .post__image {
+      width: 150px;
+      height: 150px;
+    }
+    .post__link {
+      padding: 0 0 20px 20px;
+    }
+    .post__text {
+      padding-left: 20px;
+      text-indent: 30px;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    max-width: 750px;
+    &:hover {
+      max-width: 800px;
+    }
+    .post__image {
+      width: 200px;
+      height: 200px;
+    }
+    .post__link {
+      padding: 10px 0 20px 30px;
+    }
+    .post__text {
+      padding-left: 30px;
+    }
+  }
+  width: 100%;
+  max-width: 550px;
   height: 250px;
+  backface-visibility: hidden;
+  transform: translateZ(0) scale(1,1);
+  transition: $transition;
   background: #fff;
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,245,248,1) 35%, rgba(236,236,237,1) 100%);
-  box-shadow: 0 13px 15px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  transition: $transition;
-  backface-visibility: hidden;
-  transform: translateZ(0) scale(1.0, 1.0);
-  @media only screen and (min-width: 992px) {
-    width: 700px;
-  }
+  box-shadow: 0 13px 15px rgba(0,0,0,.3);
   &:hover {
     height: 300px;
-    width: 600px;
     background-color: #fff;
     box-shadow: 0 30px 30px rgba(0, 0, 0, 0.3);
-    @media only screen and (min-width: 992px) {
-      width: 800px;
-    }
     .author__image, .post__button {
       opacity: 1;
       transition-delay: .7s;
@@ -39,8 +63,8 @@ $transition: .5s;
   position: relative;
   display: flex;
   &__image{
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 10px 10px 10px;
   }
   &__content {
@@ -49,11 +73,11 @@ $transition: .5s;
     flex-grow: 1;
     position: relative;
     overflow: hidden;
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   }
   &__link {
-    width: 400px;
-    padding: 10px 0 20px 30px;
+    max-width: 400px;
+    padding: 0 0 15px 15px;
     font-size: 28px;
     display: flex;
     text-align: start;
@@ -65,9 +89,9 @@ $transition: .5s;
     }
   }
   &__text {
-    padding-left: 30px;
+    padding-left: 15px;
     font-size: 15px;
-    text-indent: 30px;
+    text-indent: 20px;
     color: $text-color-2;
   }
   &__footer {
