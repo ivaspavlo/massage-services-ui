@@ -15,6 +15,7 @@ export class TabsComponent implements OnInit, AfterViewInit {
   
   @Input() items: ITab[] = [];
   @Input() current = 0;
+  
   @Output() tabClick: EventEmitter<string> = new EventEmitter();
   
   private underline: HTMLElement;
@@ -32,7 +33,7 @@ export class TabsComponent implements OnInit, AfterViewInit {
   
   public onTabClick(index: number): void {
     this.current = index;
-    this.tabClick.emit(this.items[index]?.name);
+    this.tabClick.emit(this.items[index]?.url);
     this.moveUnderline(index);
   }
   

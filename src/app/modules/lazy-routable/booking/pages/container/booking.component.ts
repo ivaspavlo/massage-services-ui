@@ -2,6 +2,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ITab } from '@app/interfaces';
+
 import { Tabs } from '../../constants/tabs.constant';
 
 
@@ -14,15 +15,23 @@ import { Tabs } from '../../constants/tabs.constant';
 export class BookingComponent implements OnInit {
   
   public tabs: ITab[] = Tabs;
+  public currentTabIndex: number = null;
   
   constructor(
     private router: Router
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.currentTabIndex = this.getCurrentTabIndex(this.router.url);
+  }
   
-  public onTabClick(name: string): void {
-    this.router.navigate(['/']);
+  public onTabClick(url: string): void {
+    this.currentTabIndex = this.getCurrentTabIndex(this.router.url);
+    this.router.navigateByUrl(url);
+  }
+  
+  private getCurrentTabIndex(url: string): number {
+    return this.tabs.findIndex(tab => tab.url === url) || 0;
   }
 
 }
