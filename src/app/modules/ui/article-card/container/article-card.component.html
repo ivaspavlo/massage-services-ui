@@ -10,7 +10,7 @@
     </div>
     
     <footer class="post__footer">
-      <div *ngIf="config.author" class="author">
+      <div *ngIf="config.author" class="author d-none d-lg-flex">
         <img [src]="config.author_img" alt="Author image" class="author__image">
         <div class="author__content">
           <p class="author__name">{{config.author}}</p>

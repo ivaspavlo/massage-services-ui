@@ -1,13 +1,11 @@
 
-<section class="blog d-flex flex-column align-items-center height-vh-100 container-fluid pos-relative">
+<section class="blog pb-rem-2 d-flex flex-column justify-content-start align-items-center height-vh-100 container-fluid pos-relative">
   
   <header class="width-100 pos-sticky top-0 z-index-2">
     <app-header shrinked="true"></app-header>
   </header>
   
-  <div class="max-width-992 py-rem-2 d-flex flex-column justify-content-center align-items-center">
-    <app-article-card class="my-rem-1" *ngFor="let article of MOCK_ARTICLES" [config]="article"></app-article-card>
-  </div>
+  <app-article-card *ngFor="let article of MOCK_ARTICLES; let isLast = last; let isFirst = first;" [config]="article" [ngClass]="{'pb-rem-2': isLast, 'pt-rem-2': isFirst}" class="py-rem-1"></app-article-card>
   
   <div class="blog__bg width-100 height-100 pos-fixed top-0 z-index-minus-1"></div>
 

@@ -7,19 +7,23 @@ $transition: .5s;
 
 .article {
   @media only screen and (min-width: 576px) {
-    max-width: 650px;
+    max-width: 550px;
     border-radius: 10px;
     .post__image {
       width: 150px;
       height: 150px;
     }
     .post__link {
+      font-size: 24px;
       padding: 0 0 20px 20px;
     }
     .post__text {
       padding-left: 20px;
       text-indent: 30px;
     }
+  }
+  @media only screen and (min-width: 768px) {
+    max-width: 650px;
   }
   @media only screen and (min-width: 992px) {
     max-width: 750px;
@@ -31,6 +35,7 @@ $transition: .5s;
       height: 200px;
     }
     .post__link {
+      font-size: 28px;
       padding: 10px 0 20px 30px;
     }
     .post__text {
@@ -43,7 +48,6 @@ $transition: .5s;
   backface-visibility: hidden;
   transform: translateZ(0) scale(1,1);
   transition: $transition;
-  background: #fff;
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,245,248,1) 35%, rgba(236,236,237,1) 100%);
   box-shadow: 0 13px 15px rgba(0,0,0,.3);
   &:hover {
@@ -78,7 +82,7 @@ $transition: .5s;
   &__link {
     max-width: 400px;
     padding: 0 0 15px 15px;
-    font-size: 28px;
+    font-size: 20px;
     display: flex;
     text-align: start;
     color: $text-color-1;
