@@ -40,7 +40,11 @@
   @include e('card') {
     max-width: 500px;
   }
-  @include e('image-plh') {
+  @include e('bg-1') {
+    background-image: url('/assets/img/png/main-bg-1.png');
+    @include background-image-center;
+  }
+  @include e('bg-2') {
     background-color: rgb(117,195,183,.5);
   }
 }

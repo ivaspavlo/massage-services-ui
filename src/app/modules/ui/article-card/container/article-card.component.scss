@@ -7,7 +7,7 @@ $transition: .5s;
 
 .article {
   @media only screen and (min-width: 576px) {
-    max-width: 650px;
+    max-width: 550px;
     border-radius: 10px;
     .post__image {
       width: 150px;
@@ -21,6 +21,9 @@ $transition: .5s;
       padding-left: 20px;
       text-indent: 30px;
     }
+  }
+  @media only screen and (min-width: 768px) {
+    max-width: 650px;
   }
   @media only screen and (min-width: 992px) {
     max-width: 750px;
