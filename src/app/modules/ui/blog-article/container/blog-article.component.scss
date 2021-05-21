@@ -1,10 +1,7 @@
 
 $blue-1: #9ECAFF;
 $blue-2: #1f84ff;
-$grey-1: #3C4447;
-$grey-2: #4B4B4B;
-$grey-3: #C3C3C3;
-$grey-4: #353B3F;
+$grey-1: #4B4B4B;
 
 @mixin article-bg {
 	background: rgb(255,255,255); /* Old browsers */
@@ -14,62 +11,49 @@ $grey-4: #353B3F;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-@mixin bg-title {
-	position: absolute;
-	font-size: 210px;
-	font-weight: 800;
-	text-transform: uppercase;
-	color: $grey-1;
-}
-
 @mixin article-text {
 	line-height: 150%;
 	font-size: 16px;
-	color: $grey-2;
+	color: $grey-1;
 	text-indent: 30px;
-}
-
-@media only screen and (min-width: 992px) {
-	div.article__header {
-		flex-direction: row;
-	}
-	div.article__right, div.article__left {
-		width: 50%;
-	}
-	div.article__content {
-		column-count: 3;
-		column-width: 33%;
-	}
-	div.article__left {
-		transform: translate(20px, -20px);
-	}
-	div.article {
-		margin: 100px auto;
-		border-radius: 4px;
-	}
-	figure.thumbnail {
-		border-radius: 4px;
-	}
 }
 
 .wrapper {
 	width: 100%;
-	height: 100vh;
-	overflow-y: auto;
-	background-color: $grey-4;
-	&__bg-1 {
-		@include bg-title;
-		top: 0; left: 0;
-	}
-	&__bg-2 {
-		@include bg-title;
-		bottom: 0; right: 0;
+	@media only screen and (min-width: 992px) {
+		padding: 100px 0;
 	}
 }
 
 .article {
+	@media only screen and (min-width: 576px) {
+		.article__content {
+			column-count: 2;
+			column-width: 50%;
+		}
+	}
+	@media only screen and (min-width: 992px) {
+		margin: 0 auto;
+		border-radius: 4px;
+		.article__header {
+			flex-direction: row;
+		}
+		.article__right, .article__left {
+			width: 50%;
+		}
+		.article__content {
+			column-count: 3;
+			column-width: 33%;
+		}
+		.article__left {
+			transform: translate(20px, -20px);
+		}
+		.thumbnail {
+			border-radius: 4px;
+		}
+	}
 	max-width: 992px;
-	margin: 100px auto 0;
+	margin: auto 0;
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -95,7 +79,7 @@ $grey-4: #353B3F;
 	}
 	&__title {
 		font-size: 42px;
-		color: $grey-2;
+		color: $grey-1;
 	}
 	&__intro {
 		padding: 10px;
@@ -106,8 +90,8 @@ $grey-4: #353B3F;
 	&__content {
 		width: 100%;
 		padding: 30px 50px 50px;
-		column-count: 2;
-		column-width: 50%;
+		column-count: 1;
+		column-width: 100%;
 		@include article-text;
 	}
 }

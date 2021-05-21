@@ -1,15 +1,14 @@
 
 <div class="wrapper">
   
-  <p class="wrapper__bg-1">{{config.bg_title_1}}</p>
-  <p class="wrapper__bg-2">{{config.bg_title_2}}</p>
-  
   <div class="article">
     <div class="article__header">
       <div class="article__left">
+        
         <figure class="thumbnail">
           <img [src]="config.title_img" alt="Main image" class="thumbnail__img">
         </figure>
+        
         <div class="info">
           <div class="date">
             <p class="date__day">{{config.day}}</p>
@@ -29,17 +28,24 @@
             </li>
           </ul>
         </div>
+        
       </div>
       <div class="article__right">
+        
         <h1 class="article__title">{{config.title}}</h1>
+        
         <div class="author">
           <img class="author__img" [src]="config.author_img" alt="Author image">
           <h2 class="author__name">{{config.author_name}}</h2>
         </div>
+        
         <p class="article__intro">{{config.intro}}</p>
+        
       </div>
     </div>
+    
     <div class="article__content">{{config.content}}</div>
+    
   </div>
   
 </div>

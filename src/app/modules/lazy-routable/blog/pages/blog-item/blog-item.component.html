@@ -1,2 +1,13 @@
 
-<app-blog-article [config]="" (copied)="onCopied()" (loaded)="onArticleLoaded($event)" (liked)="onLiked($event)"></app-blog-article>
+<section class="blog-item">
+  
+  <header class="width-100 pos-sticky top-0 z-index-2">
+    <app-header shrinked="true"></app-header>
+  </header>
+  
+  <app-blog-article [config]="" (copied)="onCopied()" (loaded)="onArticleLoaded($event)" (liked)="onLiked($event)"></app-blog-article>
+
+  <div class="blog-item__bg-1">Tkachuk</div>
+  <div class="blog-item__bg-2">Blog</div>
+  
+</section>

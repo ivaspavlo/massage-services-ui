@@ -1,0 +1,22 @@
+
+@import 'mixins/_all';
+
+@mixin bg-title {
+	position: absolute;
+	font-size: 210px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: #3C4447;
+}
+
+.blog-item {
+  background-color: #353B3F;
+  @include e('bg-1') {
+		@include bg-title;
+		top: 0; left: 0;
+	}
+  @include e('bg-2') {
+    @include bg-title;
+		bottom: 0; right: 0;
+  }
+}
