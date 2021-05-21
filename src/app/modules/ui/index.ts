@@ -1,4 +1,5 @@
 
+// generic elements
 export * from './expansion-panel/expansion-panel.module';
 export * from './brand-signature/brand-signature.module';
 export * from './scroll-down/scroll-down.module';
@@ -23,7 +24,9 @@ export * from './header-dropdown/header-dropdown.module';
 export * from './toast/toast.module';
 export * from './tabs/tabs.module';
 export * from './checkbox/checkbox.module';
+export * from './language-bar/language-bar.module';
 
+// app specific elements
 export * from './title/title.module';
 export * from './logo/logo.module';
 export * from './login-form/login-form.module';
