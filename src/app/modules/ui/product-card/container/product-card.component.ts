@@ -11,7 +11,7 @@ import { IProductCard } from '../interfaces';
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input() card: IProductCard;
+  @Input() card: IProductCard = { background: '/assets/img/png/service-bg.png', title: 'CARD1', info: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', button: 'TEST' };
 
   constructor() { }
 

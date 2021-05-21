@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
-import { ArticleCardModule, TabsModule } from '@app/modules/ui';
+import { ArticleCardModule, ProductCardModule, TabsModule } from '@app/modules/ui';
 
 import { BookingRoutingModule } from './booking-routing.module';
 import { PAGES } from './pages';
@@ -19,7 +19,8 @@ import { PAGES } from './pages';
     HeaderModule,
     FooterModule,
     TabsModule,
-    ArticleCardModule
+    ArticleCardModule,
+    ProductCardModule
   ]
 })
 export class BookingModule { }

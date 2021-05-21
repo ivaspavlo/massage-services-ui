@@ -1,15 +1,30 @@
 
 $text-color: #7dc9bd;
 
+@mixin item {
+	min-width: 60px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 :host {
   width: 100%;
 }
 
 .menu {
 	position: relative;
+	&:hover {
+		.menu__current {
+			background-color: rgba(255,255,255,.3);
+		}
+	}
 	&--opened {
 		.menu__current {
 			background-color: rgba(255,255,255,.3);
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
 		}
 		.menu__list {
 			transform: scale(1);
@@ -21,12 +36,9 @@ $text-color: #7dc9bd;
 		}
 	}
 	&__current {
-		display: flex;
-		align-items: flex-end;
-    padding: 10px 20px;
+		@include item;
+		border-radius: 4px;
     transition: .3s ease;
-		border-top-left-radius: 4px;
-		border-top-right-radius: 4px;
 		color: $text-color;
 		cursor: pointer;
 		&--no-items {
@@ -35,19 +47,18 @@ $text-color: #7dc9bd;
 	}
 	&__list {
 		position: absolute; top: 100%;
-		margin: 0;
 		transition: .3s ease;
 		transform-origin: 0 0;
 		transform: scale(0);
 		opacity: 0;
 		border-radius: 4px;
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
 		background-color: rgba(125,201,189,.8);
 		z-index: 3;
 	}
 	&__item {
-    padding: 15px 20px;
-		transform: translateY(-20px);
-		border: 1px solid transparent;
+		@include item;
     white-space: nowrap;
 		transition: .1s;
 		overflow: hidden;
