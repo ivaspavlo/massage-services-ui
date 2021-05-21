@@ -1,6 +1,6 @@
 
 <div *ngIf="card" class="card">
-  <img class="bg-image" [src]="card.background" alt="Card Image">
+  
   <div class="content">
     <h2 class="title">{{ card.title }}</h2>
     <p class="info-text">{{ card.info }}</p>
@@ -11,4 +11,7 @@
       <button class="default-button">{{ card.button }}</button>
     </div>
   </div>
+  
+  <div class="bg-image" [ngStyle]="{'background-image': 'url(' + card.background + ')'}">
+  
 </div>
