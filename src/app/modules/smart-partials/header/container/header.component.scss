@@ -19,7 +19,4 @@
     padding: 1rem 0;
     background-color: rgba(46, 49, 49, .2);
   }
-  @include e('mobile') {
-    background-color: white;
-  }
 }
