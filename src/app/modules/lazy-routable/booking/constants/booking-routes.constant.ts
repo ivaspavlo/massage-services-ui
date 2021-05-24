@@ -9,8 +9,8 @@ import { ReservationComponent } from '../pages/reservation/reservation.component
 export enum BOOKING_ROUTE_NAMES {
   BLANK = '',
   RESERVATION = 'reservation',
-  GIFTS = 'gifts',
-  APPOINTMENT = 'appointment'
+  APPOINTMENT = 'reservation/:id',
+  GIFTS = 'gifts'
 }
 
 export const BOOKING_ROUTES: Routes = [

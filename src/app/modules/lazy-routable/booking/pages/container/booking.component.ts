@@ -30,7 +30,7 @@ export class BookingComponent implements OnInit {
   }
   
   private getCurrentTabIndex(url: string): number {
-    return this.tabs.findIndex(tab => tab.url === url) || 0;
+    return this.tabs.findIndex(tab => url.includes(tab.url)) || 0;
   }
 
 }
