@@ -11,7 +11,8 @@ const MockArticleCard = {
   // author: 'Sergiy Tkachuk',
   author_img: 'https://assets.codepen.io/2642098/internal/avatars/users/default.png?format=auto&height=80&version=1543776877&width=80',
   date: 'Mar 10, 2020',
-  button_name: 'BOOK NOW'
+  button_name: 'BOOK NOW',
+  price: '100.00'
 }
 
 @Component({

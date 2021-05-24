@@ -18,6 +18,7 @@
         </div>
       </div>
       <button *ngIf="config.button_name && config.url" [routerLink]="[config.url]" class="post__button">{{config.button_name}}</button>
+      <p *ngIf="config.price" class="post__price">{{config.price}} UAH / hour</p>
     </footer>
     
   </div>
