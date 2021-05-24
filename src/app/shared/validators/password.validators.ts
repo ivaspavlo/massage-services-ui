@@ -24,7 +24,6 @@ export class PasswordValidators {
   
   static passwordsEqual(passwordControlName = 'password'): ValidatorFn {
     return (control: AbstractControl) => {
-      debugger;
       const formGroup = control.parent;
       const passwordControl = control?.parent?.get(passwordControlName);
       if (!formGroup || !passwordControl) {

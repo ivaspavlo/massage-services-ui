@@ -8,4 +8,5 @@ export interface IArticleCard {
   author_img?: string;
   date?: string;
   button_name?: string;
+  price?: string;
 }
