@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, Renderer2, ViewChild, ElementRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, Renderer2, ElementRef, AfterViewInit, ViewChildren, QueryList, ChangeDetectorRef } from '@angular/core';
 import { ITab } from '../interfaces';
 
 
@@ -16,7 +16,7 @@ export class TabsComponent implements OnInit, AfterViewInit {
   @Input() items: ITab[] = [];
   @Input() current = 0;
   
-  @Output() tabClick: EventEmitter<string> = new EventEmitter();
+  @Output() tabClick: EventEmitter<ITab> = new EventEmitter();
   
   private underline: HTMLElement;
 
@@ -33,7 +33,7 @@ export class TabsComponent implements OnInit, AfterViewInit {
   
   public onTabClick(index: number): void {
     this.current = index;
-    this.tabClick.emit(this.items[index]?.url);
+    this.tabClick.emit(this.items[index]);
     this.moveUnderline(index);
   }
   

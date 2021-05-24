@@ -25,9 +25,8 @@ export class BookingComponent implements OnInit {
     this.currentTabIndex = this.getCurrentTabIndex(this.router.url);
   }
   
-  public onTabClick(url: string): void {
-    this.currentTabIndex = this.getCurrentTabIndex(this.router.url);
-    this.router.navigateByUrl(url);
+  public onTabClick(tab: ITab): void {
+    this.router.navigateByUrl(tab.url);
   }
   
   private getCurrentTabIndex(url: string): number {
