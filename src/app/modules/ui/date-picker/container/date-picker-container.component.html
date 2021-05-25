@@ -1,0 +1,14 @@
+
+<div class="input-group">
+
+  <input class="form-control" name="mydate" placeholder="Select a date" angular-mydatepicker #dp="angular-mydatepicker" [(ngModel)]="model" [options]="options"/>
+
+  <div class="input-group-append">
+    <button type="button" class="btn btn-secondary" *ngIf="model" (click)="dp.clearDate()">CLEAR</button>
+  </div>
+
+  <div class="input-group-append">
+    <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()">TOGGLE</button>
+  </div>
+
+</div>
