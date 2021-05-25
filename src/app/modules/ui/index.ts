@@ -25,6 +25,7 @@ export * from './toast/toast.module';
 export * from './tabs/tabs.module';
 export * from './checkbox/checkbox.module';
 export * from './language-bar/language-bar.module';
+export * from './date-picker/date-picker.module';
 
 // app specific elements
 export * from './title/title.module';
