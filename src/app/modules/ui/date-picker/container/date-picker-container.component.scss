@@ -1,6 +1,7 @@
 
 $accent-color: #7d6caf;
 $clear-button-color: #e3e3e3;
+$clear-button-color-hover: #f6f6f6;
 
 .wrap {
   position: relative;
@@ -31,13 +32,16 @@ $clear-button-color: #e3e3e3;
   border-bottom-left-radius: 0;
   background-color: $clear-button-color;
   cursor: pointer;
+  &:hover {
+    background-color: ;
+  }
   &__icon {
     width: 20px;
     height: 20px;
-    
     background-image: url('/assets/img/svg/x-button.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
   }
 }
