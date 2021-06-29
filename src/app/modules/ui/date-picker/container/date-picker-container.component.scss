@@ -3,45 +3,12 @@ $accent-color: #7d6caf;
 $clear-button-color: #e3e3e3;
 $clear-button-color-hover: #f6f6f6;
 
-.wrap {
-  position: relative;
+.dp {
   border: 1px solid $accent-color;
   border-radius: 4px;
 }
 
-.picker {
-  position: relative;
-  &__input {
-    padding: 18px 45px 18px 12px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: 0;
-  }
-}
-
-.x-button {
-  position: absolute; right: 0; top: 0;
-  width: 40px;
-  height: 100%;
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  background-color: $clear-button-color;
-  cursor: pointer;
-  &:hover {
-    background-color: ;
-  }
-  &__icon {
-    width: 20px;
-    height: 20px;
-    background-image: url('/assets/img/svg/x-button.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-  }
+button {
+  background-color: transparent !important;
+  border: 0 !important;
 }
