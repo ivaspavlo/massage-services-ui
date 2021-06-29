@@ -1,14 +1,6 @@
 
-<div class="wrap">
+<div class="dp">
   
-  <div class="picker">
-    <input #dp="angular-mydatepicker" angular-mydatepicker [(ngModel)]="model" [options]="options" (focus)="dp.toggleCalendar()" name="mydate" placeholder="Select dates" class="picker__input"/>
-  </div>
-  
-  <button *ngIf="model" class="x-button" (click)="dp.clearDate()">
-    <i class="x-button__icon"></i>
-  </button>
-  
+  <dp-date-picker [config]="datePickerConfig"></dp-date-picker>
+
 </div>
-
-
