@@ -1,0 +1,39 @@
+<div class="d-flex">
+
+  <button (click)="onPrevClick()" class="ctrl-main ctrl-main--left">
+    <i class="ctrl-main__icon ctrl-main__icon--right"></i>
+    <span>{{ 'core.pagination.prev' | translate }}</span>
+  </button>
+
+  <div class="d-flex d-md-none">
+    <button class="ctrl-num ctrl-num--active ctrl-num--last">
+      <span>{{ currentPage + 1 }}</span>
+    </button>
+  </div>
+
+  <ul class="d-none d-md-flex p-0 m-0">
+    <li *ngFor="let i of currentRange; let isLast = last;">
+      <button (click)="onPageClick(i)" [ngClass]="{'ctrl-num--active': i === currentPage, 'ctrl-num--last': isLast && currentRangeIndex === ranges.length - 1}" class="ctrl-num">
+        <span>{{ i + 1 }}</span>
+      </button>
+    </li>
+    <ng-container *ngIf="currentRangeIndex !== ranges.length - 1">
+      <li>
+        <button (click)="onDotsClick()" class="ctrl-num">
+          <span>...</span>
+        </button>
+      </li>
+      <li>
+        <button (click)="onLastPageClick()" [ngClass]="{'ctrl-num--active': currentPage === pagesQty}" class="ctrl-num ctrl-num--last">
+          <span>{{ pagesQty }}</span>
+        </button>
+      </li>
+    </ng-container>
+  </ul>
+
+  <button (click)="onNextClick()" class="ctrl-main ctrl-main--right">
+    <span>{{ 'core.pagination.next' | translate }}</span>
+    <i class="ctrl-main__icon ctrl-main__icon--left"></i>
+  </button>
+
+</div>
