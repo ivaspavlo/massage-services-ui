@@ -1,6 +1,4 @@
 
-<div class="dp">
-  
-  <dp-date-picker [config]="datePickerConfig"></dp-date-picker>
-
+<div class="input-box-container">
+  <input #dp="angular-mydatepicker" angular-mydatepicker [options]="myDpOptions" [(ngModel)]="model" (dateChanged)="onDateChanged($event)" (click)="onInputClick(dp)" class="input-box" [placeholder]="plh" name="mydate"/>
 </div>

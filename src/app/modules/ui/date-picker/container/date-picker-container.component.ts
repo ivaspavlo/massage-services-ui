@@ -1,18 +1,78 @@
 
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Optional, ViewChild } from '@angular/core';
+import { ControlContainer, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
 
 
 @Component({
   selector: 'app-date-picker',
   templateUrl: './date-picker-container.component.html',
-  styleUrls: ['./date-picker-container.component.scss']
+  styleUrls: ['./date-picker-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: DatePickerContainerComponent,
+    multi: true
+  }],
+  
 })
 export class DatePickerContainerComponent implements OnInit {
-   
-  @Input() datePickerConfig: any;
 
-  constructor() { }
+  @Input() myDpOptions: IAngularMyDpOptions = {
+    dateRange: false,
+    dateFormat: 'dd.mm.yyyy'
+  };
+  @Input() plh = '';
+  @Input() errorsMap: { [key:string]: string; };
+  @Input() controlName = '';
+  
+  // ControlValueAccessor
+  private onChange;
+  private onTouched;
+  
+  // ControlContainer
+  public get form(): FormGroup { return this.controlContainer?.control as FormGroup; }
+  public get control(): FormControl { return this.form?.get(this.controlName) as FormControl; }
+  
+  public model: IMyDateModel = null;
+
+  constructor(
+    @Optional() private controlContainer: ControlContainer,
+    private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void { }
+  
+  // ControlValueAccessor
+  public registerOnChange(fn): void {
+    this.onChange = fn;
+  }
+  public registerOnTouched(fn): void {
+    this.onTouched = fn;
+  }
+  public writeValue(value: Date): void {
+    if (!value) {
+      return;
+    }
+    this.model = {
+      isRange: this.myDpOptions.dateRange,
+      singleDate: {
+        jsDate: value
+      }
+    }
+  }
+  
+  public onDateChanged(event: IMyDateModel): void {
+    const value = this.myDpOptions.dateRange ?
+      { begin: event.dateRange.beginJsDate, end: event.dateRange.endJsDate } :
+      event.singleDate.jsDate;
+    this.onChange(value);
+  }
+  
+  public onInputClick(dp: any): void {
+    this.onTouched();
+    dp.toggleCalendar();
+    this.cdr.detectChanges();
+  }
 
 }

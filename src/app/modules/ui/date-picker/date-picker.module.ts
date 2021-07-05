@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { DpDatePickerModule } from 'ng2-date-picker';
+import { AngularMyDatePickerModule } from 'angular-mydatepicker';
 
 import { DatePickerContainerComponent } from './container/date-picker-container.component';
 
@@ -14,8 +14,8 @@ import { DatePickerContainerComponent } from './container/date-picker-container.
   ],
   imports: [
     CommonModule,
-    DpDatePickerModule,
-    FormsModule
+    FormsModule,
+    AngularMyDatePickerModule
   ],
   exports: [
     DatePickerContainerComponent

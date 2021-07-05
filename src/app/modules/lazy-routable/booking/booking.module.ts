@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
 import { ArticleCardModule, ProductCardModule, TabsModule, DatePickerModule } from '@app/modules/ui';
@@ -15,6 +16,7 @@ import { PAGES } from './pages';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     BookingRoutingModule,
     HeaderModule,
     FooterModule,

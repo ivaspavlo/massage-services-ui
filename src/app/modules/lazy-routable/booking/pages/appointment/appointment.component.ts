@@ -1,5 +1,6 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,9 +10,21 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppointmentComponent implements OnInit {
+  
+  public form: FormGroup = null;
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+  ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.form = this.initForm();
+  }
+  
+  private initForm(): FormGroup {
+    return this.fb.group({
+      date: this.fb.control('', [Validators.required])
+    });
+  }
 
 }
