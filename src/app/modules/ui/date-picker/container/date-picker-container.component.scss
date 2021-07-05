@@ -9,12 +9,13 @@ $clear-button-color-hover: #f6f6f6;
 }
 
 ::ng-deep {
-  button {
-    border: 0;
-    background-color: transparent;
+  .input-box-container {
+    position: relative;
   }
-  dp-day-calendar .dp-calendar-weekday {
-    border-bottom: 0;
-    border-left: 0;
+  .input-box {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
   }
 }
