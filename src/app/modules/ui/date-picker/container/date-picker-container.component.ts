@@ -1,5 +1,5 @@
 
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Optional, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Optional } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
 
@@ -13,16 +13,12 @@ import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
     provide: NG_VALUE_ACCESSOR,
     useExisting: DatePickerContainerComponent,
     multi: true
-  }],
-  
+  }]
 })
 export class DatePickerContainerComponent implements OnInit {
 
-  @Input() myDpOptions: IAngularMyDpOptions = {
-    dateRange: false,
-    dateFormat: 'dd.mm.yyyy'
-  };
-  @Input() plh = '';
+  @Input() myDpOptions: IAngularMyDpOptions;
+  @Input() plh = 'Please select the date';
   @Input() errorsMap: { [key:string]: string; };
   @Input() controlName = '';
   
@@ -41,7 +37,20 @@ export class DatePickerContainerComponent implements OnInit {
     private cdr: ChangeDetectorRef
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.initOptions();
+  }
+  
+  private initOptions(): void {
+    if (!this.myDpOptions) {
+      const now = new Date();
+      this.myDpOptions = {
+        dateRange: false,
+        dateFormat: 'dd.mm.yyyy',
+        disableUntil: { year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate() }
+      }
+    }
+  }
   
   // ControlValueAccessor
   public registerOnChange(fn): void {
