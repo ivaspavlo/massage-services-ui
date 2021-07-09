@@ -19,6 +19,7 @@ export class DatePickerContainerComponent implements OnInit {
 
   @Input() myDpOptions: IAngularMyDpOptions;
   @Input() plh = 'Please select the date';
+  @Input() label = 'test';
   @Input() errorsMap: { [key:string]: string; };
   @Input() controlName = '';
   

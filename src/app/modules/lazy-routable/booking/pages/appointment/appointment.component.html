@@ -10,8 +10,8 @@
     <div class="width-100 height-100 d-flex flex-grow-1">
       
       <div class="width-100 width-lg-50 height-100 px-rem-2 py-rem-1 d-flex flex-column">
-        <h5 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Select the date</h5>
-        <form [formGroup]="form" class="my-rem-1">
+        <h5 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Select date</h5>
+        <form [formGroup]="form" class="dp">
           <app-date-picker [formControl]="form.get('date')" controlName="date"></app-date-picker>
         </form>
         <h5 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Select time</h5>
@@ -25,14 +25,15 @@
       
       <i class="delimeter"></i>
       
-      <div class="width-100 width-lg-50 height-100 p-rem-0_75 d-flex flex-column">
-        <h5>Selected dates</h5>
-        <ul>
-          <li>some date #1</li>
-          <li>some date #1</li>
-          <li>some date #1</li>
-          <li>some date #1</li>
+      <div class="width-100 width-lg-50 height-100 px-rem-2 py-rem-1 d-flex flex-column">
+        <h5 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Selected dates</h5>
+        <ul class="date">
+          <li class="date__slot">01.01.2021 09:00-10:00</li>
+          <li class="date__slot">01.01.2021 09:00-10:00</li>
+          <li class="date__slot">01.01.2021 09:00-10:00</li>
+          <li class="date__slot">01.01.2021 09:00-10:00</li>
         </ul>
+        
       </div>
       
     </div>
