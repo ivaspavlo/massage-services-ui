@@ -1,17 +1,17 @@
 
 <section class="width-100 height-100 p-rem-3 d-flex justify-content-center">
   
-  <div class="width-100 max-width-992 d-flex flex-column bg-dark-transparent bg-blur b-radius-4">
+  <div class="width-100 max-width-992 p-rem-0_75 d-flex flex-column bg-dark-transparent bg-blur b-radius-4">
     
-    <header class="width-100 p-rem-0_75 d-flex justify-content-center">
+    <header class="width-100 pb-rem-1 d-flex justify-content-center">
       <h3 class="font-42 spacing-px-1 font-family-nexa text-shadow-primary color-white ng-star-inserted">Name of massage</h3>
     </header>
     
     <div class="width-100 height-100 d-flex flex-grow-1">
       
-      <div class="width-100 width-lg-50 height-100 px-rem-2 py-rem-1 d-flex flex-column">
+      <div class="selector">
         <h5 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Select date</h5>
-        <form [formGroup]="form" class="dp">
+        <form [formGroup]="form" class="selector__dp">
           <app-date-picker [formControl]="form.get('date')" controlName="date"></app-date-picker>
         </form>
         <h5 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Select time</h5>
@@ -25,15 +25,16 @@
       
       <i class="delimeter"></i>
       
-      <div class="width-100 width-lg-50 height-100 px-rem-2 py-rem-1 d-flex flex-column">
+      <div class="date-time-pairs">
         <h5 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Selected dates</h5>
-        <ul class="date">
-          <li class="date__slot">01.01.2021 09:00-10:00</li>
-          <li class="date__slot">01.01.2021 09:00-10:00</li>
-          <li class="date__slot">01.01.2021 09:00-10:00</li>
-          <li class="date__slot">01.01.2021 09:00-10:00</li>
+        <ul class="my-rem-1 flex-grow-1">
+          <li class="pair">
+            <span class="font-18">38.01.2021</span>
+            <span class="ml-rem-0_5 font-14 color-accent-600">09:00-20:00</span>
+            <i class="pair__close"></i>
+          </li>
         </ul>
-        
+        <app-button-primary title="Confirm" filled="true"></app-button-primary>
       </div>
       
     </div>

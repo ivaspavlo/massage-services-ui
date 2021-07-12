@@ -5,6 +5,6 @@
 .blog {
   @include e('bg') {
     background-image: url('/assets/img/png/contactus-bg.png');
-    @include background-image-center;
+    @include bg();
   }
 }

@@ -21,7 +21,7 @@
     width: 25px;
     height: 25px;
     display: flex;
-    @include background-image-center;
+    @include bg();
     @include m('phone') {
       background-image: url('/assets/img/svg/phone.svg');
     }

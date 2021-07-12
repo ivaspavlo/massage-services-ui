@@ -26,7 +26,6 @@ export * from './tabs/tabs.module';
 export * from './checkbox/checkbox.module';
 export * from './language-bar/language-bar.module';
 export * from './date-picker/date-picker.module';
-export * from './popover/popover.module';
 
 // app specific elements
 export * from './title/title.module';
