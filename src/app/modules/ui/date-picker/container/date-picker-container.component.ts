@@ -17,7 +17,7 @@ import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
 })
 export class DatePickerContainerComponent implements OnInit {
 
-  @Input() myDpOptions: IAngularMyDpOptions;
+  @Input() dpOptions: IAngularMyDpOptions;
   @Input() plh = 'Please select the date';
   @Input() label = 'test';
   @Input() errorsMap: { [key:string]: string; };
@@ -38,20 +38,7 @@ export class DatePickerContainerComponent implements OnInit {
     private cdr: ChangeDetectorRef
   ) { }
 
-  ngOnInit(): void {
-    this.initOptions();
-  }
-  
-  private initOptions(): void {
-    if (!this.myDpOptions) {
-      const now = new Date();
-      this.myDpOptions = {
-        dateRange: false,
-        dateFormat: 'dd.mm.yyyy',
-        disableUntil: { year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate() }
-      }
-    }
-  }
+  ngOnInit(): void { }
   
   // ControlValueAccessor
   public registerOnChange(fn): void {
@@ -65,7 +52,7 @@ export class DatePickerContainerComponent implements OnInit {
       return;
     }
     this.model = {
-      isRange: this.myDpOptions.dateRange,
+      isRange: this.dpOptions.dateRange,
       singleDate: {
         jsDate: value
       }
@@ -73,7 +60,7 @@ export class DatePickerContainerComponent implements OnInit {
   }
   
   public onDateChanged(event: IMyDateModel): void {
-    const value = this.myDpOptions.dateRange ?
+    const value = this.dpOptions.dateRange ?
       { begin: event.dateRange.beginJsDate, end: event.dateRange.endJsDate } :
       event.singleDate.jsDate;
     this.onChange(value);
