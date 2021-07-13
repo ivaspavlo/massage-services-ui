@@ -7,12 +7,15 @@ import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
 import { ArticleCardModule, ProductCardModule, TabsModule, DatePickerModule, ButtonPrimaryModule } from '@app/modules/ui';
 
 import { BookingRoutingModule } from './booking-routing.module';
+
 import { PAGES } from './pages';
+import { PIPES } from './pipes';
 
 
 @NgModule({
   declarations: [
-    ...PAGES
+    ...PAGES,
+    ...PIPES
   ],
   imports: [
     CommonModule,
