@@ -7,7 +7,7 @@
       <h3 class="font-42 spacing-px-1 font-family-nexa text-shadow-primary color-white ng-star-inserted">Name of massage</h3>
     </header>
     
-    <div class="width-100 height-100 d-flex flex-grow-1">
+    <div class="width-100 height-100 d-flex flex-column flex-md-row align-items-center flex-grow-1">
       
       <div class="selector">
         <h5 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Select date</h5>
@@ -22,18 +22,16 @@
         </ul>
       </div>
       
-      <i class="delimeter"></i>
-      
       <div class="date-time-pairs">
-        <h5 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Selected dates</h5>
-        <ul class="my-rem-1 flex-grow-1">
+        <h5 class="width-100 font-30 d-flex justify-content-center justify-content-md-start font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Selected dates</h5>
+        <ul class="my-rem-1 d-flex flex-md-column justify-content-center justify-content-md-start flex-grow-1">
           <li (click)="onDeletePair(index)" *ngFor="let pair of pairs | formatDateTime; let index = index;" class="pair">
             <span class="font-18">{{pair.date}}</span>
             <span class="ml-rem-0_5 font-14 color-accent-600">{{pair.time}}</span>
             <a class="pair__close"></a>
           </li>
         </ul>
-        <app-button-primary title="Confirm" filled="true" class="mt-rem-1"></app-button-primary>
+        <app-button-primary *ngIf="pairs.length" title="Confirm" filled="true" class="mt-rem-1"></app-button-primary>
       </div>
       
     </div>
