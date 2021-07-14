@@ -10,11 +10,13 @@ import { BookingRoutingModule } from './booking-routing.module';
 
 import { PAGES } from './pages';
 import { PIPES } from './pipes';
+import { PARTIALS } from './partials';
 
 
 @NgModule({
   declarations: [
     ...PAGES,
+    ...PARTIALS,
     ...PIPES
   ],
   imports: [
