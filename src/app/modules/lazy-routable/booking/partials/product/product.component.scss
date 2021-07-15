@@ -1,0 +1,21 @@
+
+@import 'mixins/_all';
+
+:host {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.product {
+  max-width: 650px;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  border-radius: 10px;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,245,248,1) 35%, rgba(236,236,237,1) 100%);
+  @include e('image') {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+  }
+}
