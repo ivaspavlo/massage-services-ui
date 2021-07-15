@@ -105,7 +105,9 @@
 .mb-rem-4_5 { margin-bottom: 4.5rem; }
 .mb-rem-4_75 { margin-bottom: 4.75rem; }
 
-@include sm { }
+@include sm {
+  .mt-rem-sm-0 { margin-top: 0; }
+}
 
 @include md { }
 
