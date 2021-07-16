@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { ILanguageBarItem } from '../interfaces';
 
@@ -20,6 +20,7 @@ export class LanguageBarComponent implements OnInit {
   
   @Input() items: ILanguageBarItem[] = MockItems;
   @Input() current: ILanguageBarItem = MockItems[0];
+  @Output() languageChange: EventEmitter<string> = new EventEmitter();
   
   public current$: BehaviorSubject<ILanguageBarItem> = new BehaviorSubject(null);
   public listItems$: BehaviorSubject<ILanguageBarItem[]> = new BehaviorSubject(null);
@@ -39,10 +40,12 @@ export class LanguageBarComponent implements OnInit {
   }
   
   public onItemClick(event: MouseEvent, item: ILanguageBarItem): void {
+    debugger;
     event.preventDefault();
     event.stopPropagation();
     this.isOpened$.next(false);
     this.setValues(item);
+    this.languageChange.emit(item.id);
   }
   
   private setValues(item: ILanguageBarItem): void {

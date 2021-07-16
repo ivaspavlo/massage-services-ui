@@ -1,2 +1,14 @@
 
-
+{
+  "core.address": "Kyiv, Saratovska str. 10",
+  "core.footer.work-days": "Mo - Fr",
+  "core.footer.empovered-by": "Empovered by m1",
+  "core.footer.work-weekends": "Sa",
+  "core.footer.site-map": "Site Map",
+  "core.footer.payment-methods": "Payment Methods",
+  "core.footer.contradictions": "Contradictions",
+  "core.footer.loyalty-program": "Loyalty Program",
+  "core.footer.privacy-policy": "Privacy Policy",
+  "core.footer.discounts-promotions": "Discounts & Promotions",
+  "core.footer.service-statements": "Service Statements"
+}

@@ -15,7 +15,7 @@ import { CORE_GUARDS } from './guards';
 @NgModule({
   imports: [
     DialogModule,
-    CoreTranslationModule,
+    CoreTranslationModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: IS_PROD })
   ],
   providers: [

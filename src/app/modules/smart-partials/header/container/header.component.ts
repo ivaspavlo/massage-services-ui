@@ -1,5 +1,6 @@
 
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { IHeaderDropdownMenu } from '@app/interfaces';
 import { MAIN_MENU_ITEMS, USER_MENU_ITEMS, USER_ICON } from '../constants';
 
@@ -20,11 +21,17 @@ export class HeaderComponent implements OnInit {
   
   private user = null;
   
-  constructor() { }
+  constructor(
+    private translateService: TranslateService
+  ) { }
 
   ngOnInit(): void {
     this.desktopMenuItems = this.getDesktopItems(this.user);
     this.mobileMenuItems = this.getMobileItems(this.user);
+  }
+  
+  public onLanguageChange(lang: string): void {
+    this.translateService.setDefaultLang(lang);
   }
   
   private getDesktopItems(user: any): IHeaderDropdownMenu[] {

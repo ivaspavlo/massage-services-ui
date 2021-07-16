@@ -16,7 +16,7 @@
             <app-header-dropdown [menu]="item"></app-header-dropdown>
           </li>
           <li class="d-flex">
-            <app-language-bar></app-language-bar>
+            <app-language-bar (languageChange)="onLanguageChange($event)"></app-language-bar>
           </li>
         </ul>
       </div>
