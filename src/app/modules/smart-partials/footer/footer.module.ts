@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CoreTranslationModule } from '@app/core/core-translation.module';
 import { TitleModule, LogoModule, SocialModule } from '@app/modules/ui';
 
 import { FooterComponent } from './container/footer.component';
@@ -15,7 +16,8 @@ import { FooterComponent } from './container/footer.component';
     CommonModule,
     TitleModule,
     LogoModule,
-    SocialModule
+    SocialModule,
+    CoreTranslationModule.forChild()
   ],
   exports: [
     FooterComponent
