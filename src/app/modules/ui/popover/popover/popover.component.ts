@@ -14,8 +14,9 @@ export class PopoverComponent implements OnInit {
   content: PopoverContent;
   context;
 
-  constructor(private popoverRef: PopoverRef) {
-  }
+  constructor(
+    private popoverRef: PopoverRef
+  ) { }
 
   ngOnInit() {
     this.content = this.popoverRef.content;

@@ -1,6 +1,7 @@
 
 
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { DialogModule } from '@app/modules/ui';
@@ -15,6 +16,8 @@ import { CORE_GUARDS } from './guards';
 @NgModule({
   imports: [
     DialogModule,
+    FormsModule,
+    ReactiveFormsModule,
     CoreTranslationModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: IS_PROD })
   ],

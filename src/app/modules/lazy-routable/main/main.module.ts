@@ -1,7 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '@app/shared/shared.module';
 import { BrandSignatureModule, ScrollDownModule, CarouselModule, ArrowAnimatedButtonModule, ProductCardModule, SliderQuoteModule, InputModule, ButtonPrimaryModule, SliderModule, ButtonSecondaryModule, HorizontalMenuModule, LogoModule } from '@app/modules/ui';
@@ -20,6 +20,7 @@ import { MODALS } from './modals';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveFormsModule,
     MainRoutingModule,
     SharedModule,
