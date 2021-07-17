@@ -1,5 +1,5 @@
 
-<ul *ngIf="(current$ | async) as currentItem" [ngClass]="{'menu--opened': isOpened$ | async}" class="menu">
+<ul *ngIf="(current$ | async) as currentItem" class="menu">
   <a (click)="onMenuClick()" class="menu__current">
     <span>{{currentItem.name}}</span>
     <i *ngIf="currentItem.icon" [ngStyle]="{'background-image': 'url(' + currentItem.icon + ')'}" class="menu__icon"></i>

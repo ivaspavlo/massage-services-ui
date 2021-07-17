@@ -2,9 +2,16 @@
 @import 'mixins/bem';
 @import '_core-z-index';
 @import '_core-sizes';
+@import '_core-colors';
 
 :host {
   width: 100%;
+}
+
+.delimeter {
+  height: 30px;
+  width: 1px;
+  background-color: $accent-500;
 }
 
 .menu {

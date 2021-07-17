@@ -1,6 +1,8 @@
 
 {
   "core.address": "Kyiv, Saratovska str. 10",
+  "core.not-found": "Seems to be this page doesn't exist...",
+  "core.back-to-main-page": "Main Page",
   "core.footer.work-days": "Mo - Fr",
   "core.footer.empovered-by": "Empovered by m1",
   "core.footer.work-weekends": "Sa",
