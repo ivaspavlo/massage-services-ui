@@ -10,5 +10,9 @@
   "core.footer.loyalty-program": "Постоянным клиентам",
   "core.footer.privacy-policy": "Политика приватности",
   "core.footer.discounts-promotions": "Акции и скидки",
-  "core.footer.service-statements": "Правила обслуживания"
+  "core.footer.service-statements": "Правила обслуживания",
+  "newsletter.header": "Подписывайтесь на новости от нас",
+  "newsletter.get": "и получите",
+  "newsletter.bonus": "бонусну карту",
+  "newsletter.subscribe": "Подписаться"
 }

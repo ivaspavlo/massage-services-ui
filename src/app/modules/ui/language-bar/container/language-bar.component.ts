@@ -40,7 +40,6 @@ export class LanguageBarComponent implements OnInit {
   }
   
   public onItemClick(event: MouseEvent, item: ILanguageBarItem): void {
-    debugger;
     event.preventDefault();
     event.stopPropagation();
     this.isOpened$.next(false);
