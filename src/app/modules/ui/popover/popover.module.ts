@@ -1,13 +1,22 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PopoverComponent } from './popover/popover.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
+import { PopoverComponent } from './popover/popover.component';
+import { PopoverService } from './popover.service';
 
 
 @NgModule({
-  declarations: [PopoverComponent],
+  declarations: [
+    PopoverComponent
+  ],
+  providers: [
+    PopoverService
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    OverlayModule
   ]
 })
 export class PopoverModule { }
