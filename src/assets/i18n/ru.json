@@ -1,6 +1,8 @@
 
 {
   "core.address": "Киев, ул. Саратовская 10",
+  "core.not-found": "Похоже эта страничка не существует...",
+  "core.back-to-main-page": "На главную",
   "core.footer.empovered-by": "Создано компанией m1",
   "core.footer.work-days": "Пн - Пт",
   "core.footer.work-weekends": "Сб",

@@ -15,6 +15,7 @@
           <li *ngFor="let item of desktopMenuItems" class="d-flex align-items-center">
             <app-header-dropdown [menu]="item"></app-header-dropdown>
           </li>
+          <i class="delimeter"></i>
           <li class="d-flex">
             <app-language-bar (languageChange)="onLanguageChange($event)"></app-language-bar>
           </li>

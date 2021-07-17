@@ -1,6 +1,6 @@
 
 <ul class="menu">
-  <a [routerLink]="menu.href" routerLinkActive="router-link-active" class="menu__title" [ngClass]="{'menu__title--no-items': !menu.items}">
+  <a [routerLink]="menu.href" routerLinkActive="router-link-active" class="menu__title" [ngClass]="{'menu__title--no-items': !menu.items || !menu.items.length}">
     <span>{{menu.name}}</span>
     <i *ngIf="menu.icon" [ngStyle]="{'background-image': 'url(' + menu.icon + ')'}" class="menu__icon"></i>
   </a>
