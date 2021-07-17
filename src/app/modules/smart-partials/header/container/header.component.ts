@@ -32,9 +32,17 @@ export class HeaderComponent implements OnInit {
   }
   
   public onLanguageChange(lang: string): void {
+    // TODO: test
+    // const popoverRef = this.popoverService.open({
+    //   origin,
+    //   content: tpl,
+    //   data: { skills: [1, 2, 3] }
+    // });
+    // popoverRef.afterClosed$.subscribe(res => console.log('works'));
+    
     this.translateService.setDefaultLang(lang);
   }
-  
+
   private getDesktopItems(): IHeaderDropdownMenu[] {
     const userMenu = {
       name: '',

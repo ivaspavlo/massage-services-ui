@@ -1,12 +1,14 @@
 
+@import "~@angular/cdk/overlay";
 @import '~bootstrap-4-grid/scss/grid.scss';
 @import '~locomotive-scroll/dist/locomotive-scroll.css';
+
+@import '_normalize';
 
 @import '_core-z-index';
 @import '_core-fonts';
 @import '_core-colors';
 @import '_core-sizes';
-@import '_normalize';
 
 @import 'mixins/_all';
 @import 'util-classes/_all';

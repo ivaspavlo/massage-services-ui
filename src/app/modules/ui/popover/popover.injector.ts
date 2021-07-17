@@ -2,7 +2,7 @@
 import { Injector } from '@angular/core';
 
 
-export class PortalInjector implements Injector {
+export class PopoverInjector implements Injector {
   
   constructor(
     private _parentInjector: Injector,
