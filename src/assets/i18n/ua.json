@@ -10,5 +10,9 @@
   "core.footer.loyalty-program": "Постійним клієнтам",
   "core.footer.privacy-policy": "Політика приватності",
   "core.footer.discounts-promotions": "Акції та скидки",
-  "core.footer.service-statements": "Правила обслуговування"
+  "core.footer.service-statements": "Правила обслуговування",
+  "newsletter.header": "Підпишітся на новини від нас",
+  "newsletter.get": "и отримайте",
+  "newsletter.bonus": "бонусну карту",
+  "newsletter.subscribe": "Підписатись"
 }

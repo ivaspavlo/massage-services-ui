@@ -1,11 +1,11 @@
 
 @import 'mixins/bem';
 
-.font-family-roboto { font-family: 'Roboto'; }
+.font-family-roboto { font-family: 'Roboto', Arial; }
 
-.font-family-rubik { font-family: 'Rubik'; }
+.font-family-rubik { font-family: 'Rubik', Arial; }
 
-.font-family-nexa { font-family: 'Nexa'; }
+.font-family-nexa { font-family: 'Nexa', Arial; }
 
 @include sm { }
 

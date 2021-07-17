@@ -10,5 +10,9 @@
   "core.footer.loyalty-program": "Loyalty Program",
   "core.footer.privacy-policy": "Privacy Policy",
   "core.footer.discounts-promotions": "Discounts & Promotions",
-  "core.footer.service-statements": "Service Statements"
+  "core.footer.service-statements": "Service Statements",
+  "newsletter.header": "Subscribe to our newsletter",
+  "newsletter.get": "and get our",
+  "newsletter.bonus": "promotion bonus",
+  "newsletter.subscribe": "Subscribe"
 }

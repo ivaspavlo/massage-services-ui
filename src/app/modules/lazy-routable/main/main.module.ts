@@ -11,6 +11,7 @@ import { MainRoutingModule } from './main-routing.module';
 
 import { COMPONENTS } from './container';
 import { MODALS } from './modals';
+import { CoreTranslationModule } from '@app/core/core-translation.module';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MODALS } from './modals';
     ButtonSecondaryModule,
     HorizontalMenuModule,
     LogoModule,
-    HeaderModule
+    HeaderModule,
+    CoreTranslationModule.forChild()
   ]
 })
 export class MainModule { }
