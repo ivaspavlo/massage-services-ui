@@ -1,8 +1,10 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
-import { ITab } from '@app/interfaces';
 
+import { IProductCard, ITab } from '@app/interfaces';
+
+import { GiftCards } from '../../constants/gift-cards.constant';
 import { Tabs } from '../../constants/tabs.constant';
 
 
@@ -16,6 +18,7 @@ export class BookingComponent implements OnInit {
   
   public tabs: ITab[] = Tabs;
   public currentTabIndex: number = null;
+  public giftCards: IProductCard[] = GiftCards;
   
   constructor(
     private router: Router
