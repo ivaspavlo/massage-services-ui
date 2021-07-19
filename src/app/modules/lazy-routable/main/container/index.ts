@@ -12,4 +12,4 @@ export const COMPONENTS = [
   BrandServicesComponent,
   NewsletterComponent,
   BrandingComponent
-]
+];

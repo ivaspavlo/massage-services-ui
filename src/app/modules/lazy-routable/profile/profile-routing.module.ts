@@ -2,15 +2,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { MAIN_ROUTES } from './constants/main-routes.constant';
+import { PROFILE_ROUTES } from './constants/profile-routes.constant';
 
 
 @NgModule({
   imports: [
-    RouterModule.forChild(MAIN_ROUTES)
+    RouterModule.forChild(PROFILE_ROUTES)
   ],
   exports: [
     RouterModule
   ]
 })
-export class MainRoutingModule { }
+export class ProfileRoutingModule { }
