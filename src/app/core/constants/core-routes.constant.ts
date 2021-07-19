@@ -9,6 +9,7 @@ export enum CORE_ROUTE_NAMES {
   MAIN = 'main',
   BLOG = 'blog',
   BOOKING = 'booking',
+  PROFILE = 'profile',
   OTHER = '**',
   NOT_FOUND = '404'
 }
@@ -30,6 +31,9 @@ export const CORE_ROUTES: Routes = [
   }, {
     path: CORE_ROUTE_NAMES.BOOKING,
     loadChildren: () => import('@app/modules/lazy-routable/booking/booking.module').then(m => m.BookingModule)
+  }, {
+    path: CORE_ROUTE_NAMES.PROFILE,
+    loadChildren: () => import('@app/modules/lazy-routable/profile/profile.module').then(m => m.ProfileModule)
   }, {
     path: CORE_ROUTE_NAMES.OTHER,
     pathMatch: 'full',
