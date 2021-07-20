@@ -1,5 +1,5 @@
 
-import {PipeTransform, Pipe} from '@angular/core';
+import { PipeTransform, Pipe } from '@angular/core';
 import { IDateTimePair } from '../interfaces';
 
 @Pipe({
