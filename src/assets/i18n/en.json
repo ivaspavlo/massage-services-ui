@@ -16,5 +16,11 @@
   "newsletter.header": "Subscribe to our newsletter",
   "newsletter.get": "and get our",
   "newsletter.bonus": "promotion bonus",
-  "newsletter.subscribe": "Subscribe"
+  "newsletter.subscribe": "Subscribe",
+  "booking.gift.buy-now": "Buy now",
+  "booking.gift.info": "Any massage of your selection",
+  "booking.gift.one.title": "100.00 UAH",
+  "booking.gift.two.title": "300.00 UAH",
+  "booking.gift.three.title": "400.00 UAH",
+  "booking.gift.four.title": "500.00 UAH"
 }
