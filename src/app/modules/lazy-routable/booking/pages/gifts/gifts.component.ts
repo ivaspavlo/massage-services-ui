@@ -1,8 +1,11 @@
 
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { IProductCard } from '@app/interfaces';
+import { ActivatedRoute } from '@angular/router';
 
-import { GiftCards } from '../../constants/gift-cards.constant';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+
+import { IProductCard } from '@app/interfaces';
 
 
 @Component({
@@ -13,10 +16,16 @@ import { GiftCards } from '../../constants/gift-cards.constant';
 })
 export class GiftsComponent implements OnInit {
   
-  public giftCards: IProductCard[] = GiftCards;
+  public giftCards$: Observable<IProductCard[]>;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {
+    this.giftCards$ = this.route.data.pipe(
+      map((data: { giftCards: IProductCard[] }) => data.giftCards)
+    );
+  }
+  
 }

@@ -3,14 +3,11 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { BookingModule } from '../booking.module';
 import { IMassageBooking } from '../interfaces';
-import { BookingService } from '../services';
+import { BookingService } from '../services/booking.service';
 
 
-@Injectable({
-  providedIn: BookingModule
-})
+@Injectable()
 export class MassageBookingResolver implements Resolve<IMassageBooking> {
   
   constructor(
