@@ -4,6 +4,7 @@ import { AppointmentComponent } from '../pages/appointment/appointment.component
 import { BookingComponent } from '../pages/container/booking.component';
 import { GiftsComponent } from '../pages/gifts/gifts.component';
 import { ReservationComponent } from '../pages/reservation/reservation.component';
+import { GiftCardsResolver } from '../resolvers/gift-cards.resolver';
 
 
 export enum BOOKING_ROUTE_NAMES {
@@ -23,7 +24,8 @@ export const BOOKING_ROUTES: Routes = [
         component: ReservationComponent
       }, {
         path: BOOKING_ROUTE_NAMES.GIFTS,
-        component: GiftsComponent
+        component: GiftsComponent,
+        resolve: { giftCards: GiftCardsResolver }
       }, {
         path: BOOKING_ROUTE_NAMES.APPOINTMENT,
         component: AppointmentComponent
