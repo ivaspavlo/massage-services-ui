@@ -1,6 +1,6 @@
-
 import { PipeTransform, Pipe } from '@angular/core';
 import { IDateTimePair } from '../interfaces';
+
 
 @Pipe({
   name: 'formatDateTime'

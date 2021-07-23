@@ -3,7 +3,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ITab } from '@app/interfaces';
-import { TranslateService } from '@ngx-translate/core';
 
 import { Tabs } from '../../constants/tabs.constant';
 
