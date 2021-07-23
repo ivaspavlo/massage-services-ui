@@ -14,12 +14,19 @@ import { PAGES } from './pages';
 import { PIPES } from './pipes';
 import { PARTIALS } from './partials';
 
+import { BookingService } from './services';
+import { BookingFacade } from './booking.facade';
+
 
 @NgModule({
   declarations: [
     ...PAGES,
     ...PARTIALS,
     ...PIPES
+  ],
+  providers: [
+    BookingService,
+    BookingFacade
   ],
   imports: [
     CommonModule,

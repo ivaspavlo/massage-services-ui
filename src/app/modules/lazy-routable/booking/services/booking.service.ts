@@ -7,9 +7,7 @@ import { IProductCard } from '@app/interfaces';
 import { GiftCards } from '../constants/gift-cards.constant';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BookingService {
   
   constructor() { }
