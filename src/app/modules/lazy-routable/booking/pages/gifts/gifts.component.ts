@@ -25,4 +25,8 @@ export class GiftsComponent implements OnInit {
     this.giftCards$ = this.facade.getGiftCards();
   }
   
+  public onClick(card: IProductCard): void {
+    console.log(card);
+  }
+  
 }

@@ -1,12 +1,18 @@
 
 $common-transition: cubic-bezier(0.19, 1, 0.22, 1);
 
+:host {
+  display: flex;
+  justify-content: center;
+}
+
 .ng-content-button-wrap:not(:empty) + .default-button-wrap {
   display: none;
 }
 
 .card {  
   width: 100%;
+  max-width: 350px;
   height: 350px;
   padding: 1rem;
   position: relative;
@@ -57,15 +63,6 @@ $common-transition: cubic-bezier(0.19, 1, 0.22, 1);
   background-repeat: no-repeat;
   background-size: cover;
   transition: transform calc(700ms * 1.5) $common-transition;
-  // @media only screen and (min-width: 992px) {
-  //   width: auto;
-  //   height: 110%;
-  // }
-  // width: 100%;
-  // height: auto;
-  // position: absolute; top: 0; left: 0;
-  // transition: transform calc(700ms * 1.5) $common-transition;
-  // pointer-events: none;
 }
 
 .content {
@@ -77,20 +74,19 @@ $common-transition: cubic-bezier(0.19, 1, 0.22, 1);
   align-items: center;
   transition: transform 700ms $common-transition;
   z-index: 1;
-  & > * {
-    backface-visibility: hidden;
-  }
+  & > * { backface-visibility: hidden; }
 }
 
 .title {
-  font-size: 1.3rem;
+  font-size: 24px;
+  margin-bottom: 1rem;
   font-weight: bold;
   line-height: 1.2;
 }
 
-.info-text {
+.sub-title {
   margin-bottom: 1.5rem;
-  font-size: 1.125rem;
+  font-size: 14px;
   font-style: italic;
   line-height: 1.35;
 }
