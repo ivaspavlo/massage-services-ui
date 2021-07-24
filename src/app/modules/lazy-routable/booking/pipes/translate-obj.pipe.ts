@@ -2,7 +2,7 @@ import { PipeTransform, Pipe } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, startWith, switchMap } from 'rxjs/operators';
 
 
 @Pipe({
@@ -18,9 +18,20 @@ export class TranslateObjPipe implements PipeTransform {
     if (typeof data !== 'object') {
       return of(data);
     }
-    const keysArr = Object.keys(data).map(key => {
+    const keysArr = this.getArrayOfKeys(data);
+    return this.translateService.onDefaultLangChange.pipe(
+      startWith(null),
+      switchMap(_ => this.translate(data, keysArr))
+    );
+  }
+  
+  private getArrayOfKeys(data) {
+    return Object.keys(data).map(key => {
       return typeof data[key] === 'string' ? data[key] : null;
     });
+  }
+  
+  private translate<T>(data: T, keysArr: string | null[]): Observable<T> {
     return this.translateService.get(keysArr).pipe(
       map((translated: string[]) => {
         return Object.keys(data).reduce((acc, key) => {

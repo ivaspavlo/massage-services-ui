@@ -16,5 +16,13 @@
   "newsletter.header": "Подписывайтесь на новости от нас",
   "newsletter.get": "и получите",
   "newsletter.bonus": "бонусну карту",
-  "newsletter.subscribe": "Подписаться"
+  "newsletter.subscribe": "Подписаться",
+  "booking.gift.page.title": "Подарочные сертификаты",
+  "booking.gift.page.subtitle": "Выберите свой из доступных видов",
+  "booking.gift.buy-now": "Купить",
+  "booking.gift.info": "Сертификат на любой из массажей на ваш выбор",
+  "booking.gift.one.title": "100.00 грн",
+  "booking.gift.two.title": "300.00 грн",
+  "booking.gift.three.title": "400.00 грн",
+  "booking.gift.four.title": "500.00 грн"
 }
