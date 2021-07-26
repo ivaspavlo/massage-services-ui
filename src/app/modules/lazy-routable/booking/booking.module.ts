@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CoreTranslationModule } from '@app/core/core-translation.module';
+import { SharedModule } from '@app/shared/shared.module';
 
 import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
 import { ArticleCardModule, ProductCardModule, TabsModule, DatePickerModule, ButtonPrimaryModule, ButtonSecondaryModule } from '@app/modules/ui';
@@ -30,6 +31,7 @@ import { BookingFacade } from './booking.facade';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ReactiveFormsModule,
     BookingRoutingModule,
     HeaderModule,

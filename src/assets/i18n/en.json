@@ -24,5 +24,7 @@
   "booking.gift.one.title": "100.00 UAH",
   "booking.gift.two.title": "300.00 UAH",
   "booking.gift.three.title": "400.00 UAH",
-  "booking.gift.four.title": "500.00 UAH"
+  "booking.gift.four.title": "500.00 UAH",
+  "booking.tabs.gift": "Gift certificates",
+  "booking.tabs.reservation": "Reservation"
 }
