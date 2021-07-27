@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, CanLoad, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { AppStorageService } from '@app/core/services';
+import { CoreStorageService } from '@app/core/services';
 import { TOKEN_KEY, LOGIN_URL } from '@app/core/constants';
 
 
@@ -11,7 +11,7 @@ import { TOKEN_KEY, LOGIN_URL } from '@app/core/constants';
 export class AuthGuard implements CanActivate, CanLoad {
 
   constructor(
-    private storage: AppStorageService,
+    private storage: CoreStorageService,
     private router: Router
   ) { }
 

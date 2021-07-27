@@ -1,7 +1,7 @@
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AppStorageService } from '@app/core/services/app-storage.service';
+import { CoreStorageService } from '@app/core/services/core-storage.service';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class UserService {
 
   constructor(
     private http: HttpClient,
-    private storageService: AppStorageService
+    private storageService: CoreStorageService
   ) { }
 
   // public getUserProfileData(): Observable<IUserProfile> {
