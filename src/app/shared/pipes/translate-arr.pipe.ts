@@ -2,7 +2,7 @@ import { PipeTransform, Pipe } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { forkJoin, Observable, of } from 'rxjs';
-import { map, startWith, switchMap, tap } from 'rxjs/operators';
+import { map, startWith, switchMap } from 'rxjs/operators';
 
 
 @Pipe({
@@ -14,30 +14,31 @@ export class TranslateArrPipe implements PipeTransform {
     private translateService: TranslateService
   ) { }
   
-  transform<T>(data: T): Observable<T> {
+  transform(data: unknown[]): Observable<unknown[]> {
     if (!Array.isArray(data)) {
       return of(data);
     }
-    const test = data.map(i => this.translate(i));
-    debugger;
-    return this.translateService.onDefaultLangChange.pipe(
+    return this.translateService.onLangChange.pipe(
       startWith(null),
-      tap(res => {
-        debugger;
-      }),
-      switchMap(_ => forkJoin(...test))
+      map(_ => data.map(i => this.translate(i))),
+      switchMap(translations$ => forkJoin(translations$))
     );
   }
   
-  private getArrayOfKeys(data) {
+  private getArrayOfKeys(data: object): string[] | null {
+    if (typeof data !== 'object') {
+      return null;
+    }
     return Object.keys(data).map(key => {
       return typeof data[key] === 'string' ? data[key] : null;
     });
   }
   
-  private translate<T>(data: T): Observable<T> {
-    debugger;
+  private translate(data: object): Observable<object> {
     const keysArr = this.getArrayOfKeys(data);
+    if (!keysArr) {
+      return of(data);
+    }
     return this.translateService.get(keysArr).pipe(
       map((translated: string[]) => {
         return Object.keys(data).reduce((acc, key) => {
@@ -46,7 +47,7 @@ export class TranslateArrPipe implements PipeTransform {
             ...acc,
             [key]: value
           }
-        }, {} as T);
+        }, {});
       })
     );
   }

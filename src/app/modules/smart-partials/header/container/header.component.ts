@@ -1,8 +1,11 @@
-
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+
 import { IHeaderDropdownMenu, IUser } from '@app/interfaces';
-import { MAIN_MENU_ITEMS, USER_MENU_ITEMS, USER_ICON } from '../constants';
+import { CoreTranslateService } from '@app/core/services';
+import { SupportedLang } from '@app/core/constants';
+
+import { MAIN_MENU_ITEMS, USER_ICON, USER_MENU_ITEMS } from '../constants';
 
 
 @Component({
@@ -17,18 +20,21 @@ export class HeaderComponent implements OnInit {
   
   public desktopMenuItems: IHeaderDropdownMenu[];
   public mobileMenuItems: IHeaderDropdownMenu[];
+  public langMenuItems = SupportedLang;
+  public currentLang$: Observable<string>;
   public isOpen = false;
   
   private user: IUser = null;
   
   constructor(
-    private translateService: TranslateService
+    private translateService: CoreTranslateService
   ) { }
 
   ngOnInit(): void {
-    // Logic for fetching user is to be implemented
+    // TODO: user logic to be implemented
     this.desktopMenuItems = this.getDesktopItems();
     this.mobileMenuItems = this.getMobileItems();
+    this.currentLang$ = this.translateService.getCurrentLang();
   }
   
   public onLanguageChange(lang: string): void {
@@ -40,7 +46,7 @@ export class HeaderComponent implements OnInit {
     // });
     // popoverRef.afterClosed$.subscribe(res => console.log('works'));
     
-    this.translateService.setDefaultLang(lang);
+    this.translateService.use(lang);
   }
 
   private getDesktopItems(): IHeaderDropdownMenu[] {

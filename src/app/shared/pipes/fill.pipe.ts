@@ -1,5 +1,5 @@
+import { PipeTransform, Pipe } from '@angular/core';
 
-import {PipeTransform, Pipe} from '@angular/core';
 
 @Pipe({
   name: 'fill'

@@ -8,13 +8,15 @@ import { SharedModule } from '@app/shared/shared.module';
 import { TitleModule, ExpansionPanelModule, LogoModule, PhoneAnimationModule, InputModule, ButtonPrimaryModule, HamburgerModule, HeaderDropdownModule, LanguageBarModule, PopoverModule } from '@app/modules/ui';
 
 import { HeaderComponent } from './container/header.component';
-import { MODALS } from './modals';
+import { MapLangItemsPipe } from './pipes/map-lang-items.pipe';
+import { MapCurrentLangItemPipe } from './pipes/map-current-lang-item.pipe';
 
 
 @NgModule({
   declarations: [
-    ...MODALS,
-    HeaderComponent
+    HeaderComponent,
+    MapLangItemsPipe,
+    MapCurrentLangItemPipe
   ],
   imports: [
     CommonModule,

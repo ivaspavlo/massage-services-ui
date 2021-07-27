@@ -18,11 +18,13 @@
   "newsletter.bonus": "бонусну карту",
   "newsletter.subscribe": "Підписатись",
   "booking.gift.page.title": "Подарункові сертифікати",
-  "booking.gift.page.subtitle": "Оберіть свій із доступних сертифікатів",
+  "booking.gift.page.subtitle": "Оберіть свій із доступних видів",
   "booking.gift.buy-now": "Придбати",
   "booking.gift.info": "Сертифікат на будь-який з массажів на ваш вибір",
   "booking.gift.one.title": "100.00 грн",
   "booking.gift.two.title": "300.00 грн",
   "booking.gift.three.title": "400.00 грн",
-  "booking.gift.four.title": "500.00 грн"
+  "booking.gift.four.title": "500.00 грн",
+  "booking.tabs.gift": "Подарункові сертифікати",
+  "booking.tabs.reservation": "Бронювання"
 }

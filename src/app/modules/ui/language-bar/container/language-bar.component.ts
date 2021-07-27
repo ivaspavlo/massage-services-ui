@@ -4,12 +4,6 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { ILanguageBarItem } from '../interfaces';
 
 
-const MockItems = [
-  { id: 'en', name: 'EN' },
-  { id: 'ua', name: 'UA' },
-  { id: 'ru', name: 'RU' }
-];
-
 @Component({
   selector: 'app-language-bar',
   templateUrl: './language-bar.component.html',
@@ -18,8 +12,8 @@ const MockItems = [
 })
 export class LanguageBarComponent implements OnInit {
   
-  @Input() items: ILanguageBarItem[] = MockItems;
-  @Input() current: ILanguageBarItem = MockItems[0];
+  @Input() items: ILanguageBarItem[];
+  @Input() current: ILanguageBarItem;
   @Output() languageChange: EventEmitter<string> = new EventEmitter();
   
   public current$: BehaviorSubject<ILanguageBarItem> = new BehaviorSubject(null);
@@ -32,6 +26,7 @@ export class LanguageBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    debugger;
     this.setValues(this.current || this.items[0] || null);
   }
   

@@ -6,9 +6,11 @@ import { LOCAL_STORAGE } from '@app/core/providers';
 @Injectable({
   providedIn: 'root'
 })
-export class AppStorageService {
+export class CoreStorageService {
 
-  constructor(@Inject(LOCAL_STORAGE) private localStorage: Storage) { }
+  constructor(
+    @Inject(LOCAL_STORAGE) private localStorage: Storage
+  ) { }
 
   public get(key: string): any {
     return this.localStorage.getItem(key);

@@ -17,7 +17,7 @@
           </li>
           <i class="delimeter"></i>
           <li class="d-flex">
-            <app-language-bar (languageChange)="onLanguageChange($event)"></app-language-bar>
+            <app-language-bar [current]="currentLang$ | async | mapCurrentLangItem" [items]="langMenuItems | mapLangItems" (languageChange)="onLanguageChange($event)"></app-language-bar>
           </li>
         </ul>
       </div>
@@ -35,7 +35,7 @@
     <div class="width-100 d-flex justify-content-between align-items-center p-rem-1 bg-white">
       <app-logo size="sm"></app-logo>
       <div class="d-flex align-items-center">
-        <app-language-bar (languageChange)="onLanguageChange($event)" class="mr-rem-1"></app-language-bar>
+        <app-language-bar [current]="currentLang$ | async | mapCurrentLangItem" [items]="langMenuItems | mapLangItems" (languageChange)="onLanguageChange($event)" class="mr-rem-1"></app-language-bar>
         <app-hamburger (isOn)="isOpen = $event" class="my-px-10"></app-hamburger>
       </div>
     </div>
