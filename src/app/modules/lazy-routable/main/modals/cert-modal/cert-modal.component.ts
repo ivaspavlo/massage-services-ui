@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { DialogRef } from '@app/modules/ui/dialog';
+
 
 @Component({
   selector: 'app-cert-modal',
@@ -8,9 +10,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class CertModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dialog: DialogRef
+  ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
