@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, Renderer2, ElementRef, AfterViewInit, ViewChildren, QueryList, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ElementRef, AfterViewInit, ViewChildren, QueryList, ChangeDetectorRef } from '@angular/core';
 import { ITab } from '../interfaces';
 
 
@@ -17,17 +17,16 @@ export class TabsComponent implements OnInit, AfterViewInit {
   @Input() current = 0;
   
   @Output() tabClick: EventEmitter<ITab> = new EventEmitter();
-  
-  private underline: HTMLElement;
+
+  public underlineShift: object = {};
 
   constructor(
-    private renderer: Renderer2
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void { }
   
   ngAfterViewInit(): void {
-    this.initMovableUnderline();
     this.moveUnderline(this.current);
   }
   
@@ -38,13 +37,8 @@ export class TabsComponent implements OnInit, AfterViewInit {
   }
   
   private moveUnderline(index: number): void {
-    if (this.underline) {
-      this.renderer.setStyle(this.underline, 'left', `${100 * index}%`);
-    }
-  }
-  
-  private initMovableUnderline(): void {
-    this.underline = this.underlines?.first?.nativeElement || null;
+    this.underlineShift = { 'left': `${100 * index}%` };
+    this.cdr.detectChanges();
   }
 
 }

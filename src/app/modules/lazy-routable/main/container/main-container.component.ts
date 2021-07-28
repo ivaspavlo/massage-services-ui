@@ -9,6 +9,7 @@ import { map, throttleTime } from 'rxjs/operators';
 import { MOCK_PRODUCTS, MOCK_QUOTES, MOCK_CERTIFICATES, MOCK_SLIDES } from '../constants';
 import { DialogService } from '@app/modules/ui/dialog/services';
 import { QuoteModalComponent } from '../modals/quote-modal/quote-modal.component';
+import { CertModalComponent } from '../modals';
 
 
 @Component({
@@ -52,6 +53,8 @@ export class MainContainerComponent implements OnInit {
     this.listenToResize();
   }
   
+  // PUBLIC METHODS
+  
   public onScrollDown(): void {
     this.scroll.scrollTo(this.document.documentElement.clientHeight);
   }
@@ -63,6 +66,12 @@ export class MainContainerComponent implements OnInit {
   public onScrollTop(): void {
     this.scroll.scrollTo(0);
   }
+  
+  public onCertClick(): void {
+    this.dialogService.open(CertModalComponent);
+  }
+  
+  // PRIVATE METHODS
   
   private listenToScroll(): void {
     this.scroll.on(this.locomotiveScrollEventName, (res: any) => this.scrollListener$.next(res));

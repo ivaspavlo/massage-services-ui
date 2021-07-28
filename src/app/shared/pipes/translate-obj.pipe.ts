@@ -19,7 +19,7 @@ export class TranslateObjPipe implements PipeTransform {
       return of(data);
     }
     const keysArr = this.getArrayOfKeys(data);
-    return this.translateService.onDefaultLangChange.pipe(
+    return this.translateService.onLangChange.pipe(
       startWith(null),
       switchMap(_ => this.translate(data, keysArr))
     );

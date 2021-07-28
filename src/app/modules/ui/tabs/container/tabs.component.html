@@ -1,7 +1,8 @@
-
 <ul class="tabs-container">
   <li (click)="onTabClick(index)" *ngFor="let item of items; let index = index; let first = first;" class="tab" [ngClass]="{'selected': index === current}">
-    <span>{{item.name}}</span>
-    <i #underlines *ngIf="first" class="tab__underline"></i>
+    <a class="tab__link">
+      <span>{{item.name}}</span>
+      <i *ngIf="first && underlineShift" [ngStyle]="underlineShift" #underlines class="tab__underline"></i>
+    </a>
   </li>
 </ul>

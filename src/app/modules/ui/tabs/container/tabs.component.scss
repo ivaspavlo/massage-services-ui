@@ -13,9 +13,9 @@ $tab-bg-hover: #e3e3e3;
 .tabs-container {
   width: 100%;
   border-radius: 3px;
-  box-shadow: 0 0 100px rgba(0,0,0,.5);
   display: flex;
   background-color: #fff;
+  box-shadow: 0 4px 6px -6px #222;
 }
 
 .tab {
@@ -23,18 +23,24 @@ $tab-bg-hover: #e3e3e3;
   padding: $undreline-height 10px;
   display: flex;
   flex-grow: 1;
-  align-items: center;
-  justify-content: center;
   position: relative;
   transition: .3s ease;
   background-color: $tab-bg;
-  color: $tab-color;
   cursor: pointer;
   &:not(.selected):hover {
     background-color: $tab-bg-hover;
   }
   &.selected {
     background-color: $tab-bg-selected;
+  }
+  &__link {
+    position: absolute; top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $tab-color;
   }
   &__underline {
     position: absolute; bottom: 0; left: 0;

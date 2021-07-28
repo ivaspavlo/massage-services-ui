@@ -26,7 +26,6 @@ export class LanguageBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    debugger;
     this.setValues(this.current || this.items[0] || null);
   }
   
@@ -44,7 +43,7 @@ export class LanguageBarComponent implements OnInit {
   
   private setValues(item: ILanguageBarItem): void {
     this.current$.next(item);
-    this.listItems$.next(this.items.filter(i => i !== item));
+    this.listItems$.next(this.items.filter(i => i.id !== item.id));
   }
   
   ngOnDestroy(): void {

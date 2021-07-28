@@ -4,7 +4,7 @@
   <div id="cert-list" class="cert__list py-rem-2 mb-rem-2 width-100 d-flex justify-content-center z-index-1">
     <app-horizontal-menu class="max-width-992">
       <li horMenuItem class="cert__item px-rem-1" *ngFor="let cert of certificates; let idx = index;">
-        <figure><img class="width-100 p-rem-1 box-shadow-4 b-radius-4" [src]="cert.src" alt="Certificate #{{ idx }}"></figure>
+        <figure (click)="certClick.emit(cert)"><img class="width-100 p-rem-1 box-shadow-4 b-radius-4" [src]="cert.src" alt="Certificate #{{ idx }}"></figure>
       </li>
     </app-horizontal-menu>
   </div>
