@@ -12,4 +12,5 @@ export class DialogConfig {
     this.contentFactory = contentFactory;
     this.data = { data };
   }
+
 }

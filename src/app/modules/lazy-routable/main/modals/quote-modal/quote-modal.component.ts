@@ -1,4 +1,3 @@
-
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -29,6 +28,8 @@ export class QuoteModalComponent implements OnInit {
     });
   }
 
-  public onSubmit(): void { }
+  public onSubmit(): void {
+    // TODO: to be implemented when API is ready
+  }
 
 }
