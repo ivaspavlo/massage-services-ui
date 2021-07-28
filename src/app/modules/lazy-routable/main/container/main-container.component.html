@@ -9,7 +9,7 @@
     
     <app-branding [isVisible]="!(isBelowTreshold$ | async)" (scrollDown)="onScrollDown()"></app-branding>
   
-    <app-certificates [certificates]="certificates" [slides]="slides"></app-certificates>
+    <app-certificates (certClick)="onCertClick($event)" [certificates]="certificates" [slides]="slides"></app-certificates>
   
     <app-brand-services [quotes]="quotes" [productCards]="productCards" (showQuoteModal)="onShowQuoteModal()"></app-brand-services>
   

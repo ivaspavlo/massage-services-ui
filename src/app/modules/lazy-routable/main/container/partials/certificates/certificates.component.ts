@@ -1,6 +1,7 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { ISlide } from '@app/interfaces';
+
 import { ICertificate } from '../../../interfaces';
 
 
@@ -14,6 +15,7 @@ export class CertificatesComponent implements OnInit {
 
   @Input() certificates: ICertificate[];
   @Input() slides: ISlide[];
+  @Output() certClick: EventEmitter<ICertificate> = new EventEmitter();
 
   constructor() { }
 
