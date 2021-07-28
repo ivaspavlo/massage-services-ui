@@ -6,9 +6,9 @@
     <p class="font-22 font-family-nexa color-white">{{ 'booking.gift.page.subtitle' | translate }}</p>
   </header>
   
-  <div class="width-100 max-width-992 d-flex flex-column flex-md-row">
+  <div class="width-100 max-width-992 d-flex flex-column flex-lg-row">
     <ng-container *ngFor="let card of giftCards$ | async">
-      <app-product-card (cardClick)="onClick($event)" [card]="card | translateObj | async" class="width-100 width-md-50 p-rem-1">
+      <app-product-card (cardClick)="onClick($event)" [card]="card | translateObj | async" class="width-100 width-lg-50 p-rem-1">
         <app-button-secondary [title]="card.button | translate"></app-button-secondary>
       </app-product-card>
     </ng-container>

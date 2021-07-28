@@ -7,7 +7,6 @@ import { ILanguageBarItem } from '@app/modules/ui/language-bar/interfaces';
 })
 export class MapCurrentLangItemPipe implements PipeTransform {
   transform(value: string): ILanguageBarItem {
-    debugger;
     if (typeof value !== 'string') {
       return value;
     }
