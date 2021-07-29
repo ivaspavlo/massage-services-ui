@@ -26,5 +26,11 @@
   "booking.gift.three.title": "400.00 грн",
   "booking.gift.four.title": "500.00 грн",
   "booking.tabs.gift": "Подарункові сертифікати",
-  "booking.tabs.reservation": "Бронювання"
+  "booking.tabs.reservation": "Бронювання",
+  "booking.reserve.title": "Масажні послуги",
+  "booking.reserve.subtitle": "Оберіть той, що найбільше відповідає вашим вимогам",
+  "booking.reserve.massage.sport.title": "Спортивний масаж",
+  "booking.reserve.massage.sport.subtitle": "Призначений для запобігання і лікування травм, поліпшення гнучкості і поліпшення спортивних результатів.",
+  "booking.reserve.massage.shwedish.title": "Шведский масаж",
+  "booking.reserve.massage.shwedish.subtitle": "Використовуючи лосьйон або олію, масаж починається з загальних областей, а потім переходять до масування проблемних ділянок."
 }

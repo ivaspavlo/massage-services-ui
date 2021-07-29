@@ -26,5 +26,11 @@
   "booking.gift.three.title": "400.00 грн",
   "booking.gift.four.title": "500.00 грн",
   "booking.tabs.gift": "Подарочные сертификаты",
-  "booking.tabs.reservation": "Бронирование"
+  "booking.tabs.reservation": "Бронирование",
+  "booking.reserve.title": "Массажные услуги",
+  "booking.reserve.subtitle": "Выберите тот, который наиболее вам подходит",
+  "booking.reserve.massage.sport.title": "Спортивный массаж",
+  "booking.reserve.massage.sport.subtitle": "Предназначен для предотвращения и лечения травм, улучшения гибкости и улучшения спортивных результатов.",
+  "booking.reserve.massage.shwedish.title": "Шведский массаж",
+  "booking.reserve.massage.shwedish.subtitle": "Используя лосьон или масло, массаж начинается с общих областей, а затем переходят к массированию проблемных участков."
 }
