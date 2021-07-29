@@ -1,16 +1,14 @@
-
 import { ComponentFactory } from '@angular/core';
-import { IDialogConfigData } from './interfaces';
 
 
 export class DialogConfig {
   
-  contentFactory: ComponentFactory<any>;
-  data: IDialogConfigData;
+  public contentFactory: ComponentFactory<any>;
+  public data: any;
   
   constructor(contentFactory: ComponentFactory<any>, data?: any) {
     this.contentFactory = contentFactory;
-    this.data = { data };
+    this.data = data;
   }
 
 }

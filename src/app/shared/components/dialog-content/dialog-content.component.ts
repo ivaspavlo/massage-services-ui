@@ -15,9 +15,7 @@ export class DialogContentComponent implements OnInit {
   @Input() set size(value: string) {
     this._size = value && DIALOG_SIZES[value] ? DIALOG_SIZES[value] : DIALOG_SIZES.auto;
   }
-  get size() {
-    return this._size;
-  }
+  get size() { return this._size; }
   private _size: string = DIALOG_SIZES.auto;
 
   constructor(
