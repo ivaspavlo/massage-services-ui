@@ -26,5 +26,11 @@
   "booking.gift.three.title": "400.00 UAH",
   "booking.gift.four.title": "500.00 UAH",
   "booking.tabs.gift": "Gift certificates",
-  "booking.tabs.reservation": "Reservation"
+  "booking.tabs.reservation": "Reservation",
+  "booking.reserve.title": "Massage treatments",
+  "booking.reserve.subtitle": "Select one that fits your needs the most",
+  "booking.reserve.massage.sport.title": "Sport massage",
+  "booking.reserve.massage.sport.subtitle": "Designed to prevent and treat injuries, improve flexibility, and enhance athletic performance.",
+  "booking.reserve.massage.shwedish.title": "Shwedish massage",
+  "booking.reserve.massage.shwedish.subtitle": "Using lotion or oil, massage therapists typically begin with broad general strokes and then transition to specific strokes to address problem areas."
 }
