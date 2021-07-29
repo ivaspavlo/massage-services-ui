@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { DialogRef } from '@app/modules/ui/dialog';
+import { DialogConfig, DialogRef } from '@app/modules/ui/dialog';
+import { ICertificate } from '../../interfaces';
 
 
 @Component({
@@ -9,11 +10,16 @@ import { DialogRef } from '@app/modules/ui/dialog';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CertModalComponent implements OnInit {
+  
+  public cert: ICertificate;
 
   constructor(
-    private dialog: DialogRef
+    public config: DialogConfig,
+    public dialog: DialogRef
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.cert = this.config.data as ICertificate;
+  }
 
 }

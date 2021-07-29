@@ -1,4 +1,3 @@
-
 import { Observable, Subject } from 'rxjs';
 
 
@@ -12,5 +11,5 @@ export class DialogRef {
     this._afterClosed.next(result);
   }
 
-  afterClosed: Observable<any> = this._afterClosed.asObservable();
+  public afterClosed: Observable<any> = this._afterClosed.asObservable();
 }

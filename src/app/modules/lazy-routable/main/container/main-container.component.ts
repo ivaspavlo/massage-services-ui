@@ -6,10 +6,12 @@ import LocomotiveScroll from 'locomotive-scroll';
 import { Observable, Subject } from 'rxjs';
 import { map, throttleTime } from 'rxjs/operators';
 
-import { MOCK_PRODUCTS, MOCK_QUOTES, MOCK_CERTIFICATES, MOCK_SLIDES } from '../constants';
 import { DialogService } from '@app/modules/ui/dialog/services';
+
+import { MOCK_PRODUCTS, MOCK_QUOTES, MOCK_CERTIFICATES, MOCK_SLIDES } from '../constants';
 import { QuoteModalComponent } from '../modals/quote-modal/quote-modal.component';
 import { CertModalComponent } from '../modals';
+import { ICertificate } from '../interfaces';
 
 
 @Component({
@@ -67,8 +69,8 @@ export class MainContainerComponent implements OnInit {
     this.scroll.scrollTo(0);
   }
   
-  public onCertClick(): void {
-    this.dialogService.open(CertModalComponent);
+  public onCertClick(cert: ICertificate): void {
+    this.dialogService.open(CertModalComponent, cert);
   }
   
   // PRIVATE METHODS
