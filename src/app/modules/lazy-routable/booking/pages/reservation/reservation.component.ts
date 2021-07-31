@@ -1,5 +1,7 @@
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Products } from '../../constants/products.constant';
+import { IProduct } from '../../interfaces/product.interface';
 
 
 @Component({
@@ -8,10 +10,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./reservation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReservationComponent implements OnInit {
+export class ReservationComponent {
+  
+  public products: IProduct[] = Products;
   
   constructor() { }
-
-  ngOnInit(): void { }
 
 }
