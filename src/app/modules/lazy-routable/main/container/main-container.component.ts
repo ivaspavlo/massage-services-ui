@@ -10,7 +10,7 @@ import { DialogService } from '@app/modules/ui/dialog/services';
 
 import { MOCK_PRODUCTS, MOCK_QUOTES, MOCK_CERTIFICATES, MOCK_SLIDES } from '../constants';
 import { QuoteModalComponent } from '../modals/quote-modal/quote-modal.component';
-import { CertModalComponent } from '../modals';
+import { CertModalComponent, InfoModalComponent } from '../modals';
 import { ICertificate } from '../interfaces';
 
 
@@ -71,6 +71,10 @@ export class MainContainerComponent implements OnInit {
   
   public onCertClick(cert: ICertificate): void {
     this.dialogService.open(CertModalComponent, cert);
+  }
+  
+  public onShowInfo(): void {
+    this.dialogService.open(InfoModalComponent);
   }
   
   // PRIVATE METHODS

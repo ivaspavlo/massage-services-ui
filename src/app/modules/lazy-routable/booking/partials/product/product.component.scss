@@ -1,4 +1,3 @@
-
 @import 'mixins/_all';
 
 :host {
@@ -16,8 +15,16 @@
   border-radius: 10px;
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,245,248,1) 35%, rgba(236,236,237,1) 100%);
   @include e('image') {
-    width: 120px;
+    width: 20%;
     height: 120px;
     border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+  }
+  @include e('data') {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
   }
 }

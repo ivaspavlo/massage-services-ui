@@ -1,9 +1,11 @@
 
 <section class="product">
   
-  <img class="product__image" [src]="product.img" alt="Product image"/>
+  <figure class="product__image">
+    <img [src]="product.img" class="width-100" alt="Product image"/>
+  </figure>
   
-  <div class="d-flex flex-column flex-grow-1 px-rem-1">
+  <div class="product__data">
     <h4 class="font-28 color-grey-800 text-shadow-secondary">{{product.title}}</h4>
     <p class="font-18 mt-rem-0_5 color-grey-700">{{product.subtitle}}</p>
     <footer class="width-100 mt-rem-1 d-flex flex-column flex-sm-row justify-content-between align-items-center">
