@@ -1,27 +1,22 @@
 <app-dialog-content>
-  <div class="wrapper">
+  <div class="width-100">
   
-    <div class="article">
-      <div class="article__header">
-        <div class="article__left">
-          
-          <figure class="thumbnail">
-            <img src="/assets/img/jpg/about-1.jpeg" alt="Main image" class="thumbnail__img">
-          </figure>
-          
+    <div class="info-modal bg-composite">
+      <div class="info-modal__header">
+        
+        <div class="info-modal__left">
+          <div class="info-modal__author"></div>
         </div>
-        <div class="article__right">
-          
-          <h1 class="article__title">config.title</h1>
-          
-          <p class="article__intro">config.intro</p>
-          
+        
+        <div class="info-modal__right">
+          <h1 class="info-modal__title">{{ 'about.title' | translate }}</h1>
+          <p class="info-modal__intro">{{ 'about.subtitle' | translate }}</p>
         </div>
+        
       </div>
       
-      <div class="article__content">config.content</div>
+      <div class="info-modal__content">{{ 'about.content' | translate }}</div>
       
     </div>
-    
   </div>
 </app-dialog-content>
