@@ -35,13 +35,13 @@
   &--prev {
     left: 0;
     &:hover {
-      button.ctrl__arrow { transform: translateX(5px); }
+      button.ctrl__arrow { transform: translateX(-5px); }
     }
   }
   &--next {
     right: 0;
     &:hover {
-      button.ctrl__arrow { transform: translateX(-5px); }
+      button.ctrl__arrow { transform: translateX(5px); }
     }
   }
   &__arrow {
