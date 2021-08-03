@@ -2,7 +2,7 @@
 import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef } from '@angular/core';
 import { transition, trigger, useAnimation } from '@angular/animations';
 
-import { AnimationType, fadeIn, fadeOut, scaleIn, scaleOut } from './slider.animations';
+import { scaleIn, scaleOut } from './slider.animations';
 import { ISlide } from '../interfaces';
 
 
@@ -26,12 +26,13 @@ export class SliderComponent {
   @Input() autoChangeOff = false;
 
   public currentSlide = 0;
+  private changeIntervalId = null;
 
   constructor(private cdr: ChangeDetectorRef) { }
   
   ngOnInit(): void {
     this.preloadImages();
-    this.autoChange();
+    this.startSliding();
   }
 
   public onPreviousClick(): void {
@@ -51,9 +52,17 @@ export class SliderComponent {
     }
   }
   
-  private autoChange(): void {
+  public startSliding(): void {
+    debugger;
     if (!this.autoChangeOff) {
-      setInterval(this.onNextClick.bind(this), this.intervalMs);
+      this.changeIntervalId = setInterval(this.onNextClick.bind(this), this.intervalMs);
+    }
+  }
+  
+  public stopSliding(): void {
+    debugger;
+    if (this.changeIntervalId) {
+      clearInterval(this.changeIntervalId);
     }
   }
 
