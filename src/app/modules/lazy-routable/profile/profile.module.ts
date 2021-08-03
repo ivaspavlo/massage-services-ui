@@ -2,6 +2,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
+
 import { ProfileRoutingModule } from './profile-routing.module';
 import { PAGES } from './pages';
 
@@ -12,7 +14,9 @@ import { PAGES } from './pages';
   ],
   imports: [
     CommonModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    HeaderModule,
+    FooterModule
   ]
 })
 export class ProfileModule { }

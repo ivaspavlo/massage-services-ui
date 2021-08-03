@@ -53,14 +53,12 @@ export class SliderComponent {
   }
   
   public startSliding(): void {
-    debugger;
     if (!this.autoChangeOff) {
       this.changeIntervalId = setInterval(this.onNextClick.bind(this), this.intervalMs);
     }
   }
   
   public stopSliding(): void {
-    debugger;
     if (this.changeIntervalId) {
       clearInterval(this.changeIntervalId);
     }
