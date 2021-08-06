@@ -1,0 +1,35 @@
+@import 'mixins/_all';
+@import '_core-colors';
+
+.wrapper {
+  background-image: url('/assets/img/jpg/concrete-bg.jpg');
+  @include bg();
+}
+
+.avatar {
+  height: 200px;
+  width: 200px;
+  border: 3px solid $secondary-500;
+  border-radius: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  background-color: rgba(255,255,255,.6);
+  @include e('left') {
+    width: 30%;
+    max-width: 300px;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+  }
+  @include e('right') {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-grow: 1;
+  }
+}
