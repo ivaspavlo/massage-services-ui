@@ -1,4 +1,3 @@
-
 // generic elements
 export * from './expansion-panel/expansion-panel.module';
 export * from './brand-signature/brand-signature.module';
@@ -27,6 +26,7 @@ export * from './checkbox/checkbox.module';
 export * from './language-bar/language-bar.module';
 export * from './date-picker/date-picker.module';
 export * from './popover/popover.module';
+export * from './date-time-card/date-time-card.module';
 
 // app specific elements
 export * from './title/title.module';

@@ -8,7 +8,8 @@
         <img class="height-100" src="/assets/img/jpg/mock-avatar.jpeg" alt="Avatar">
       </figure>
       <ul class="mt-rem-2">
-        <li class="width-100 d-flex flex-column align-items-center mb-rem-1">
+        <li><button data-wipe="Wipe Hover Effect1">Wipe Hover Effect</button></li>
+        <!-- <li class="width-100 d-flex flex-column align-items-center mb-rem-1">
           <app-button-secondary title="Bookings" filled="true"></app-button-secondary>
         </li>
         <li class="width-100 d-flex flex-column align-items-center mb-rem-1">
@@ -16,13 +17,16 @@
         </li>
         <li class="width-100 d-flex flex-column align-items-center mb-rem-1">
           <app-button-secondary title="Orders" filled="true"></app-button-secondary>
-        </li>
+        </li> -->
       </ul>
     </aside>
     <div class="content__right">
       <ng-container>
-        <h4 class="font-42 spacing-px-1 font-family-nexa text-shadow-primary color-accent-500">Bookings</h4>
-        <form action=""></form>
+        <h4 class="mb-rem-2 font-42 spacing-px-1 font-family-nexa text-shadow-primary color-accent-500">Bookings</h4>
+        <ul>
+          <li *ngFor="let pair of dateTimePairs"><app-date-time-card [pair]="pair"></app-date-time-card></li>
+        </ul>
+        <app-button-secondary title="Load More" class="mt-rem-2 d-flex justify-content-start"></app-button-secondary>
       </ng-container>
     </div>
   </div>
