@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
-import { ButtonSecondaryModule, DateTimeCardModule } from '@app/modules/ui';
+import { ButtonAsideModule, ButtonSecondaryModule, DateTimeCardModule } from '@app/modules/ui';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { PAGES } from './pages';
@@ -19,7 +19,8 @@ import { PAGES } from './pages';
     HeaderModule,
     FooterModule,
     ButtonSecondaryModule,
-    DateTimeCardModule
+    DateTimeCardModule,
+    ButtonAsideModule
   ]
 })
 export class ProfileModule { }
