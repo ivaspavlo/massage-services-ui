@@ -25,10 +25,8 @@
       <div class="date-time-pairs">
         <h5 class="width-100 font-30 d-flex justify-content-center justify-content-md-start font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">Selected dates</h5>
         <ul class="my-rem-1 d-flex flex-md-column justify-content-center justify-content-md-start flex-grow-1">
-          <li *ngFor="let pair of pairs | formatDateTime; let index = index;" class="pair">
-            <span class="font-18">{{pair.date}}</span>
-            <span class="ml-rem-0_5 font-14 color-accent-600">{{pair.time}}</span>
-            <a (click)="onDeletePair(index)" class="pair__close"></a>
+          <li *ngFor="let pair of pairs; let index = index;">
+            <app-date-time-card (closePair)="onDeletePair(index)" [pair]="pair"></app-date-time-card>
           </li>
         </ul>
         <app-button-primary *ngIf="pairs.length" title="Confirm" filled="true" class="mt-rem-1"></app-button-primary>

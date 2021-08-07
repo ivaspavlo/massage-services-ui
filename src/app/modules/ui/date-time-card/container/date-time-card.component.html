@@ -1,0 +1,5 @@
+<div *ngIf="(pair | formatDateTime) as data" class="pair">
+  <span class="pair__date">{{data.date}}</span>
+  <span class="pair__time">{{data.time}}</span>
+  <a (click)="closePair.emit(pair)" class="pair__close"></a>
+</div>

@@ -1,12 +1,10 @@
-
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IAngularMyDpOptions } from 'angular-mydatepicker';
-
-import { DestroySubscriptions } from '@app/shared/classes';
 import { map, takeUntil } from 'rxjs/operators';
 
-import { IDateTimePair, ITimeSlot } from '../../interfaces';
+import { DestroySubscriptions } from '@app/shared/classes';
+import { IDateTimePair, ITimeSlot } from '@app/interfaces';
 
 
 @Component({
