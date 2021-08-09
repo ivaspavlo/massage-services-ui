@@ -7,14 +7,14 @@
       <figure class="avatar box-shadow-2">
         <img class="height-100" src="/assets/img/jpg/mock-avatar.jpeg" alt="Avatar">
       </figure>
-      <ul class="mt-rem-2">
+      <ul class="width-100 mt-rem-2">
         <li><app-button-aside title="Bookings"></app-button-aside></li>
       </ul>
     </aside>
     <div class="content__right">
       <ng-container>
         <h4 class="mb-rem-2 font-42 spacing-px-1 font-family-nexa text-shadow-primary color-accent-500">Bookings</h4>
-        <ul>
+        <ul class="">
           <li *ngFor="let pair of dateTimePairs"><app-date-time-card [pair]="pair"></app-date-time-card></li>
         </ul>
         <app-button-secondary title="Load More" class="mt-rem-2 d-flex justify-content-start"></app-button-secondary>
