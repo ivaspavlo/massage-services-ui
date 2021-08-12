@@ -1,3 +1,2 @@
-
 <input [formControl]="innerControl" type="checkbox" id="toggle" class="toggle"/>
-<label for="toggle" class="toggle-label" [ngClass]="{'has-error': (control.touched || control.dirty) && control.errors}"></label>
+<label for="toggle" class="toggle-label" [ngClass]="{'has-error': (innerControl.touched || innerControl.dirty) && hasErrors}"></label>

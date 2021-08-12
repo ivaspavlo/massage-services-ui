@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonAsideComponent } from './button-aside.component';
+import { ProfileFormComponent } from './profile-form.component';
 
-describe('ButtonAsideComponent', () => {
-  let component: ButtonAsideComponent;
-  let fixture: ComponentFixture<ButtonAsideComponent>;
+describe('ProfileFormComponent', () => {
+  let component: ProfileFormComponent;
+  let fixture: ComponentFixture<ProfileFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ButtonAsideComponent ]
+      declarations: [ ProfileFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ButtonAsideComponent);
+    fixture = TestBed.createComponent(ProfileFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

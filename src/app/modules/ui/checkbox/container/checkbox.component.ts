@@ -1,6 +1,5 @@
-
-import { Component, OnInit, ChangeDetectionStrategy, Optional, Input } from '@angular/core';
-import { ControlContainer, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -17,25 +16,18 @@ import { takeUntil } from 'rxjs/operators';
   }]
 })
 export class CheckboxComponent implements OnInit {
-  
-  @Input() errorsMap: { [key:string]: string; };
-  @Input() controlName = '';
+
+  @Input() hasErrors = false;
   
   // ControlValueAccessor
   private onChange;
   private onTouched;
   
-  // ControlContainer
-  public get form(): FormGroup { return this.controlContainer?.control as FormGroup; }
-  public get control(): FormControl { return this.form?.get(this.controlName) as FormControl; }
-  
   public innerControl = new FormControl();
   
   private componentDestroyed$: Subject<void> = new Subject();
 
-  constructor(
-    @Optional() private controlContainer: ControlContainer
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.listenToInnerControlChanges();

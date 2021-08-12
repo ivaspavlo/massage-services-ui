@@ -8,6 +8,7 @@ export * from '@app/modules/ui/header-dropdown/interfaces';
 export * from '@app/modules/ui/tabs/interfaces';
 export * from '@app/modules/ui/language-bar/interfaces';
 export * from '@app/modules/ui/date-time-card/interfaces';
+export * from '@app/modules/ui/profile-form/interfaces';
 
 // common
 export * from './user.interface';

@@ -1,0 +1,13 @@
+<form [formGroup]="form" markTouched class="d-flex flex-column">
+
+  <h3 *ngIf="title" class="font-32 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">{{title}}</h3>
+  
+  <app-input [formControl]="form.get('name')" controlName="name" label="Name" placeholder="Please enter your name" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('surname')" controlName="surname" label="Surname" placeholder="Please enter your surname" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('birthDate')" controlName="birthDate" label="Date of Birth" placeholder="DD/MM/YYYY" type="date" [maskNumber]="{blocks: [2,2,4], separator: '/'}" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('email')" controlName="email" label="Email" placeholder="Please enter your email" type="email" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('phoneNumber')" controlName="phoneNumber" label="Phone" placeholder="XXX-XXX-XXXX" type="phone" [maskNumber]="{blocks: [3,3,4], separator: '-'}"  [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('password')" controlName="password" label="Password" placeholder="Please enter your password" type="password" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('confirmPassword')" controlName="confirmPassword" label="Confirm Password" placeholder="Please confirm your password" type="password" [errorsMap]="errorMessages"></app-input>
+  
+</form>
