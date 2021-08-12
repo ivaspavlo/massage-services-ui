@@ -1,9 +1,7 @@
-
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ErrorMessages } from '@app/core/constants';
 import { AuthService } from '@app/core/services';
-import { DateValidators, PasswordValidators } from '@app/shared/validators';
+import { IProfileFormValue } from '@app/interfaces';
 
 
 @Component({
@@ -15,7 +13,6 @@ import { DateValidators, PasswordValidators } from '@app/shared/validators';
 export class RegisterComponent implements OnInit {
   
   public form: FormGroup;
-  public errorMessages = ErrorMessages;
 
   constructor(
     private fb: FormBuilder,
@@ -26,21 +23,12 @@ export class RegisterComponent implements OnInit {
     this.form = this.initForm();
   }
   
-  public onSubmit(): void {
-    this.authService.signup({ userName: 'asdfasdf', password: 'asdfa111A1' }).subscribe(res => {
-      console.log(res);
-    })
+  public onSubmit(value: IProfileFormValue): void {
+    console.log(value);
   }
   
   private initForm(): FormGroup {
     return this.fb.group({
-      name: this.fb.control('', Validators.required),
-      surname: this.fb.control('', Validators.required),
-      birthDate: this.fb.control('', [Validators.required, DateValidators.default]),
-      password: this.fb.control('', [Validators.required, PasswordValidators.default]),
-      confirmPassword: this.fb.control('', [Validators.required, PasswordValidators.default, PasswordValidators.passwordsEqual()]),
-      email: this.fb.control('', [Validators.required, Validators.email]),
-      phoneNumber: this.fb.control('', [Validators.required, Validators.minLength(12)]),
       consent: this.fb.control(false, Validators.requiredTrue)
     });
   }

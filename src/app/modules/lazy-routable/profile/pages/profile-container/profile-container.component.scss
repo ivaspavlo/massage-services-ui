@@ -17,20 +17,36 @@
 }
 
 .content {
+  width: 100%;
+  max-width: 992px;
+  display: flex;
+  flex-direction: column;
   background-color: rgba(255,255,255,.6);
+  @media only screen and (min-width: map-get($breakpoints, "sm")) {
+    flex-direction: row;
+  }
   @include e('left') {
-    width: 30%;
-    max-width: 300px;
+    width: 100%;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
+    @media only screen and (min-width: map-get($breakpoints, "sm")) {
+      width: 30%;
+      min-width: 250px;
+      max-width: 300px;
+    }
   }
   @include e('right') {
+    @include bg();
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    align-items: center;
+    background: center no-repeat url('/assets/img/png/contactus-bg.png');
+    @media only screen and (min-width: map-get($breakpoints, "sm")) {
+      align-items: start;
+    }
   }
 }
