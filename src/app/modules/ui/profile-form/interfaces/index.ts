@@ -1,3 +1,6 @@
+import { ValidatorFn } from '@angular/forms';
+
+
 export interface IProfileFormValue {
   name: string;
   surname: string;
@@ -6,4 +9,8 @@ export interface IProfileFormValue {
   confirmPassword: string;
   email: string;
   phoneNumber: string;
+}
+
+export interface IFormBase {
+  [key: string]: { validators: ValidatorFn[], value: unknown }
 }
