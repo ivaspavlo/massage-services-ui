@@ -5,6 +5,7 @@ import { ErrorMessages } from '@app/core/constants';
 import { DateValidators, PasswordValidators } from '@app/shared/validators';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { ProfileFormBase } from '../constants';
 
 import { IProfileFormValue } from '../interfaces';
 
@@ -35,7 +36,6 @@ export class ProfileFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    debugger;
     this.form = this.initForm();
     this.listenToFormChange();
   }
@@ -49,16 +49,11 @@ export class ProfileFormComponent implements OnInit {
   }
   
   private initForm(): FormGroup {
+    const test = new ProfileFormBase(this.formValue);
     debugger;
-    return this.fb.group({
-      name: this.fb.control({ value: this.formValue ? this.formValue.name : '', disabled: this._disabled }, Validators.required),
-      surname: this.fb.control({ value: this.formValue ? this.formValue.surname : '',  disabled: this._disabled }, Validators.required),
-      birthDate: this.fb.control({ value: this.formValue ? this.formValue.birthDate : '', disabled: this._disabled }, [Validators.required, DateValidators.default]),
-      password: this.fb.control({ value: this.formValue ? this.formValue.password : '', disabled: this._disabled }, [Validators.required, PasswordValidators.default]),
-      confirmPassword: this.fb.control({ value: this.formValue ? this.formValue.confirmPassword : '', disabled: this._disabled }, [Validators.required, PasswordValidators.default, PasswordValidators.passwordsEqual()]),
-      email: this.fb.control({ value: this.formValue ? this.formValue.email : '', disabled: this._disabled }, [Validators.required, Validators.email]),
-      phoneNumber: this.fb.control({ value: this.formValue ? this.formValue.phoneNumber : '', disabled: this._disabled }, [Validators.required, Validators.minLength(12)])
-    });
+    return this.fb.group(
+      test
+    );
   }
   
   private toggleDisableForm(value: boolean): void {
