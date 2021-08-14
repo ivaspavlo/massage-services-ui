@@ -7,7 +7,9 @@
   <app-input [formControl]="form.get('birthDate')" controlName="birthDate" label="Date of Birth" placeholder="DD/MM/YYYY" type="date" [maskNumber]="{blocks: [2,2,4], separator: '/'}" [errorsMap]="errorMessages"></app-input>
   <app-input [formControl]="form.get('email')" controlName="email" label="Email" placeholder="Please enter your email" type="email" [errorsMap]="errorMessages"></app-input>
   <app-input [formControl]="form.get('phoneNumber')" controlName="phoneNumber" label="Phone" placeholder="XXX-XXX-XXXX" type="phone" [maskNumber]="{blocks: [3,3,4], separator: '-'}"  [errorsMap]="errorMessages"></app-input>
-  <app-input [formControl]="form.get('password')" controlName="password" label="Password" placeholder="Please enter your password" type="password" [errorsMap]="errorMessages"></app-input>
-  <app-input [formControl]="form.get('confirmPassword')" controlName="confirmPassword" label="Confirm Password" placeholder="Please confirm your password" type="password" [errorsMap]="errorMessages"></app-input>
+  <ng-container *ngIf="!isEditMode">
+    <app-input [formControl]="form.get('password')" controlName="password" label="Password" placeholder="Please enter your password" type="password" [errorsMap]="errorMessages"></app-input>
+    <app-input [formControl]="form.get('confirmPassword')" controlName="confirmPassword" label="Confirm Password" placeholder="Please confirm your password" type="password" [errorsMap]="errorMessages"></app-input>
+  </ng-container>
   
 </form>
