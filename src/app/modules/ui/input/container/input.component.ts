@@ -60,7 +60,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.onTouched = fn;
   }
   public writeValue(value: unknown): void {
-    debugger;
     this.innerControl.patchValue(value);
   }
   
@@ -87,7 +86,9 @@ export class InputComponent implements OnInit, ControlValueAccessor {
       formattedValue = this.maskFn(formattedValue, this.maskNumber);
     }
     this.innerControl.patchValue(formattedValue, { emitEvent: false, onlySelf: true });
-    this?.onChange(formattedValue);
+    if (this.onChange) {
+      this.onChange(formattedValue);
+    }
   }
   
   public onPasswordToggle(isHidden: boolean): void {
