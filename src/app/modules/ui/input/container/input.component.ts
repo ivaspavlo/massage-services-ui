@@ -52,17 +52,20 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.listenToInnerControlChanges();
   }
   
-  // ControlValueAccessor
+  // ControlValueAccessor methods
   public registerOnChange(fn): void {
     this.onChange = fn;
   }
+  
   public registerOnTouched(fn): void {
     this.onTouched = fn;
   }
+  
   public writeValue(value: unknown): void {
     this.innerControl.patchValue(value);
   }
   
+  // Public methods
   public listenToInnerControlChanges(): void {
     this.innerControl.valueChanges.pipe(
       takeUntil(this.componentDestroyed$)
@@ -95,6 +98,7 @@ export class InputComponent implements OnInit, ControlValueAccessor {
     this.innerInputType = isHidden ? 'password' : 'text';
   }
   
+  // Private mehtods
   private forceNumberValue(value: string): string {
     return value.replace(/\D/g, '');
   }
