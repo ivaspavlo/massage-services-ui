@@ -8,6 +8,7 @@ import { SharedModule } from '@app/shared/shared.module';
 import { ButtonPrimaryModule } from '../button-primary/button-primary.module';
 import { InputModule } from '../input/input.module';
 import { CheckboxModule } from '../checkbox/checkbox.module';
+import { DatePickerModule } from '../date-picker/date-picker.module';
 
 import { ProfileFormComponent } from './container/profile-form.component';
 
@@ -24,7 +25,8 @@ import { ProfileFormComponent } from './container/profile-form.component';
     ButtonPrimaryModule,
     InputModule,
     CheckboxModule,
-    RouterModule
+    RouterModule,
+    DatePickerModule
   ],
   exports: [
     ProfileFormComponent

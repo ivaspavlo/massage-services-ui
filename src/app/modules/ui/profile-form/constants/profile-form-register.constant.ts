@@ -4,7 +4,7 @@ import { ProfileFormSettings } from './profile-form-settings.constant';
 
 
 export class ProfileFormRegister {
-  constructor(initValue: IProfileFormValue | null) {
+  constructor(initValue?: IProfileFormValue) {
     ProfileFormSettings.forEach(ctrl => {
       this[ctrl.name] = new FormControl(
         { value: initValue ? initValue[ctrl.name] : '', disabled: false },

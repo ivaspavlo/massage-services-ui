@@ -17,7 +17,10 @@ import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
 })
 export class DatePickerContainerComponent implements OnInit {
 
-  @Input() dpOptions: IAngularMyDpOptions;
+  @Input() dpOptions: IAngularMyDpOptions = {
+    dateRange: false,
+    dateFormat: 'dd.mm.yyyy',
+  };
   @Input() plh = 'Please select the date';
   @Input() label = 'test';
   @Input() errorsMap: { [key:string]: string; };

@@ -3,6 +3,10 @@ $main-color: #7dc9bd;
 $plh-color: #656565;
 $br: 4px;
 
+:host {
+  margin: 15px 0;
+}
+
 .input {
   width: 100%;
   position: relative;
@@ -29,6 +33,19 @@ $br: 4px;
       color: $plh-color;
       transition: .3s;
     }
+  }
+  
+  &__icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/assets/img/svg/calendar.svg');
   }
   
 }

@@ -1,0 +1,13 @@
+@import '_core-colors';
+
+
+::ng-deep {
+  .profile-form {
+    app-date-picker div.input {
+      input.input__field {
+        border-color: $accent-500;
+        color: $grey-700;
+      }
+    }
+  }
+}
