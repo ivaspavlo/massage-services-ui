@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Optional } from '@angular/core';
 import { ControlContainer, ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { IMaskNumberInput, InputTypes } from '../interfaces';
+import { InputTypes } from '../interfaces';
 
 
 @Component({
@@ -22,12 +22,10 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   @Input() label = '';
   @Input() placeholder = '';
   @Input() errorsMap: { [key:string]: string; };
-  @Input() maskNumber: IMaskNumberInput = null;
   @Input() type: InputTypes;
   
   get isText() { return this.type === 'text'; }
   get isTextArea() { return this.type === 'textarea'; }
-  get isDate() { return this.type === 'date'; }
   
   public innerControl = new FormControl();
   public innerInputType: InputTypes;
@@ -85,9 +83,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   public onInput(value): void {
     let formattedValue = value;
-    if (this.maskNumber) {
-      formattedValue = this.maskFn(formattedValue, this.maskNumber);
-    }
     this.innerControl.patchValue(formattedValue, { emitEvent: false, onlySelf: true });
     if (this.onChange) {
       this.onChange(formattedValue);
@@ -99,44 +94,8 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   }
   
   // Private mehtods
-  private forceNumberValue(value: string): string {
-    return value.replace(/\D/g, '');
-  }
-  
-  private maskFn(value: string, { blocks, separator }: IMaskNumberInput): string {
-    let valueString = this.forceNumberValue(value);
-    let maxLength = 0;
-    let result = '';
-    for (let index = 0; index < blocks.length; index++) {
-      const blockSize = blocks[index];
-      maxLength += blockSize;
-      
-      const isFirstBlock = index === 0;
-      const isLastBlock = index === blocks.length - 1;
-      
-      const separatorsLength = separator.length * index;
-      const resultLength = result.length - separatorsLength;
-      
-      const start = isFirstBlock ? 0 : resultLength;
-      const end = isFirstBlock ? blockSize : resultLength + blockSize;
-      
-      const stopLoop = valueString.length <= resultLength + blockSize;
-      
-      for (let n = start; n < end; n++) {
-        result = valueString[n] === undefined ? result : result + valueString[n];
-      }
-      
-      if (stopLoop) {
-        break;
-      }
-      
-      result = isLastBlock ? result : result + separator;
-    }
-    return result;
-  }
-  
   private initInnerInputType(): void {
-    this.innerInputType = this.maskNumber || this.isDate || !this.type ? 'text' : this.type;
+    this.innerInputType = !this.type ? 'text' : this.type;
   }
   
   ngOnDestroy() {
@@ -145,3 +104,44 @@ export class InputComponent implements OnInit, ControlValueAccessor {
   }
 
 }
+
+// private forceNumberValue(value: string): string {
+//   return value.replace(/\D/g, '');
+// }
+
+// private maskFn(value: string, { blocks, separator }: IMaskNumberInput): string {
+//   let valueString = this.forceNumberValue(value);
+//   let maxLength = 0;
+//   let result = '';
+//   for (let index = 0; index < blocks.length; index++) {
+//     const blockSize = blocks[index];
+//     maxLength += blockSize;
+    
+//     const isFirstBlock = index === 0;
+//     const isLastBlock = index === blocks.length - 1;
+    
+//     const separatorsLength = separator.length * index;
+//     const resultLength = result.length - separatorsLength;
+    
+//     const start = isFirstBlock ? 0 : resultLength;
+//     const end = isFirstBlock ? blockSize : resultLength + blockSize;
+    
+//     const stopLoop = valueString.length <= resultLength + blockSize;
+    
+//     for (let n = start; n < end; n++) {
+//       result = valueString[n] === undefined ? result : result + valueString[n];
+//     }
+    
+//     if (stopLoop) {
+//       break;
+//     }
+    
+//     result = isLastBlock ? result : result + separator;
+//   }
+//   return result;
+// }
+
+// export interface IMaskNumberInput {
+//   blocks: number[];
+//   separator: string;
+// }

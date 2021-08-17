@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
 
 import { ErrorMessages } from '@app/core/constants';
+import { DestroySubscriptions } from '@app/shared/classes';
 
 import { ProfileFormRegister, ProfileFormEdit } from '../constants';
 import { IProfileFormValue } from '../interfaces';
-import { DestroySubscriptions } from '@app/shared/classes';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class ProfileFormComponent extends DestroySubscriptions implements OnInit
     this.toggleDisableForm(value);
   };
   
-  get isEditMode(): boolean { return !!this.initValue; }
+  get isEditMode(): boolean { return !this.initValue; }
   
   public form: FormGroup;
   public errorMessages = ErrorMessages;
@@ -51,7 +51,7 @@ export class ProfileFormComponent extends DestroySubscriptions implements OnInit
     return this.fb.group(
       this.isEditMode ?
         new ProfileFormEdit(this.initValue) :
-        new ProfileFormRegister(this.initValue)
+        new ProfileFormRegister()
     );
   }
   

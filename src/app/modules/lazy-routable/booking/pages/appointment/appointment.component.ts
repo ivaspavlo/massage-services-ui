@@ -18,8 +18,6 @@ export class AppointmentComponent extends DestroySubscriptions implements OnInit
   public form: FormGroup = null;
   public dpOptions: IAngularMyDpOptions = {
     disableWeekends: true,
-    dateRange: false,
-    dateFormat: 'dd.mm.yyyy',
     disableUntil: { year: new Date().getFullYear(), month: new Date().getMonth() + 1, day: new Date().getDate() }
   };
   public timeSlots: ITimeSlot[] = [];
