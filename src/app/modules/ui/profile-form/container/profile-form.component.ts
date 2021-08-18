@@ -25,7 +25,7 @@ export class ProfileFormComponent extends DestroySubscriptions implements OnInit
     this.toggleDisableForm(value);
   };
   
-  get isEditMode(): boolean { return !this.initValue; }
+  get isEditMode(): boolean { return !!this.initValue; }
   
   public form: FormGroup;
   public errorMessages = ErrorMessages;

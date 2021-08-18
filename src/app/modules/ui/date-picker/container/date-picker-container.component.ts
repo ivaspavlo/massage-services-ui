@@ -1,5 +1,5 @@
 
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, Optional } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, Optional } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
 
@@ -8,14 +8,13 @@ import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
   selector: 'app-date-picker',
   templateUrl: './date-picker-container.component.html',
   styleUrls: ['./date-picker-container.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: DatePickerContainerComponent,
     multi: true
   }]
 })
-export class DatePickerContainerComponent implements OnInit {
+export class DatePickerContainerComponent {
 
   @Input() dpOptions: IAngularMyDpOptions = {
     dateRange: false,
@@ -27,10 +26,12 @@ export class DatePickerContainerComponent implements OnInit {
   @Input() controlName = '';
   
   // ControlValueAccessor
+  
   private onChange;
   private onTouched;
   
   // ControlContainer
+  
   public get form(): FormGroup { return this.controlContainer?.control as FormGroup; }
   public get control(): FormControl { return this.form?.get(this.controlName) as FormControl; }
   
@@ -41,9 +42,12 @@ export class DatePickerContainerComponent implements OnInit {
     private cdr: ChangeDetectorRef
   ) { }
 
-  ngOnInit(): void { }
+  ngOnChanges(val): void {
+    console.log(val);
+  }
   
   // ControlValueAccessor
+  
   public registerOnChange(fn): void {
     this.onChange = fn;
   }
@@ -61,6 +65,8 @@ export class DatePickerContainerComponent implements OnInit {
       }
     }
   }
+  
+  // Public methods
   
   public onDateChanged(event: IMyDateModel): void {
     const value = this.dpOptions.dateRange ?
