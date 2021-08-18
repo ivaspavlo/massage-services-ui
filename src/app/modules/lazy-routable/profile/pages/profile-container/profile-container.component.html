@@ -23,7 +23,7 @@
       </ng-container>
       <ng-container *ngSwitchCase="profileSections.orders">test</ng-container>
       <ng-container *ngSwitchCase="profileSections.profile">
-        <app-profile-form (formChange)="onFormChange($event)" title="Profile" [formValue]="initValue" [disabled]="formDisabled" class="width-50"></app-profile-form>
+        <app-profile-form (formChange)="onFormChange($event)" title="Profile" [initValue]="initValue" [disabled]="formDisabled" class="width-50"></app-profile-form>
         <app-button-secondary *ngIf="formDisabled" (click)="onEditProfile()" title="Edit" class="mt-rem-2 d-flex justify-content-start"></app-button-secondary>
         <app-button-secondary *ngIf="!formDisabled" (click)="onSaveProfile()" title="Save" class="mt-rem-2 d-flex justify-content-start"></app-button-secondary>
       </ng-container>
