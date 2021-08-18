@@ -1,4 +1,3 @@
-
 import { ChangeDetectorRef, Component, Input, Optional } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
