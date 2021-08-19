@@ -1,6 +1,5 @@
-<div class="input">
-  <label [for]="controlName" class="input__label">{{label}}</label>
-  <input [id]="controlName" #dp="angular-mydatepicker" [attr.disabled]="control.disabled || null" angular-mydatepicker [options]="dpOptions" [ngClass]="{'input__field--has-value': !!(control.valueChanges | async)}" [(ngModel)]="model" (dateChanged)="onDateChanged($event)" (click)="onInputClick(dp)" name="mydate" class="input__field">
-  <p class="input__error">{{control.errors}}</p>
+<div class="input" [ngClass]="{'input--invalid': control.dirty && control.errors !== null}">
+  <input [id]="controlName" #dp="angular-mydatepicker" [attr.disabled]="control.disabled || null" angular-mydatepicker [options]="dpOptions" [(ngModel)]="model" (dateChanged)="onDateChanged($event)" (click)="onInputClick(dp)" [placeholder]="'test'" name="mydate" class="input__field">
+  <p class="input__error">{{control.errors | firstError:errorsMap}}</p>
   <i class="input__icon"></i>
 </div>

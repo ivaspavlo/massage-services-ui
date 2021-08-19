@@ -1,4 +1,3 @@
-
 <div class="input" [ngClass]="{'input--invalid': control.errors && control.dirty}">
   
   <input *ngIf="innerInputType !== 'textarea'" [attr.disabled]="control.disabled || null" class="input__field" [ngClass]="{'input__field--has-value': !!(control.valueChanges | async)}" [id]="controlName" name="input" [placeholder]="placeholder" [type]="innerInputType" [formControl]="innerControl" (focus)="onFocus()" (blur)="onBlur()">

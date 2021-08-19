@@ -40,10 +40,6 @@ export class DatePickerContainerComponent {
     @Optional() private controlContainer: ControlContainer,
     private cdr: ChangeDetectorRef
   ) { }
-
-  ngOnChanges(val): void {
-    console.log(val);
-  }
   
   // ControlValueAccessor
   
