@@ -1,4 +1,3 @@
-$main-color: #7dc9bd;
 $text-color: #656565;
 $warn-color: #ff6363;
 $accent-color: #7d6caf;
@@ -12,13 +11,10 @@ $border-radius: 4px;
   width: 100%;
   position: relative;
   text-align: left;
-
   &--invalid {
-    .input__field, .input__text-area { border-color: $warn-color !important; }
-    .input__label { color: $warn-color !important; }
+    .input__field { border-color: $warn-color !important; }
     .input__error { opacity: 1; }
   }
-
   &__field {
     width: 100%;
     padding: 18px 45px 18px 12px;
@@ -32,44 +28,7 @@ $border-radius: 4px;
     background-color: transparent;
     transition: border-color .2s;
     outline: 0;
-    &:required,
-    &:invalid {
-      box-shadow: none;
-    }
-    &::placeholder {
-      color: transparent;
-      transition: .3s;
-    }
-    &:placeholder-shown ~ label {
-      font-size: 16px;
-      transform: translateY(19px);
-      padding: 0px 0px;
-      cursor: text;
-    }
-    &:focus, &--has-value {
-      border-width: 1px;
-      border-color: $accent-color;
-      ~ label {
-        top: 0;
-        transform: translateY(0);
-        color: $accent-color;
-        font-size: 12px;
-      }
-      &::placeholder {
-        color: $text-color;
-      }
-    }
   }
-
-  &__label {
-    position: absolute; left: 12px; top: 50%;
-    transform: translatey(-50%);
-    font-size: 12px;
-    display: block;
-    transition: .3s;
-    color: $text-color;
-  }
-
   &__error {
     width: 100%;
     position: absolute; bottom: -15px;
@@ -81,7 +40,6 @@ $border-radius: 4px;
     opacity: 0;
     transition: opacity .3s;
   }
-  
   &__icon {
     position: absolute;
     right: 10px;
@@ -94,5 +52,4 @@ $border-radius: 4px;
     background-size: cover;
     background-image: url('/assets/img/svg/calendar.svg');
   }
-  
 }
