@@ -4,7 +4,7 @@
   
   <app-input [formControl]="form.get('name')" controlName="name" label="Name" placeholder="Please enter your name" [errorsMap]="errorMessages"></app-input>
   <app-input [formControl]="form.get('surname')" controlName="surname" label="Surname" placeholder="Please enter your surname" [errorsMap]="errorMessages"></app-input>
-  <app-date-picker [formControl]="form.get('birthDate')" controlName="birthDate"></app-date-picker>
+  <app-date-picker [formControl]="form.get('birthDate')" label="Date of Birth" placeholder="Select your Birth Date" controlName="birthDate" [errorsMap]="errorMessages"></app-date-picker>
   <app-input [formControl]="form.get('email')" controlName="email" label="Email" placeholder="Please enter your email" type="email" [errorsMap]="errorMessages"></app-input>
   <app-input [formControl]="form.get('phoneNumber')" controlName="phoneNumber" label="Phone" placeholder="09311122233" type="phone" [errorsMap]="errorMessages"></app-input>
   <ng-container *ngIf="!isEditMode">

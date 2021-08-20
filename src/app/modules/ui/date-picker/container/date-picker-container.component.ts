@@ -1,6 +1,8 @@
-import { ChangeDetectorRef, Component, Input, Optional } from '@angular/core';
+import { Component, Input, Optional, ViewChild } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
+import { AngularMyDatePickerDirective, IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -14,15 +16,21 @@ import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
   }]
 })
 export class DatePickerContainerComponent {
+  
+  @ViewChild('dp') mydp: AngularMyDatePickerDirective;
 
   @Input() dpOptions: IAngularMyDpOptions = {
     dateRange: false,
     dateFormat: 'dd.mm.yyyy',
+    minYear: 1930,
+    maxYear: this.getMaxAllowedBirthYear()
   };
-  @Input() plh = 'Please select the date';
+  @Input() placeholder = 'Please select the date';
   @Input() label = 'test';
   @Input() errorsMap: { [key:string]: string; };
   @Input() controlName = '';
+  
+  public isCalendarVisible$: Observable<boolean>;
   
   // ControlValueAccessor
   
@@ -37,9 +45,12 @@ export class DatePickerContainerComponent {
   public model: IMyDateModel = null;
 
   constructor(
-    @Optional() private controlContainer: ControlContainer,
-    private cdr: ChangeDetectorRef
+    @Optional() private controlContainer: ControlContainer
   ) { }
+  
+  ngAfterViewInit() {
+    this.initCalendarVisibleObservable();
+  }
   
   // ControlValueAccessor
   
@@ -73,7 +84,18 @@ export class DatePickerContainerComponent {
   public onInputClick(dp: any): void {
     this.onTouched();
     dp.toggleCalendar();
-    this.cdr.detectChanges();
+  }
+  
+  // Private methods
+  
+  private initCalendarVisibleObservable(): void {
+    this.isCalendarVisible$ = this.mydp.calendarToggle.pipe(
+      map((res: number) => res === 1)
+    );
+  }
+  
+  private getMaxAllowedBirthYear(): number {
+    return new Date().getFullYear() - 16;
   }
 
 }
