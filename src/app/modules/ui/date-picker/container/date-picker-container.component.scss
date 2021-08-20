@@ -11,10 +11,18 @@ $border-radius: 4px;
   width: 100%;
   position: relative;
   text-align: left;
+  
+  &--active {
+    .input__label { font-size: 12px; transform: translateY(-15px); }
+    .input__field::placeholder { color: $text-color; }
+  }
+  
   &--invalid {
     .input__field { border-color: $warn-color !important; }
+    .input__label { color: $warn-color !important; }
     .input__error { opacity: 1; }
   }
+  
   &__field {
     width: 100%;
     padding: 18px 45px 18px 12px;
@@ -26,9 +34,11 @@ $border-radius: 4px;
     display: block;
     color: $text-color;
     background-color: transparent;
-    transition: border-color .2s;
+    transition: border-color .3s;
     outline: 0;
+    &::placeholder { color: transparent; transition: .3s; }
   }
+  
   &__error {
     width: 100%;
     position: absolute; bottom: -15px;
@@ -40,6 +50,16 @@ $border-radius: 4px;
     opacity: 0;
     transition: opacity .3s;
   }
+  
+  &__label {
+    position: absolute; left: 12px; top: 0;
+    transform: translatey(100%);
+    font-size: 16px;
+    display: block;
+    transition: .3s;
+    color: $text-color;
+  }
+  
   &__icon {
     position: absolute;
     right: 10px;
@@ -52,4 +72,5 @@ $border-radius: 4px;
     background-size: cover;
     background-image: url('/assets/img/svg/calendar.svg');
   }
+  
 }
