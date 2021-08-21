@@ -1,7 +1,6 @@
-
 export const ErrorMessages = {
   required: 'Value is required',
-  date: 'Date is incorrect',
+  birthDate: 'Selected Birth Date is incorrect',
   email: 'Email is incorrect',
   minlength: 'More symbols required',
   maxlength: 'Too many symbols',
