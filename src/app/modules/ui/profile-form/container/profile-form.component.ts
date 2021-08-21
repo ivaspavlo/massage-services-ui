@@ -22,6 +22,7 @@ export class ProfileFormComponent extends DestroySubscriptions implements OnInit
   @Input() initValue: any = {};
   @Input() title: string;
   @Input() set disabled(value: boolean) {
+    this.isDisabled = value;
     this.toggleDisableForm(value);
   };
   
@@ -29,6 +30,7 @@ export class ProfileFormComponent extends DestroySubscriptions implements OnInit
   
   public form: FormGroup;
   public errorMessages = ErrorMessages;
+  private isDisabled = false;
 
   constructor(
     private fb: FormBuilder
@@ -36,6 +38,7 @@ export class ProfileFormComponent extends DestroySubscriptions implements OnInit
 
   ngOnInit(): void {
     this.form = this.initForm();
+    this.toggleDisableForm(this.isDisabled);
     this.listenToFormChange();
   }
   
