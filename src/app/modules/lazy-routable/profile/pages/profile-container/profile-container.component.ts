@@ -22,7 +22,6 @@ export class ProfileContainerComponent {
     email: 'string',
     phoneNumber: 'string'
   };
-  private formValue: IProfileFormValue;
   
   public dateTimePairs: IDateTimePair[] = [
     { date: new Date(), timeSlot: { start: 10, end: 11 } },
@@ -36,22 +35,22 @@ export class ProfileContainerComponent {
     this.currentSection = section;
   }
   
-  public onEditProfile(): void {
-    this.formDisabled = false;
-  }
-  
-  public onSaveProfile(): void {
-    const hasChanged = !!Object.keys(this.initValue || {}).find(key => {
-      this.initValue[key] !== this.formValue[key];
-    });
-    if (hasChanged) {
+  public onButtonClick(currentValue: IProfileFormValue): void {
+    if (this.formDisabled) {
+      this.formDisabled = false;
+      return;
+    }
+    if (this.hasChanged(this.initValue, currentValue)) {
       // TODO: to be implemented
     }
   }
   
-  public onFormChange(formValue: IProfileFormValue): void {
-    console.log(formValue);
-    this.formValue = formValue;
+  // Private methods
+  
+  private hasChanged(initValue: IProfileFormValue, currentValue: IProfileFormValue): boolean {
+    return Object.keys(initValue).some(key => {
+      return initValue[key] !== currentValue[key];
+    });
   }
   
 }
