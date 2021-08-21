@@ -25,7 +25,7 @@ $border-radius: 4px;
   
   &__field {
     width: 100%;
-    padding: 18px 45px 18px 12px;
+    padding: 18px 60px 18px 12px;
     font-size: 16px;
     border: 1px solid;
     border-color: $accent-color;
@@ -70,7 +70,17 @@ $border-radius: 4px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('/assets/img/svg/calendar.svg');
+    &--calendar {
+      background-image: url('/assets/img/svg/calendar.svg');
+    }
+    &--clear {
+      width: 20px;
+      height: 20px;
+      right: 40px;
+      cursor: pointer;
+      background-image: url('/assets/img/svg/x-button.svg');
+      &:hover { background-image: url('/assets/img/svg/x-button-red.svg'); }
+    }
   }
   
 }

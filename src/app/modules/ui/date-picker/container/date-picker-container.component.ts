@@ -21,9 +21,7 @@ export class DatePickerContainerComponent {
 
   @Input() dpOptions: IAngularMyDpOptions = {
     dateRange: false,
-    dateFormat: 'dd.mm.yyyy',
-    minYear: 1930,
-    maxYear: this.getMaxAllowedBirthYear()
+    dateFormat: 'dd.mm.yyyy'
   };
   @Input() placeholder = 'Please select the date';
   @Input() label = 'test';
@@ -81,9 +79,13 @@ export class DatePickerContainerComponent {
     this.onChange(value);
   }
   
-  public onInputClick(dp: any): void {
+  public onInputClick(): void {
     this.onTouched();
-    dp.toggleCalendar();
+    this.mydp.toggleCalendar();
+  }
+  
+  public onClearDate(): void {
+    this.mydp.clearDate();
   }
   
   // Private methods
@@ -92,10 +94,6 @@ export class DatePickerContainerComponent {
     this.isCalendarVisible$ = this.mydp.calendarToggle.pipe(
       map((res: number) => res === 1)
     );
-  }
-  
-  private getMaxAllowedBirthYear(): number {
-    return new Date().getFullYear() - 16;
   }
 
 }
