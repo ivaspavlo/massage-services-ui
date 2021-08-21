@@ -9,5 +9,6 @@ export const ProfileFormSettings = [
   { name: 'email', validators: [Validators.required, Validators.email] },
   { name: 'phoneNumber', validators: [Validators.required, Validators.minLength(12)] },
   { name: 'password', validators: [Validators.required, PasswordValidators.default] },
-  { name: 'confirmPassword', validators: [Validators.required, PasswordValidators.default, PasswordValidators.passwordsEqual()] }
+  { name: 'confirmPassword', validators: [Validators.required, PasswordValidators.default, PasswordValidators.passwordsEqual()] },
+  { name: 'consent', Validators: [Validators.requiredTrue] }
 ];

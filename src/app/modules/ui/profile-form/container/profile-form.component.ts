@@ -1,9 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { takeUntil } from 'rxjs/operators';
 
 import { ErrorMessages } from '@app/core/constants';
-import { DestroySubscriptions } from '@app/shared/classes';
 
 import { ProfileFormRegister, ProfileFormEdit } from '../constants';
 import { IProfileFormValue } from '../interfaces';
@@ -15,11 +13,11 @@ import { IProfileFormValue } from '../interfaces';
   styleUrls: ['./profile-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProfileFormComponent extends DestroySubscriptions implements OnInit {
+export class ProfileFormComponent implements OnInit {
   
-  @Output() formChange: EventEmitter<IProfileFormValue> = new EventEmitter();
+  @Output() buttonClick: EventEmitter<IProfileFormValue> = new EventEmitter();
   
-  @Input() initValue: any = {};
+  @Input() initValue: IProfileFormValue;
   @Input() title: string;
   @Input() set disabled(value: boolean) {
     this.isDisabled = value;
@@ -34,20 +32,11 @@ export class ProfileFormComponent extends DestroySubscriptions implements OnInit
 
   constructor(
     private fb: FormBuilder
-  ) { super(); }
+  ) { }
 
   ngOnInit(): void {
     this.form = this.initForm();
     this.toggleDisableForm(this.isDisabled);
-    this.listenToFormChange();
-  }
-  
-  public listenToFormChange(): void {
-    this.form.valueChanges.pipe(
-      takeUntil(this.componentDestroyed$)
-    ).subscribe((res: IProfileFormValue) => {
-      this.formChange.emit(res);
-    });
   }
   
   private initForm(): FormGroup {
