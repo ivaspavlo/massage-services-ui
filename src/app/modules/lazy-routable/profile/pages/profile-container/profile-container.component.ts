@@ -18,7 +18,7 @@ export class ProfileContainerComponent {
   public initValue: IProfileFormValue = {
     name: 'string',
     surname: 'string',
-    birthDate: '',
+    birthDate: new Date(),
     email: 'string',
     phoneNumber: 'string'
   };
