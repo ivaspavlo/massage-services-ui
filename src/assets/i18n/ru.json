@@ -13,6 +13,7 @@
   "core.footer.privacy-policy": "Политика приватности",
   "core.footer.discounts-promotions": "Акции и скидки",
   "core.footer.service-statements": "Правила обслуживания",
+  "auth.register": "Регистрация",
   "newsletter.header": "Подписывайтесь на новости от нас",
   "newsletter.get": "и получите",
   "newsletter.bonus": "бонусну карту",
@@ -37,6 +38,9 @@
   "cert.section.desc": "Обладая более чем десятилетним профессиональным опытом, я никогда не прекращаю совершенствовать свои навыки и пытаюсь найти особый подход к каждому клиенту, потому что моя цель - вылечить и восстановить.",
   "cert.section.button": "Узнать больше",
   "about.title": "Больше обо мне",
-  "about.subtitle": "Some subtitle",
-  "about.content": "Some content"
+  "about.subtitle": "Здесь будет sub-title",
+  "about.content": "Здесь будет content",
+  "user.button.profile": "Данные пользователя",
+  "user.button.bookings": "Бронирования",
+  "user.button.more": "Больше"
 }

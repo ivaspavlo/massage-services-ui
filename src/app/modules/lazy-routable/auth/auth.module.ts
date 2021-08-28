@@ -2,10 +2,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ButtonPrimaryModule, ButtonSecondaryModule, CheckboxModule, InputModule, LoginFormModule, ToastModule, ProfileFormModule } from '@app/modules/ui';
-import { SharedModule } from '@app/shared/shared.module';
-import { AuthRoutingModule } from './auth-routing.module';
 
+import { CoreTranslationModule } from '@app/core/core-translation.module';
+import { SharedModule } from '@app/shared/shared.module';
+import { ButtonPrimaryModule, ButtonSecondaryModule, CheckboxModule, InputModule, LoginFormModule, ToastModule, ProfileFormModule } from '@app/modules/ui';
+
+import { AuthRoutingModule } from './auth-routing.module';
 import { PAGES } from './pages';
 
 
@@ -24,7 +26,8 @@ import { PAGES } from './pages';
     InputModule,
     CheckboxModule,
     ProfileFormModule,
-    ToastModule.forRoot()
+    ToastModule.forRoot(),
+    CoreTranslationModule.forChild()
   ]
 })
 export class AuthModule { }

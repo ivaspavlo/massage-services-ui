@@ -13,6 +13,7 @@
   "core.footer.privacy-policy": "Privacy Policy",
   "core.footer.discounts-promotions": "Discounts & Promotions",
   "core.footer.service-statements": "Service Statements",
+  "auth.register": "Register",
   "newsletter.header": "Subscribe to our newsletter",
   "newsletter.get": "and get our",
   "newsletter.bonus": "promotion bonus",
@@ -42,5 +43,8 @@
   "cert.section.button": "Read more",
   "about.title": "More about me",
   "about.subtitle": "Some subtitle",
-  "about.content": "Some content"
+  "about.content": "Some content",
+  "user.button.profile": "Profile",
+  "user.button.bookings": "Bookings",
+  "user.button.more": "Load more"
 }
