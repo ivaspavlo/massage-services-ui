@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { CoreTranslationModule } from '@app/core/core-translation.module';
 import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
-import { ButtonSecondaryModule, DateTimeCardModule, ProfileFormModule } from '@app/modules/ui';
+import { ButtonSecondaryModule, DateTimeCardModule, ImgLoaderModule, ProfileFormModule } from '@app/modules/ui';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { PAGES } from './pages';
@@ -19,7 +20,9 @@ import { PAGES } from './pages';
     FooterModule,
     ButtonSecondaryModule,
     DateTimeCardModule,
-    ProfileFormModule
+    ProfileFormModule,
+    ImgLoaderModule,
+    CoreTranslationModule.forChild()
   ]
 })
 export class ProfileModule { }

@@ -13,6 +13,7 @@
   "core.footer.privacy-policy": "Політика приватності",
   "core.footer.discounts-promotions": "Акції та скидки",
   "core.footer.service-statements": "Правила обслуговування",
+  "auth.register": "Регістрація",
   "newsletter.header": "Підпишітся на новини від нас",
   "newsletter.get": "и отримайте",
   "newsletter.bonus": "бонусну карту",
@@ -37,6 +38,9 @@
   "cert.section.desc": "Маючи більш ніж десятирічний професійний досвід, я ніколи не припиняю вдосконалювати свої навички та намагаюся знайти особливий підхід до кожного, тому що моя мета - вилікувати та відновити.",
   "cert.section.button": "Дізнатись більше",
   "about.title": "Більше про мене",
-  "about.subtitle": "Some subtitle",
-  "about.content": "Some content"
+  "about.subtitle": "Тут має бути subtitle",
+  "about.content": "Тут має бути content",
+  "user.button.profile": "Дані користувача",
+  "user.button.bookings": "Бронювання",
+  "user.button.more": "Більше"
 }

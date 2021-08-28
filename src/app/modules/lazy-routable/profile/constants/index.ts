@@ -1,5 +1,4 @@
 export enum ProfileSections {
-  profile = 'profile',
-  bookings = 'bookings',
-  orders = 'orders'
+  profile = 'user.button.profile',
+  bookings = 'user.button.bookings'
 };

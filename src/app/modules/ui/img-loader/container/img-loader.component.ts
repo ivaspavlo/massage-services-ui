@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ImgLoaderAdapter } from '../img-loader.adapter';
+
 
 @Component({
   selector: 'app-img-loader',
@@ -8,9 +11,16 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class ImgLoaderComponent implements OnInit {
 
-  constructor() { }
+  public adapter = new ImgLoaderAdapter(this.http);
 
-  ngOnInit(): void {
+  constructor(
+    private http: HttpClient
+  ) {}
+
+  public ngOnInit(): void {}
+
+  public uploadSuccess(event): void {
+    console.log(event);
   }
 
 }

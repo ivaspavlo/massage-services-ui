@@ -5,28 +5,24 @@
   <div class="content">
     
     <aside class="content__left">
-      <figure class="avatar box-shadow-2">
+      <app-img-loader></app-img-loader>
+      <!-- <figure class="avatar box-shadow-2">
         <img class="height-100" src="/assets/img/jpg/mock-avatar.jpeg" alt="Avatar">
-      </figure>
+      </figure> -->
       <ul class="width-100 mt-rem-2">
         <li *ngFor="let item of profileSections | keyvalue">
-          <app-button-secondary (click)="onMenuButtonClick(item.key)" [title]="item.key | titlecase" fullWidth="true" class="mb-rem-1"></app-button-secondary>
+          <app-button-secondary (click)="onMenuButtonClick(item.value)" [title]="item.value | translate" fullWidth="true" class="mb-rem-1"></app-button-secondary>
         </li>
       </ul>
     </aside>
     
     <div [ngSwitch]="currentSection" class="content__right">
+      <h4 class="mb-rem-2 font-36 spacing-px-1 font-family-nexa text-shadow-primary color-accent-500">{{ currentSection | translate }}</h4>
       <ng-container *ngSwitchCase="profileSections.bookings">
-        <h4 class="mb-rem-2 font-42 spacing-px-1 font-family-nexa text-shadow-primary color-accent-500">Bookings</h4>
         <ul>
           <li *ngFor="let pair of dateTimePairs"><app-date-time-card [pair]="pair"></app-date-time-card></li>
         </ul>
-        <app-button-secondary title="Load More" class="mt-rem-2 d-flex justify-content-start"></app-button-secondary>
-      </ng-container>
-      <ng-container *ngSwitchCase="profileSections.orders">
-        <ul>
-          <li></li>
-        </ul>
+        <app-button-secondary [title]="'user.button.more' | translate" class="mt-rem-2 d-flex justify-content-start"></app-button-secondary>
       </ng-container>
       <ng-container *ngSwitchCase="profileSections.profile">
         <app-profile-form (buttonClick)="onButtonClick($event)" title="Profile" [initValue]="initValue" [disabled]="formDisabled" class="width-50">
