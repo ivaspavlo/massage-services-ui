@@ -2,12 +2,18 @@
   display: block;
 }
 
-.uploader-wrapper {
-  width: 100vw;
-  height: 80vh;
-  padding-top: 20px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center
+::ng-deep {
+  .uploader-wrapper {
+    width: 100vw;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  .file-drop-wrapper {
+    width: auto !important;
+    padding-top: 0 !important;
+  }
 }
+
