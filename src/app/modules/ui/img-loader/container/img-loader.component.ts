@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ImgLoaderAdapter } from '../img-loader.adapter';
+import { ImageCroppedEvent, LoadedImage } from 'ngx-image-cropper';
 
 
 @Component({
@@ -10,17 +9,32 @@ import { ImgLoaderAdapter } from '../img-loader.adapter';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImgLoaderComponent implements OnInit {
+  
+  imageChangedEvent: any = '';
+  croppedImage: any = '';
 
-  public adapter = new ImgLoaderAdapter(this.http);
-
-  constructor(
-    private http: HttpClient
-  ) {}
+  constructor() {}
 
   public ngOnInit(): void {}
-
-  public uploadSuccess(event): void {
-    console.log(event);
+  
+  fileChangeEvent(event: any): void {
+    this.imageChangedEvent = event;
+  }
+  
+  imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+  }
+  
+  imageLoaded() {
+    // show cropper
+  }
+  
+  cropperReady() {
+    // cropper ready
+  }
+  
+  loadImageFailed() {
+    // show message
   }
 
 }

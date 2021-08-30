@@ -5,10 +5,9 @@
   <div class="content">
     
     <aside class="content__left">
-      <app-img-loader></app-img-loader>
-      <!-- <figure class="avatar box-shadow-2">
+      <figure class="avatar box-shadow-2">
         <img class="height-100" src="/assets/img/jpg/mock-avatar.jpeg" alt="Avatar">
-      </figure> -->
+      </figure>
       <ul class="width-100 mt-rem-2">
         <li *ngFor="let item of profileSections | keyvalue">
           <app-button-secondary (click)="onMenuButtonClick(item.value)" [title]="item.value | translate" fullWidth="true" class="mb-rem-1"></app-button-secondary>
@@ -25,6 +24,9 @@
         <app-button-secondary [title]="'user.button.more' | translate" class="mt-rem-2 d-flex justify-content-start"></app-button-secondary>
       </ng-container>
       <ng-container *ngSwitchCase="profileSections.profile">
+        <div class="img-loader-wrap">
+          <app-img-loader></app-img-loader>
+        </div>
         <app-profile-form (buttonClick)="onButtonClick($event)" title="Profile" [initValue]="initValue" [disabled]="formDisabled" class="width-50">
           <app-button-secondary [title]="formDisabled ? 'Edit' : 'Save'" class="mt-rem-2"></app-button-secondary>
         </app-profile-form>
