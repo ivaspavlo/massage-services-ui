@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FilePickerModule } from 'ngx-awesome-uploader';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { ImgLoaderComponent } from './container/img-loader.component';
 
@@ -11,7 +11,7 @@ import { ImgLoaderComponent } from './container/img-loader.component';
   ],
   imports: [
     CommonModule,
-    FilePickerModule
+    ImageCropperModule
   ],
   exports: [
     ImgLoaderComponent
