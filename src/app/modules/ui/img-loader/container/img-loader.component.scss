@@ -1,3 +1,10 @@
+.cropper-wrap {
+  position: relative;
+}
+
 ::ng-deep {
-  image-cropper { padding: 0 !important; }
+  image-cropper {
+    --cropper-outline-color: transparent;
+    --cropper-overlay-color: transparent;
+  }
 }
