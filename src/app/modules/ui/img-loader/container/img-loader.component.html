@@ -1,7 +1,16 @@
-<input type="file" (change)="fileChangeEvent($event)"/>
-<div class="cropper-wrap">
+<div class="app-img-loader">
+	
+	<div class="app-img-loader__controls">
+		<input id="file-input" type="file" (change)="fileChangeEvent($event)"/>
+		<label *ngIf="!image" for="file-input" class="app-img-loader__btn">{{ btnTitles.fileInput }}</label>
+		<ng-container *ngIf="image">
+			<a (click)="onClear()" class="app-img-loader__btn">{{ btnTitles.clear }}</a>
+			<a (click)="onCrop()" class="app-img-loader__btn">{{ btnTitles.crop }}</a>
+		</ng-container>
+	</div>
+	
 	<image-cropper
-		[imageChangedEvent]="imageChangedEvent"
+		[imageChangedEvent]="image"
 		[maintainAspectRatio]="true"
 		[aspectRatio]="4 / 3"
 		format="png"
@@ -10,6 +19,7 @@
 		(cropperReady)="cropperReady()"
 		(loadImageFailed)="loadImageFailed()"
 	></image-cropper>
+	
 </div>
 
 <!-- <img [src]="croppedImage"/> -->

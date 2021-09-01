@@ -1,10 +1,32 @@
-.cropper-wrap {
-  position: relative;
+:host {
+  --main-color: #7d6caf;
 }
 
 ::ng-deep {
-  image-cropper {
-    --cropper-outline-color: transparent;
-    --cropper-overlay-color: transparent;
+  .app-img-loader {
+    image-cropper {
+      --cropper-outline-color: transparent;
+      --cropper-overlay-color: transparent;
+    }
+  }
+}
+
+.app-img-loader {
+  input[type="file"] {
+    display: none;
+  }
+  &__controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__btn {
+    padding: 10px;
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+    display: table;
+    color: var(--main-color);
+    cursor: pointer;
+    &:hover { opacity: .7; }
   }
 }
