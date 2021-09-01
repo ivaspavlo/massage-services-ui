@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { ImageCroppedEvent, LoadedImage } from 'ngx-image-cropper';
 
 
@@ -10,15 +10,22 @@ import { ImageCroppedEvent, LoadedImage } from 'ngx-image-cropper';
 })
 export class ImgLoaderComponent implements OnInit {
   
-  imageChangedEvent: any = '';
-  croppedImage: any = '';
-
-  constructor() {}
-
-  public ngOnInit(): void {}
+  @Input() btnTitles: { fileInput: string; crop: string; clear: string; } = { fileInput: 'Select File', crop: 'Crop', clear: 'Clear' };
   
-  fileChangeEvent(event: any): void {
-    this.imageChangedEvent = event;
+  public image: any = '';
+  public croppedImage: any = '';
+
+  constructor() { }
+
+  public ngOnInit(): void { }
+  
+  public fileChangeEvent(event: any): void {
+    debugger;
+    this.image = event;
+  }
+  
+  public onClear(): void {
+    this.image = '';
   }
   
   imageCropped(event: ImageCroppedEvent) {
