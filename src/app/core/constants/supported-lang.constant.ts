@@ -1,5 +1,4 @@
 export enum SupportedLang {
   en = 'en',
-  ua = 'ua',
-  ru = 'ru'
+  ua = 'ua'
 };

@@ -1,5 +1,4 @@
-
 export const USER_MENU_ITEMS = [
-  { name: 'Login', href: '/auth/login' },
-  { name: 'Register', href: '/auth/register' }
+  { name: 'header.login', href: '/auth/login' },
+  { name: 'header.register', href: '/auth/register' }
 ];

@@ -20,7 +20,6 @@ export class ImgLoaderComponent implements OnInit {
   public ngOnInit(): void { }
   
   public fileChangeEvent(event: any): void {
-    debugger;
     this.image = event;
   }
   
