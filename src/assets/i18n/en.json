@@ -1,5 +1,15 @@
-
 {
+  "header": {
+    "about": "About",
+    "services": "Services",
+    "discount": "Discounts",
+    "blog": "Blog",
+    "book-online": "Book online",
+    "login": "Логін",
+    "register": "Регістрація",
+    "test-service": "Test service",
+    "test-discount": "Test discount"
+  },
   "core.address": "Kyiv, Saratovska str. 10",
   "core.not-found": "Seems to be this page doesn't exist...",
   "core.back-to-main-page": "Main Page",

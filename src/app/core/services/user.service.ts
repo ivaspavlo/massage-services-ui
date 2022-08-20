@@ -1,7 +1,8 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 import { CoreStorageService } from '@app/core/services/core-storage.service';
+import { IDiscount, IService } from '@app/interfaces';
 
 
 @Injectable({
@@ -13,6 +14,22 @@ export class UserService {
     private http: HttpClient,
     private storageService: CoreStorageService
   ) { }
+
+  public getDiscountsList(): Observable<IDiscount[]> {
+    return of([
+      { id: 'discount_1', name: 'header.test-discount', href: '/' },
+      { id: 'discount_2', name: 'header.test-discount', href: '/' },
+      { id: 'discount_3', name: 'header.test-discount', href: '/' }
+    ]);
+  }
+
+  public getServicesList(): Observable<IService[]> {
+    return of([
+      { id: 'service_1', name: 'header.test-service', href: '/' },
+      { id: 'service_2', name: 'header.test-service', href: '/' },
+      { id: 'service_3', name: 'header.test-service', href: '/' }
+    ]);
+  }
 
   // public getUserProfileData(): Observable<IUserProfile> {
   //   return this.http.get<IUserProfile>(`${API_URL}/profile`);
