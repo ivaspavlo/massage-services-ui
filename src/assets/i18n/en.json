@@ -10,6 +10,24 @@
     "test-service": "Test service",
     "test-discount": "Test discount"
   },
+  "main": {
+    "title": "Massage Therapy",
+    "name": "Sergii Tkachuk"
+  },
+  "certification": {
+    "title": "Accelerating healing",
+    "desc": "With more that 10 years professional experience, I never stop improving my skills and try to find a specific approach to every, because my aim is to cure and restore every single one of my clients.",
+    "button": "Read more"
+  },
+  "brand-services": {
+    "title": "Our services"
+  },
+  "newsletter": {
+    "header": "Subscribe to our newsletter",
+    "get": "and get our",
+    "bonus": "promotion bonus",
+    "subscribe": "Subscribe"
+  },
   "core.address": "Kyiv, Saratovska str. 10",
   "core.not-found": "Seems to be this page doesn't exist...",
   "core.back-to-main-page": "Main Page",
@@ -24,10 +42,6 @@
   "core.footer.discounts-promotions": "Discounts & Promotions",
   "core.footer.service-statements": "Service Statements",
   "auth.register": "Register",
-  "newsletter.header": "Subscribe to our newsletter",
-  "newsletter.get": "and get our",
-  "newsletter.bonus": "promotion bonus",
-  "newsletter.subscribe": "Subscribe",
   "booking.gift.page.title": "Gift Certificates",
   "booking.gift.page.subtitle": "Pick yours of the available types",
   "booking.gift.buy-now": "Buy now",
@@ -48,9 +62,6 @@
   "booking.reserve.massage.limpha.subtitle": "Removal of excess fluid and other metabolic products from the intercellular space to improve the transport function of the arterial and venous systems.",
   "booking.reserve.massage.shiatsu.title": "Shiatsu massage",
   "booking.reserve.massage.shiatsu.subtitle": "Apply pressure using only the fingers, palms and especially the thumbs on points that have been related to the central and autonomic nervous systems.",
-  "cert.section.title": "Accelerating of healing",
-  "cert.section.desc": "With more that 10 years professional experience, I never stop improving my skills and try to find a specific approach to every, because my aim is to cure and restore every single one of my clients.",
-  "cert.section.button": "Read more",
   "about.title": "More about me",
   "about.subtitle": "Some subtitle",
   "about.content": "Some content",

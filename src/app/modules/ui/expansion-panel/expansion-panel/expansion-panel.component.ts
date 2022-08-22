@@ -1,4 +1,3 @@
-
 import { DOCUMENT } from '@angular/common';
 import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, ElementRef, Inject } from '@angular/core';
 import { IExpansionPanelItem } from '../interfaces';

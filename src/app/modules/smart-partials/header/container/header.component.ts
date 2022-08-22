@@ -22,14 +22,23 @@ export class HeaderComponent implements OnInit {
   @ViewChild('panel', {static: true}) panel: ElementRef;
 
   public mobileMenuItems: IHeaderDropdownMenu[];
+  public userMenuItems: { href: string; name: string; }[] = USER_MENU_ITEMS;
   public langMenuItems = SupportedLang;
-  public currentLang$: Observable<string>;
-  public isOpen = false;
 
+  public currentLang$: Observable<string>;
   public services$: Observable<IService[]>;
   public discounts$: Observable<IDiscount[]>;
-  public userMenuItems: { href: string; name: string; }[] = USER_MENU_ITEMS;
-  public user: IUser = null;
+
+  public isOpen = false;
+  public set user(value: IUser) {
+    this._user = value;
+    this.mobileMenuItems = this.getMobileItems();
+  };
+  public get user() {
+    return this._user;
+  }
+
+  private _user: IUser = null;
   
   constructor(
     private translateService: CoreTranslateService,

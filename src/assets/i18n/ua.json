@@ -11,6 +11,24 @@
     "test-service": "Тестовий сервіс",
     "test-discount": "Тестовий дискаунт"
   },
+  "main": {
+    "title": "Лікувальний масаж",
+    "name": "Сергій Ткачук"
+  },
+  "certification": {
+    "title": "Прискорюючи одужання",
+    "desc": "Маючи більш ніж десятирічний професійний досвід, я ніколи не припиняю вдосконалювати свої навички та намагаюся знайти особливий підхід до кожного, тому що моя мета - вилікувати та відновити.",
+    "button": "Дізнатись більше"
+  },
+  "brand-services": {
+    "title": "Наші послуги"
+  },
+  "newsletter": {
+    "header": "Підпишітся на новини від нас",
+    "get": "и отримайте",
+    "bonus": "бонусну карту",
+    "subscribe": "Підписатись"
+  },
   "core.address": "Київ, вул. Саратовська 10",
   "core.not-found": "Здається, ця сторінка не існує...",
   "core.back-to-main-page": "На головну",
@@ -25,10 +43,6 @@
   "core.footer.discounts-promotions": "Акції та скидки",
   "core.footer.service-statements": "Правила обслуговування",
   "auth.register": "Регістрація",
-  "newsletter.header": "Підпишітся на новини від нас",
-  "newsletter.get": "и отримайте",
-  "newsletter.bonus": "бонусну карту",
-  "newsletter.subscribe": "Підписатись",
   "booking.gift.page.title": "Подарункові сертифікати",
   "booking.gift.page.subtitle": "Оберіть свій із доступних видів",
   "booking.gift.buy-now": "Придбати",
