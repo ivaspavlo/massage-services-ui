@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
-import { IPageChange } from './interfaces';
+import { IPageChange } from '../interfaces';
 
 
 @Component({
