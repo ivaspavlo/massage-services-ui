@@ -12,7 +12,7 @@
     </div>
   </div> -->
   
-  <div class="width-100 max-width-992 py-rem-2 p-lg-0 py-rem d-flex flex-column justify-content-center flex-grow-1">
+  <div class="width-100 max-width-992 py-rem-2 p-lg-0 py-rem d-flex flex-column align-items-center justify-content-center flex-grow-1">
     
     <div class="services__title d-flex flex-column align-items-center width-100 font-24 b-radius-4 text-shadow-primary">
       <ng-container *ngTemplateOutlet="servicesTitle"></ng-container>
@@ -21,7 +21,7 @@
       </div>
     </div>
     
-    <div class="py-rem-1 p-lg-0 d-flex flex-column justify-content-center align-items-center flex-lg-row flex-grow-1 border-x-2 border-x-lg-0 border-color-secondary-500">
+    <div class="py-rem-1 p-lg-0 d-flex flex-column justify-content-center align-items-center flex-lg-row border-x-2 border-x-lg-0 border-color-secondary-500">
       <div *ngFor="let card of productCards" class="services__card width-100 width-lg-25 p-rem-1">
         <app-product-card [card]="card">
           <app-button-secondary title="Book"></app-button-secondary>

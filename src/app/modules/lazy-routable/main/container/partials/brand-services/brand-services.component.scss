@@ -5,6 +5,7 @@
 }
 
 .services {
+  min-height: 100vh;
   @include e('quotes-wrapper') {
     background: rgba(101,101,101,1);
     @include sm {
