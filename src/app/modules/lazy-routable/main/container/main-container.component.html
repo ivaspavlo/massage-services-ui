@@ -12,8 +12,6 @@
 
     <app-brand-services [quotes]="quotes" [productCards]="productCards" (showQuoteModal)="onShowQuoteModal()"></app-brand-services>
 
-    <app-newsletter></app-newsletter>
-
     <app-footer></app-footer>
 
     <div (click)="onScrollTop()" class="scroll-top-button pos-fixed right-0 bottom-0 d-none d-lg-flex transition-1 z-index-1" [ngClass]="{'scroll-top-button--visible': isBelowTreshold$ | async}">
