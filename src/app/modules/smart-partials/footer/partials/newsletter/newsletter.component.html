@@ -1,4 +1,4 @@
-<div class="newsletter width-75 py-rem-1 px-rem-2 d-flex flex-wrap flex-lg-nowrap justify-content-between bg-white b-radius-10 z-index-1" data-scroll-section>
+<div class="newsletter width-75 py-rem-1 px-rem-2 d-flex flex-wrap flex-lg-nowrap justify-content-between bg-white b-radius-10 z-index-1">
   
   <div class="width-100 width-lg-50 pt-rem-1 px-rem-1 d-flex flex-column align-items-start">
     <h3 class="width-100 font-30 font-weight-bold font-family-nexa text-shadow-primary spacing-px-1 color-white">{{ 'newsletter.header' | translate }}</h3>
@@ -11,9 +11,9 @@
     </div>
   </div>
   
-  <!-- <form [formGroup]="newsletterForm" markTouched (ngSubmit)="onSubmit()" class="width-100 widht-md-50 px-rem-1 d-flex flex-column justify-content-center">
+  <form [formGroup]="newsletterForm" markTouched (ngSubmit)="onSubmit()" class="width-100 widht-md-50 px-rem-1 d-flex flex-column justify-content-center">
     <app-input [formControl]="newsletterForm.get('newsletter')" controlName="newsletter" label="Email" color="secondary" placeholder="Email placeholder"></app-input>
     <app-button-primary [title]="'newsletter.subscribe' | translate" [invalid]="!newsletterForm.valid"></app-button-primary>
-  </form> -->
+  </form>
   
 </div>
