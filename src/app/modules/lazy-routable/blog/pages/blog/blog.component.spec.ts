@@ -20,6 +20,6 @@ describe('BlogComponent', () => {
   });
 
   it('should create', () => {
-    expect(false).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 });
