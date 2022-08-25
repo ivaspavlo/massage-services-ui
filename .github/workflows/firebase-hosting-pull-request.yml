@@ -8,9 +8,20 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: npm install && ng test --browsers ChromeHeadless
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Initialize Node
+        uses: actions/setup-node@master
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: npm install
+      - name: Test
+        run: npm run test:prod
+      - name: Build
+        run: npm run build:prod
+      - name: Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MASSAGE_THERAPY_TKACHUK }}'
