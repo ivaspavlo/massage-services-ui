@@ -1,5 +1,4 @@
-
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { IProductCard, IQuote } from '@app/interfaces';
 
 
@@ -9,14 +8,11 @@ import { IProductCard, IQuote } from '@app/interfaces';
   styleUrls: ['./brand-services.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BrandServicesComponent implements OnInit {
+export class BrandServicesComponent {
 
   @Input() productCards: IProductCard[];
   @Input() quotes: IQuote[];
+  // TODO: create a separate component for quote modal
   @Output() showQuoteModal: EventEmitter<void> = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit() { }
 
 }

@@ -1,4 +1,9 @@
 {
+  "core": {
+    "address": "Kyiv, Saratovska str. 10",
+    "not-found": "Seems to be this page doesn't exist...",
+    "back-to-main-page": "Main Page"
+  },
   "header": {
     "about": "About",
     "services": "Services",
@@ -28,19 +33,18 @@
     "bonus": "promotion bonus",
     "subscribe": "Subscribe"
   },
-  "core.address": "Kyiv, Saratovska str. 10",
-  "core.not-found": "Seems to be this page doesn't exist...",
-  "core.back-to-main-page": "Main Page",
-  "core.footer.work-days": "Mo - Fr",
-  "core.footer.empovered-by": "Empovered by m1",
-  "core.footer.work-weekends": "Sa",
-  "core.footer.site-map": "Site Map",
-  "core.footer.payment-methods": "Payment Methods",
-  "core.footer.contradictions": "Contradictions",
-  "core.footer.loyalty-program": "Loyalty Program",
-  "core.footer.privacy-policy": "Privacy Policy",
-  "core.footer.discounts-promotions": "Discounts & Promotions",
-  "core.footer.service-statements": "Service Statements",
+  "footer": {
+    "work-days": "Mo - Fr",
+    "empovered-by": "Empovered by Pavlo Iv",
+    "work-weekends": "Sa",
+    "site-map": "Site Map",
+    "payment-methods": "Payment Methods",
+    "social-networks": "Social Networks",
+    "loyalty-program": "Loyalty Program",
+    "privacy-policy": "Privacy Policy",
+    "discounts-promotions": "Discounts & Promotions",
+    "service-statements": "Service Statements"
+  },
   "auth.register": "Register",
   "booking.gift.page.title": "Gift Certificates",
   "booking.gift.page.subtitle": "Pick yours of the available types",

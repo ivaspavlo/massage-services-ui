@@ -1,5 +1,4 @@
-
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ErrorMessages } from '@app/core/constants';
 
 
@@ -9,12 +8,8 @@ import { ErrorMessages } from '@app/core/constants';
   styleUrls: ['./login.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   
   public errorMessages = ErrorMessages;
-
-  constructor() { }
-
-  ngOnInit(): void { }
 
 }
