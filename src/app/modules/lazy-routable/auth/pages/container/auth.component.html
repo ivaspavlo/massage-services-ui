@@ -1,19 +1,22 @@
-
 <section class="wrap width-100 height-100 d-flex justify-content-center align-items-center bg-primary-500">
-  
+
   <div class="auth py-rem-1 pl-rem-1 d-flex bg-white b-radius-4">
-    
+
     <div class="auth__left width-50 mr-rem-1 d-none d-sm-flex">
       <div class="auth__blurred-bg width-100 height-100 d-flex flex-column justify-content-end">
         <app-button-primary routerLink="/booking" class="mb-rem-2" title="Book now" filled="true"></app-button-primary>
         <app-button-secondary routerLink="/" class="mb-rem-1" title="Main Page" filled="true"></app-button-secondary>
       </div>
     </div>
-    
+
     <div class="auth__right width-100 width-sm-50 pr-rem-1 overflow-auto">
+      <div class="d-flex flex-column align-items-center">
+        <app-logo size="sm"></app-logo>
+        <h2 class="font-22 font-weight-bold font-family-nexa color-primary-900">Massage Therapy</h2>
+      </div>
       <router-outlet></router-outlet>
     </div>
-    
+
   </div>
 
 </section>

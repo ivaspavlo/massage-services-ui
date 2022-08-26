@@ -1,5 +1,9 @@
-
 {
+  "core": {
+    "address": "Київ, вул. Саратовська 10",
+    "not-found": "Здається, ця сторінка не існує...",
+    "back-to-main-page": "На головну"
+  },
   "header": {
     "about": "Про нас",
     "services": "Послуги",
@@ -29,19 +33,18 @@
     "bonus": "бонусну карту",
     "subscribe": "Підписатись"
   },
-  "core.address": "Київ, вул. Саратовська 10",
-  "core.not-found": "Здається, ця сторінка не існує...",
-  "core.back-to-main-page": "На головну",
-  "core.footer.empovered-by": "Створено компанією m1",
-  "core.footer.work-days": "Пн - Пт",
-  "core.footer.work-weekends": "Сб",
-  "core.footer.site-map": "Мапа сайту",
-  "core.footer.payment-methods": "Платіжні методи",
-  "core.footer.contradictions": "Протипоказання",
-  "core.footer.loyalty-program": "Постійним клієнтам",
-  "core.footer.privacy-policy": "Політика приватності",
-  "core.footer.discounts-promotions": "Акції та скидки",
-  "core.footer.service-statements": "Правила обслуговування",
+  "footer": {
+    "empovered-by": "Empovered by Pavlo Iv",
+    "work-days": "Пн-Пт",
+    "work-weekends": "Сб",
+    "site-map": "Мапа сайту",
+    "payment-methods": "Платіжні методи",
+    "social-networks": "Соціальні мережі",
+    "loyalty-program": "Постійним клієнтам",
+    "privacy-policy": "Політика приватності",
+    "discounts-promotions": "Акції та скидки",
+    "service-statements": "Правила обслуговування"
+  },
   "auth.register": "Регістрація",
   "booking.gift.page.title": "Подарункові сертифікати",
   "booking.gift.page.subtitle": "Оберіть свій із доступних видів",

@@ -1,16 +1,4 @@
-
 <div id="services-section" class="services py-rem-lg-2 d-flex flex-column justify-content-center align-items-center pos-relative overflow-hidden" data-scroll-section>
-  
-  <!-- TODO: create a separate section for quotes -->
-  <!-- <div class="services__quotes-wrapper width-100 py-rem-1 pos-relative d-flex flex-column align-items-center justify-content-center">
-    <app-slider-quote [quotes]="quotes"></app-slider-quote>
-  </div>
-  <div class="width-100 my-rem-1 d-flex justify-content-center bg-dark-transparent">
-    <div class="width-100 max-width-992 py-rem-1 d-flex flex-column align-items-center">
-      <p class="pb-rem-0_5 font-14 font-md-18 color-white spacing-px-1">Please share your feedback with us <span class="font-14 color-warn-500">&hearts;</span></p>
-      <app-button-secondary title="Quote" (click)="showQuoteModal.emit()"></app-button-secondary>
-    </div>
-  </div> -->
   
   <div class="width-100 max-width-992 py-rem-2 p-lg-0 py-rem d-flex flex-column align-items-center justify-content-center flex-grow-1">
     
@@ -21,7 +9,7 @@
       </div>
     </div>
     
-    <div class="py-rem-1 p-lg-0 d-flex flex-column justify-content-center align-items-center flex-lg-row border-x-2 border-x-lg-0 border-color-secondary-500">
+    <div class="py-rem-1 p-lg-0 d-flex flex-column justify-content-center align-items-center flex-lg-row">
       <div *ngFor="let card of productCards" class="services__card width-100 width-lg-25 p-rem-1">
         <app-product-card [card]="card">
           <app-button-secondary title="Book"></app-button-secondary>

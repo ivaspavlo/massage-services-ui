@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { CoreTranslationModule } from '@app/core/core-translation.module';
 import { SharedModule } from '@app/shared/shared.module';
-import { ButtonPrimaryModule, ButtonSecondaryModule, CheckboxModule, InputModule, LoginFormModule, ToastModule, ProfileFormModule } from '@app/modules/ui';
+import { LogoModule, ButtonPrimaryModule, ButtonSecondaryModule, CheckboxModule, InputModule, LoginFormModule, ToastModule, ProfileFormModule } from '@app/modules/ui';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { PAGES } from './pages';
@@ -26,6 +26,7 @@ import { PAGES } from './pages';
     InputModule,
     CheckboxModule,
     ProfileFormModule,
+    LogoModule,
     ToastModule.forRoot(),
     CoreTranslationModule.forChild()
   ]
