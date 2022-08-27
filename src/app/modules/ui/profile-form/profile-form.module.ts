@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '@app/shared/shared.module';
+import { CoreTranslationModule } from '@app/core/core-translation.module';
 
 import { ButtonPrimaryModule } from '../button-primary/button-primary.module';
 import { InputModule } from '../input/input.module';
@@ -26,7 +27,8 @@ import { ProfileFormComponent } from './container/profile-form.component';
     InputModule,
     CheckboxModule,
     RouterModule,
-    DatePickerModule
+    DatePickerModule,
+    CoreTranslationModule.forChild()
   ],
   exports: [
     ProfileFormComponent

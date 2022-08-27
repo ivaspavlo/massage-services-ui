@@ -2,7 +2,8 @@
   "core": {
     "address": "Київ, вул. Саратовська 10",
     "not-found": "Здається, ця сторінка не існує...",
-    "back-to-main-page": "На головну"
+    "back-to-main-page": "На головну",
+    "and": "та"
   },
   "header": {
     "about": "Про нас",
@@ -45,7 +46,65 @@
     "discounts-promotions": "Акції та скидки",
     "service-statements": "Правила обслуговування"
   },
-  "auth.register": "Регістрація",
+  "auth": {
+    "register": "Регістрація",
+    "book-now": "Замовити",
+    "go-to-main-page": "На головну",
+    "register-submit": "Регістрація",
+    "already-registered": "Вже є аккаунт",
+    "go-to-login": "Увійти"
+  },
+  "profile-form": {
+    "give-consent": "Я погоджуюсь з",
+    "privacy-policy": "Політикою Приватності",
+    "terms": "Правилами Обслуговування",
+    "name": {
+      "label": "Ім'я",
+      "plh": "Введіть ім'я"
+    },
+    "surname": {
+      "label": "Прізвище",
+      "plh": "Введіть прізвище"
+    },
+    "birthday": {
+      "label": "День народження",
+      "plh": "Виберіть дату народження"
+    },
+    "email": {
+      "label": "Ел. пошта",
+      "plh": "Введіть ел. пошту"
+    },
+    "phone": {
+      "label": "Телефон",
+      "plh": "Телефон у форматі 09911122233"
+    },
+    "password": {
+      "label": "Пароль",
+      "plh": "Введіть пароль"
+    },
+    "confirm-password": {
+      "label": "Підтвердити пароль",
+      "plh": "Введіть пароль повторно"
+    }
+  },
+  "login-form": {
+    "title": "Логін",
+    "submit": "Увійти",
+    "go-to-register": "Зареєструватись",
+    "go-to-forgot-password": "Забули пароль?",
+    "email": {
+      "label": "Ел. пошта",
+      "plh": "Введіть ел. пошту"
+    },
+    "password": {
+      "label": "Пароль",
+      "plh": "Введіть пароль"
+    }
+  },
+  "forgot-password-form": {
+    "title": "Нагадати пароль",
+    "submit": "Надіслати"
+  },
   "booking.gift.page.title": "Подарункові сертифікати",
   "booking.gift.page.subtitle": "Оберіть свій із доступних видів",
   "booking.gift.buy-now": "Придбати",
