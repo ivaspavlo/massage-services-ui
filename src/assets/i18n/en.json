@@ -2,7 +2,8 @@
   "core": {
     "address": "Kyiv, Saratovska str. 10",
     "not-found": "Seems to be this page doesn't exist...",
-    "back-to-main-page": "Main Page"
+    "back-to-main-page": "Main Page",
+    "and": "and"
   },
   "header": {
     "about": "About",
@@ -45,7 +46,61 @@
     "discounts-promotions": "Discounts & Promotions",
     "service-statements": "Service Statements"
   },
-  "auth.register": "Register",
+  "auth": {
+    "register": "Registration",
+    "book-now": "Book now",
+    "go-to-main-page": "Main page",
+    "register-submit": "Register",
+    "already-registered": "Already registered",
+    "go-to-login": "Login"
+  },
+  "profile-form": {
+    "give-consent": "I give my consent to",
+    "privacy-policy": "Privacy policy",
+    "terms": "Terms & Conditions",
+    "name": {
+      "label": "Name",
+      "plh": "Please enter your name"
+    },
+    "surname": {
+      "label": "Surname",
+      "plh": "Enter your surname"
+    },
+    "birthday": {
+      "label": "Date of Birth",
+      "plh": "Select Birth Date"
+    },
+    "email": {
+      "label": "Email",
+      "plh": "Enter your email"
+    },
+    "phone": {
+      "label": "Phone",
+      "plh": "Your phone in format 09311122233"
+    },
+    "password": {
+      "label": "Password",
+      "plh": "Enter your password"
+    },
+    "confirm-password": {
+      "label": "Confirm password",
+      "plh": "Confirm your password"
+    }
+  },
+  "login-form": {
+    "title": "Login",
+    "submit": "Submit",
+    "go-to-register": "Register",
+    "go-to-forgot-password": "Forgot password?",
+    "email": {
+      "label": "Email",
+      "plh": "Enter your email"
+    },
+    "password": {
+      "label": "Password",
+      "plh": "Enter your password"
+    }
+  },
   "booking.gift.page.title": "Gift Certificates",
   "booking.gift.page.subtitle": "Pick yours of the available types",
   "booking.gift.buy-now": "Buy now",

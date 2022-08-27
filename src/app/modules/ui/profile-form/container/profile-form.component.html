@@ -1,20 +1,20 @@
 <form [formGroup]="form" markTouched class="profile-form d-flex flex-column">
   
-  <app-input [formControl]="form.get('name')" controlName="name" label="Name" placeholder="Please enter your name" [errorsMap]="errorMessages"></app-input>
-  <app-input [formControl]="form.get('surname')" controlName="surname" label="Surname" placeholder="Please enter your surname" [errorsMap]="errorMessages"></app-input>
-  <app-date-picker [formControl]="form.get('birthDate')" label="Date of Birth" placeholder="Select your Birth Date" controlName="birthDate" [errorsMap]="errorMessages"></app-date-picker>
-  <app-input [formControl]="form.get('email')" controlName="email" label="Email" placeholder="Please enter your email" type="email" [errorsMap]="errorMessages"></app-input>
-  <app-input [formControl]="form.get('phoneNumber')" controlName="phoneNumber" label="Phone" placeholder="09311122233" type="phone" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('name')" controlName="name" label="{{ 'profile-form.name.label' | translate }}" placeholder="{{ 'profile-form.name.plh' | translate }}" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('surname')" controlName="surname" label="{{ 'profile-form.surname.label' | translate }}" placeholder="{{ 'profile-form.surname.plh' | translate }}" [errorsMap]="errorMessages"></app-input>
+  <app-date-picker [formControl]="form.get('birthDate')" label="{{ 'profile-form.birthday.label' | translate }}" placeholder="{{ 'profile-form.birthday.plh' | translate }}" controlName="birthDate" [errorsMap]="errorMessages"></app-date-picker>
+  <app-input [formControl]="form.get('email')" controlName="email" label="{{ 'profile-form.email.label' | translate }}" placeholder="{{ 'profile-form.email.plh' | translate }}" type="email" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('phoneNumber')" controlName="phoneNumber" label="{{ 'profile-form.phone.label' | translate }}" placeholder="{{ 'profile-form.phone.plh' | translate }}" type="phone" [errorsMap]="errorMessages"></app-input>
   <ng-container *ngIf="!isEditMode">
-    <app-input [formControl]="form.get('password')" controlName="password" label="Password" placeholder="Please enter your password" type="password" [errorsMap]="errorMessages"></app-input>
-    <app-input [formControl]="form.get('confirmPassword')" controlName="confirmPassword" label="Confirm Password" placeholder="Please confirm your password" type="password" [errorsMap]="errorMessages"></app-input>
+    <app-input [formControl]="form.get('password')" controlName="password" label="{{ 'profile-form.password.label' | translate }}" placeholder="{{ 'profile-form.password.plh' | translate }}" type="password" [errorsMap]="errorMessages"></app-input>
+    <app-input [formControl]="form.get('confirmPassword')" controlName="confirmPassword" label="{{ 'profile-form.confirm-password.label' | translate }}" placeholder="{{ 'profile-form.confirm-password.plh' | translate }}" type="password" [errorsMap]="errorMessages"></app-input>
     <div class="my-rem-1 d-flex align-items-center">
       <app-checkbox [formControl]="form.get('consent')" [hasErrors]="!!form.get('consent').errors"></app-checkbox>
       <p class="font-14">
-        <span>I give my consent to </span>
-        <a class="color-accent-500 hover-opacity text-decoration-underline cursor-pointer">Privacy Policy</a>
-        <span> and </span>
-        <a class="color-accent-500 hover-opacity text-decoration-underline cursor-pointer">Terms & Conditions</a>
+        <span>{{ "profile-form.give-consent" | translate }} </span>
+        <a class="color-accent-500 hover-opacity text-decoration-underline cursor-pointer">{{ "profile-form.privacy-policy" | translate }}</a>
+        <span> {{ "core.and" | translate }} </span>
+        <a class="color-accent-500 hover-opacity text-decoration-underline cursor-pointer">{{ "profile-form.terms" | translate }}</a>
       </p>
     </div>
   </ng-container>
