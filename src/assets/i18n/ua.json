@@ -50,9 +50,9 @@
     "register": "Регістрація",
     "book-now": "Замовити",
     "go-to-main-page": "На головну",
+    "go-to-login": "Увійти",
     "register-submit": "Регістрація",
-    "already-registered": "Вже є аккаунт",
-    "go-to-login": "Увійти"
+    "already-registered": "Вже є аккаунт"
   },
   "profile-form": {
     "give-consent": "Я погоджуюсь з",
@@ -90,7 +90,7 @@
   "login-form": {
     "title": "Логін",
     "submit": "Увійти",
-    "go-to-register": "Зареєструватись",
+    "go-to-register": "Створити акаунт",
     "go-to-forgot-password": "Забули пароль?",
     "email": {
       "label": "Ел. пошта",
@@ -103,7 +103,35 @@
   },
   "forgot-password-form": {
     "title": "Нагадати пароль",
-    "submit": "Надіслати"
+    "submit": "Надіслати",
+    "go-to-login": "Увійти",
+    "go-to-register": "Створити акаунт",
+    "email": {
+      "label": "Ел. пошта",
+      "plh": "Введіть ел. пошту"
+    }
+  },
+  "reset-password-form": {
+    "title": "Змінити пароль",
+    "submit": "Змінити",
+    "password": {
+      "label": "Пароль",
+      "plh": "Введіть пароль"
+    },
+    "confirm-password": {
+      "label": "Підтвердити пароль",
+      "plh": "Введіть пароль повторно"
+    }
+  },
+  "booking": {
+    "tabs": {
+      "gift": "Подарункові сертифікати",
+      "booking.tabs.reservation": "Бронювання"
+    },
+    "reserve": {
+      "title": "Послуги масажу",
+      "subtitle": "Оберіть той, що найбільше відповідає вашим вимогам"
+    }
   },
   "booking.gift.page.title": "Подарункові сертифікати",
   "booking.gift.page.subtitle": "Оберіть свій із доступних видів",
@@ -113,10 +141,6 @@
   "booking.gift.two.title": "300.00 грн",
   "booking.gift.three.title": "400.00 грн",
   "booking.gift.four.title": "500.00 грн",
-  "booking.tabs.gift": "Подарункові сертифікати",
-  "booking.tabs.reservation": "Бронювання",
-  "booking.reserve.title": "Масажні послуги",
-  "booking.reserve.subtitle": "Оберіть той, що найбільше відповідає вашим вимогам",
   "booking.reserve.massage.sport.title": "Спортивний масаж",
   "booking.reserve.massage.sport.subtitle": "Призначений для запобігання і лікування травм, поліпшення гнучкості і поліпшення спортивних результатів.",
   "booking.reserve.massage.shwedish.title": "Шведский масаж",

@@ -1,10 +1,10 @@
 <section class="width-100 py-rem-2 d-flex flex-column justify-content-center align-items-center">
   
   <header class="mb-rem-2 px-rem-2 d-flex flex-column align-items-center">
-    <h3 class="font-42 spacing-px-1 font-family-nexa text-shadow-primary color-white">{{ "booking.reserve.title" | translate }}</h3>
-    <p class="font-22 font-family-nexa color-white">{{ "booking.reserve.subtitle" | translate }}</p>
+    <h3 class="font-42 spacing-px-1 font-family-nexa text-shadow-primary color-primary-500">{{ 'booking.reserve.title' | translate }}</h3>
+    <p class="font-22 font-family-nexa color-primary-500">{{ 'booking.reserve.subtitle' | translate }}</p>
   </header>
   
-  <app-product *ngFor="let product of products | translateArr | async" [product]="product" class="mb-rem-1"></app-product>
+  <app-product *ngFor="let product of products | translateArr | async" [product]="product" class="mb-rem-2"></app-product>
 
 </section>

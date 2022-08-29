@@ -1,6 +1,4 @@
-
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { ToastService } from '@app/modules/ui/toast';
 
 
 @Component({
