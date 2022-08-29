@@ -101,6 +101,38 @@
       "plh": "Enter your password"
     }
   },
+  "forgot-password-form": {
+    "title": "Forgot password",
+    "submit": "Send password",
+    "go-to-login": "Login",
+    "go-to-register": "Register",
+    "email": {
+      "label": "Email",
+      "plh": "Enter your email"
+    }
+  },
+  "reset-password-form": {
+    "title": "Change password",
+    "submit": "Submit",
+    "password": {
+      "label": "Password",
+      "plh": "Enter your password"
+    },
+    "confirm-password": {
+      "label": "Confirm password",
+      "plh": "Confirm your password"
+    }
+  },
+  "booking": {
+    "tabs": {
+      "gift": "Gift certificates",
+      "booking.tabs.reservation": "Reservation"
+    },
+    "reserve": {
+      "title": "Massage services",
+      "subtitle": "Select one that fits your needs the most"
+    }
+  },
   "booking.gift.page.title": "Gift Certificates",
   "booking.gift.page.subtitle": "Pick yours of the available types",
   "booking.gift.buy-now": "Buy now",

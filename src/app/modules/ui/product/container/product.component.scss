@@ -1,0 +1,117 @@
+$cyan: hsl(179, 62%, 43%);
+$bright-yellow: hsl(71, 73%, 54%);
+$light-gray: hsl(204, 43%, 93%);
+$grayish-blue: hsl(218, 22%, 67%);
+
+.product {
+  width: 100%;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  border-radius: 10px;
+  box-shadow: 1px 5px 20px 2px rgb(194, 216, 228);
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: .75fr 1fr;
+  }
+}
+
+.product-header {
+  width: 100%;
+  grid-area: 1 / 1 / span 1 / span 1;
+  padding: 1.5rem 1.5rem;
+  background-color: #fff;
+  border-radius: 8px 8px 0 0;
+  &__title {
+    color: $cyan;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.3px;
+  }
+  &__subtitle {
+    font-size: 1.13rem;
+    color: $bright-yellow;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.3px;
+  }
+  &__text {
+    color: $grayish-blue;
+    line-height: 1.6;
+  }
+  @media only screen and (min-width: 768px) {
+    grid-area: 1 / 1 / span 1 / span 2;
+    padding: 2.5rem 2.5rem;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+.product-price {
+  background-color: $cyan;
+  padding: 1.5rem 1.5rem;
+  &__title {
+    color: #fff;
+  }
+  &__amount {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.441);
+    margin-top: 1rem;
+  }
+  &__text {
+    color: $light-gray;
+    margin-top: .5rem;
+  }
+  &__number {
+    color: rgb(255, 255, 255);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: .5rem;
+  }
+  &__button {
+    display: block;
+    text-align: center;
+    background-color: $bright-yellow;
+    border: 2px solid $bright-yellow;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: .75rem 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 1px 3px 10px hsl(179, 75%, 30%);
+    transition: background-color .3s;
+    color: #f6f6f6;
+    &:hover{
+      background-color: transparent;
+      color: $bright-yellow;
+      box-shadow: none;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    border-radius: 0 0 0 10px;
+    padding: 2.5rem 2.5rem;
+  }
+}
+
+.product-why-us {
+  background-color: hsla(179, 62%, 43%, 0.8);
+  padding: 1.5rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+  &__title {
+    color: $light-gray;
+    margin-bottom: 1.25rem;
+  }
+  &__list {
+    list-style-type: none;
+    color: $light-gray;
+    font-weight: 400;
+    li {
+      font-size: .875rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.5;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    border-radius: 0 0 10px 0;
+    padding: 2.5rem 2.5rem;
+  }
+}

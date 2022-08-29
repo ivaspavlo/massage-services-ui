@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { AuthService } from '@app/core/services';
 import { IProfileFormValue } from '@app/interfaces';
 
 
@@ -11,12 +10,8 @@ import { IProfileFormValue } from '@app/interfaces';
 })
 export class RegisterComponent {
 
-  constructor(
-    private authService: AuthService
-  ) { }
+  constructor() { }
   
-  public onSubmit(value: IProfileFormValue): void {
-    console.log(value);
-  }
+  public onSubmit(value: IProfileFormValue): void {}
 
 }

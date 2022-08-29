@@ -4,7 +4,7 @@ import { IProduct } from '../../interfaces/product.interface';
 
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-product_',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

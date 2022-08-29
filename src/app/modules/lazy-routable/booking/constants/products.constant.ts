@@ -23,12 +23,5 @@ export const Products: IProduct[] = [
     subtitle: 'booking.reserve.massage.limpha.subtitle',
     price: '300.00',
     url: '/booking/reservation/3',
-  }, {
-    id: '4',
-    img: '/assets/img/jpg/massage-shiatsu.jpeg',
-    title: 'booking.reserve.massage.shiatsu.title',
-    subtitle: 'booking.reserve.massage.shiatsu.subtitle',
-    price: '400.00',
-    url: '/booking/reservation/4',
   }
 ];
