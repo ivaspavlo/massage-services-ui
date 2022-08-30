@@ -1,7 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-
-import { Products } from '../../constants/products.constant';
-import { IProduct } from '../../interfaces/product.interface';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BookingFacade } from '../../booking.facade';
+import { IProduct } from '../../interfaces';
 
 
 @Component({
@@ -10,10 +10,16 @@ import { IProduct } from '../../interfaces/product.interface';
   styleUrls: ['./reservation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReservationComponent {
+export class ReservationComponent implements OnInit {
   
-  public products: IProduct[] = Products;
+  public products$: Observable<IProduct[]>;
   
-  constructor() { }
+  constructor(
+    private facade: BookingFacade
+  ) { }
+
+  ngOnInit(): void {
+    this.products$ = this.facade.getMassageList();
+  }
 
 }
