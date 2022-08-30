@@ -1,4 +1,3 @@
-
 import { Routes } from '@angular/router';
 import { AppointmentComponent } from '../pages/appointment/appointment.component';
 import { BookingComponent } from '../pages/container/booking.component';

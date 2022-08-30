@@ -1,30 +1,24 @@
 <div class="product">
 
   <header class="product-header">
-    <h2 class="product-header__title">Join our community</h2>
-    <h3 class="product-header__subtitle">30-day, hassle-free money back guarantee</h3>
-    <p class="product-header__text">Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who are serious about honing their skills.</p>
+    <h2 class="product-header__title">{{ 'booking.reserve.type-sport.title' | translate }}</h2>
+    <h3 class="product-header__subtitle">{{ 'booking.reserve.type-sport.subtitle' | translate }}</h3>
+    <p class="product-header__text">{{ 'booking.reserve.type-sport.desc' | translate }}</p>
   </header>
 
   <div class="product-price">
-    <h3 class="product-price__title">Monthly Subscription</h3>
+    <h3 class="product-price__title">{{ 'booking.reserve.service-cost' | translate }}</h3>
     <p class="product-price__amount">
-      <span class="product-price__number">$29</span> per month
+      <span class="product-price__number">$29</span>{{ 'booking.reserve.per-hour' | translate }}
     </p>
-    <p class="product-price__text">Full access for less than $1 a day</p>
-    <a href="#" class="product-price__button">Sign Up</a>
+    <p class="product-price__text">{{ 'booking.reserve.first-time' | translate }}</p>
+    <app-button-secondary title="{{ 'booking.reserve.book' | translate }}" [filled]="true" class="product-price__button"></app-button-secondary>
   </div>
 
   <div class="product-why-us">
-    <h3 class="product-why-us__title">Why Us</h3>
+    <h3 class="product-why-us__title">{{ 'booking.reserve.why-us' | translate }}</h3>
     <ul class="product-why-us__list">
-      <li>Tutorials by industry experts</li>
-      <li>Peer & expert code review</li>
-      <li>Coding exercises</li>
-      <li>Access to our GitHub repos</li>
-      <li>Community forum</li>
-      <li>Flashcard decks</li>
-      <li>New videos every week</li>
+      <li *ngFor="let item of advantages">{{ item | translate }}</li>
     </ul>
   </div>
 

@@ -126,16 +126,20 @@
   "booking": {
     "tabs": {
       "gift": "Gift certificates",
-      "booking.tabs.reservation": "Reservation"
+      "reservation": "Reservation"
     },
     "reserve": {
       "title": "Massage services",
-      "subtitle": "Select one that fits your needs the most"
+      "subtitle": "Select one that fits your needs the most",
+      "book": "Book now",
+      "per-hour": " per hour"
+    },
+    "gift": {
+      "title": "Gift Certificates",
+      "subtitle": "Pick yours of the available types",
+      "buy-now": "Buy now"
     }
   },
-  "booking.gift.page.title": "Gift Certificates",
-  "booking.gift.page.subtitle": "Pick yours of the available types",
-  "booking.gift.buy-now": "Buy now",
   "booking.gift.info": "Certificate for any massage of your selection",
   "booking.gift.one.title": "100.00 UAH",
   "booking.gift.two.title": "300.00 UAH",

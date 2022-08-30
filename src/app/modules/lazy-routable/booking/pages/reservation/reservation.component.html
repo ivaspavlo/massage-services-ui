@@ -5,6 +5,6 @@
     <p class="font-22 font-family-nexa color-primary-500">{{ 'booking.reserve.subtitle' | translate }}</p>
   </header>
   
-  <app-product *ngFor="let product of products | translateArr | async" [product]="product" class="mb-rem-2"></app-product>
+  <app-product *ngFor="let product of products$ | async" [product]="product" class="mb-rem-2"></app-product>
 
 </section>
