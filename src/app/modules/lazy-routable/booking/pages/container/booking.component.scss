@@ -1,7 +1,8 @@
 @import 'mixins/_all';
 
 .booking {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
   @include e('bg') {
     @include bg();
     background-image: url('/assets/img/png/abstract-grey-bg.png');
