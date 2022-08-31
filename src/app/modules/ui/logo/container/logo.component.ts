@@ -1,5 +1,4 @@
-
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 
 @Component({
@@ -8,12 +7,8 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
   styleUrls: ['./logo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LogoComponent implements OnInit {
+export class LogoComponent {
 
-  @Input() size: 'sm' | 'md' | 'lg' = 'md';
-
-  constructor() { }
-
-  ngOnInit(): void { }
+  @Input() size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
 
 }

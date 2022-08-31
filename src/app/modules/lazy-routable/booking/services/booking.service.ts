@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { IProductCard } from '@app/interfaces';
-import { GiftCards } from '../constants/gift-cards.constant';
 import { IProduct } from '../interfaces';
 
 
@@ -34,6 +33,34 @@ const products = [
   }
 ];
 
+const gifts = [
+  {
+    id: '1',
+    background: '/assets/img/png/service-bg.png',
+    title: 'booking.gift.one.title',
+    info: 'booking.gift.info',
+    button: 'booking.gift.buy-now'
+  }, {
+    id: '2',
+    background: '/assets/img/png/service-bg.png',
+    title: 'booking.gift.two.title',
+    info: 'booking.gift.info',
+    button: 'booking.gift.buy-now'
+  }, {
+    id: '3',
+    background: '/assets/img/png/service-bg.png',
+    title: 'booking.gift.three.title',
+    info: 'booking.gift.info',
+    button: 'booking.gift.buy-now'
+  }, {
+    id: '4',
+    background: '/assets/img/png/service-bg.png',
+    title: 'booking.gift.four.title',
+    info: 'booking.gift.info',
+    button: 'booking.gift.buy-now'
+  }
+]
+
 @Injectable()
 export class BookingService {
   
@@ -44,13 +71,11 @@ export class BookingService {
   }
   
   public getBookingDataById(id: string): Observable<any> {
-    // TODO: API to be implemented
     return of(null);
   }
   
   public getGiftCards(): Observable<IProductCard[]> {
-    // TODO: API to be implemented
-    return of(GiftCards);
+    return of(gifts);
   }
   
 }
