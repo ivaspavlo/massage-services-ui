@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { IProductCard } from '@app/interfaces';
 import { IProduct } from '../interfaces';
+import { IGift } from '../interfaces/gift.interface';
 
 
 const products = [
@@ -36,28 +36,16 @@ const products = [
 const gifts = [
   {
     id: '1',
-    background: '/assets/img/png/service-bg.png',
-    title: 'booking.gift.one.title',
-    info: 'booking.gift.info',
-    button: 'booking.gift.buy-now'
+    price: '300'
   }, {
     id: '2',
-    background: '/assets/img/png/service-bg.png',
-    title: 'booking.gift.two.title',
-    info: 'booking.gift.info',
-    button: 'booking.gift.buy-now'
+    price: '500'
   }, {
     id: '3',
-    background: '/assets/img/png/service-bg.png',
-    title: 'booking.gift.three.title',
-    info: 'booking.gift.info',
-    button: 'booking.gift.buy-now'
+    price: '700'
   }, {
     id: '4',
-    background: '/assets/img/png/service-bg.png',
-    title: 'booking.gift.four.title',
-    info: 'booking.gift.info',
-    button: 'booking.gift.buy-now'
+    price: '1000'
   }
 ]
 
@@ -74,7 +62,7 @@ export class BookingService {
     return of(null);
   }
   
-  public getGiftCards(): Observable<IProductCard[]> {
+  public getGiftCards(): Observable<IGift[]> {
     return of(gifts);
   }
   

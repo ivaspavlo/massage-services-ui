@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { IProductCard } from '@app/interfaces';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { IProduct } from './interfaces';
 
 import { BookingService } from './services/booking.service';
+import { IGift } from './interfaces/gift.interface';
 
 
 @Injectable()
@@ -20,7 +20,7 @@ export class BookingFacade {
     );
   }
   
-  public getGiftCards(): Observable<IProductCard[]> {
+  public getGiftCards(): Observable<IGift[]> {
     return this.bookingService.getGiftCards().pipe(
       catchError(() => of([]))
     );

@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { IGift } from '../../interfaces/gift.interface';
 
 
 @Component({
@@ -7,11 +8,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./gift.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GiftComponent implements OnInit {
+export class GiftComponent {
 
-  constructor() { }
+  @Input() gift: IGift;
+  @Output() giftClick: EventEmitter<IGift> = new EventEmitter();
 
-  ngOnInit(): void {
+  public onGiftClick(): void {
+    this.giftClick.emit(this.gift);
   }
 
 }

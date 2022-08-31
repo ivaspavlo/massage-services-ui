@@ -1,4 +1,4 @@
-<div class="gift">
+<div (onClick)="onGiftClick()" class="gift">
 
   <div class="gift__img">
     <app-logo size="xs"></app-logo>
@@ -6,9 +6,9 @@
   </div>
 
   <div class="gift-content">
-    <p class="gift-content__amount">$100</p>
+    <p class="gift-content__amount">&#8372;{{ gift.price }}</p>
     <p class="gift-content__code">345D 4353 FF77 DFG5</p>
-    <p class="gift-content__desc">Use this code at checkout to redeem your gift card</p>
+    <p class="gift-content__desc">{{ 'booking.gift.redeem' | translate }}</p>
   </div>
 
 </div>
