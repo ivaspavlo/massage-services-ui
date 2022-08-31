@@ -1,8 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { IProductCard } from '@app/interfaces';
-
 import { BookingFacade } from '../../booking.facade';
 
 
@@ -24,8 +22,6 @@ export class GiftsComponent implements OnInit {
     this.giftCards$ = this.facade.getGiftCards();
   }
   
-  public onClick(card: IProductCard): void {
-    console.log(card);
-  }
+  public onClick(card: IProductCard): void {}
   
 }

@@ -1,0 +1,47 @@
+@import 'mixins/_all';
+@import '_core-colors';
+
+.gift {
+  width: 415px;
+  height: 230px;
+  display: flex;
+  box-shadow: 0 1px 5px rgba(0,0,0,.2);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fafafa;
+  &__img {
+    width: 140px;
+    background-image: url('/assets/img/png/gift.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 15px;
+    @include bg(left);
+  }
+}
+
+.gift-content {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #3d3d3d;
+  &__amount {
+    font-size: 70px;
+  }
+  &__code {
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 8px 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    border: 1px solid #e3e3e3;
+  }
+  &__desc {
+    font-size: 10px;
+    display: block;
+    margin-top: 10px;
+  }
+}
