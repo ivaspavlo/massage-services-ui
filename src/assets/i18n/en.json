@@ -137,7 +137,8 @@
     "gift": {
       "title": "Gift Certificates",
       "subtitle": "Pick yours of the available types",
-      "buy-now": "Buy now"
+      "buy-now": "Buy now",
+      "redeem": "Use this code at checkout to redeem your gift card"
     }
   },
   "booking.gift.info": "Certificate for any massage of your selection",
