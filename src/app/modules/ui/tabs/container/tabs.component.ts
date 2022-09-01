@@ -1,4 +1,3 @@
-
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, ElementRef, AfterViewInit, ViewChildren, QueryList, ChangeDetectorRef } from '@angular/core';
 import { ITab } from '../interfaces';
 
@@ -12,13 +11,19 @@ import { ITab } from '../interfaces';
 export class TabsComponent implements OnInit, AfterViewInit {
   
   @ViewChildren('underlines') underlines: QueryList<ElementRef>;
-  
-  @Input() items: ITab[] = [];
-  @Input() current = 0;
-  
   @Output() tabClick: EventEmitter<ITab> = new EventEmitter();
+  @Input() items: ITab[] = [];
+  @Input() public set current(value: number) {
+    console.log('change')
+    this._current = value;
+    this.moveUnderline(value);
+  };
+  public get current() {
+    return this._current;
+  }
 
   public underlineShift: object = {};
+  private _current = 0;
 
   constructor(
     private cdr: ChangeDetectorRef

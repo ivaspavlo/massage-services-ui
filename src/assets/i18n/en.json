@@ -132,22 +132,50 @@
       "title": "Massage services",
       "subtitle": "Select one that fits your needs the most",
       "book": "Book now",
-      "per-hour": " per hour"
+      "per-hour": " per hour",
+      "why-us": "Why us?",
+      "service-cost": "Cost of service",
+      "first-time": "Discount 50% for the first massage",
+      "advantage": {
+        "approach": "Individual approach",
+        "experience": "Experienced specialists",
+        "methodics": "Advanced methodics",
+        "prices": "Reasonable prices",
+        "garanty": "Result guarantee"
+      },
+      "type-anti-cellulite": {
+        "title": "Anti-cellulite massage",
+        "subtitle": "An intensive type of massage performed with special anti-cellulite methodics",
+        "desc": "Anti-cellulite massage is currently one of the most popular types of massage, because every person wants to see themselves in the mirror fit and slim."
+      },
+      "type-sport": {
+        "title": "Sports massage",
+        "subtitle": "All types of sports massage: preliminary and restorative",
+        "desc": "A type of massage that is used to improve conditioning of the athlete and his sports performance. It is also used to increase physical endurance, relieve fatigue, prevent injuries and diseases of the musculoskeletal system."
+      },
+      "type-shwedish": {
+        "title": "Swedish massage",
+        "subtitle": "Deep massage of muscles, soft tissues of the body, stretching of joints and tendons",
+        "desc": "Using lotion or oil, the massage starts with general areas and then moves on to massaging problem areas."
+      },
+      "type-relax": {
+        "title": "Relaxing massage",
+        "subtitle": "The best remedy for getting rid of muscle tension and symptoms of chronic fatigue",
+        "desc": "The main purpose is to relieve a person of stress, and this goal is achieved through the use of a special impact technique by the massage therapist. The basis of this technique is the simultaneous effect on a person's muscles and joints."
+      },
+      "type-lymph-drainage": {
+        "title": "Lymphatic drainage massage",
+        "subtitle": "With the help of massage, the elimination of liquid, processed microelements and toxic substances from the cells is accelerated",
+        "desc": "One of the best salon massages: it is performed along the lymphatic lines of the body, helps to improve the movement of lymph, remove excess fluid and eliminate swelling."
+      }
     },
     "gift": {
       "title": "Gift Certificates",
-      "subtitle": "Pick yours of the available types",
+      "subtitle": "Certificate for any massage of your selection",
       "buy-now": "Buy now",
-      "redeem": "Use this code at checkout to redeem your gift card"
+      "redeem": "Use this code to redeem your gift card"
     }
   },
-  "booking.gift.info": "Certificate for any massage of your selection",
-  "booking.gift.one.title": "100.00 UAH",
-  "booking.gift.two.title": "300.00 UAH",
-  "booking.gift.three.title": "400.00 UAH",
-  "booking.gift.four.title": "500.00 UAH",
-  "booking.tabs.gift": "Gift certificates",
-  "booking.tabs.reservation": "Reservation",
   "booking.reserve.title": "Massage treatments",
   "booking.reserve.subtitle": "Select one that fits your needs the most",
   "booking.reserve.massage.sport.title": "Sport massage",

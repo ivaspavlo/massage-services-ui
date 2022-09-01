@@ -22,4 +22,8 @@ export class ReservationComponent implements OnInit {
     this.products$ = this.facade.getMassageList();
   }
 
+  public onBook(product: IProduct): void {
+    console.log(product);
+  }
+
 }
