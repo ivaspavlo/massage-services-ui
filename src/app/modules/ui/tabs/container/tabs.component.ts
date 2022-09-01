@@ -11,12 +11,15 @@ import { ITab } from '../interfaces';
 export class TabsComponent implements OnInit, AfterViewInit {
   
   @ViewChildren('underlines') underlines: QueryList<ElementRef>;
+
   @Output() tabClick: EventEmitter<ITab> = new EventEmitter();
+
   @Input() items: ITab[] = [];
   @Input() public set current(value: number) {
-    console.log('change')
-    this._current = value;
-    this.moveUnderline(value);
+    if (value !== this._current) {
+      this._current = value;
+      this.moveUnderline(value);
+    }
   };
   public get current() {
     return this._current;

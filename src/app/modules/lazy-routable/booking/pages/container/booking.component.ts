@@ -26,24 +26,16 @@ export class BookingComponent implements OnInit {
     this.updateTabOnRouteChange();
   }
   
-  public onTabClick(tab: ITab): void {
-    this.router.navigateByUrl(tab.url);
-  }
-  
   private getCurrentTabIndex(url: string): number {
     const index = this.tabs.findIndex(tab => url.includes(tab.url));
-    return index === -1 ? 1 : index;
+    return index === -1 ? 0 : index;
   }
 
   private updateTabOnRouteChange(): void {
     this.router.events.pipe(
-      filter((res: RouterEvent) => {
-        return res instanceof NavigationEnd && !this.tabs.find(t => t.url === res.url);
-      }),
+      filter((res: RouterEvent) => res instanceof NavigationEnd),
       tap((res: RouterEvent) => {
         this.currentTabIndex = this.getCurrentTabIndex(res.url);
-        console.log(this.currentTabIndex);
-        this.cdr.detectChanges();
       })
     ).subscribe();
   }
