@@ -9,27 +9,32 @@ const products = [
     id: '1',
     title: 'booking.reserve.type-anti-cellulite.title',
     subtitle: 'booking.reserve.type-anti-cellulite.subtitle',
+    desc: 'booking.reserve.type-anti-cellulite.desc',
     price: '500'
   }, {
     id: '2',
-    title: 'booking.reserve.sport.title',
-    subtitle: 'booking.reserve.sport.subtitle',
-    price: '100'
+    title: 'booking.reserve.type-sport.title',
+    subtitle: 'booking.reserve.type-sport.subtitle',
+    desc: 'booking.reserve.type-sport.desc',
+    price: '400'
   }, {
     id: '3',
-    title: 'booking.reserve.shwedish.title',
-    subtitle: 'booking.reserve.shwedish.subtitle',
-    price: '200'
+    title: 'booking.reserve.type-shwedish.title',
+    subtitle: 'booking.reserve.type-shwedish.subtitle',
+    desc: 'booking.reserve.type-shwedish.desc',
+    price: '400'
   }, {
     id: '4',
-    title: 'booking.reserve.massage.type-relax.title',
-    subtitle: 'booking.reserve.massage.type-relax.subtitle',
+    title: 'booking.reserve.type-relax.title',
+    subtitle: 'booking.reserve.type-relax.subtitle',
+    desc: 'booking.reserve.type-relax.desc',
     price: '300'
   }, {
     id: '5',
-    title: 'booking.reserve.massage.type-lymph-drainage.title',
-    subtitle: 'booking.reserve.massage.type-lymph-drainage.subtitle',
-    price: '300'
+    title: 'booking.reserve.type-lymph-drainage.title',
+    subtitle: 'booking.reserve.type-lymph-drainage.subtitle',
+    desc: 'booking.reserve.type-lymph-drainage.desc',
+    price: '450'
   }
 ];
 

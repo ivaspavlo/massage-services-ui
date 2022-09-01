@@ -1,5 +1,4 @@
-
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -8,7 +7,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
   styleUrls: ['./button-secondary.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ButtonSecondaryComponent implements OnInit {
+export class ButtonSecondaryComponent {
   
   @Input() filled = false;
   @Input() title = 'button';
@@ -16,8 +15,10 @@ export class ButtonSecondaryComponent implements OnInit {
   @Input() fullWidth = false;
   @Input() link = false;
 
-  constructor() { }
+  @Output() buttonSecondaryClick: EventEmitter<void> = new EventEmitter();
 
-  ngOnInit(): void { }
+  public onClick(): void {
+    this.buttonSecondaryClick.emit();
+  }
 
 }
