@@ -3,7 +3,7 @@
   <header class="width-100 pos-sticky top-0 d-flex flex-column align-items-center z-index-2">
     <app-header shrinked="true"></app-header>
     <div class="width-100 max-width-992">
-      <app-tabs [items]="tabs | translateArr | async" [current]="currentTabIndex" (tabClick)="onTabClick($event)"></app-tabs>
+      <app-tabs [items]="tabs | translateArr | async" [current]="currentTabIndex"></app-tabs>
     </div>
   </header>
 
