@@ -1,0 +1,15 @@
+<app-dialog-content>
+  <div class="select-date">
+
+    <div class="select-date__content">
+      <h2 class="select-date__title">{{ 'booking.select-date.title' | translate }}</h2>
+      <h3 class="select-date__subtitle">{{ 'booking.select-date.subtitle' | translate }}</h3>
+      <div class="width-100 d-flex flex-column flex-sm-row flex-grow-1 b-radius-4 overflow-hidden">
+        <div class="dates"></div>
+        <div class="timeslots"></div>
+      </div>
+      <app-button-secondary title="{{ 'booking.select-date.confirm' | translate }}" [filled]="true" class="mt-rem-1"></app-button-secondary>
+    </div>
+
+  </div>
+</app-dialog-content>

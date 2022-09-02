@@ -1,6 +1,6 @@
-import { BookDateModalComponent } from "./book-date-modal/book-date-modal.component";
+import { SelectDateModalComponent } from "./select-date-modal/select-date-modal.component";
 
 
 export const MODALS = [
-  BookDateModalComponent
+  SelectDateModalComponent
 ];
