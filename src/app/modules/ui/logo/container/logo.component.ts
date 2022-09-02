@@ -10,5 +10,6 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 export class LogoComponent {
 
   @Input() size: 'xs' | 'sm' | 'md' | 'lg' = 'md';
+  @Input() noUrl: boolean = false;
 
 }

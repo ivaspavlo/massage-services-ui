@@ -1,7 +1,9 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { DialogService } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
 import { BookingFacade } from '../../booking.facade';
 import { IProduct } from '../../interfaces';
+import { BookDateModalComponent } from '../../modals/book-date-modal/book-date-modal.component';
 
 
 @Component({
@@ -15,7 +17,8 @@ export class ReservationComponent implements OnInit {
   public products$: Observable<IProduct[]>;
   
   constructor(
-    private facade: BookingFacade
+    private facade: BookingFacade,
+    private dialogService: DialogService
   ) { }
 
   ngOnInit(): void {
@@ -23,7 +26,7 @@ export class ReservationComponent implements OnInit {
   }
 
   public onBook(product: IProduct): void {
-    console.log(product);
+    this.dialogService.open(BookDateModalComponent, product);
   }
 
 }

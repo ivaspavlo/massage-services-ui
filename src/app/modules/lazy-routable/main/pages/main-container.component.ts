@@ -1,4 +1,3 @@
-
 import { Component, OnInit, ChangeDetectionStrategy, ElementRef, ViewChild, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import LocomotiveScroll from 'locomotive-scroll';
