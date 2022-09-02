@@ -1,8 +1,6 @@
-
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { ISlide } from '@app/interfaces';
-
-import { ICertificate } from '../../../interfaces';
+import { ICertificate } from '../../interfaces';
 
 
 @Component({

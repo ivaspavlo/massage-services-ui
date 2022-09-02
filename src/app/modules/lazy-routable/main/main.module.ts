@@ -1,23 +1,24 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '@app/shared/shared.module';
+import { CoreTranslationModule } from '@app/core/core-translation.module';
 import { BrandSignatureModule, ScrollDownModule, CarouselModule, ArrowAnimatedButtonModule, ProductCardModule, SliderQuoteModule, InputModule, ButtonPrimaryModule, SliderModule, ButtonSecondaryModule, HorizontalMenuModule, LogoModule, BlogArticleModule } from '@app/modules/ui';
 import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
 
 import { MainRoutingModule } from './main-routing.module';
 
-import { COMPONENTS } from './container';
 import { MODALS } from './modals';
-import { CoreTranslationModule } from '@app/core/core-translation.module';
+import { PAGES } from './pages';
+import { PARTIALS } from './partials';
 
 
 @NgModule({
   declarations: [
-    ...COMPONENTS,
-    ...MODALS
+    ...PAGES,
+    ...MODALS,
+    ...PARTIALS
   ],
   imports: [
     CommonModule,

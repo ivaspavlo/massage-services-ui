@@ -19,7 +19,7 @@ export class CertModalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.cert = this.config.data as ICertificate;
+    this.cert = this.config.data;
   }
 
 }

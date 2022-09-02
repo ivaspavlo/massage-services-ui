@@ -1,4 +1,3 @@
-
 import { Component, OnInit, ChangeDetectionStrategy, ContentChildren, QueryList, ContentChild, Input, ElementRef, ViewChild } from '@angular/core';
 import { HorizontalMenuItemDirective } from '../directives';
 

@@ -24,7 +24,7 @@ $grayish-blue: hsl(218, 22%, 67%);
 .product-header {
   width: 100%;
   grid-area: 1 / 1 / span 1 / span 1;
-  padding: 1.5rem 1.5rem;
+  padding: 1rem 1rem;
   background-color: #fff;
   border-radius: 8px 8px 0 0;
   &__title {
@@ -45,13 +45,13 @@ $grayish-blue: hsl(218, 22%, 67%);
   }
   @include md {
     grid-area: 1 / 1 / span 1 / span 2;
-    padding: 2.5rem 2.5rem;
+    padding: 2rem 2rem;
     border-radius: 10px 10px 0 0;
   }
 }
 
 .product-price {
-  padding: 1.5rem 1.5rem;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -80,13 +80,13 @@ $grayish-blue: hsl(218, 22%, 67%);
   }
   @include md {
     border-radius: 0 0 0 10px;
-    padding: 2.5rem 2.5rem;
+    padding: 2rem 2rem;
   }
 }
 
 .product-why-us {
   background-color: hsla(179, 62%, 43%, 0.8);
-  padding: 1.5rem 1.5rem;
+  padding: 1rem 1rem;
   border-radius: 0 0 8px 8px;
   &__title {
     color: $light-gray;
@@ -106,6 +106,6 @@ $grayish-blue: hsl(218, 22%, 67%);
   }
   @include md {
     border-radius: 0 0 10px 0;
-    padding: 2.5rem 2.5rem;
+    padding: 2rem 2rem;
   }
 }

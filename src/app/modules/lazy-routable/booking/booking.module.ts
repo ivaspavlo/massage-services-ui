@@ -13,12 +13,14 @@ import { BookingFacade } from './booking.facade';
 
 import { PAGES } from './pages';
 import { PARTIALS } from './partials';
+import { MODALS } from './modals';
 
 
 @NgModule({
   declarations: [
     ...PAGES,
-    ...PARTIALS
+    ...PARTIALS,
+    ...MODALS
   ],
   providers: [
     BookingService,
