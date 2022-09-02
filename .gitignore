@@ -24,6 +24,7 @@ modules/.settings
 modules/.vscode
 .vimrc
 .nvimrc
+tasks.md
 
 # Don't check in secret files
 *secret.js

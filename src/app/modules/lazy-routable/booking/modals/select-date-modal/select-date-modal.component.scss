@@ -1,0 +1,57 @@
+@import 'mixins/_all';
+@import '_core-colors';
+
+$bright-yellow: hsl(71, 73%, 54%);
+$cyan: hsl(179, 62%, 43%);
+
+.select-date {
+  width: 80vw;
+  max-width: 600px;
+  height: 80vh;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 4px;
+  position: relative;
+  overflow: auto;
+  &__content {
+    position: absolute; left: 0;
+    width: 100%;
+    min-height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-size: 32px;
+    color: $primary-500;
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+    align-items: center;
+  }
+  &__subtitle {
+    font-size: 1.13rem;
+    color: $bright-yellow;
+    margin-bottom: 1rem;
+    letter-spacing: -0.3px;
+  }
+}
+
+.dates {
+  width: 100%;
+  display: flex;
+  background-color: $cyan;
+  @include sm {
+    width: 75%;
+  }
+}
+
+.timeslots {
+  width: 100%;
+  display: flex;
+  background-color: hsla(179, 62%, 43%, 0.8);
+  @include sm {
+    width: 25%;
+  }
+}

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BookDateModalComponent } from './book-date-modal.component';
+import { SelectDateModalComponent } from './select-date-modal.component';
 
-describe('BookDateModalComponent', () => {
-  let component: BookDateModalComponent;
-  let fixture: ComponentFixture<BookDateModalComponent>;
+describe('SelectDateModalComponent', () => {
+  let component: SelectDateModalComponent;
+  let fixture: ComponentFixture<SelectDateModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BookDateModalComponent ]
+      declarations: [ SelectDateModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BookDateModalComponent);
+    fixture = TestBed.createComponent(SelectDateModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,7 +3,7 @@ import { DialogService } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
 import { BookingFacade } from '../../booking.facade';
 import { IProduct } from '../../interfaces';
-import { BookDateModalComponent } from '../../modals/book-date-modal/book-date-modal.component';
+import { SelectDateModalComponent } from '../../modals/select-date-modal/select-date-modal.component';
 
 
 @Component({
@@ -26,7 +26,7 @@ export class ReservationComponent implements OnInit {
   }
 
   public onBook(product: IProduct): void {
-    this.dialogService.open(BookDateModalComponent, product);
+    this.dialogService.open(SelectDateModalComponent, product);
   }
 
 }

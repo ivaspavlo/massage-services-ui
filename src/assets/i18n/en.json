@@ -173,18 +173,13 @@
       "subtitle": "Certificate for any massage of your selection",
       "buy-now": "Buy now",
       "redeem": "Use this code to redeem your gift card"
+    },
+    "select-date": {
+      "title": "Select a date and time",
+      "subtitle": "After that you will be able to proceed to checkout",
+      "confirm": "Confirm selection"
     }
   },
-  "booking.reserve.title": "Massage treatments",
-  "booking.reserve.subtitle": "Select one that fits your needs the most",
-  "booking.reserve.massage.sport.title": "Sport massage",
-  "booking.reserve.massage.sport.subtitle": "Designed to prevent and treat injuries, improve flexibility, and enhance athletic performance.",
-  "booking.reserve.massage.shwedish.title": "Shwedish massage",
-  "booking.reserve.massage.shwedish.subtitle": "Using lotion or oil, massage therapists typically begin with broad general strokes and then transition to specific strokes to address problem areas.",
-  "booking.reserve.massage.limpha.title": "Lymphatic drainage",
-  "booking.reserve.massage.limpha.subtitle": "Removal of excess fluid and other metabolic products from the intercellular space to improve the transport function of the arterial and venous systems.",
-  "booking.reserve.massage.shiatsu.title": "Shiatsu massage",
-  "booking.reserve.massage.shiatsu.subtitle": "Apply pressure using only the fingers, palms and especially the thumbs on points that have been related to the central and autonomic nervous systems.",
   "about.title": "More about me",
   "about.subtitle": "Some subtitle",
   "about.content": "Some content",
