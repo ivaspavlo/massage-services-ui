@@ -56,6 +56,7 @@ $grayish-blue: hsl(218, 22%, 67%);
   flex-direction: column;
   flex-grow: 1;
   background-color: $cyan;
+  border-radius: 0 0 8px 8px;
   &__title {
     color: #fff;
   }
@@ -87,7 +88,8 @@ $grayish-blue: hsl(218, 22%, 67%);
 .product-why-us {
   background-color: hsla(179, 62%, 43%, 0.8);
   padding: 1rem 1rem;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 10px 0;
+  display: none;
   &__title {
     color: $light-gray;
     margin: 1.5rem 0 1rem;
@@ -105,7 +107,8 @@ $grayish-blue: hsl(218, 22%, 67%);
     }
   }
   @include md {
-    border-radius: 0 0 10px 0;
+    display: flex;
+    flex-direction: column;
     padding: 2rem 2rem;
   }
 }
