@@ -1,8 +1,10 @@
 @import 'mixins/_all';
 @import '_core-colors';
 
-$bright-yellow: hsl(71, 73%, 54%);
-$cyan: hsl(179, 62%, 43%);
+$cyan: #2BB1AF;
+$cyan-light: #61C1BF;
+$bright-yellow: #C0DF33;
+$light-gray: #e5eff5;
 
 .select-date {
   width: 80vw;
@@ -19,7 +21,7 @@ $cyan: hsl(179, 62%, 43%);
     position: absolute; left: 0;
     width: 100%;
     min-height: 100%;
-    padding: 30px;
+    padding: 2rem 2rem 0;
     display: flex;
     flex-direction: column;
   }
@@ -41,17 +43,91 @@ $cyan: hsl(179, 62%, 43%);
 .dates {
   width: 100%;
   display: flex;
-  background-color: $cyan;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: $cyan-light;
+  &__title {
+    padding: 1rem 1rem 0;
+    font-size: 18px;
+    color: $light-gray;
+  }
+  &__month {
+    padding: 1rem 1rem 0;
+    font-size: 32px;
+    color: #fff;
+  }
+  &__slots-container {
+    padding: 0.5rem;
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+  &__slot {
+    margin: 0.5rem;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 20px;
+    display: flex;
+    color: #fff;
+    background-color: $cyan;
+    transition: .3s;
+    cursor: pointer;
+    &--active {
+      background-color: $bright-yellow;
+    }
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0px 2px 5px 0px grey;
+    }
+  }
   @include sm {
     width: 75%;
   }
 }
 
-.timeslots {
+.times {
   width: 100%;
+  padding: 1rem;
   display: flex;
-  background-color: hsla(179, 62%, 43%, 0.8);
+  flex-direction: column;
+  background-color: $cyan;
+  &__title {
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    color: $light-gray;
+    text-align: center;
+  }
+  &__slots-container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__slot {
+    margin-bottom: 8px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: $primary-500;
+    transition: .3s;
+    cursor: pointer;
+    &--active {
+      background-color: $bright-yellow;
+    }
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0px 2px 5px 0px grey;
+    }
+  }
+  &__no-items {
+    padding: 0.5rem;
+    color: $primary-500;
+  }
   @include sm {
-    width: 25%;
+    width: 40%;
+    max-width: 170px;
   }
 }

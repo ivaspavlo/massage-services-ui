@@ -1,14 +1,112 @@
 <app-dialog-content>
-  <div class="select-date">
+  <div class="d-flex flex-column bg-white b-radius-4">
 
-    <div class="select-date__content">
-      <h2 class="select-date__title">{{ 'booking.select-date.title' | translate }}</h2>
-      <h3 class="select-date__subtitle">{{ 'booking.select-date.subtitle' | translate }}</h3>
-      <div class="width-100 d-flex flex-column flex-sm-row flex-grow-1 b-radius-4 overflow-hidden">
-        <div class="dates"></div>
-        <div class="timeslots"></div>
+    <div class="select-date">
+
+      <div class="select-date__content">
+  
+        <h2 class="select-date__title">{{ 'booking.select-date.title' | translate }}</h2>
+        <h3 class="select-date__subtitle">{{ 'booking.select-date.subtitle' | translate }}</h3>
+  
+        <div class="width-100 d-flex flex-column-reverse flex-sm-row flex-grow-1 b-radius-4 overflow-hidden ">
+  
+          <div class="dates">
+            <h5 class="dates__title">Dates</h5>
+            <div class="d-flex flex-column">
+              <h6 class="dates__month">September</h6>
+              <ul class="dates__slots-container">
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+              </ul>
+            </div>
+            <div class="d-flex flex-column">
+              <h6 class="dates__month">September</h6>
+              <ul class="dates__slots-container">
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+                <li class="dates__slot">3</li>
+                <li class="dates__slot">31</li>
+                <li class="dates__slot">1</li>
+                <li class="dates__slot">2</li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="times">
+            <h5 class="times__title">Timeslots</h5>
+            <ul *ngIf="true" class="times__slots-container">
+              <li class="times__slot">
+                <p>
+                  <span>22</span>
+                  <span class="mx-rem-0_5">:</span>
+                  <span>22</span>
+                </p>
+                <p>
+                  <span>22</span>
+                  <span class="mx-rem-0_5">:</span>
+                  <span>22</span>
+                </p>
+              </li>
+              <li class="times__slot">
+                <p>
+                  <span>22</span>
+                  <span class="mx-rem-0_5">:</span>
+                  <span>22</span>
+                </p>
+                <p>
+                  <span>22</span>
+                  <span class="mx-rem-0_5">:</span>
+                  <span>22</span>
+                </p>
+              </li>
+            </ul>
+            <p *ngIf="false" class="times__no-items">Select date</p>
+          </div>
+  
+        </div>
+  
       </div>
-      <app-button-secondary title="{{ 'booking.select-date.confirm' | translate }}" [filled]="true" class="mt-rem-1"></app-button-secondary>
+  
+    </div>
+  
+    <div class="py-rem-1">
+      <app-button-secondary title="{{ 'booking.select-date.confirm' | translate }}" [filled]="true"></app-button-secondary>
     </div>
 
   </div>
