@@ -7,92 +7,62 @@
   
         <h2 class="select-date__title">{{ 'booking.select-date.title' | translate }}</h2>
         <h3 class="select-date__subtitle">{{ 'booking.select-date.subtitle' | translate }}</h3>
+
+        <div class="selected-slots" [ngClass]="{'selected-slots--has-items': !!selectedSlots.size}">
+          <h5 class="selected-slots__title">Dates selected</h5>
+          <ul class="width-100 d-flex flex-wrap">
+            <li *ngFor="let item of selectedSlots.entries()" class="selected-slots__item">
+              {{ item | json }}
+              <!-- <p class="mb-px-5">
+                <span class="mr-px-5">{{ item.day }}</span>
+                <span>{{ item.month }}</span>
+              </p>
+              <div>
+                <p>
+                  <span>{{ item.start.hour }}</span>
+                  <span class="mx-px-5">:</span>
+                  <span>{{ item.start.minute }}</span>
+                </p>
+                <p>
+                  <span>{{ item.end.hour }}</span>
+                  <span class="mx-px-5">:</span>
+                  <span>{{ item.end.minute }}</span>
+                </p>
+              </div> -->
+            </li>
+          </ul>
+        </div>
   
-        <div class="width-100 d-flex flex-column-reverse flex-sm-row flex-grow-1 b-radius-4 overflow-hidden ">
+        <div class="width-100 d-flex flex-column-reverse flex-sm-row flex-grow-1 b-radius-4 overflow-hidden">
   
           <div class="dates">
+
             <h5 class="dates__title">Dates</h5>
-            <div class="d-flex flex-column">
-              <h6 class="dates__month">September</h6>
+
+            <div *ngFor="let item of bookingData" class="d-flex flex-column">
+
+              <h6 class="dates__month">{{ item.month }}</h6>
+
               <ul class="dates__slots-container">
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
+                <li (click)="onSelectDate(item.month, date)" *ngFor="let date of item.dates" class="dates__slot">{{ date.day }}</li>
               </ul>
-            </div>
-            <div class="d-flex flex-column">
-              <h6 class="dates__month">September</h6>
-              <ul class="dates__slots-container">
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-                <li class="dates__slot">3</li>
-                <li class="dates__slot">31</li>
-                <li class="dates__slot">1</li>
-                <li class="dates__slot">2</li>
-              </ul>
+
             </div>
           </div>
   
           <div class="times">
             <h5 class="times__title">Timeslots</h5>
-            <ul *ngIf="true" class="times__slots-container">
-              <li class="times__slot">
+            <ul *ngIf="currentDate" class="times__slots-container">
+              <li (click)="onSelectTime(time)" *ngFor="let time of currentDate.time" class="times__slot">
                 <p>
-                  <span>22</span>
+                  <span>{{ time.start.hour }}</span>
                   <span class="mx-rem-0_5">:</span>
-                  <span>22</span>
+                  <span>{{ time.start.minute }}</span>
                 </p>
                 <p>
-                  <span>22</span>
+                  <span>{{ time.end.hour }}</span>
                   <span class="mx-rem-0_5">:</span>
-                  <span>22</span>
-                </p>
-              </li>
-              <li class="times__slot">
-                <p>
-                  <span>22</span>
-                  <span class="mx-rem-0_5">:</span>
-                  <span>22</span>
-                </p>
-                <p>
-                  <span>22</span>
-                  <span class="mx-rem-0_5">:</span>
-                  <span>22</span>
+                  <span>{{ time.end.minute }}</span>
                 </p>
               </li>
             </ul>
