@@ -8,52 +8,47 @@
         <h2 class="select-date__title">{{ 'booking.select-date.title' | translate }}</h2>
         <h3 class="select-date__subtitle">{{ 'booking.select-date.subtitle' | translate }}</h3>
 
-        <div class="selected-slots" [ngClass]="{'selected-slots--has-items': !!selectedSlots.size}">
+        <div class="selected-slots" [ngClass]="{'selected-slots--has-items': hasSelectedItems}">
           <h5 class="selected-slots__title">Dates selected</h5>
           <ul class="width-100 d-flex flex-wrap">
-            <li *ngFor="let item of selectedSlots.entries()" class="selected-slots__item">
-              {{ item | json }}
-              <!-- <p class="mb-px-5">
-                <span class="mr-px-5">{{ item.day }}</span>
-                <span>{{ item.month }}</span>
-              </p>
-              <div>
-                <p>
-                  <span>{{ item.start.hour }}</span>
-                  <span class="mx-px-5">:</span>
-                  <span>{{ item.start.minute }}</span>
+            <ng-container *ngFor="let date of selectedSlots.keys()">
+              <li *ngFor="let item of selectedSlots.get(date)" class="selected-slots__item">
+                <p class="mb-px-5">
+                  <span class="font-24">{{ date.uiName }}</span>
                 </p>
-                <p>
-                  <span>{{ item.end.hour }}</span>
-                  <span class="mx-px-5">:</span>
-                  <span>{{ item.end.minute }}</span>
-                </p>
-              </div> -->
-            </li>
+                <div>
+                  <p>
+                    <span>{{ item.start.hour }}</span>
+                    <span class="mx-px-5">:</span>
+                    <span>{{ item.start.minute }}</span>
+                  </p>
+                  <p>
+                    <span>{{ item.end.hour }}</span>
+                    <span class="mx-px-5">:</span>
+                    <span>{{ item.end.minute }}</span>
+                  </p>
+                </div>
+              </li>
+            </ng-container>
           </ul>
         </div>
   
         <div class="width-100 d-flex flex-column-reverse flex-sm-row flex-grow-1 b-radius-4 overflow-hidden">
   
           <div class="dates">
-
             <h5 class="dates__title">Dates</h5>
-
             <div *ngFor="let item of bookingData" class="d-flex flex-column">
-
               <h6 class="dates__month">{{ item.month }}</h6>
-
               <ul class="dates__slots-container">
-                <li (click)="onSelectDate(item.month, date)" *ngFor="let date of item.dates" class="dates__slot">{{ date.day }}</li>
+                <li (click)="onSelectDate(date)" *ngFor="let date of item.dates" class="dates__slot" [ngClass]="{'dates__slot--has-focus': date === currentDate, 'dates__slot--active': selectedSlots.has(date)}">{{ date.day }}</li>
               </ul>
-
             </div>
           </div>
   
           <div class="times">
             <h5 class="times__title">Timeslots</h5>
             <ul *ngIf="currentDate" class="times__slots-container">
-              <li (click)="onSelectTime(time)" *ngFor="let time of currentDate.time" class="times__slot">
+              <li (click)="onSelectTime(time)" *ngFor="let time of currentDate.time" class="times__slot" [ngClass]="{'times__slot--active': selectedSlots.get(currentDate)?.includes(time)}">
                 <p>
                   <span>{{ time.start.hour }}</span>
                   <span class="mx-rem-0_5">:</span>
