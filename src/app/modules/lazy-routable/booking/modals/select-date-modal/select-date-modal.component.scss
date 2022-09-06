@@ -65,12 +65,15 @@ $light-gray: #e5eff5;
     margin: 0.5rem;
     padding: 8px 12px;
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 24px;
     display: flex;
     color: #fff;
     background-color: $cyan;
     transition: .3s;
     cursor: pointer;
+    &--has-focus {
+      background-color: $primary-900;
+    }
     &--active {
       background-color: $bright-yellow;
     }
