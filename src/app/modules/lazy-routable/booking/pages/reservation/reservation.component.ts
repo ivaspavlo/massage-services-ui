@@ -1,8 +1,10 @@
-import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from '@angular/core';
+import { ITimeSlot } from '@app/interfaces';
 import { DialogService } from '@app/modules/ui/dialog';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { BookingFacade } from '../../booking.facade';
-import { IProduct } from '../../interfaces';
+import { IBookingTime, IProduct } from '../../interfaces';
 import { SelectDateModalComponent } from '../../modals/select-date-modal/select-date-modal.component';
 
 
@@ -12,9 +14,10 @@ import { SelectDateModalComponent } from '../../modals/select-date-modal/select-
   styleUrls: ['./reservation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReservationComponent implements OnInit {
+export class ReservationComponent implements OnInit, OnDestroy {
   
   public products$: Observable<IProduct[]>;
+  private componentDestroyed$: Subject<void> = new Subject();
   
   constructor(
     private facade: BookingFacade,
@@ -26,7 +29,18 @@ export class ReservationComponent implements OnInit {
   }
 
   public onBook(product: IProduct): void {
-    this.dialogService.open(SelectDateModalComponent, product);
+    const dialogConfig = {
+      product,
+      bookingData$: this.facade.getAvailableDates()
+    };
+    this.dialogService.open(SelectDateModalComponent, dialogConfig).afterClosed.pipe(
+      takeUntil(this.componentDestroyed$)
+    ).subscribe((req: IBookingTime[]) => this.facade.confirmBooking(req));
+  }
+
+  ngOnDestroy() {
+    this.componentDestroyed$.next();
+    this.componentDestroyed$.unsubscribe();
   }
 
 }

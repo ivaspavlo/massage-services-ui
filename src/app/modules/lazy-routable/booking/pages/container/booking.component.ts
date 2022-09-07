@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { Router, RouterEvent, NavigationEnd } from '@angular/router';
 import { ITab } from '@app/interfaces';
-import { tap, filter } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { tap, filter, takeUntil } from 'rxjs/operators';
 import { Tabs } from '../../constants/tabs.constant';
 
 
@@ -11,14 +12,14 @@ import { Tabs } from '../../constants/tabs.constant';
   styleUrls: ['./booking.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BookingComponent implements OnInit {
+export class BookingComponent implements OnInit, OnDestroy {
 
   public tabs: ITab[] = Tabs;
   public currentTabIndex: number = null;
+  private componentDestroyed$: Subject<void> = new Subject();
 
   constructor(
-    private router: Router,
-    private cdr: ChangeDetectorRef
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -36,8 +37,14 @@ export class BookingComponent implements OnInit {
       filter((res: RouterEvent) => res instanceof NavigationEnd),
       tap((res: RouterEvent) => {
         this.currentTabIndex = this.getCurrentTabIndex(res.url);
-      })
+      }),
+      takeUntil(this.componentDestroyed$)
     ).subscribe();
+  }
+
+  ngOnDestroy() {
+    this.componentDestroyed$.next();
+    this.componentDestroyed$.unsubscribe();
   }
 
 }

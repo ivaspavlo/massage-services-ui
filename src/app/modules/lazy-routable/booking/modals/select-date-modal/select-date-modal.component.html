@@ -8,7 +8,7 @@
         <h2 class="select-date__title">{{ 'booking.select-date.title' | translate }}</h2>
         <h3 class="select-date__subtitle">{{ 'booking.select-date.subtitle' | translate }}</h3>
 
-        <div class="selected-slots" [ngClass]="{'selected-slots--has-items': hasSelectedItems}">
+        <div class="selected-slots" [ngClass]="{'selected-slots--has-items': selectedSlotsQty}">
           <h5 class="selected-slots__title">Dates selected</h5>
           <ul class="width-100 d-flex flex-wrap">
             <ng-container *ngFor="let date of selectedSlots.keys()">
@@ -28,16 +28,21 @@
                     <span>{{ item.end.minute }}</span>
                   </p>
                 </div>
+                <a (click)="onRemoveSlot(date, item)" class="selected-slots__close-button"></a>
               </li>
             </ng-container>
           </ul>
+          <h4 class="selected-slots__price">
+            <span class="mr-px-5">Total price:</span>
+            <span>&#8372;{{ +product.price * selectedSlotsQty }}.00</span>
+          </h4>
         </div>
   
         <div class="width-100 d-flex flex-column-reverse flex-sm-row flex-grow-1 b-radius-4 overflow-hidden">
   
           <div class="dates">
             <h5 class="dates__title">Dates</h5>
-            <div *ngFor="let item of bookingData" class="d-flex flex-column">
+            <div *ngFor="let item of bookingData$ | async" class="d-flex flex-column">
               <h6 class="dates__month">{{ item.month }}</h6>
               <ul class="dates__slots-container">
                 <li (click)="onSelectDate(date)" *ngFor="let date of item.dates" class="dates__slot" [ngClass]="{'dates__slot--has-focus': date === currentDate, 'dates__slot--active': selectedSlots.has(date)}">{{ date.day }}</li>
@@ -71,7 +76,7 @@
     </div>
   
     <div class="py-rem-1">
-      <app-button-secondary title="{{ 'booking.select-date.confirm' | translate }}" [filled]="true"></app-button-secondary>
+      <app-button-secondary title="{{ 'booking.select-date.confirm' | translate }}" (buttonSecondaryClick)="onConfirm()" [filled]="true" [disabled]="!selectedSlotsQty"></app-button-secondary>
     </div>
 
   </div>

@@ -14,6 +14,7 @@ export class ButtonSecondaryComponent {
   @Input() routerLink = null;
   @Input() fullWidth = false;
   @Input() link = false;
+  @Input() disabled = false;
 
   @Output() buttonSecondaryClick: EventEmitter<void> = new EventEmitter();
 

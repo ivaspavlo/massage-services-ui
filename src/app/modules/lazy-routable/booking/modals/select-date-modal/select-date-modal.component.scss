@@ -107,9 +107,9 @@ $light-gray: #e5eff5;
   }
   &__slot {
     margin-bottom: 8px;
-    padding: 8px 12px;
+    padding: 4px 12px;
     border-radius: 4px;
-    font-size: 34px;
+    font-size: 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,15 +162,18 @@ $light-gray: #e5eff5;
     border-radius: 4px;
     color: #fff;
     position: relative;
-    &::before {
-      position: absolute; top: -5px; right: -5px;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      background: url('/assets/img/svg/x-button-filled.svg') center no-repeat;
-      @include bg();
-      cursor: pointer;
-      content: '';
-    }
+  }
+  &__close-button {
+    position: absolute; top: -5px; right: -5px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    background: url('/assets/img/svg/x-button-filled.svg') center no-repeat;
+    @include bg();
+    cursor: pointer;
+  }
+  &__price {
+    color: #98a6bd;
+    font-weight: bold;
   }
 }
