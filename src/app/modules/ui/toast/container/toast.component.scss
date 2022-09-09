@@ -1,4 +1,3 @@
-
 $border-color: #d6d6d6;
 $text-color: #656565;
 $background-color: #fff;
@@ -18,7 +17,7 @@ $info-color: #3EA1EC;
   background-color: $background-color;
   box-shadow: 0 2px 4px rgba(0,0,0,.2);
   &__content {
-    padding: 25px 15px;
+    padding: 25px 40px 25px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;

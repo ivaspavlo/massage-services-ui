@@ -1,6 +1,4 @@
-
-import { Component, OnInit, Inject, ChangeDetectionStrategy } from '@angular/core';
-
+import { Component, OnInit, Inject, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { ToastData, TOAST_CONFIG_TOKEN } from '../toast-config';
 import { ToastRef } from '../toast-ref';
 import { toastAnimations, ToastAnimationState } from '../toast.animation';
@@ -17,17 +15,20 @@ import { IToastConfig } from '../interfaces';
 export class ToastComponent implements OnInit {
 
   public animationState: ToastAnimationState = 'default';
-  
   private intervalId;
 
   constructor(
     readonly data: ToastData,
     readonly ref: ToastRef,
+    private cdr: ChangeDetectorRef,
     @Inject(TOAST_CONFIG_TOKEN) public toastConfig: IToastConfig
   ) { }
 
   ngOnInit() {
-    this.intervalId = setTimeout(() => this.animationState = 'closing', 5000);
+    this.intervalId = setTimeout(() => {
+      this.animationState = 'closing';
+      this.cdr.detectChanges();
+    }, 3000);
   }
   
   public close(): void {

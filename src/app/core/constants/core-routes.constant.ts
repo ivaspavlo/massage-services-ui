@@ -1,4 +1,3 @@
-
 import { Routes } from '@angular/router';
 // import { AuthGuard } from '../guards/auth.guard';
 
@@ -10,6 +9,7 @@ export enum CORE_ROUTE_NAMES {
   BLOG = 'blog',
   BOOKING = 'booking',
   PROFILE = 'profile',
+  ABOUT = 'about',
   OTHER = '**',
   NOT_FOUND = '404'
 }
@@ -34,6 +34,9 @@ export const CORE_ROUTES: Routes = [
   }, {
     path: CORE_ROUTE_NAMES.PROFILE,
     loadChildren: () => import('@app/modules/lazy-routable/profile/profile.module').then(m => m.ProfileModule)
+  }, {
+    path: CORE_ROUTE_NAMES.ABOUT,
+    loadChildren: () => import('@app/modules/lazy-routable/about/about.module').then(m => m.AboutModule)
   }, {
     path: CORE_ROUTE_NAMES.OTHER,
     pathMatch: 'full',

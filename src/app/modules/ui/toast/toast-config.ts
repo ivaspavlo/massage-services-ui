@@ -1,4 +1,3 @@
-
 import { InjectionToken, TemplateRef } from '@angular/core';
 import { IToastConfig } from './interfaces';
 
@@ -24,7 +23,7 @@ export const defaultToastConfig: IToastConfig = {
     right: 20
   },
   animation: {
-    fadeOut: 2500,
+    fadeOut: 300,
     fadeIn: 300
   },
 };

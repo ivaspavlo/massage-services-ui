@@ -193,7 +193,6 @@ export class BookingService {
   }
 
   public confirmBooking(req: IBookingTime[]): Observable<any> {
-    console.log(req);
     return of(true);
   }
   
