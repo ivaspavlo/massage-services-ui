@@ -1,4 +1,3 @@
-
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Inject, Injectable, Injector } from '@angular/core';
@@ -42,7 +41,7 @@ export class ToastService {
   public getPositionStrategy() {
     return this.overlay.position()
       .global()
-      .top(this.getPosition())
+      .bottom(this.getPosition())
       .right(`${this.toastConfig.position.right}px`);
   }
 

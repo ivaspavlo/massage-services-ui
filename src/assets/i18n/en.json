@@ -180,9 +180,17 @@
       "confirm": "Confirm selection"
     }
   },
-  "about.title": "More about me",
-  "about.subtitle": "Some subtitle",
-  "about.content": "Some content",
+  "toast": {
+    "added-to-cart": "Added to cart"
+  },
+  "about": {
+    "page-title": "About us",
+    "subtitle": "Lorem ipsum dolor sit amet",
+    "block-1": {
+      "title": "Lorem ipsum?",
+      "content": "Lorem ipsum dolor sit amet, consectetur adip*isicing elit, sed do eiusmod *tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adip*isicing elit, sed do eiusmod *tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adip*isicing elit, sed do eiusmod *tempor incididunt ut labore et dolore magna aliqua."
+    }
+  },
   "user.button.profile": "Profile",
   "user.button.bookings": "Bookings",
   "user.button.more": "Load more"

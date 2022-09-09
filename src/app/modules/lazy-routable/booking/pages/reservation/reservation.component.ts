@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from '@angular/core';
-import { ITimeSlot } from '@app/interfaces';
 import { DialogService } from '@app/modules/ui/dialog';
+import { ToastService } from '@app/modules/ui/toast';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { BookingFacade } from '../../booking.facade';
@@ -21,7 +22,9 @@ export class ReservationComponent implements OnInit, OnDestroy {
   
   constructor(
     private facade: BookingFacade,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private toastService: ToastService,
+    private translateService: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -35,7 +38,15 @@ export class ReservationComponent implements OnInit, OnDestroy {
     };
     this.dialogService.open(SelectDateModalComponent, dialogConfig).afterClosed.pipe(
       takeUntil(this.componentDestroyed$)
-    ).subscribe((req: IBookingTime[]) => this.facade.confirmBooking(req));
+    ).subscribe((req: IBookingTime[]) => {
+      if (req) {
+        this.facade.confirmBooking(req);
+        this.toastService.show({
+          text: this.translateService.instant('toast.added-to-cart'),
+          type: 'success'
+        });
+      }
+    });
   }
 
   ngOnDestroy() {
