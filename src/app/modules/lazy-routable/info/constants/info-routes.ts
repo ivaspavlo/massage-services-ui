@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AboutComponent } from '../pages/about/about.component';
+import { DiscountsComponent } from '../pages/discounts/discounts.component';
 import { InfoContainerComponent } from '../pages/info-container/info-container.component';
 import { ProductsComponent } from '../pages/products/products.component';
 
@@ -7,7 +8,8 @@ import { ProductsComponent } from '../pages/products/products.component';
 export enum INFO_ROUTE_NAMES {
   BLANK = '',
   ABOUT = 'about',
-  PRODUCTS = 'services'
+  PRODUCTS = 'services',
+  DISCOUNTS = 'discounts'
 }
 
 export const INFO_ROUTES: Routes = [
@@ -21,6 +23,9 @@ export const INFO_ROUTES: Routes = [
       }, {
         path: INFO_ROUTE_NAMES.PRODUCTS,
         component: ProductsComponent
+      }, {
+        path: INFO_ROUTE_NAMES.DISCOUNTS,
+        component: DiscountsComponent
       }, {
         path: INFO_ROUTE_NAMES.BLANK,
         pathMatch: 'full',

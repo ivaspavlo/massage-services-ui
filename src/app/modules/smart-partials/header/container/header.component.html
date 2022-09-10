@@ -20,29 +20,19 @@
             </div>
           </li>
 
-          <li *ngIf="(services$ | async) as services" class="d-flex align-items-center">
+          <li class="d-flex align-items-center">
             <div class="header-menu">
-              <a routerLink="/booking" routerLinkActive="router-link-active" class="header-menu__title">
+              <a routerLink="/info/services" routerLinkActive="router-link-active" class="header-menu__title header-menu__title--no-items">
                 <span>{{'header.services' | translate}}</span>
               </a>
-              <ul class="header-menu__list">
-                <li *ngFor="let service of services" class="header-menu__item">
-                  <a [routerLink]="service.href">{{service.name | translate}}</a>
-                </li>
-              </ul>
             </div>
           </li>
 
-          <li *ngIf="(discounts$ | async) as discounts" class="d-flex align-items-center">
+          <li class="d-flex align-items-center">
             <div class="header-menu">
-              <a routerLink="/" routerLinkActive="router-link-active" class="header-menu__title">
+              <a routerLink="/info/discounts" routerLinkActive="router-link-active" class="header-menu__title header-menu__title--no-items">
                 <span>{{'header.discount' | translate}}</span>
               </a>
-              <ul class="header-menu__list">
-                <li *ngFor="let discount of discounts" class="header-menu__item">
-                  <a [routerLink]="discount.href">{{discount.name | translate}}</a>
-                </li>
-              </ul>
             </div>
           </li>
 
@@ -58,6 +48,20 @@
             <div class="header-menu">
               <a [routerLink]="user ? '/user' : null" routerLinkActive="router-link-active" class="header-menu__title" [ngClass]="{'header-menu__title--no-items': !!user}">
                 <i [ngStyle]="{'background-image': 'url(/assets/img/svg/user.svg)'}" class="header-menu__icon"></i>
+              </a>
+              <ul *ngIf="!user" class="header-menu__list">
+                <li *ngFor="let item of userMenuItems" class="header-menu__item">
+                  <a [routerLink]="item.href">{{item.name | translate}}</a>
+                </li>
+              </ul>
+            </div>
+            <i class="delimeter"></i>
+          </li>
+
+          <li class="d-flex align-items-center">
+            <div class="header-menu">
+              <a [routerLink]="user ? '/user' : null" routerLinkActive="router-link-active" class="header-menu__title" [ngClass]="{'header-menu__title--no-items': !!user}">
+                <i [ngStyle]="{'background-image': 'url(/assets/img/svg/cart.svg)'}" class="header-menu__icon"></i>
               </a>
               <ul *ngIf="!user" class="header-menu__list">
                 <li *ngFor="let item of userMenuItems" class="header-menu__item">
