@@ -1,10 +1,9 @@
-
 @import '_core-sizes';
 @import 'mixins/_all';
 
 .blog {
   @include e('bg') {
-    background-image: url('/assets/img/png/contactus-bg.png');
+    background-image: url('/assets/img/png/abstract-grey-bg.png');
     @include bg();
   }
 }
