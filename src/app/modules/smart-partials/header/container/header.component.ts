@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('panel', {static: true}) panel: ElementRef;
 
+  public mainMenuItems = MAIN_MENU_ITEMS;
   public mobileMenuItems: IHeaderDropdownMenu[];
   public userMenuItems: { href: string; name: string; }[] = USER_MENU_ITEMS;
   public langMenuItems = SupportedLang;
