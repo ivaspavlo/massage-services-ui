@@ -15,13 +15,28 @@
     display: flex;
     content: '';
   }
+  &__header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
   &__scroll-wrap {
     position: absolute; top: 0;
     width: 100%;
   }
+  &__page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
   &__title {
     width: 100%;
-    padding: 7rem 1rem 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
     font-size: 50px;
     text-align: center;
     color: #fff;

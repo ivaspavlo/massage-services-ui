@@ -1,1 +1,18 @@
-<p>discounts works!</p>
+<div class="info__page">
+
+  <h1 class="info__title">{{ 'info.discounts.page-title' | translate }}</h1>
+
+  <ng-container *ngFor="let i of [1,2,3]">
+
+    <figure class="info__image">
+      <img src="/assets/img/png/about-bg.png" alt="About page">
+    </figure>
+
+    <div class="info-content">
+      <h3 class="info-content__title">{{ 'info.discounts.block.title' | translate }}</h3>
+      <p class="info-content__text">{{ 'info.discounts.block.content' | translate }}</p>
+    </div>
+
+  </ng-container>
+
+</div>

@@ -37,7 +37,9 @@
           <li class="d-flex align-items-center">
             <div class="header-menu">
               <a routerLink="/checkout" routerLinkActive="router-link-active" class="header-menu__title header-menu__title--no-items">
-                <i [ngStyle]="{'background-image': 'url(/assets/img/svg/cart.svg)'}" class="header-menu__icon"></i>
+                <i [ngStyle]="{'background-image': 'url(/assets/img/svg/cart.svg)'}" class="header-menu__icon pos-relative">
+                  <i class="cart-items"></i>
+                </i>
               </a>
             </div>
             <i class="delimeter"></i>
@@ -61,7 +63,7 @@
   
   <div class="menu__mobile width-100 d-flex d-lg-none flex-column border-bottom-1 border-color-lightgrey box-shadow-3">
 
-    <div class="width-100 d-flex justify-content-between align-items-center p-rem-1 bg-white">
+    <div class="width-100 d-flex justify-content-between align-items-center p-rem-0_5 bg-white">
       <app-logo size="sm"></app-logo>
       <div class="d-flex align-items-center">
         <app-language-bar [current]="currentLang$ | async | mapCurrentLangItem" [items]="langMenuItems | mapLangItems" (languageChange)="onLanguageChange($event)" class="mr-rem-1"></app-language-bar>
