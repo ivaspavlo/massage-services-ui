@@ -18,7 +18,7 @@
   z-index: $z-header;
   @include m('is-shrinked') {
     .menu__desktop {
-      background-color: rgba(36, 36, 36, .7);
+      background-color: rgba(36, 36, 36, .9);
       padding: .25rem 0;
     }
   }
@@ -159,4 +159,14 @@
       z-index: -1;
     }
   }
+}
+
+.cart-items {
+  position: absolute; top: 100%; right: 0;
+  transform: translate(50%, -50%);
+  width: 8px;
+  height: 8px;
+  display: flex;
+  background-color: red;
+  border-radius: 100%;
 }
