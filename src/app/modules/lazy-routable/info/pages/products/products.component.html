@@ -1,14 +1,7 @@
-<div class="min-height-100 width-100 d-flex flex-column align-items-center pos-relative">
+<div class="info__page">
 
   <h1 class="info__title">{{ 'info.services.page-title' | translate }}</h1>
 
-  <figure class="info__image">
-    <img src="/assets/img/png/about-bg.png" alt="About page">
-  </figure>
-
-  <!-- <div class="info-content">
-    <h3 class="info-content__title">{{ 'about.block.title' | translate }}</h3>
-    <p class="info-content__text">{{ 'about.block.content' | translate }}</p>
-  </div> -->
+  <app-info-block [item]="item" *ngFor="let item of infoService.getServices() | async"></app-info-block>
 
 </div>

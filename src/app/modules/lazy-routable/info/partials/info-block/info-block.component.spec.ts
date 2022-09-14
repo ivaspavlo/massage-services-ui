@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfoContainerComponent } from './info-container.component';
+import { InfoBlockComponent } from './info-block.component';
 
-describe('InfoContainerComponent', () => {
-  let component: InfoContainerComponent;
-  let fixture: ComponentFixture<InfoContainerComponent>;
+describe('InfoBlockComponent', () => {
+  let component: InfoBlockComponent;
+  let fixture: ComponentFixture<InfoBlockComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InfoContainerComponent ]
+      declarations: [ InfoBlockComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InfoContainerComponent);
+    fixture = TestBed.createComponent(InfoBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

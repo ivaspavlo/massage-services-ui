@@ -1,4 +1,3 @@
-
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { InputTypes } from '../../interfaces';
 
