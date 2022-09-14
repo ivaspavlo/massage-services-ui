@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { InfoService } from '../../services/info.service';
+
 
 @Component({
   selector: 'app-discounts',
@@ -6,11 +8,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./discounts.component.scss', '../info-container/info-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DiscountsComponent implements OnInit {
+export class DiscountsComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(
+    public infoService: InfoService
+  ) { }
 
 }

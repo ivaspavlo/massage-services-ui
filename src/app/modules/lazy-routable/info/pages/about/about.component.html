@@ -2,13 +2,6 @@
 
   <h1 class="info__title">{{ 'info.about.page-title' | translate }}</h1>
 
-  <figure class="info__image">
-    <img src="/assets/img/png/about-bg.png" alt="About page">
-  </figure>
-
-  <div class="info-content">
-    <h3 class="info-content__title">{{ 'info.about.block.title' | translate }}</h3>
-    <p class="info-content__text">{{ 'info.about.block.content' | translate }}</p>
-  </div>
+  <app-info-block [item]="item" *ngFor="let item of infoService.getAbout() | async"></app-info-block>
 
 </div>
