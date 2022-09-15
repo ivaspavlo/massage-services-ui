@@ -1,4 +1,3 @@
-
 import { FactoryProvider, InjectionToken } from '@angular/core';
 import { WINDOW } from './window.provider';
 
