@@ -1,8 +1,6 @@
 import { Injectable }  from '@angular/core';
-
 import { CoreStorageService } from './core/services/core-storage.service';
 import { CoreTranslateService } from './core/services/core-translate.service';
-
 import { LANG_ID, SupportedLang } from './core/constants';
 
 

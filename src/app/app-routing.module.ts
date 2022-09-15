@@ -1,7 +1,5 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import { CORE_ROUTES } from '@app/core/constants';
 
 
