@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { IBooking, IProduct, IBookingTime } from './interfaces';
-import { BookingService } from './services/booking.service';
+import { BookingService } from '@app/core/services';
+import { IBooking, IProduct, IBookingReq } from './interfaces';
 import { IGift } from './interfaces/gift.interface';
 
 
@@ -31,7 +31,7 @@ export class BookingFacade {
     );
   }
 
-  public confirmBooking(req: IBookingTime[]): Observable<any> {
+  public confirmBooking(req: IBookingReq): Observable<any> {
     return this.bookingService.confirmBooking(req);
   }
 

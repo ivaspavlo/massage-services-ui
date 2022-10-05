@@ -68,7 +68,14 @@ export class SelectDateModalComponent implements OnInit {
   }
 
   public onConfirm(): void {
-    this.dialog.close(Array.from(this.selectedSlots.values()));
+    const dateTimeEntries = Array.from(this.selectedSlots.entries());
+    const res = dateTimeEntries.map(([slotDate, timeSlots]: [IBookingDate, IBookingTime[]]) => {
+      return {
+        date: slotDate.dateString,
+        timeSlots
+      };
+    });
+    this.dialog.close(Array.from(res));
   }
 
 }
