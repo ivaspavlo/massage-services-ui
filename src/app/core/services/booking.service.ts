@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { IBooking, IBookingTime, IProduct } from '../interfaces';
-import { IGift } from '../interfaces/gift.interface';
+import { IProduct, IBooking, IBookingReq, IGift } from '@app/interfaces';
 
 
 const products = [
@@ -171,7 +170,9 @@ const bookingData = [
   }
 ];
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class BookingService {
   
   constructor() { }
@@ -192,7 +193,7 @@ export class BookingService {
     return of(bookingData);
   }
 
-  public confirmBooking(req: IBookingTime[]): Observable<any> {
+  public confirmBooking(req: IBookingReq): Observable<any> {
     return of(true);
   }
   

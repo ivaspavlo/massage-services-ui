@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { IDateTimePair, IProfileFormValue } from '@app/interfaces';
+import { IProfileFormValue } from '@app/interfaces';
 
 import { ProfileSections } from '../../constants';
 
@@ -23,7 +23,7 @@ export class ProfileContainerComponent {
     phoneNumber: 'string'
   };
   
-  public dateTimePairs: IDateTimePair[] = [
+  public dateTimePairs: any[] = [
     { date: new Date(), timeSlot: { start: 10, end: 11 } },
     { date: new Date(), timeSlot: { start: 10, end: 11 } },
     { date: new Date(), timeSlot: { start: 10, end: 11 } }
