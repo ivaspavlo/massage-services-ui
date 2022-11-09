@@ -20,7 +20,7 @@ export interface ITimeSlot {
   minute: string;
 }
 
-export interface IBookingReq {
+export interface IBookingSlot {
   date: string;
   timeSlots: IBookingTime[];
 }

@@ -75,7 +75,7 @@ export class SelectDateModalComponent implements OnInit {
         timeSlots
       };
     });
-    this.dialog.close(Array.from(res));
+    this.dialog.close(res);
   }
 
 }

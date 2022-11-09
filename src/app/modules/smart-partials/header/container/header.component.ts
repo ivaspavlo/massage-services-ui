@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, ElementRe
 import { Observable } from 'rxjs';
 
 import { IUser } from '@app/interfaces';
-import { CoreTranslateService, UserService } from '@app/core/services';
+import { BookingService, CoreTranslateService } from '@app/core/services';
 import { SupportedLang } from '@app/core/constants';
 
 import { MAIN_MENU_ITEMS, USER_MENU_ITEMS } from '../constants';
@@ -18,7 +18,6 @@ import { IDiscount, IHeaderDropdownMenu, IService } from '../interfaces';
 export class HeaderComponent implements OnInit {
   
   @Input() shrinked: boolean = false;
-
   @ViewChild('panel', {static: true}) panel: ElementRef;
 
   public mainMenuItems = MAIN_MENU_ITEMS;
@@ -43,14 +42,14 @@ export class HeaderComponent implements OnInit {
   
   constructor(
     private translateService: CoreTranslateService,
-    private userService: UserService
+    private bookingService: BookingService
   ) { }
 
   ngOnInit(): void {
     this.mobileMenuItems = this.getMobileItems();
     this.currentLang$ = this.translateService.getCurrentLang();
-    this.services$ = this.userService.getServicesList();
-    this.discounts$ = this.userService.getDiscountsList();
+    this.services$ = this.bookingService.getServicesList();
+    this.discounts$ = this.bookingService.getDiscountsList();
   }
   
   public onLanguageChange(lang: string): void {
