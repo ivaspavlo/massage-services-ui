@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { BookingService } from '@app/core/services';
-import { IBooking, IProduct, IBookingReq } from './interfaces';
+import { IBooking, IProduct, IBookingSlot } from './interfaces';
 import { IGift } from './interfaces/gift.interface';
 
 
@@ -13,8 +13,8 @@ export class BookingFacade {
     private bookingService: BookingService
   ) { }
 
-  public getMassageList(): Observable<IProduct[]> {
-    return this.bookingService.getMassageList().pipe(
+  public getProducts(): Observable<IProduct[]> {
+    return this.bookingService.getProducts().pipe(
       catchError(() => of([]))
     );
   }
@@ -25,14 +25,14 @@ export class BookingFacade {
     );
   }
 
-  public getAvailableDates(): Observable<IBooking[]> {
-    return this.bookingService.getAvailableDates().pipe(
+  public getAvailableSlots(): Observable<IBooking[]> {
+    return this.bookingService.getAvailableSlots().pipe(
       catchError(() => of([]))
     );
   }
 
-  public confirmBooking(req: IBookingReq): Observable<any> {
-    return this.bookingService.confirmBooking(req);
+  public addToCart(selectedSlots: IBookingSlot[]): Observable<any> {
+    return this.bookingService.addTimeslotsToCart(selectedSlots);
   }
 
 }

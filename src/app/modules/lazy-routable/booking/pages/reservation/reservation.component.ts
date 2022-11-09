@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { BookingFacade } from '../../booking.facade';
-import { IBookingTime, IProduct, IBookingReq } from '../../interfaces';
+import { IProduct, IBookingSlot } from '../../interfaces';
 import { SelectDateModalComponent } from '../../modals/select-date-modal/select-date-modal.component';
 
 
@@ -28,19 +28,19 @@ export class ReservationComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.products$ = this.facade.getMassageList();
+    this.products$ = this.facade.getProducts();
   }
 
   public onBook(product: IProduct): void {
     const dialogConfig = {
       product,
-      bookingData$: this.facade.getAvailableDates()
+      bookingData$: this.facade.getAvailableSlots()
     };
     this.dialogService.open(SelectDateModalComponent, dialogConfig).afterClosed.pipe(
       takeUntil(this.componentDestroyed$)
-    ).subscribe((req: IBookingReq) => {
+    ).subscribe((req: IBookingSlot[]) => {
       if (req) {
-        this.facade.confirmBooking(req);
+        this.facade.addToCart(req);
         this.toastService.show({
           text: this.translateService.instant('toast.added-to-cart'),
           type: 'success'

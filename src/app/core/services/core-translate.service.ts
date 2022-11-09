@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, of } from 'rxjs';
 
-import { LANG_ID } from '../constants';
+import { LANG_ID_KEY } from '../constants';
 import { CoreStorageService } from './core-storage.service';
 
 
@@ -27,7 +27,7 @@ export class CoreTranslateService {
   }
   
   public use(lang: string): Observable<any> {
-    this.storageSerive.set(LANG_ID, lang);
+    this.storageSerive.set(LANG_ID_KEY, lang);
     return this.translate.use(lang);
   }
   

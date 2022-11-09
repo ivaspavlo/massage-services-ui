@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { IProduct, IBooking, IBookingReq, IGift } from '@app/interfaces';
+import { CART_TIMESLOTS_KEY } from '@app/core/constants';
+import { CoreStorageService } from '@app/core/services/core-storage.service';
+import { IProduct, IBooking, IBookingSlot, IGift, IDiscount, IService } from '@app/interfaces';
 
 
-const products = [
+const mockProducts = [
   {
     id: '1',
     title: 'booking.reserve.type-anti-cellulite.title',
@@ -37,7 +39,7 @@ const products = [
   }
 ];
 
-const gifts = [
+const mockGifts = [
   {
     id: '1',
     price: '300'
@@ -53,7 +55,7 @@ const gifts = [
   }
 ];
 
-const bookingData = [
+const mockBookingData = [
   {
     month: 'September',
     dates: [
@@ -170,31 +172,54 @@ const bookingData = [
   }
 ];
 
+const mockDiscounts = [
+  { id: 'discount_1', name: 'header.test-discount', href: '/' },
+  { id: 'discount_2', name: 'header.test-discount', href: '/' },
+  { id: 'discount_3', name: 'header.test-discount', href: '/' }
+];
+
+const mockServices = [
+  { id: 'service_1', name: 'header.test-service', href: '/' },
+  { id: 'service_2', name: 'header.test-service', href: '/' },
+  { id: 'service_3', name: 'header.test-service', href: '/' }
+];
+
 @Injectable({
   providedIn: 'root'
 })
 export class BookingService {
-  
-  constructor() { }
 
-  public getMassageList(): Observable<IProduct[]> {
-    return of(products);
+  constructor(
+    private storage: CoreStorageService
+  ) { }
+
+  public getProducts(): Observable<IProduct[]> {
+    return of(mockProducts);
   }
-  
-  public getBookingDataById(id: string): Observable<any> {
-    return of(null);
+
+  public getAvailableSlots(): Observable<IBooking[]> {
+    return of(mockBookingData);
   }
-  
+
   public getGiftCards(): Observable<IGift[]> {
-    return of(gifts);
+    return of(mockGifts);
   }
 
-  public getAvailableDates(): Observable<IBooking[]> {
-    return of(bookingData);
+  public getDiscountsList(): Observable<IDiscount[]> {
+    return of(mockDiscounts);
   }
 
-  public confirmBooking(req: IBookingReq): Observable<any> {
+  public getServicesList(): Observable<IService[]> {
+    return of(mockServices);
+  }
+
+  public addTimeslotsToCart(selectedSlots: IBookingSlot[]): Observable<boolean> {
+    const currentItems = this.storage.get(CART_TIMESLOTS_KEY) || [];
+    this.storage.set(
+      CART_TIMESLOTS_KEY,
+      [...currentItems, ...selectedSlots]
+    );
     return of(true);
   }
-  
+
 }
