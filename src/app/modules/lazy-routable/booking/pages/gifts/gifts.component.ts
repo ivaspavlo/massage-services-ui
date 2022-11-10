@@ -1,8 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IProductCard } from '@app/interfaces';
 import { BookingFacade } from '../../booking.facade';
-import { IGift } from '../../interfaces/gift.interface';
+import { IProduct } from '../../interfaces';
 
 
 @Component({
@@ -13,7 +12,8 @@ import { IGift } from '../../interfaces/gift.interface';
 })
 export class GiftsComponent implements OnInit {
   
-  public giftCards$: Observable<IGift[]>;
+  public giftCards$: Observable<IProduct[]>;
+  public currentlyClickedCard: IProduct;
 
   constructor(
     private facade: BookingFacade
@@ -22,7 +22,9 @@ export class GiftsComponent implements OnInit {
   ngOnInit(): void {
     this.giftCards$ = this.facade.getGiftCards();
   }
-  
-  public onClick(card: IProductCard): void { }
+
+  public onGiftCardClick(value: IProduct): void {
+    this.currentlyClickedCard = value;
+  }
   
 }

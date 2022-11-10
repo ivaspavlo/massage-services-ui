@@ -40,7 +40,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
       takeUntil(this.componentDestroyed$)
     ).subscribe((req: IBookingSlot[]) => {
       if (req) {
-        this.facade.addToCart(req);
+        this.facade.addBookingSlotsToCart(req);
         this.toastService.show({
           text: this.translateService.instant('toast.added-to-cart'),
           type: 'success'

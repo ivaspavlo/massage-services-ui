@@ -5,6 +5,6 @@
     <p class="font-22 text-align-center font-family-nexa color-primary-500">{{ 'booking.gift.subtitle' | translate }}</p>
   </header>
 
-  <app-gift *ngFor="let gift of giftCards$ | async" [gift]="gift" class="mb-rem-2"></app-gift>
+  <app-gift *ngFor="let giftCard of giftCards$ | async" (giftClick)="onGiftCardClick($event)" [currentlyClicked]="currentlyClickedCard === giftCard" [gift]="giftCard" class="mb-rem-2"></app-gift>
   
 </section>

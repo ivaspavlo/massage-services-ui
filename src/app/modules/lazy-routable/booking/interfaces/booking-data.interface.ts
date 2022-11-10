@@ -1,6 +1,11 @@
-export interface IBooking {
+export interface IBookingAvailable {
   month: string;
   dates: IBookingDate[];
+}
+
+export interface ITimeSlot {
+  hour: string;
+  minute: string;
 }
 
 export interface IBookingDate {
@@ -15,12 +20,12 @@ export interface IBookingTime {
   end: ITimeSlot;
 }
 
-export interface ITimeSlot {
-  hour: string;
-  minute: string;
-}
-
 export interface IBookingSlot {
   date: string;
   timeSlots: IBookingTime[];
+}
+
+export interface IBookingGift {
+  date: string;
+  data: { id: string; qty: number; }[];
 }

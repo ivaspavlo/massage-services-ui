@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { CART_TIMESLOTS_KEY } from '@app/core/constants';
+import { CART_GIFTS_KEY, CART_TIMESLOTS_KEY } from '@app/core/constants';
 import { CoreStorageService } from '@app/core/services/core-storage.service';
-import { IProduct, IBooking, IBookingSlot, IGift, IDiscount, IService } from '@app/interfaces';
+import { IProduct, IBookingAvailable, IBookingSlot, IDiscount, IService } from '@app/interfaces';
 
 
 const mockProducts = [
@@ -42,15 +42,19 @@ const mockProducts = [
 const mockGifts = [
   {
     id: '1',
+    title: '345D 4353 FF77 DFG5',
     price: '300'
   }, {
     id: '2',
+    title: '345D 4353 FF77 DFG5',
     price: '500'
   }, {
     id: '3',
+    title: '345D 4353 FF77 DFG5',
     price: '700'
   }, {
     id: '4',
+    title: '345D 4353 FF77 DFG5',
     price: '1000'
   }
 ];
@@ -197,11 +201,11 @@ export class BookingService {
     return of(mockProducts);
   }
 
-  public getAvailableSlots(): Observable<IBooking[]> {
+  public getAvailableSlots(): Observable<IBookingAvailable[]> {
     return of(mockBookingData);
   }
 
-  public getGiftCards(): Observable<IGift[]> {
+  public getGiftCards(): Observable<IProduct[]> {
     return of(mockGifts);
   }
 
@@ -213,11 +217,20 @@ export class BookingService {
     return of(mockServices);
   }
 
-  public addTimeslotsToCart(selectedSlots: IBookingSlot[]): Observable<boolean> {
-    const currentItems = this.storage.get(CART_TIMESLOTS_KEY) || [];
+  public addBookingSlotsToCart(currValue: IBookingSlot[]): Observable<boolean> {
+    const prevValue = this.storage.get(CART_TIMESLOTS_KEY) || [];
     this.storage.set(
       CART_TIMESLOTS_KEY,
-      [...currentItems, ...selectedSlots]
+      [...prevValue, ...currValue]
+    );
+    return of(true);
+  }
+
+  public addGiftsToCart(currValue: any): Observable<boolean> {
+    const prevValue = this.storage.get(CART_GIFTS_KEY) || [];
+    this.storage.set(
+      CART_GIFTS_KEY,
+      [...prevValue, ...currValue]
     );
     return of(true);
   }
