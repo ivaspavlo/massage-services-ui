@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { BookingService } from '@app/core/services';
-import { IBooking, IProduct, IBookingSlot } from './interfaces';
-import { IGift } from './interfaces/gift.interface';
+import { IBookingAvailable, IProduct, IBookingSlot } from './interfaces';
 
 
 @Injectable()
@@ -19,20 +18,24 @@ export class BookingFacade {
     );
   }
   
-  public getGiftCards(): Observable<IGift[]> {
+  public getGiftCards(): Observable<IProduct[]> {
     return this.bookingService.getGiftCards().pipe(
       catchError(() => of([]))
     );
   }
 
-  public getAvailableSlots(): Observable<IBooking[]> {
+  public getAvailableSlots(): Observable<IBookingAvailable[]> {
     return this.bookingService.getAvailableSlots().pipe(
       catchError(() => of([]))
     );
   }
 
-  public addToCart(selectedSlots: IBookingSlot[]): Observable<any> {
-    return this.bookingService.addTimeslotsToCart(selectedSlots);
+  public addBookingSlotsToCart(value: IBookingSlot[]): Observable<boolean> {
+    return this.bookingService.addBookingSlotsToCart(value);
+  }
+
+  public addGiftsToCart(value: IProduct): Observable<boolean> {
+    return this.bookingService.addGiftsToCart(value);
   }
 
 }

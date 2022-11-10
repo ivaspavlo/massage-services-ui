@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogConfig, DialogRef } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
-import { IBooking, IBookingDate, IBookingTime, IProduct } from '../../interfaces';
+import { IBookingAvailable, IBookingDate, IBookingTime, IProduct } from '../../interfaces';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { IBooking, IBookingDate, IBookingTime, IProduct } from '../../interfaces
 export class SelectDateModalComponent implements OnInit {
 
   public product: IProduct;
-  public bookingData$: Observable<IBooking[]>;
+  public bookingData$: Observable<IBookingAvailable[]>;
 
   public currentDate: IBookingDate;
   public selectedSlots: Map<IBookingDate, IBookingTime[]> = new Map();

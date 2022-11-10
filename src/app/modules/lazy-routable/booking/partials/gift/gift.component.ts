@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
-import { IGift } from '../../interfaces/gift.interface';
+import { IProduct } from '../../interfaces';
 
 
 @Component({
@@ -10,8 +10,9 @@ import { IGift } from '../../interfaces/gift.interface';
 })
 export class GiftComponent {
 
-  @Input() gift: IGift;
-  @Output() giftClick: EventEmitter<IGift> = new EventEmitter();
+  @Input() gift: IProduct;
+  @Input() currentlyClicked = false;
+  @Output() giftClick: EventEmitter<IProduct> = new EventEmitter();
 
   public onGiftClick(): void {
     this.giftClick.emit(this.gift);
