@@ -1,4 +1,5 @@
 export interface IBookingAvailable {
+  productId: string;
   month: string;
   dates: IBookingDate[];
 }
@@ -21,6 +22,7 @@ export interface IBookingTime {
 }
 
 export interface IBookingSlot {
+  productId: string;
   date: string;
   timeSlots: IBookingTime[];
 }
