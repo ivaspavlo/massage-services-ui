@@ -61,6 +61,7 @@ const mockGifts = [
 
 const mockBookingData = [
   {
+    productId: '1',
     month: 'September',
     dates: [
       {
@@ -201,7 +202,7 @@ export class BookingService {
     return of(mockProducts);
   }
 
-  public getAvailableSlots(): Observable<IBookingAvailable[]> {
+  public getAvailableSlots(productId: string): Observable<IBookingAvailable[]> {
     return of(mockBookingData);
   }
 

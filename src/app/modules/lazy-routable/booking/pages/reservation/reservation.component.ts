@@ -34,7 +34,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
   public onBook(product: IProduct): void {
     const dialogConfig = {
       product,
-      bookingData$: this.facade.getAvailableSlots()
+      bookingData$: this.facade.getAvailableSlots(product.id)
     };
     this.dialogService.open(SelectDateModalComponent, dialogConfig).afterClosed.pipe(
       takeUntil(this.componentDestroyed$)
