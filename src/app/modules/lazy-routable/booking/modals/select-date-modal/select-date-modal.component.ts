@@ -30,6 +30,7 @@ export class SelectDateModalComponent implements OnInit {
   ngOnInit(): void {
     this.product = this.config.data.product;
     this.bookingData$ = this.config.data.bookingData$;
+    debugger;
   }
 
   public onSelectDate(date: IBookingDate): void {

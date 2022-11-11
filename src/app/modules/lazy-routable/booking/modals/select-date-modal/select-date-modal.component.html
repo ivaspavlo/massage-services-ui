@@ -42,11 +42,11 @@
   
           <div class="dates">
             <h5 class="dates__title">Dates</h5>
-            <div *ngFor="let item of bookingData$ | async" class="d-flex flex-column">
-              <h6 class="dates__month">{{ item.month }}</h6>
-              <ul class="dates__slots-container">
-                <li (click)="onSelectDate(date)" *ngFor="let date of item.dates" class="dates__slot" [ngClass]="{'dates__slot--has-focus': date === currentDate, 'dates__slot--active': selectedSlots.has(date)}">{{ date.day }}</li>
-              </ul>
+            <div *ngFor="let item of bookingData$ | async | groupByMonth" class="d-flex flex-column">
+              <h6 class="dates__month">{{item.month}}</h6>
+              <!-- <ul class="dates__slots-container">
+                <li (click)="onSelectDate(date)" *ngFor="let item of item.dates" class="dates__slot" [ngClass]="{'dates__slot--has-focus': date === currentDate, 'dates__slot--active': selectedSlots.has(date)}">{{ new Date(item) | date: 'c' }}</li>
+              </ul> -->
             </div>
           </div>
   
@@ -54,7 +54,8 @@
             <h5 class="times__title">Timeslots</h5>
             <ul *ngIf="currentDate" class="times__slots-container">
               <li (click)="onSelectTime(time)" *ngFor="let time of currentDate.time" class="times__slot" [ngClass]="{'times__slot--active': selectedSlots.get(currentDate)?.includes(time)}">
-                <p>
+                <!-- {{ time | json }} -->
+                <!-- <p>
                   <span>{{ time.start.hour }}</span>
                   <span class="mx-rem-0_5">:</span>
                   <span>{{ time.start.minute }}</span>
@@ -63,7 +64,7 @@
                   <span>{{ time.end.hour }}</span>
                   <span class="mx-rem-0_5">:</span>
                   <span>{{ time.end.minute }}</span>
-                </p>
+                </p> -->
               </li>
             </ul>
             <p *ngIf="false" class="times__no-items">Select date</p>

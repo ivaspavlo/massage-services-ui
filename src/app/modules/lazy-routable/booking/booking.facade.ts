@@ -24,7 +24,7 @@ export class BookingFacade {
     );
   }
 
-  public getAvailableSlots(productId: string): Observable<IBookingAvailable[]> {
+  public getAvailableSlots(productId: string): Observable<IBookingSlot[]> {
     return this.bookingService.getAvailableSlots(productId).pipe(
       catchError(() => of([]))
     );
