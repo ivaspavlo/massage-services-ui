@@ -1,3 +1,26 @@
+export interface IBookingSlot {
+  productId: string;
+  dates: IDateSlot[];
+}
+
+export interface IDateSlot {
+  date: string;
+  timeSlots: ITimeSlot[];
+}
+
+export interface ITimeSlot {
+  start: number;
+  end: number;
+}
+
+export interface IBookingGift {
+  qty: number;
+  id: string;
+}
+
+
+//////////////////////
+
 export interface IBookingAvailable {
   productId: string;
   month: string;
@@ -27,7 +50,14 @@ export interface IBookingSlot {
   timeSlots: IBookingTime[];
 }
 
+export interface IGiftSlot {
+  id: string;
+  qty: number;
+}
+
 export interface IBookingGift {
   date: string;
-  data: { id: string; qty: number; }[];
+  data: IGiftSlot[];
 }
+
+

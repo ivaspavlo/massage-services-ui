@@ -59,7 +59,40 @@ const mockGifts = [
   }
 ];
 
-const mockBookingData = [
+const mockBookingSlots = [
+  {
+    productId: '1',
+    dates: [
+      {
+        date: 'Fri Nov 11 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }, {
+        date: 'Fri Nov 12 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }, {
+        date: 'Fri Nov 13 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }
+    ]
+  }
+];
+
+const _mockBookingSlots = [
   {
     productId: '1',
     month: 'September',
@@ -202,8 +235,8 @@ export class BookingService {
     return of(mockProducts);
   }
 
-  public getAvailableSlots(productId: string): Observable<IBookingAvailable[]> {
-    return of(mockBookingData);
+  public getAvailableSlots(productId: string): Observable<any[]> {
+    return of(mockBookingSlots);
   }
 
   public getGiftCards(): Observable<IProduct[]> {

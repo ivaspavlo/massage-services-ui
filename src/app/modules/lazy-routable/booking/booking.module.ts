@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { CoreTranslationModule } from '@app/core/core-translation.module';
@@ -13,16 +13,19 @@ import { BookingFacade } from './booking.facade';
 import { PAGES } from './pages';
 import { PARTIALS } from './partials';
 import { MODALS } from './modals';
+import { PIPES } from './pipes';
 
 
 @NgModule({
   declarations: [
     ...PAGES,
     ...PARTIALS,
-    ...MODALS
+    ...MODALS,
+    ...PIPES
   ],
   providers: [
-    BookingFacade
+    BookingFacade,
+    DatePipe
   ],
   imports: [
     CommonModule,
