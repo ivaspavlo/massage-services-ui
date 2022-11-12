@@ -1,7 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogConfig, DialogRef } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
-import { IBookingAvailable, IBookingDate, IBookingTime, IProduct } from '../../interfaces';
+import { map } from 'rxjs/operators';
+import { IBookingAvailable, IBookingDate, IBookingSlot, IBookingTime, IProduct } from '../../interfaces';
 
 
 @Component({
@@ -30,7 +31,6 @@ export class SelectDateModalComponent implements OnInit {
   ngOnInit(): void {
     this.product = this.config.data.product;
     this.bookingData$ = this.config.data.bookingData$;
-    debugger;
   }
 
   public onSelectDate(date: IBookingDate): void {
