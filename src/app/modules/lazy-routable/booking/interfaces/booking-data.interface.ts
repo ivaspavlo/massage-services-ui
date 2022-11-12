@@ -18,6 +18,11 @@ export interface IBookingGift {
   id: string;
 }
 
+export interface IDatesGroup {
+  month: string;
+  dates: { date: Date; timeSlots: ITimeSlot[] }[]
+}
+
 
 //////////////////////
 

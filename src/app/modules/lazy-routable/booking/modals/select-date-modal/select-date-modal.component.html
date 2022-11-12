@@ -42,12 +42,14 @@
   
           <div class="dates">
             <h5 class="dates__title">Dates</h5>
-            <div *ngFor="let item of bookingData$ | async | groupByMonth" class="d-flex flex-column">
-              <h6 class="dates__month">{{item.month}}</h6>
-              <!-- <ul class="dates__slots-container">
-                <li (click)="onSelectDate(date)" *ngFor="let item of item.dates" class="dates__slot" [ngClass]="{'dates__slot--has-focus': date === currentDate, 'dates__slot--active': selectedSlots.has(date)}">{{ new Date(item) | date: 'c' }}</li>
-              </ul> -->
-            </div>
+            <ng-container *ngIf="(bookingData$ | async) as data">
+              <div *ngFor="let item of data.months" class="d-flex flex-column">
+                <h6 class="dates__month">{{item.month}}</h6>
+                <ul class="dates__slots-container">
+                  <li (click)="onSelectDate(date)" *ngFor="let dateObj of item.dates" class="dates__slot" [ngClass]="{'dates__slot--has-focus': date === currentDate, 'dates__slot--active': selectedSlots.has(date)}">{{ dateObj.date | date:'d' }}</li>
+                </ul>
+              </div>
+            </ng-container>
           </div>
   
           <div class="times">
