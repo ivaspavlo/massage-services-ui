@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { BookingFacade } from '../../booking.facade';
-import { IProduct, IBookingSlot } from '../../interfaces';
+import { IProduct, IBookedSlot } from '../../interfaces';
 import { SelectDateModalComponent } from '../../modals/select-date-modal/select-date-modal.component';
 
 
@@ -38,7 +38,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
     };
     this.dialogService.open(SelectDateModalComponent, dialogConfig).afterClosed.pipe(
       takeUntil(this.componentDestroyed$)
-    ).subscribe((req: IBookingSlot[]) => {
+    ).subscribe((req: IBookedSlot[]) => {
       if (req) {
         this.facade.addBookingSlotsToCart(req);
         this.toastService.show({

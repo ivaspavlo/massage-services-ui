@@ -1,8 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogConfig, DialogRef } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { IBookingAvailable, IBookingDate, IBookingSlot, IBookingTime, IProduct } from '../../interfaces';
+import { IProduct, IDatesGroup, IDateSlot, ITimeSlot } from '../../interfaces';
 
 
 @Component({
@@ -14,10 +13,10 @@ import { IBookingAvailable, IBookingDate, IBookingSlot, IBookingTime, IProduct }
 export class SelectDateModalComponent implements OnInit {
 
   public product: IProduct;
-  public bookingData$: Observable<IBookingAvailable[]>;
+  public bookingData$: Observable<IDatesGroup[]>;
 
-  public currentDate: IBookingDate;
-  public selectedSlots: Map<IBookingDate, IBookingTime[]> = new Map();
+  public currentDate: IDateSlot;
+  public selectedSlots: Map<IDateSlot, ITimeSlot[]> = new Map();
 
   get selectedSlotsQty() {
     return [].concat(...Array.from(this.selectedSlots.values()))?.length;
@@ -33,11 +32,11 @@ export class SelectDateModalComponent implements OnInit {
     this.bookingData$ = this.config.data.bookingData$;
   }
 
-  public onSelectDate(date: IBookingDate): void {
+  public onSelectDate(date: IDateSlot): void {
     this.currentDate = date;
   }
 
-  public onSelectTime(time: IBookingTime): void {
+  public onSelectTime(time: ITimeSlot): void {
     const slotsPerDate = this.selectedSlots.get(this.currentDate) || [];
     
     if (!slotsPerDate) {
@@ -55,13 +54,13 @@ export class SelectDateModalComponent implements OnInit {
     this.removeKeyIfEmpty(this.currentDate);
   }
 
-  public onRemoveSlot(date: IBookingDate, slot: IBookingTime): void {
+  public onRemoveSlot(date: IDateSlot, slot: ITimeSlot): void {
     const timeSlots = this.selectedSlots.get(date).filter(i => i !== slot);
     this.selectedSlots.set(date, timeSlots);
     this.removeKeyIfEmpty(date);
   }
 
-  private removeKeyIfEmpty(key: IBookingDate): void {
+  private removeKeyIfEmpty(key: IDateSlot): void {
     const hasNoItemsPerKey = !this.selectedSlots.get(key)?.length;
     if (hasNoItemsPerKey) {
       this.selectedSlots.delete(key);
@@ -70,9 +69,9 @@ export class SelectDateModalComponent implements OnInit {
 
   public onConfirm(): void {
     const dateTimeEntries = Array.from(this.selectedSlots.entries());
-    const res = dateTimeEntries.map(([slotDate, timeSlots]: [IBookingDate, IBookingTime[]]) => {
+    const res = dateTimeEntries.map(([slotDate, timeSlots]: [IDateSlot, ITimeSlot[]]) => {
       return {
-        date: slotDate.dateString,
+        date: slotDate.date,
         timeSlots
       };
     });
