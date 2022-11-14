@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CART_GIFTS_KEY, CART_TIMESLOTS_KEY } from '@app/core/constants';
 import { CoreStorageService } from '@app/core/services/core-storage.service';
-import { IProduct, IBookingSlot, IDiscount, IService } from '@app/interfaces';
+import { IProduct, IBookingSlot, IDiscount, IService, IBookedSlot } from '@app/interfaces';
 
 
 const mockProducts = [
@@ -123,7 +123,7 @@ export class BookingService {
     return of(mockProducts);
   }
 
-  public getAvailableSlots(productId: string): Observable<any> {
+  public getAvailableSlots(productId: string): Observable<IBookingSlot> {
     return of(mockBookingSlots);
   }
 
@@ -139,7 +139,7 @@ export class BookingService {
     return of(mockServices);
   }
 
-  public addBookingSlotsToCart(currValue: IBookingSlot[]): Observable<boolean> {
+  public addBookingSlotsToCart(currValue: IBookedSlot[]): Observable<boolean> {
     const prevValue = this.storage.get(CART_TIMESLOTS_KEY) || [];
     this.storage.set(
       CART_TIMESLOTS_KEY,

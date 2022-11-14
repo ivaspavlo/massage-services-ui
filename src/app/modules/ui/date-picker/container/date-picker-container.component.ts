@@ -88,7 +88,7 @@ export class DatePickerContainerComponent {
     this.mydp.clearDate();
   }
   
-  // Private methods
+  // PRIVATE METHODS
   
   private initCalendarVisibleObservable(): void {
     this.isCalendarVisible$ = this.mydp.calendarToggle.pipe(

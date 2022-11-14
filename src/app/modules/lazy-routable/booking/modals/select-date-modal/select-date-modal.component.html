@@ -18,14 +18,14 @@
                 </p>
                 <div>
                   <p>
-                    <span>{{ item.start.hour }}</span>
+                    <span>{{ item.start }}</span>
                     <span class="mx-px-5">:</span>
-                    <span>{{ item.start.minute }}</span>
+                    <span>00</span>
                   </p>
                   <p>
-                    <span>{{ item.end.hour }}</span>
+                    <span>{{ item.end }}</span>
                     <span class="mx-px-5">:</span>
-                    <span>{{ item.end.minute }}</span>
+                    <span>00</span>
                   </p>
                 </div>
                 <a (click)="onRemoveSlot(date, item)" class="selected-slots__close-button"></a>
@@ -42,11 +42,18 @@
   
           <div class="dates">
             <h5 class="dates__title">Dates</h5>
-            <ng-container *ngIf="(bookingData$ | async) as data">
-              <div *ngFor="let item of data.months" class="d-flex flex-column">
+            <ng-container *ngIf="(bookingData$ | async) as monthGroups">
+              <div *ngFor="let item of monthGroups" class="d-flex flex-column">
                 <h6 class="dates__month">{{item.month}}</h6>
                 <ul class="dates__slots-container">
-                  <li (click)="onSelectDate(date)" *ngFor="let dateObj of item.dates" class="dates__slot" [ngClass]="{'dates__slot--has-focus': date === currentDate, 'dates__slot--active': selectedSlots.has(date)}">{{ dateObj.date | date:'d' }}</li>
+                  <li
+                    *ngFor="let dateObj of item.dates"
+                    (click)="onSelectDate(dateObj)"
+                    [ngClass]="{
+                      'dates__slot--has-focus': dateObj === currentDate,
+                      'dates__slot--active': selectedSlots.has(dateObj)}"
+                    class="dates__slot"
+                  >{{ dateObj.date | date:'d' }}</li>
                 </ul>
               </div>
             </ng-container>
@@ -55,18 +62,17 @@
           <div class="times">
             <h5 class="times__title">Timeslots</h5>
             <ul *ngIf="currentDate" class="times__slots-container">
-              <li (click)="onSelectTime(time)" *ngFor="let time of currentDate.time" class="times__slot" [ngClass]="{'times__slot--active': selectedSlots.get(currentDate)?.includes(time)}">
-                <!-- {{ time | json }} -->
-                <!-- <p>
-                  <span>{{ time.start.hour }}</span>
+              <li (click)="onSelectTime(time)" *ngFor="let time of currentDate.timeSlots" class="times__slot" [ngClass]="{'times__slot--active': selectedSlots.get(currentDate)?.includes(time)}">
+                <p>
+                  <span>{{ time.start }}</span>
                   <span class="mx-rem-0_5">:</span>
-                  <span>{{ time.start.minute }}</span>
+                  <span>00</span>
                 </p>
                 <p>
-                  <span>{{ time.end.hour }}</span>
+                  <span>{{ time.end }}</span>
                   <span class="mx-rem-0_5">:</span>
-                  <span>{{ time.end.minute }}</span>
-                </p> -->
+                  <span>00</span>
+                </p>
               </li>
             </ul>
             <p *ngIf="false" class="times__no-items">Select date</p>

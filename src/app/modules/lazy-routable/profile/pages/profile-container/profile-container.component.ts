@@ -45,7 +45,7 @@ export class ProfileContainerComponent {
     }
   }
   
-  // Private methods
+  // PRIVATE METHODS
   
   private hasChanged(initValue: IProfileFormValue, currentValue: IProfileFormValue): boolean {
     return Object.keys(initValue).some(key => {

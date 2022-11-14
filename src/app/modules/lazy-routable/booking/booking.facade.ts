@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { BookingService } from '@app/core/services';
-import { IProduct, IBookingSlot, IDatesGroup } from './interfaces';
+import { IProduct, IBookingSlot, IDatesGroup, IBookedSlot } from './interfaces';
 
 
 @Injectable()
@@ -26,14 +26,14 @@ export class BookingFacade {
     );
   }
 
-  public getAvailableSlots(productId: string): Observable<any> {
+  public getAvailableSlots(productId: string): Observable<IDatesGroup[]> {
     return this.bookingService.getAvailableSlots(productId).pipe(
       catchError(() => of([])),
       map((value: any) => this.groupDatesByMonth(value))
     );
   }
 
-  public addBookingSlotsToCart(value: IBookingSlot[]): Observable<boolean> {
+  public addBookingSlotsToCart(value: IBookedSlot[]): Observable<boolean> {
     return this.bookingService.addBookingSlotsToCart(value);
   }
 
@@ -43,8 +43,7 @@ export class BookingFacade {
 
   // PRIVATE METHODS
 
-  private groupDatesByMonth(value: any): any[] {
-    debugger;
+  private groupDatesByMonth(value: IBookingSlot): IDatesGroup[] {
     const groupedByMonthObj = value.dates.reduce((acc, curr) => {
       const item = { ...curr, date: new Date(curr.date) };
       const month = this.datePipe.transform(item.date, 'LLLL');
@@ -58,10 +57,7 @@ export class BookingFacade {
     const groupedByMonthArr = Object.keys(groupedByMonthObj).map((monthKey: string) => {
       return {month: monthKey, dates: groupedByMonthObj[monthKey]};
     });
-    return {
-      ...value,
-      months: groupedByMonthArr
-    };
+    return groupedByMonthArr;
   }
 
 }
