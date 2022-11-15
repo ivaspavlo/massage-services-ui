@@ -1,6 +1,7 @@
+@use 'sass:math';
 
 $width: 40px;
-$height: 25px;
+$height: 25;
 $border-width: 2px;
 $background: #fff;
 $foreground: #7564a8;
@@ -21,9 +22,9 @@ $warn-color: #ff6363;
   & + label {
     display: block;
     width: $width;
-    height: $height;
+    height: $height * 1px;
     background: $foreground-off;
-    border-radius: $height / 2;
+    border-radius: math.div($height, 2) * 1px;
     margin: 10px;
     position: relative;
     &.has-error {
@@ -39,7 +40,7 @@ $warn-color: #ff6363;
       left: $border-width;
       bottom: $border-width;
       right: $border-width;
-      border-radius: $height / 2 - $border-width;
+      border-radius: math.div($height, 2) * 1px - $border-width;
       transition: opacity .2s;
       opacity: 1.0;
       content: '';
@@ -53,9 +54,9 @@ $warn-color: #ff6363;
       position: absolute;
       top: $border-width * 2;
       left: $border-width * 2;
-      width: $height - $border-width * 4;
-      height: $height - $border-width * 4;
-      border-radius: $height / 2 - $border-width * 2;
+      width: $height * 1px - $border-width * 4;
+      height: $height * 1px - $border-width * 4;
+      border-radius: math.div($height, 2) * 1px - $border-width * 2;
       animation: toggle-off-animation 0.5s;
       animation-fill-mode: forwards;
       transition: .3s;
@@ -65,7 +66,7 @@ $warn-color: #ff6363;
 
 @keyframes toggle-on-animation {
 	0% {
-		width: $height - $border-width * 4;
+		width: $height * 1px - $border-width * 4;
 		left: $border-width * 2;
 	}
 	50% {
@@ -73,22 +74,22 @@ $warn-color: #ff6363;
 		left: $border-width * 2;
 	}
 	100% {
-		width: $height - $border-width * 4;
-		left: $width - $border-width * 2 - ($height - $border-width * 4);
+		width: $height * 1px - $border-width * 4;
+		left: $width - $border-width * 2 - ($height * 1px - $border-width * 4);
 	}
 }
 
 @keyframes toggle-off-animation {
 	0% {
 		width: $height - $border-width * 4;
-		left: $width - $border-width * 2 - ($height - $border-width * 4);
+		left: $width - $border-width * 2 - ($height * 1px - $border-width * 4);
 	}
 	50% {
 		width: $width - $border-width * 4;
 		left: $border-width * 2;
 	}
 	100% {
-		width: $height - $border-width * 4;
+		width: $height * 1px - $border-width * 4;
 		left: $border-width * 2;
 	}
 }

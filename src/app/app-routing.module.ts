@@ -5,7 +5,7 @@ import { CORE_ROUTES } from '@app/core/constants';
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(CORE_ROUTES)
+    RouterModule.forRoot(CORE_ROUTES, { relativeLinkResolution: 'legacy' })
   ],
   exports: [
     RouterModule
