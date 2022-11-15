@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -8,16 +7,16 @@ import { CoreTranslationModule } from '@app/core/core-translation.module';
 import { SharedModule } from '@app/shared/shared.module';
 import { TitleModule, ExpansionPanelModule, LogoModule, PhoneAnimationModule, InputModule, ButtonPrimaryModule, HamburgerModule, LanguageBarModule, PopoverModule } from '@app/modules/ui';
 
-import { HeaderComponent } from './container/header.component';
-import { MapLangItemsPipe } from './pipes/map-lang-items.pipe';
-import { MapCurrentLangItemPipe } from './pipes/map-current-lang-item.pipe';
+import { PARTIALS } from './partials';
+import { PIPES } from './pipes';
+import { COMPONENTS } from './components';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent,
-    MapLangItemsPipe,
-    MapCurrentLangItemPipe
+    ...COMPONENTS,
+    ...PIPES,
+    ...PARTIALS
   ],
   imports: [
     CommonModule,
@@ -37,7 +36,7 @@ import { MapCurrentLangItemPipe } from './pipes/map-current-lang-item.pipe';
     CoreTranslationModule.forChild()
   ],
   exports: [
-    HeaderComponent
+    ...COMPONENTS
   ]
 })
 export class HeaderModule { }

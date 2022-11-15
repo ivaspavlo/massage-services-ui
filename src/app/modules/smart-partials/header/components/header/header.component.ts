@@ -5,8 +5,8 @@ import { IUser } from '@app/interfaces';
 import { BookingService, CoreTranslateService } from '@app/core/services';
 import { SupportedLang } from '@app/core/constants';
 
-import { MAIN_MENU_ITEMS, USER_MENU_ITEMS } from '../constants';
-import { IDiscount, IHeaderDropdownMenu, IService } from '../interfaces';
+import { MAIN_MENU_ITEMS, USER_MENU_ITEMS } from '../../constants';
+import { IDiscount, IHeaderDropdownMenu, IService } from '../../interfaces';
 
 
 @Component({
@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
   public currentLang$: Observable<string>;
   public services$: Observable<IService[]>;
   public discounts$: Observable<IDiscount[]>;
+  public isCartEmpty$: Observable<boolean>;
 
   public isOpen = false;
   public set user(value: IUser) {
@@ -50,6 +51,7 @@ export class HeaderComponent implements OnInit {
     this.currentLang$ = this.translateService.getCurrentLang();
     this.services$ = this.bookingService.getServicesList();
     this.discounts$ = this.bookingService.getDiscountsList();
+    this.isCartEmpty$ = this.bookingService.isCartEmpty$;
   }
   
   public onLanguageChange(lang: string): void {
