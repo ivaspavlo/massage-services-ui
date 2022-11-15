@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { CART_GIFTS_KEY, CART_TIMESLOTS_KEY } from '@app/core/constants';
 import { CoreStorageService } from '@app/core/services/core-storage.service';
 import { IProduct, IBookingSlot, IDiscount, IService, IBookedSlot } from '@app/interfaces';
@@ -115,9 +115,16 @@ const mockServices = [
 })
 export class BookingService {
 
+  private _isCartEmpty$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  public isCartEmpty$: Observable<boolean> = this._isCartEmpty$.asObservable();
+
   constructor(
     private storage: CoreStorageService
-  ) { }
+  ) {
+    this._isCartEmpty$.next(
+      !this.hasCartItems()
+    );
+  }
 
   public getProducts(): Observable<IProduct[]> {
     return of(mockProducts);
@@ -145,6 +152,7 @@ export class BookingService {
       CART_TIMESLOTS_KEY,
       [...prevValue, ...currValue]
     );
+    this._isCartEmpty$.next(false);
     return of(true);
   }
 
@@ -154,7 +162,14 @@ export class BookingService {
       CART_GIFTS_KEY,
       [...prevValue, ...currValue]
     );
+    this._isCartEmpty$.next(false);
     return of(true);
+  }
+
+  public hasCartItems(): boolean {
+    const hasTimeSlots = !!this.storage.get(CART_TIMESLOTS_KEY);
+    const hasGiftCards = !!this.storage.get(CART_GIFTS_KEY);
+    return hasTimeSlots || hasGiftCards;
   }
 
 }
