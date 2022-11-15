@@ -23,7 +23,7 @@ export class GiftsComponent implements OnInit {
     this.giftCards$ = this.facade.getGiftCards();
   }
 
-  public onGiftCardClick(value: IProduct): void {
+  public onGiftCardClick(value: IProduct | null): void {
     this.currentlyClickedCard = value;
   }
   

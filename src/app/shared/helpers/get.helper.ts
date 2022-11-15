@@ -1,4 +1,3 @@
-
 export const get = (obj: object, path: string, defaultValue?: any): any => {
   const result = String.prototype.split.call(path, /[,[\].]+?/)
     .filter(Boolean)

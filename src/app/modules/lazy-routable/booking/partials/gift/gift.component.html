@@ -1,4 +1,4 @@
-<div (click)="onGiftClick()" class="gift" [ngClass]="{'gift--selected': currentlyClicked}">
+<div (click)="onGiftClick($event)" class="gift" [ngClass]="{'gift--selected': currentlyClicked}">
 
   <div class="gift__img">
     <app-logo size="xs"></app-logo>
