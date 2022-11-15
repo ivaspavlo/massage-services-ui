@@ -1,4 +1,3 @@
-
 import { Directive, Inject, OnInit, OnDestroy, ViewContainerRef, TemplateRef, Input, ChangeDetectorRef } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
 import { distinctUntilChanged, map, startWith, takeUntil } from 'rxjs/operators';
