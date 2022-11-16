@@ -12,7 +12,8 @@
   </div>
 
   <div class="gift__confirm-overlay">
-    <app-button-primary title="{{'core.add-to-cart' | translate}}" filled="true"></app-button-primary>
+    <app-qty-selector></app-qty-selector>
+    <app-button-secondary (buttonSecondaryClick)="onAddClick()" title="{{'core.add-to-cart' | translate}}" filled="true"></app-button-secondary>
   </div>
 
 </div>
