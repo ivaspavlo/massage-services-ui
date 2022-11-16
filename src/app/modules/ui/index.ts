@@ -28,6 +28,7 @@ export * from './popover/popover.module';
 export * from './date-time-card/date-time-card.module';
 export * from './profile-form/profile-form.module';
 export * from './img-loader/img-loader.module';
+export * from './qty-selector/qty-selector.module';
 
 // app specific elements
 export * from './title/title.module';

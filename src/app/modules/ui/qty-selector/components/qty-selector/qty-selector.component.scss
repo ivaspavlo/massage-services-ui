@@ -1,0 +1,21 @@
+.qtySelector {
+  width: 100px;
+  height: 50px;
+  padding: 0 1rem;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  background-color: lightgray;
+  border-radius: 4px;
+  &--up-zero {
+    background-attachment: #fff;
+  }
+  &__number {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  &__btn {
+    
+  }
+}

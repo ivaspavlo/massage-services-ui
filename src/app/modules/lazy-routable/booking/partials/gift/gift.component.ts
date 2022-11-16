@@ -13,11 +13,16 @@ export class GiftComponent {
   @Input() gift: IProduct;
   @Input() currentlyClicked = false;
   @Output() giftClick: EventEmitter<IProduct> = new EventEmitter();
+  @Output() addGift: EventEmitter<IProduct> = new EventEmitter();
 
   public onGiftClick(event: Event): void {
     event.preventDefault();
     event.stopPropagation();
     this.giftClick.emit(this.gift);
+  }
+
+  public onAddClick(): void {
+    this.addGift.emit(this.gift);
   }
 
 }
