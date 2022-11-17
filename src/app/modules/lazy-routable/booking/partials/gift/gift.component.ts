@@ -15,6 +15,8 @@ export class GiftComponent {
   @Output() giftClick: EventEmitter<IProduct> = new EventEmitter();
   @Output() addGift: EventEmitter<IProduct> = new EventEmitter();
 
+  public currentQty = 0;
+
   public onGiftClick(event: Event): void {
     event.preventDefault();
     event.stopPropagation();

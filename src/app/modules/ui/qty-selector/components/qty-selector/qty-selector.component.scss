@@ -1,14 +1,22 @@
+:host {
+  --text-hover: #8AC343;
+  --text-main: #000;
+  --bg-main: lightgray;
+  --bg-up-zero: white;
+}
+
 .qtySelector {
   width: 100px;
   height: 50px;
-  padding: 0 1rem;
   font-size: 18px;
   display: flex;
   align-items: center;
-  background-color: lightgray;
   border-radius: 4px;
+  transition: .3s;
+  color: var(--text-main);
+  background-color: var(--bg-main);
   &--up-zero {
-    background-attachment: #fff;
+    background-color: var(--bg-up-zero);
   }
   &__number {
     display: flex;
@@ -16,6 +24,11 @@
     justify-content: center;
   }
   &__btn {
-    
+    padding: 1rem;
+    transition: .3s;
+    &:hover {
+      color: var(--text-hover);
+      transform: scale(1.3);
+    }
   }
 }

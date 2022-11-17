@@ -1,4 +1,4 @@
-<div class="qtySelector">
+<div class="qtySelector" [ngClass]="{'qtySelector--up-zero': qty > 0}">
   <a (click)="onChange(true)" class="qtySelector__btn">+</a>
   <p class="qtySelector__number">{{qty}}</p>
   <a (click)="onChange(false)" class="qtySelector__btn">-</a>
