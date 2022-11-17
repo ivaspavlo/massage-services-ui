@@ -1,9 +1,12 @@
-
 import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PasswordValidators } from '@app/shared/validators';
-import { ILoginFormValue } from '../interfaces';
 
+
+export interface ILoginFormValue {
+  login: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-login-form',

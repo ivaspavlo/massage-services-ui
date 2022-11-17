@@ -1,4 +1,3 @@
-// generic elements
 export * from './expansion-panel/expansion-panel.module';
 export * from './brand-signature/brand-signature.module';
 export * from './scroll-down/scroll-down.module';
@@ -29,8 +28,3 @@ export * from './date-time-card/date-time-card.module';
 export * from './profile-form/profile-form.module';
 export * from './img-loader/img-loader.module';
 export * from './qty-selector/qty-selector.module';
-
-// app specific elements
-export * from './title/title.module';
-export * from './logo/logo.module';
-export * from './login-form/login-form.module';

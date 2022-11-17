@@ -4,28 +4,28 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { CoreTranslationModule } from '@app/core/core-translation.module';
 import { SharedModule } from '@app/shared/shared.module';
-import { LogoModule, ButtonPrimaryModule, ButtonSecondaryModule, CheckboxModule, InputModule, LoginFormModule, ToastModule, ProfileFormModule } from '@app/modules/ui';
+import { ButtonPrimaryModule, ButtonSecondaryModule, CheckboxModule, InputModule, ToastModule, ProfileFormModule } from '@app/modules/ui';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { PAGES } from './pages';
+import { PARTIALS } from './partials';
 
 
 @NgModule({
   declarations: [
-    ...PAGES
+    ...PAGES,
+    ...PARTIALS
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
     AuthRoutingModule,
-    LoginFormModule,
     ButtonPrimaryModule,
     ButtonSecondaryModule,
     InputModule,
     CheckboxModule,
     ProfileFormModule,
-    LogoModule,
     ToastModule.forRoot(),
     CoreTranslationModule.forChild()
   ]
