@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CoreTranslationModule } from '@app/core/core-translation.module';
 import { SharedModule } from '@app/shared/shared.module';
-import { TitleModule, ExpansionPanelModule, LogoModule, PhoneAnimationModule, InputModule, ButtonPrimaryModule, HamburgerModule, LanguageBarModule, PopoverModule } from '@app/modules/ui';
+import { ExpansionPanelModule, PhoneAnimationModule, InputModule, ButtonPrimaryModule, HamburgerModule, LanguageBarModule, PopoverModule } from '@app/modules/ui';
 
 import { PARTIALS } from './partials';
 import { PIPES } from './pipes';
@@ -25,8 +25,6 @@ import { COMPONENTS } from './components';
     ReactiveFormsModule,
     SharedModule,
     ExpansionPanelModule,
-    TitleModule,
-    LogoModule,
     PhoneAnimationModule,
     InputModule,
     ButtonPrimaryModule,
