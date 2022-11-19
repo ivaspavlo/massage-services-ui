@@ -69,7 +69,7 @@ export class SelectDateModalComponent implements OnInit {
 
   public onConfirm(): void {
     const dateTimeEntries = Array.from(this.selectedSlots.entries());
-    const res = dateTimeEntries.map(([slotDate, timeSlots]: [IDateSlot, ITimeSlot[]]) => {
+    const res: IDateSlot[] = dateTimeEntries.map(([slotDate, timeSlots]: [IDateSlot, ITimeSlot[]]) => {
       return {
         date: slotDate.date,
         timeSlots

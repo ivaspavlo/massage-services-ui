@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { CART_GIFTS_KEY, CART_TIMESLOTS_KEY } from '@app/core/constants';
 import { CoreStorageService } from '@app/core/services/core-storage.service';
-import { IProduct, IBookingSlot, IDiscount, IService, IBookedSlot, IGiftSlot } from '@app/interfaces';
+import { IProduct, IBookingSlot, IDiscount, IService, IGiftSlot } from '@app/interfaces';
 
 
 const mockProducts = [
@@ -146,16 +146,23 @@ export class BookingService {
     return of(mockServices);
   }
 
-  public addBookingSlotsToCart(currValue: IBookedSlot[]): void {
-    const prevAddedSlots = this.storage.get(CART_TIMESLOTS_KEY) || [];
-    const sameProducts = prevAddedSlots.filter(addedVal => {
-      return currValue.some(newVal => newVal.productId === addedVal.productId);
-    });
+  public addBookingSlotsToCart(currValue: IBookingSlot): void {
+    debugger;
 
-    this.storage.set(
-      CART_TIMESLOTS_KEY,
-      [...prevAddedSlots, ...currValue]
-    );
+    const prevAddedSlots = this.storage.get(CART_TIMESLOTS_KEY) ?
+      JSON.parse(this.storage.get(CART_TIMESLOTS_KEY)) : [];
+
+    const addedProduct = prevAddedSlots.find(i => i.productId === currValue.productId);
+    if (!addedProduct) {
+      this.storage.set(
+        CART_TIMESLOTS_KEY,
+        JSON.stringify([...prevAddedSlots, currValue])
+      );
+      return;
+    }
+
+    
+
     if (this._isCartEmpty$.value) {
       this._isCartEmpty$.next(false);
     }
