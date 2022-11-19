@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { CART_GIFTS_KEY, CART_TIMESLOTS_KEY } from '@app/core/constants';
 import { CoreStorageService } from '@app/core/services/core-storage.service';
-import { IProduct, IBookingSlot, IDiscount, IService, IBookedSlot } from '@app/interfaces';
+import { IProduct, IBookingSlot, IDiscount, IService, IBookedSlot, IGiftSlot } from '@app/interfaces';
 
 
 const mockProducts = [
@@ -146,24 +146,33 @@ export class BookingService {
     return of(mockServices);
   }
 
-  public addBookingSlotsToCart(currValue: IBookedSlot[]): Observable<boolean> {
-    const prevValue = this.storage.get(CART_TIMESLOTS_KEY) || [];
+  public addBookingSlotsToCart(currValue: IBookedSlot[]): void {
+    const prevAddedSlots = this.storage.get(CART_TIMESLOTS_KEY) || [];
+    const sameProducts = prevAddedSlots.filter(addedVal => {
+      return currValue.some(newVal => newVal.productId === addedVal.productId);
+    });
+
     this.storage.set(
       CART_TIMESLOTS_KEY,
-      [...prevValue, ...currValue]
+      [...prevAddedSlots, ...currValue]
     );
-    this._isCartEmpty$.next(false);
-    return of(true);
+    if (this._isCartEmpty$.value) {
+      this._isCartEmpty$.next(false);
+    }
   }
 
-  public addGiftsToCart(currValue: any): Observable<boolean> {
-    const prevValue = this.storage.get(CART_GIFTS_KEY) || [];
-    this.storage.set(
-      CART_GIFTS_KEY,
-      [...prevValue, ...currValue]
-    );
-    this._isCartEmpty$.next(false);
-    return of(true);
+  public addGiftsToCart(currValue: IGiftSlot): void {
+    const prevAddedItems = this.storage.get(CART_GIFTS_KEY) || [];
+    const sameItem = prevAddedItems.find(i => i.id === currValue.id);
+    if (sameItem) {
+      sameItem.qty = sameItem.qty + currValue.qty;
+      this.storage.set(CART_GIFTS_KEY, prevAddedItems);
+    } else {
+      this.storage.set(CART_GIFTS_KEY, [...prevAddedItems, currValue]);
+    }
+    if (this._isCartEmpty$.value) {
+      this._isCartEmpty$.next(false);
+    }
   }
 
   public hasCartItems(): boolean {

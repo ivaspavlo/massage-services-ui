@@ -7,7 +7,8 @@
 
   <app-gift
     *ngFor="let giftCard of giftCards$ | async"
-    (giftClick)="onGiftCardClick($event)"
+    (addGift)="onAddGiftCard($event)"
+    (clickGift)="onClickGiftCard($event)"
     [currentlyClicked]="currentlyClickedCard === giftCard"
     [gift]="giftCard"
     clickOutside

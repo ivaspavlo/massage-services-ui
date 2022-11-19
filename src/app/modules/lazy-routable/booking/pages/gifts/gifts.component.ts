@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BookingFacade } from '../../booking.facade';
-import { IProduct } from '../../interfaces';
+import { IGiftSlot, IProduct } from '../../interfaces';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { IProduct } from '../../interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GiftsComponent implements OnInit {
-  
+
   public giftCards$: Observable<IProduct[]>;
   public currentlyClickedCard: IProduct;
 
@@ -23,8 +23,12 @@ export class GiftsComponent implements OnInit {
     this.giftCards$ = this.facade.getGiftCards();
   }
 
-  public onGiftCardClick(value: IProduct | null): void {
+  public onClickGiftCard(value: IProduct | null): void {
     this.currentlyClickedCard = value;
   }
-  
+
+  public onAddGiftCard(value: IGiftSlot): void {
+    this.facade.addGiftsToCart(value);
+  }
+
 }
