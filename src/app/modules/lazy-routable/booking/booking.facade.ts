@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { BookingService } from '@app/core/services';
-import { IProduct, IBookingSlot, IDatesGroup, IBookedSlot } from './interfaces';
+import { IProduct, IBookingSlot, IDatesGroup, IBookedSlot, IGiftSlot } from './interfaces';
 
 
 @Injectable()
@@ -33,11 +33,11 @@ export class BookingFacade {
     );
   }
 
-  public addBookingSlotsToCart(value: IBookedSlot[]): Observable<boolean> {
+  public addBookingSlotsToCart(value: IBookedSlot[]): void {
     return this.bookingService.addBookingSlotsToCart(value);
   }
 
-  public addGiftsToCart(value: IProduct): Observable<boolean> {
+  public addGiftsToCart(value: IGiftSlot): void {
     return this.bookingService.addGiftsToCart(value);
   }
 

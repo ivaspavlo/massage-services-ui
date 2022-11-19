@@ -13,11 +13,6 @@ export interface ITimeSlot {
   end: number;
 }
 
-export interface IBookingGift {
-  qty: number;
-  id: string;
-}
-
 export interface IDatesGroup {
   month: string;
   dates: { date: Date; timeSlots: ITimeSlot[] }[]

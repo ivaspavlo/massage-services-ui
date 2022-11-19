@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
-import { IProduct } from '../../interfaces';
+import { IGiftSlot, IProduct } from '../../interfaces';
 
 
 @Component({
@@ -12,19 +12,19 @@ export class GiftComponent {
 
   @Input() gift: IProduct;
   @Input() currentlyClicked = false;
-  @Output() giftClick: EventEmitter<IProduct> = new EventEmitter();
-  @Output() addGift: EventEmitter<IProduct> = new EventEmitter();
+  @Output() clickGift: EventEmitter<IProduct> = new EventEmitter();
+  @Output() addGift: EventEmitter<IGiftSlot> = new EventEmitter();
 
   public currentQty = 0;
 
   public onGiftClick(event: Event): void {
     event.preventDefault();
     event.stopPropagation();
-    this.giftClick.emit(this.gift);
+    this.clickGift.emit(this.gift);
   }
 
   public onAddClick(): void {
-    this.addGift.emit(this.gift);
+    this.addGift.emit({ id: this.gift.id, qty: this.currentQty });
   }
 
 }
