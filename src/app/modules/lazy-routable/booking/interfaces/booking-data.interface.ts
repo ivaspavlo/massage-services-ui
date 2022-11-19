@@ -18,12 +18,6 @@ export interface IDatesGroup {
   dates: { date: Date; timeSlots: ITimeSlot[] }[]
 }
 
-export interface IBookedSlot {
-  productId: string;
-  date: string;
-  timeSlots: ITimeSlot[];
-}
-
 export interface IGiftSlot {
   id: string;
   qty: number;

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { BookingService } from '@app/core/services';
-import { IProduct, IBookingSlot, IDatesGroup, IBookedSlot, IGiftSlot } from './interfaces';
+import { IProduct, IBookingSlot, IDatesGroup, IGiftSlot } from './interfaces';
 
 
 @Injectable()
@@ -33,7 +33,7 @@ export class BookingFacade {
     );
   }
 
-  public addBookingSlotsToCart(value: IBookedSlot[]): void {
+  public addBookingSlotsToCart(value: IBookingSlot): void {
     return this.bookingService.addBookingSlotsToCart(value);
   }
 
