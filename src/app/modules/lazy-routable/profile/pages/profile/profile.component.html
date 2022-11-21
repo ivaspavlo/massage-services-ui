@@ -1,0 +1,28 @@
+<section class="profile">
+
+  <header class="profile__header">
+    <figure class="profile__avatar">
+      <img src="" alt="User Avatar">
+    </figure>
+    <div>
+
+    </div>
+  </header>
+
+  <div class="profile__upcoming">
+    <h3>{{'user.upcomming' | translate}}</h3>
+
+  </div>
+
+  <div class="profile__content">
+    <h3>{{'user.booking-history' | translate}}</h3>
+    
+  </div>
+
+</section>
+
+<ng-template #noItems>
+  <h2 class="profile__no-items">
+    <p>{{ 'core.no-data' | translate }}</p>
+  </h2>
+</ng-template>

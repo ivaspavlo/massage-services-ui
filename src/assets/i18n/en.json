@@ -208,6 +208,8 @@
     }
   },
   "user": {
+    "upcomming": "Upcoming massage session",
+    
     "button": {
       "profile": "Profile",
       "booking": "Bookings",
