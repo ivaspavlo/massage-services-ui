@@ -1,6 +1,5 @@
-
 import { Routes } from '@angular/router';
-import { ProfileContainerComponent } from '../pages/profile-container/profile-container.component';
+import { ProfileComponent } from '../pages/profile/profile.component';
 
 
 export enum PROFILE_ROUTE_NAMES {
@@ -10,6 +9,6 @@ export enum PROFILE_ROUTE_NAMES {
 export const PROFILE_ROUTES: Routes = [
   {
     path: PROFILE_ROUTE_NAMES.BLANK,
-    component: ProfileContainerComponent
+    component: ProfileComponent
   }
 ];

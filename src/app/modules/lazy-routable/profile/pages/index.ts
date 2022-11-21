@@ -1,7 +1,6 @@
-
-import { ProfileContainerComponent } from './profile-container/profile-container.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 export const PAGES = [
-  ProfileContainerComponent
+  ProfileComponent
 ];

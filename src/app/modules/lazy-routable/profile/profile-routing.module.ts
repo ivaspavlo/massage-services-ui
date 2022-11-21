@@ -1,7 +1,5 @@
-
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
 import { PROFILE_ROUTES } from './constants/profile-routes.constant';
 
 
