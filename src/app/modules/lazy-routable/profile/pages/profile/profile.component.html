@@ -2,16 +2,20 @@
 
   <header class="profile__header">
     <figure class="profile__avatar">
-      <img src="" alt="User Avatar">
+      <img src="/assets/img/png/mock-avatar.png" alt="User Avatar">
     </figure>
-    <div>
-
+    <div *ngIf="(userProfile$ | async) as userProfile">
+      <p>{{userProfile.firstName}}</p>
+      <p>{{userProfile.lastName}}</p>
+      <p>{{userProfile.birthDate}}</p>
+      <p>{{userProfile.email}}</p>
+      <p>{{userProfile.phoneNumber}}</p>
     </div>
   </header>
 
   <div class="profile__upcoming">
     <h3>{{'user.upcomming' | translate}}</h3>
-
+    
   </div>
 
   <div class="profile__content">

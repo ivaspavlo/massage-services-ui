@@ -8,6 +8,4 @@ export * from '@app/modules/ui/language-bar/interfaces';
 export * from '@app/modules/ui/profile-form/interfaces';
 export * from '@app/modules/smart-partials/header/interfaces';
 export * from '@app/modules/lazy-routable/booking/interfaces';
-
-// common
-export * from './user.interface';
+export * from '@app/modules/lazy-routable/profile/interfaces';
