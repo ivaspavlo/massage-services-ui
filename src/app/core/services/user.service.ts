@@ -1,7 +1,85 @@
 import { Injectable } from '@angular/core';
-import { IUserProfile } from '@app/interfaces';
+import { IBookingSlot, IUserProfile } from '@app/interfaces';
 import { of, Observable } from 'rxjs';
 
+
+const bookedSlots = [
+  {
+    productId: '1',
+    dates: [
+      {
+        date: 'Fri Nov 11 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }, {
+        date: 'Fri Nov 12 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }, {
+        date: 'Fri Nov 13 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }, {
+        date: 'Fri Oct 14 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }
+    ]
+  }, {
+    productId: '2',
+    dates: [
+      {
+        date: 'Fri Nov 15 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }, {
+        date: 'Fri Nov 12 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }, {
+        date: 'Fri Nov 13 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }, {
+        date: 'Fri Oct 11 2022',
+        timeSlots: [
+          { start: 12, end: 13 },
+          { start: 14, end: 15 },
+          { start: 16, end: 17 },
+          { start: 18, end: 19 }
+        ]
+      }
+    ]
+  }
+];
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +98,8 @@ export class UserService {
     });
   }
 
-  public getBookedData(): Observable<any> {
-    return of();
+  public getBookedData(userId: string): Observable<IBookingSlot[]> {
+    return of(bookedSlots);
   }
 
 }
