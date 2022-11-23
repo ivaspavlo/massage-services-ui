@@ -147,7 +147,6 @@ export class BookingService {
   }
 
   public addBookingSlotsToCart(currValue: IBookingSlot): void {
-    debugger;
 
     const prevAddedSlots = this.storage.get(CART_TIMESLOTS_KEY) ?
       JSON.parse(this.storage.get(CART_TIMESLOTS_KEY)) : [];

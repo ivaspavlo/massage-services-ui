@@ -1,9 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { IUser } from '@app/interfaces';
 import { BookingService, CoreTranslateService } from '@app/core/services';
 import { SupportedLang } from '@app/core/constants';
+import { IUserProfile } from '@app/interfaces';
 
 import { MAIN_MENU_ITEMS, USER_MENU_ITEMS } from '../../constants';
 import { IDiscount, IHeaderDropdownMenu, IService } from '../../interfaces';
@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
   public isCartEmpty$: Observable<boolean>;
 
   public isOpen = false;
-  public set user(value: IUser) {
+  public set user(value: IUserProfile) {
     this._user = value;
     this.mobileMenuItems = this.getMobileItems();
   };
@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
     return this._user;
   }
 
-  private _user: IUser = null;
+  private _user: IUserProfile = null;
   
   constructor(
     private translateService: CoreTranslateService,
