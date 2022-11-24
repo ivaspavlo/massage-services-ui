@@ -45,7 +45,7 @@ export class BookingFacade {
 
   private groupDatesByMonth(value: IBookingSlot): IDatesGroup[] {
     const groupedByMonthObj = value.dates.reduce((acc, curr) => {
-      const item = { ...curr, date: new Date(curr.date) };
+      const item = { ...curr, date: curr.date };
       const month = this.datePipe.transform(item.date, 'LLLL');
       if (acc[month]) {
         acc[month].push(item);
