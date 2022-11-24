@@ -15,7 +15,7 @@ export interface ITimeSlot {
 
 export interface IDatesGroup {
   month: string;
-  dates: { date: Date; timeSlots: ITimeSlot[] }[]
+  dates: IDateSlot[]
 }
 
 export interface IGiftSlot {

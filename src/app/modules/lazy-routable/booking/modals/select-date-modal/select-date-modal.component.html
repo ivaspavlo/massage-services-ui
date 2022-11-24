@@ -53,7 +53,7 @@
                       'dates__slot--has-focus': dateObj === currentDate,
                       'dates__slot--active': selectedSlots.has(dateObj)}"
                     class="dates__slot"
-                  >{{ dateObj.date | date:'d' }}</li>
+                  >{{ dateObj.date | dateFromString | date:'d' }}</li>
                 </ul>
               </div>
             </ng-container>
