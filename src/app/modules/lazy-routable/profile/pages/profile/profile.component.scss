@@ -1,0 +1,48 @@
+@import 'mixins/_all';
+@import '_core-colors';
+
+.profile {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  &::before {
+    @include bg();
+    background-image: url('/assets/img/png/abstract-grey-bg.png');
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    content: '';
+  }
+  &__scroll-wrap {
+    position: absolute; top: 0;
+    width: 100%;
+  }
+}
+
+.profile-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.profile-content {
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(145, 209, 199, 0.7);
+  &__avatar {
+    width: 150px;
+    height: 150px;
+    border: 1px solid grey;
+    box-shadow: 0px 1px 7px 1px rgba(255,255,255,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  
+}
