@@ -1,28 +1,54 @@
+<app-header shrinked="true" class="profile-header"></app-header>
+
 <section class="profile">
+  <div class="profile__scroll-wrap">
 
-  <header class="profile__header">
-    <figure class="profile__avatar">
-      <img src="/assets/img/png/mock-avatar.png" alt="User Avatar">
-    </figure>
-    <div *ngIf="(userProfile$ | async) as userProfile">
-      <p>{{userProfile.firstName}}</p>
-      <p>{{userProfile.lastName}}</p>
-      <p>{{userProfile.birthDate}}</p>
-      <p>{{userProfile.email}}</p>
-      <p>{{userProfile.phoneNumber}}</p>
+    <header class="profile-content">
+
+      <div class="width-100 max-width-992 d-flex flex-column flex-lg-row">
+
+        <figure class="profile-content__avatar">
+          <img src="/assets/img/png/mock-avatar.png" alt="Profile Image" class="height-100">
+        </figure>
+
+        <div *ngIf="(userProfile$ | async) as userProfile" class="px-rem-2 py-rem-1 d-flex flex-column flex-lg-row flex-grow-1">
+          <div class="width-50 d-flex flex-column">
+            <p class="my-rem-1">
+              <span class="mr-rem-1">Name:</span>
+              <span>{{userProfile.firstName}} {{userProfile.lastName}}</span>
+            </p>
+            <p class="my-rem-1">
+              <span class="mr-rem-1">Birthday:</span>
+              <span>{{userProfile.birthDate}}</span>
+            </p>
+          </div>
+          <div class="width-50 d-flex flex-column">
+            <p class="my-rem-1">
+              <span class="mr-rem-1">Email:</span>
+              <span>{{userProfile.email}}</span>
+            </p>
+            <p class="my-rem-1">
+              <span class="mr-rem-1">Phone:</span>
+              <span>{{userProfile.phoneNumber}}</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </header>
+
+    <div class="profile__upcoming">
+      <h3>{{'user.booking-upcomming' | translate}}</h3>
+      
     </div>
-  </header>
+  
+    <div class="profile__content">
+      <h3>{{'user.booking-history' | translate}}</h3>
+      
+    </div>
 
-  <div class="profile__upcoming">
-    <h3>{{'user.upcomming' | translate}}</h3>
-    
   </div>
-
-  <div class="profile__content">
-    <h3>{{'user.booking-history' | translate}}</h3>
-    
-  </div>
-
 </section>
 
 <ng-template #noItems>
