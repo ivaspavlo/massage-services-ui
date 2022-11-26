@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CoreTranslationModule } from '@app/core/core-translation.module';
 import { HeaderModule, FooterModule } from '@app/modules/smart-partials';
-import { ButtonSecondaryModule, DateTimeCardModule, ImgLoaderModule, ProfileFormModule } from '@app/modules/ui';
+import { ButtonSecondaryModule, DatePickerModule, DateTimeCardModule, ImgLoaderModule, ProfileFormModule } from '@app/modules/ui';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { PAGES } from './pages';
@@ -22,6 +22,7 @@ import { PAGES } from './pages';
     DateTimeCardModule,
     ProfileFormModule,
     ImgLoaderModule,
+    DatePickerModule,
     CoreTranslationModule.forChild()
   ]
 })

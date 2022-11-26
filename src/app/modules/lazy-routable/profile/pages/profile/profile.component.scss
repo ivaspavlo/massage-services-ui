@@ -15,6 +15,19 @@
     display: flex;
     content: '';
   }
+  &__title {
+    width: 100%;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    font-size: 50px;
+    text-align: center;
+    color: $white;
+    background-color: $primary-900;
+    text-shadow: 1px 1px 2px rgb(0 0 0 / 60%);
+    @include lg {
+      padding: 2rem 1rem;
+    }
+  }
   &__scroll-wrap {
     position: absolute; top: 0;
     width: 100%;
@@ -29,20 +42,82 @@
 }
 
 .profile-content {
+  width: 100%;
+  max-width: 992px;
   padding: 3rem 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  background-color: rgba(145, 209, 199, 0.7);
+  align-items: center;
+  position: relative;
+  background-color: rgba(145, 209, 199, 0.8);
+  @include sm {
+    flex-direction: row;
+    border-radius: 4px;
+  }
   &__avatar {
-    width: 150px;
-    height: 150px;
-    border: 1px solid grey;
-    box-shadow: 0px 1px 7px 1px rgba(255,255,255,.5);
+    width: 200px;
+    margin: 0 0 16px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    border-radius: 4px;
+    flex-shrink: 0;
+    img {
+      border: 1px solid grey;
+      box-shadow: 0px 1px 4px 1px rgb(0 0 0 / 50%);
+      display: flex;
+      border-radius: 4px;
+    }
+    @include sm {
+      margin: 0 16px 0 0;
+    }
+    @include lg {
+      width: 150px;
+    }
   }
-  
+  &__edit-button {
+    @include bg();
+    background-image: url('/assets/img/svg/edit.svg');
+    position: absolute; bottom: 8px; right: 8px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    cursor: pointer;
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+
+.data-item {
+  width: 100%;
+  padding: 0 8px 4px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  color: $white;
+  @include lg {
+    width: 50%;
+  }
+  &__title {
+    padding: 4px 0;
+    margin-right: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: $primary-900;
+  }
+  &__input {
+    padding: 4px 0;
+    border: 0;
+    font-size: 16px;
+    display: flex;
+    flex-grow: 1;
+    color: $white;
+    border-bottom: 1px solid $white;
+    caret-color: $white;
+    background-color: transparent;
+    &--has-error {
+      border-bottom: 1px solid $warn-500;
+    }
+  }
 }

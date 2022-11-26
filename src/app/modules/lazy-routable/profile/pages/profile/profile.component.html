@@ -1,50 +1,52 @@
 <app-header shrinked="true" class="profile-header"></app-header>
 
 <section class="profile">
+
   <div class="profile__scroll-wrap">
 
-    <header class="profile-content">
+    <h1 class="profile__title">{{'user.page-title' | translate}}</h1>
 
-      <div class="width-100 max-width-992 d-flex flex-column align-items-center flex-lg-row">
+    <div class="d-flex justify-content-center">
+      <div class="profile-content">
 
         <figure class="profile-content__avatar">
-          <img src="/assets/img/png/mock-avatar.png" alt="Profile Image" class="height-100">
+          <img src="/assets/img/png/mock-avatar.png" alt="Profile Image" class="width-100">
         </figure>
-
-        <div *ngIf="(userProfile$ | async) as userProfile" class="px-rem-2 d-flex flex-wrap flex-grow-1">
-          <p class="width-50 d-flex align-items-center">
-            <span class="mr-rem-1">Name:</span>
+  
+        <div *ngIf="(userProfile$ | async) as userProfile" class="d-flex flex-column flex-lg-row flex-wrap flex-grow-1">
+          <p class="data-item">
+            <span class="data-item__title">Name:</span>
             <span>{{userProfile.firstName}} {{userProfile.lastName}}</span>
           </p>
-          <p class="width-50 d-flex align-items-center">
-            <span class="mr-rem-1">Birthday:</span>
+          <p class="data-item">
+            <span class="data-item__title">Birthday:</span>
             <span>{{userProfile.birthDate}}</span>
           </p>
-          <p class="width-50 d-flex align-items-center">
-            <span class="mr-rem-1">Email:</span>
+          <p class="data-item">
+            <span class="data-item__title">Email:</span>
             <span>{{userProfile.email}}</span>
           </p>
-          <p class="width-50 d-flex align-items-center">
-            <span class="mr-rem-1">Phone:</span>
+          <p class="data-item">
+            <span class="data-item__title">Phone:</span>
             <span>{{userProfile.phoneNumber}}</span>
           </p>
         </div>
 
+        <a (click)="toggleEditMode()" class="profile-content__edit-button"></a>
+  
       </div>
+    </div>
 
-    </header>
-
-    <div class="profile__upcoming">
+    <!-- <div class="profile__upcoming">
       <h3>{{'user.booking-upcomming' | translate}}</h3>
-      
     </div>
   
     <div class="profile__content">
       <h3>{{'user.booking-history' | translate}}</h3>
-      
-    </div>
+    </div> -->
 
   </div>
+
 </section>
 
 <ng-template #noItems>

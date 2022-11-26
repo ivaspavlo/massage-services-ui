@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { UserService } from '@app/core/services';
 import { Observable } from 'rxjs';
 import { IUserProfile } from '../../interfaces/user-profile.interface';
@@ -13,6 +14,8 @@ import { IUserProfile } from '../../interfaces/user-profile.interface';
 export class ProfileComponent implements OnInit {
 
   public userProfile$: Observable<IUserProfile>;
+  public profileForm: FormGroup;
+  public isEditMode = false;
 
   constructor(
     private userService: UserService
@@ -20,6 +23,10 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.userProfile$ = this.userService.getUserProfileData();
+  }
+
+  public toggleEditMode(): void {
+    this.isEditMode = !this.isEditMode;
   }
 
 }
