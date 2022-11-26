@@ -14,18 +14,18 @@ import { IProfileFormValue } from '../interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProfileFormComponent implements OnInit {
-  
+
   @Output() buttonClick: EventEmitter<IProfileFormValue> = new EventEmitter();
-  
+
   @Input() initValue: IProfileFormValue;
   @Input() title: string;
   @Input() set disabled(value: boolean) {
     this.isDisabled = value;
     this.toggleDisableForm(value);
   };
-  
+
   get isEditMode(): boolean { return !!this.initValue; }
-  
+
   public form: FormGroup;
   public errorMessages = ErrorMessages;
   private isDisabled = false;
