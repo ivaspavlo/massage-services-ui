@@ -208,6 +208,7 @@
     }
   },
   "user": {
+    "page-title": "My Profile",
     "booking-upcomming": "Upcoming massage session",
     "booking-history": "Reservation history",
     "button": {
