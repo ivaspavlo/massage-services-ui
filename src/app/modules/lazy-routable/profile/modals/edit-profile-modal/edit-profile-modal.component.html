@@ -1,3 +1,5 @@
 <app-dialog-content>
-  <app-profile-form title="Edit form"></app-profile-form>
+  <div class="p-rem-2 bg-white b-radius-4">
+    <app-profile-form [initValue]="userProfile$ | async" title="Edit form" class="bg-white"></app-profile-form>
+  </div>
 </app-dialog-content>

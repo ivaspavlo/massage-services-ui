@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit {
   }
 
   public toggleEditMode(): void {
-    this.dialogService.open(EditProfileModalComponent);
+    this.dialogService.open(EditProfileModalComponent, this.userProfile$);
   }
 
 }
