@@ -1,4 +1,3 @@
-
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { DialogRef } from '@app/modules/ui/dialog';
 import { DIALOG_SIZES } from '@app/core/constants';

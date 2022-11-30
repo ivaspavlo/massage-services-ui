@@ -44,7 +44,7 @@
 .profile-content {
   width: 100%;
   max-width: 992px;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,6 +53,8 @@
   background-color: rgba(145, 209, 199, 0.8);
   @include sm {
     flex-direction: row;
+  }
+  @include lg {
     border-radius: 4px;
   }
   &__avatar {
