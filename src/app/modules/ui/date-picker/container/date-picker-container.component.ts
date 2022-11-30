@@ -58,14 +58,15 @@ export class DatePickerContainerComponent {
   public registerOnTouched(fn): void {
     this.onTouched = fn;
   }
-  public writeValue(value: Date): void {
+  public writeValue(value: string): void {
     if (!value) {
       return;
     }
+    debugger;
     this.model = {
       isRange: this.dpOptions.dateRange,
       singleDate: {
-        jsDate: value
+        jsDate: new Date(value)
       }
     }
   }

@@ -1,7 +1,7 @@
 <form [formGroup]="form" markTouched class="profile-form d-flex flex-column">
   
-  <app-input [formControl]="form.get('name')" controlName="name" label="{{ 'profile-form.name.label' | translate }}" placeholder="{{ 'profile-form.name.plh' | translate }}" [errorsMap]="errorMessages"></app-input>
-  <app-input [formControl]="form.get('surname')" controlName="surname" label="{{ 'profile-form.surname.label' | translate }}" placeholder="{{ 'profile-form.surname.plh' | translate }}" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('firstName')" controlName="firstName" label="{{ 'profile-form.name.label' | translate }}" placeholder="{{ 'profile-form.name.plh' | translate }}" [errorsMap]="errorMessages"></app-input>
+  <app-input [formControl]="form.get('lastName')" controlName="lastName" label="{{ 'profile-form.surname.label' | translate }}" placeholder="{{ 'profile-form.surname.plh' | translate }}" [errorsMap]="errorMessages"></app-input>
   <app-date-picker [formControl]="form.get('birthDate')" label="{{ 'profile-form.birthday.label' | translate }}" placeholder="{{ 'profile-form.birthday.plh' | translate }}" controlName="birthDate" [errorsMap]="errorMessages"></app-date-picker>
   <app-input [formControl]="form.get('email')" controlName="email" label="{{ 'profile-form.email.label' | translate }}" placeholder="{{ 'profile-form.email.plh' | translate }}" type="email" [errorsMap]="errorMessages"></app-input>
   <app-input [formControl]="form.get('phoneNumber')" controlName="phoneNumber" label="{{ 'profile-form.phone.label' | translate }}" placeholder="{{ 'profile-form.phone.plh' | translate }}" type="phone" [errorsMap]="errorMessages"></app-input>

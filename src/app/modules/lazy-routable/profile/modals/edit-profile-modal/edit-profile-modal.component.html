@@ -1,5 +1,7 @@
-<app-dialog-content>
-  <div class="p-rem-2 bg-white b-radius-4">
-    <app-profile-form [initValue]="userProfile$ | async" title="Edit form" class="bg-white"></app-profile-form>
+<app-dialog-content size="sm">
+  <div class="edit-modal">
+    <app-profile-form [initValue]="userProfile$ | async" title="Edit form" class="bg-white">
+      <app-button-primary title="{{ 'user.save-changes' | translate }}" class="mt-rem-1 mb-rem-1"></app-button-primary>
+    </app-profile-form>
   </div>
 </app-dialog-content>

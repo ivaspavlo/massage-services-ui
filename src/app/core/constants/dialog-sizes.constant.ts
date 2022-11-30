@@ -1,4 +1,3 @@
-
 export const DIALOG_SIZES = {
   auto: 'auto',
   xs: '440px',

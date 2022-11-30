@@ -3,8 +3,8 @@ import { DateValidators, PasswordValidators } from '@app/shared/validators';
 
 
 export const ProfileFormSettings = [
-  { name: 'name', validators: [Validators.required] },
-  { name: 'surname', validators: [Validators.required] },
+  { name: 'firstName', validators: [Validators.required] },
+  { name: 'lastName', validators: [Validators.required] },
   { name: 'birthDate', validators: [Validators.required, DateValidators.birthDate] },
   { name: 'email', validators: [Validators.required, Validators.email] },
   { name: 'phoneNumber', validators: [Validators.required, Validators.minLength(12)] },
