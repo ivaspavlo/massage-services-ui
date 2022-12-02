@@ -209,6 +209,7 @@
   },
   "user": {
     "page-title": "My Profile",
+    "edit-modal": "Edit profile",
     "booking-upcomming": "Upcoming massage session",
     "booking-history": "Reservation history",
     "save-changes": "Save changes",

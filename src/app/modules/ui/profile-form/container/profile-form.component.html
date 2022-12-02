@@ -1,5 +1,7 @@
+<h3 class="font-32 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">{{title}}</h3>
+
 <form [formGroup]="form" markTouched class="profile-form d-flex flex-column">
-  
+
   <app-input [formControl]="form.get('firstName')" controlName="firstName" label="{{ 'profile-form.name.label' | translate }}" placeholder="{{ 'profile-form.name.plh' | translate }}" [errorsMap]="errorMessages"></app-input>
   <app-input [formControl]="form.get('lastName')" controlName="lastName" label="{{ 'profile-form.surname.label' | translate }}" placeholder="{{ 'profile-form.surname.plh' | translate }}" [errorsMap]="errorMessages"></app-input>
   <app-date-picker [formControl]="form.get('birthDate')" label="{{ 'profile-form.birthday.label' | translate }}" placeholder="{{ 'profile-form.birthday.plh' | translate }}" controlName="birthDate" [errorsMap]="errorMessages"></app-date-picker>
@@ -18,11 +20,11 @@
       </p>
     </div>
   </ng-container>
-  
-  <footer [ngClass]="isEditMode ? 'justify-content-start' : 'justify-content-center'" class="d-flex">
+
+  <footer ngClass="justify-content-center" class="d-flex">
     <div (click)="this.buttonClick.emit(this.form.value)">
-      <ng-content></ng-content>
+      <app-button-primary [title]="buttonTitle" [invalid]="!form.valid" class="mt-rem-1 mb-rem-2"></app-button-primary>
     </div>
   </footer>
-  
+
 </form>
