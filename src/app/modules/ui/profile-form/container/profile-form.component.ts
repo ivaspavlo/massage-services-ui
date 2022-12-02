@@ -19,6 +19,7 @@ export class ProfileFormComponent implements OnInit {
 
   @Input() initValue: IProfileFormValue;
   @Input() title: string;
+  @Input() buttonTitle: string;
   @Input() set disabled(value: boolean) {
     this.isDisabled = value;
     this.toggleDisableForm(value);

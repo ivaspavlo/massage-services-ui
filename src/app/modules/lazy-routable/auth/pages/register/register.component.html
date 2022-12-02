@@ -1,14 +1,10 @@
 <section class="py-rem-2">
   
-  <h3 class="font-32 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">{{ "auth.register" | translate }}</h3>
-  
-  <app-profile-form title="Register" (submit)="onSubmit($event)">
-    <app-button-primary title="{{ 'auth.register' | translate }}" class="mt-rem-2 mb-rem-3"></app-button-primary>
-  </app-profile-form>
+  <app-profile-form title="{{'auth.register' | translate}}" buttonTitle="{{'auth.register' | translate}}" (submit)="onSubmit($event)"></app-profile-form>
   
   <div class="width-100 px-rem-1 d-flex justify-content-center">
     <p class="font-14">
-      <span>{{ "auth.already-registered" | translate }}?</span>
+      <span>{{'auth.already-registered' | translate}}?</span>
       <a routerLink="/auth/login" class="ml-rem-0_5 color-accent-500 hover-opacity text-decoration-underline">{{ "auth.go-to-login" | translate }}</a>
     </p>
   </div>
