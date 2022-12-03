@@ -1,10 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { UserService } from '@app/core/services';
 import { DialogService } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
 import { IUserProfile } from '../../interfaces/user-profile.interface';
 import { EditProfileModalComponent } from '../../modals/edit-profile-modal/edit-profile-modal.component';
+import { ProfileFacade } from '../../profile.facade';
 
 
 @Component({
@@ -19,12 +19,12 @@ export class ProfileComponent implements OnInit {
   public profileForm: FormGroup;
 
   constructor(
-    private userService: UserService,
+    private profileFacade: ProfileFacade,
     private dialogService: DialogService
   ) { }
 
   ngOnInit(): void {
-    this.userProfile$ = this.userService.getUserProfileData();
+    this.userProfile$ = this.profileFacade.getProfileData();
   }
 
   public toggleEditMode(): void {
