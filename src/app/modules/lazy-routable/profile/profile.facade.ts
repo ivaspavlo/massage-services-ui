@@ -7,7 +7,7 @@ import { IUserProfile } from './interfaces';
 
 @Injectable()
 export class ProfileFacade {
-  
+
   constructor(
     private userService: UserService
   ) { }
