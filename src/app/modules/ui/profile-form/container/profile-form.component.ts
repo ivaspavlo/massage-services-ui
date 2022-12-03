@@ -1,8 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
 import { ErrorMessages } from '@app/core/constants';
-
 import { ProfileFormRegister, ProfileFormEdit } from '../constants';
 import { IProfileFormValue } from '../interfaces';
 

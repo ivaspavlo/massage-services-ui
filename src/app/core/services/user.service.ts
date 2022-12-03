@@ -3,7 +3,7 @@ import { IBookingSlot, IUserProfile } from '@app/interfaces';
 import { of, Observable } from 'rxjs';
 
 
-const bookedSlots = [
+const mockBookedSlots = [
   {
     productId: '1',
     dates: [
@@ -81,6 +81,14 @@ const bookedSlots = [
   }
 ];
 
+const mockUserProfile = {
+  firstName: 'Deaddy',
+  lastName: 'Poolovich',
+  email: 'deaddy_poolovich@ggg.com',
+  phoneNumber: 'some number',
+  birthDate: 'Tue Nov 22 2022 19:22:42'
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -89,17 +97,11 @@ export class UserService {
   constructor() { }
 
   public getUserProfileData(): Observable<IUserProfile> {
-    return of({
-      firstName: 'Deaddy',
-      lastName: 'Poolovich',
-      email: 'deaddy_poolovich@ggg.com',
-      phoneNumber: 'some number',
-      birthDate: 'Tue Nov 22 2022 19:22:42'
-    });
+    return of(mockUserProfile);
   }
 
   public getBookedData(): Observable<IBookingSlot[]> {
-    return of(bookedSlots);
+    return of(mockBookedSlots);
   }
 
 }
