@@ -4,4 +4,6 @@ export interface IUserProfile {
   email: string;
   phoneNumber: string;
   birthDate: string;
+  password?: string;
+  confirmPassword?: string;
 }

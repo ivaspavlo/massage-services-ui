@@ -9,6 +9,7 @@ import { ButtonPrimaryModule, ButtonSecondaryModule, DatePickerModule, DateTimeC
 import { ProfileRoutingModule } from './profile-routing.module';
 import { PAGES } from './pages';
 import { MODALS } from './modals';
+import { ProfileFacade } from './profile.facade';
 
 
 @NgModule({
@@ -30,6 +31,9 @@ import { MODALS } from './modals';
     DatePickerModule,
     DialogModule,
     CoreTranslationModule.forChild()
+  ],
+  providers: [
+    ProfileFacade
   ]
 })
 export class ProfileModule { }

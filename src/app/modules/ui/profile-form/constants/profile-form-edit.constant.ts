@@ -1,14 +1,21 @@
 import { FormControl } from '@angular/forms';
 import { IProfileFormValue } from '../interfaces';
-import { ProfileFormSettings } from './profile-form-settings.constant';
+import { Validators } from '@angular/forms';
+import { DateValidators, PasswordValidators } from '@app/shared/validators';
 
-const excludeFields = ['password', 'confirmPassword', 'consent'];
+const formSettings = [
+  { name: 'firstName', validators: [Validators.required] },
+  { name: 'lastName', validators: [Validators.required] },
+  { name: 'birthDate', validators: [Validators.required, DateValidators.birthDate] },
+  { name: 'email', validators: [Validators.required, Validators.email] },
+  { name: 'phoneNumber', validators: [Validators.required, Validators.minLength(12)] },
+  { name: 'password', validators: [PasswordValidators.default] },
+  { name: 'confirmPassword', validators: [PasswordValidators.default, PasswordValidators.passwordsEqual()] }
+];
 
 export class ProfileFormEdit {
   constructor(initValue: IProfileFormValue | null) {
-    ProfileFormSettings
-      .filter(ctrl => !excludeFields.includes(ctrl.name))
-      .forEach(ctrl => {
+    formSettings.forEach(ctrl => {
         this[ctrl.name] = new FormControl(
           { value: initValue && initValue[ctrl.name] ? initValue[ctrl.name] : '', disabled: true },
           ctrl.validators

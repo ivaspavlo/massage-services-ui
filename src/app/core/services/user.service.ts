@@ -98,7 +98,7 @@ export class UserService {
     });
   }
 
-  public getBookedData(userId: string): Observable<IBookingSlot[]> {
+  public getBookedData(): Observable<IBookingSlot[]> {
     return of(bookedSlots);
   }
 
