@@ -6,10 +6,11 @@
 
     <h1 class="profile__title">{{'user.page-title' | translate}}</h1>
 
-    <div class="d-flex justify-content-center">
-      <div class="profile-content">
+    <div class="width-100 max-width-992 d-flex flex-column align-center">
 
-        <figure class="profile-content__avatar">
+      <div class="user-data">
+
+        <figure class="user-data__avatar">
           <img src="/assets/img/png/mock-avatar.png" alt="Profile Image" class="width-100">
         </figure>
   
@@ -32,18 +33,25 @@
           </p>
         </div>
 
-        <a (click)="toggleEditMode()" class="profile-content__edit-button"></a>
+        <a (click)="toggleEditMode()" class="user-data__edit-button"></a>
   
       </div>
-    </div>
 
-    <!-- <div class="profile__upcoming">
-      <h3>{{'user.booking-upcomming' | translate}}</h3>
+      <div class="booked">
+        <h3 class="font-28 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">{{'user.booking-upcomming' | translate}}</h3>
+      </div>
+    
+      <div class="booked">
+        <h3 class="font-28 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">{{'user.booking-history' | translate}}</h3>
+        <div class="width-100 b-radius-4 overflow-hidden">
+          <div *ngFor="let item of (bookedData$ | async); let index = index;" app-table-row [ngClass]="{'app-row--even': index%2}" class="app-row">
+            <div app-table-data [data]="{ width: 50 }"><span class="px-rem-1">test1</span></div>
+            <div app-table-data [data]="{ width: 50 }"><span class="px-rem-1">test2</span></div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  
-    <div class="profile__content">
-      <h3>{{'user.booking-history' | translate}}</h3>
-    </div> -->
 
   </div>
 

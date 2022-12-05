@@ -16,6 +16,7 @@ import { ProfileFacade } from '../../profile.facade';
 export class ProfileComponent implements OnInit {
 
   public userProfile$: Observable<IUserProfile>;
+  public bookedData$: Observable<any>;
   public profileForm: FormGroup;
 
   constructor(
@@ -25,6 +26,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.userProfile$ = this.profileFacade.getProfileData();
+    this.bookedData$ = this.profileFacade.getBookingData();
   }
 
   public toggleEditMode(): void {

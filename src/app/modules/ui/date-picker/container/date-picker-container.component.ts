@@ -62,7 +62,6 @@ export class DatePickerContainerComponent {
     if (!value) {
       return;
     }
-    debugger;
     this.model = {
       isRange: this.dpOptions.dateRange,
       singleDate: {

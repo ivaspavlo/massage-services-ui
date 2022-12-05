@@ -10,6 +10,7 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { PAGES } from './pages';
 import { MODALS } from './modals';
 import { ProfileFacade } from './profile.facade';
+import { TableModule } from '@app/modules/ui/table/table.module';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ProfileFacade } from './profile.facade';
     ProfileFormModule,
     ImgLoaderModule,
     DatePickerModule,
+    TableModule,
     DialogModule,
     CoreTranslationModule.forChild()
   ],
