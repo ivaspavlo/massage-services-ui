@@ -31,6 +31,9 @@
   &__scroll-wrap {
     position: absolute; top: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -41,9 +44,8 @@
   z-index: 1;
 }
 
-.profile-content {
+.user-data {
   width: 100%;
-  max-width: 992px;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -121,5 +123,27 @@
     &--has-error {
       border-bottom: 1px solid $warn-500;
     }
+  }
+}
+
+.booked {
+  width: 100%;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-row {
+  width: 100%;
+  transition: .3s;
+  border: 0;
+  color: $grey-800;
+  background-color: $primary-100;
+  &:hover {
+    color: $white;
+    background-color: $primary-300;
+  }
+  &--even {
+    background-color: $primary-200;
   }
 }
