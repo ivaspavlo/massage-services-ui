@@ -10,8 +10,9 @@
 
       <div class="user-data">
 
-        <figure class="user-data__avatar">
-          <img src="/assets/img/png/mock-avatar.png" alt="Profile Image" class="width-100">
+        <figure (click)="onUploadPhoto()" class="avatar">
+          <i class="avatar__edit"></i>
+          <img src="/assets/img/png/mock-avatar.png" alt="Profile Image" class="avatar__img">
         </figure>
   
         <div *ngIf="(userProfile$ | async) as userProfile" class="d-flex flex-column flex-lg-row flex-wrap flex-grow-1">
