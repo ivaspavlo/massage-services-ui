@@ -4,6 +4,7 @@ import { DialogService } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
 import { IUserProfile } from '../../interfaces/user-profile.interface';
 import { EditProfileModalComponent } from '../../modals/edit-profile-modal/edit-profile-modal.component';
+import { UploadAvatarModalComponent } from '../../modals/upload-avatar-modal/upload-avatar-modal.component';
 import { ProfileFacade } from '../../profile.facade';
 
 
@@ -31,6 +32,10 @@ export class ProfileComponent implements OnInit {
 
   public toggleEditMode(): void {
     this.dialogService.open(EditProfileModalComponent, this.userProfile$);
+  }
+
+  public onUploadPhoto(): void {
+    this.dialogService.open(UploadAvatarModalComponent);
   }
 
 }
