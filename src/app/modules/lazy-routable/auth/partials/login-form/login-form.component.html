@@ -2,7 +2,7 @@
 
   <h3 class="font-32 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">{{ "login-form.title" | translate }}</h3>
 
-  <app-input [formControl]="form.get('email')" color="primary" controlName="email" label="{{ 'login-form.email.label' | translate }}" placeholder="{{ 'login-form.email.plh' | translate }}" type="email" [errorsMap]="errorsMap"></app-input>
+  <app-input formControlName="" [formControl]="form.get('email')" color="primary" controlName="email" label="{{ 'login-form.email.label' | translate }}" placeholder="{{ 'login-form.email.plh' | translate }}" type="email" [errorsMap]="errorsMap"></app-input>
   <app-input [formControl]="form.get('password')" color="primary" controlName="password" label="{{ 'login-form.password.label' | translate }}" placeholder="{{ 'login-form.password.plh' | translate }}" type="password" [errorsMap]="errorsMap"></app-input>
 
   <app-button-primary class="mt-rem-1 mb-rem-2" title="{{ 'login-form.submit' | translate }}" [invalid]="!form.valid"></app-button-primary>

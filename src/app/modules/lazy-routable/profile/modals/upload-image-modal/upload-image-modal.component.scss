@@ -1,0 +1,76 @@
+@import '_core-colors';
+@import 'mixins/_all';
+
+.upload-image {
+  width: 80vw;
+  max-width: 700px;
+  display: flex;
+}
+
+.app-cropper {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  &__container {
+    width: 75%;
+    @include sm {
+      width: 50%;
+      padding: 0 16px;
+    }
+  }
+  &__preview {
+    width: 100%;
+    padding: 5px;
+  }
+  &__image {
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+    border-radius: 4px;
+  }
+  &__icon {
+    width: 15px;
+    height: 15px;
+    margin-right: 4px;
+    display: flex;
+    &--browse {
+      @include bg();
+      background-image: url('/assets/img/svg/browse.svg');
+    }
+    &--load {
+      @include bg();
+      background-image: url('/assets/img/svg/upload-cloud.svg')
+    }
+  }
+  &__button {
+    width: 130px;
+    height: 40px;
+    margin: 0 10px;
+    border: 2px solid grey;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: gray;
+    background-color: transparent;
+    cursor: pointer;
+    &:disabled {
+      border: 2px solid gray;
+      color: gray;
+      cursor: not-allowed;
+      .app-cropper__icon--load {
+        @include bg();
+        background-image: url('/assets/img/svg/upload-cloud-grey.svg');
+      }
+    }
+    &:hover:not([disabled]) {
+      opacity: .8;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { SharedModule } from '@app/shared/shared.module';
 import { CoreTranslationModule } from '@app/core/core-translation.module';
@@ -32,6 +33,7 @@ import { TableModule } from '@app/modules/ui/table/table.module';
     DatePickerModule,
     TableModule,
     DialogModule,
+    ImageCropperModule,
     CoreTranslationModule.forChild()
   ],
   providers: [
