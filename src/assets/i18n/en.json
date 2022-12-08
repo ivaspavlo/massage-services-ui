@@ -213,6 +213,9 @@
     "booking-upcomming": "Upcoming massage session",
     "booking-history": "Reservation history",
     "save-changes": "Save changes",
+    "open-image": "Open image",
+    "load-image": "Load image",
+    "load-image-plh": "Select image",
     "button": {
       "profile": "Profile",
       "booking": "Bookings",

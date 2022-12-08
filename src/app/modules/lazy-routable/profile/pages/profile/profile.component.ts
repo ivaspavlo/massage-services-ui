@@ -4,7 +4,7 @@ import { DialogService } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
 import { IUserProfile } from '../../interfaces/user-profile.interface';
 import { EditProfileModalComponent } from '../../modals/edit-profile-modal/edit-profile-modal.component';
-import { UploadAvatarModalComponent } from '../../modals/upload-avatar-modal/upload-avatar-modal.component';
+import { UploadImageModalComponent } from '../../modals/upload-image-modal/upload-image-modal.component';
 import { ProfileFacade } from '../../profile.facade';
 
 
@@ -35,7 +35,7 @@ export class ProfileComponent implements OnInit {
   }
 
   public onUploadPhoto(): void {
-    this.dialogService.open(UploadAvatarModalComponent);
+    this.dialogService.open(UploadImageModalComponent);
   }
 
 }
