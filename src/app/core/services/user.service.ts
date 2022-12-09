@@ -86,8 +86,11 @@ const mockUserProfile = {
   lastName: 'Poolovich',
   email: 'deaddy_poolovich@ggg.com',
   phoneNumber: 'some number',
-  birthDate: 'Tue Nov 22 2022 19:22:42'
+  birthDate: 'Tue Nov 22 2022 19:22:42',
+  image: '/assets/img/png/mock-avatar.png'
 };
+
+const mockUploadImageRes = 'https://media.licdn.com/dms/image/C4E03AQFQCUJ8VKNsmg/profile-displayphoto-shrink_100_100/0/1611763267802?e=1675900800&v=beta&t=3vlTgP4SM-Xpuj50OYYKu-LtBYiCEMi2cZaDHfkWgog';
 
 @Injectable({
   providedIn: 'root'
@@ -100,8 +103,19 @@ export class UserService {
     return of(mockUserProfile);
   }
 
+  public updateUserProfileData(value: IUserProfile): Observable<IUserProfile> {
+    return of({
+      ...mockUserProfile,
+      image: '/assets/img/png/profile.png'
+    });
+  }
+
   public getBookedData(): Observable<IBookingSlot[]> {
     return of(mockBookedSlots);
+  }
+
+  public updateImage(value: string): Observable<boolean> {
+    return of(true);
   }
 
 }

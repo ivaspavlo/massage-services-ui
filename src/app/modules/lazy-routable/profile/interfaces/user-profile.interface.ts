@@ -6,4 +6,5 @@ export interface IUserProfile {
   birthDate: string;
   password?: string;
   confirmPassword?: string;
+  image?: string;
 }

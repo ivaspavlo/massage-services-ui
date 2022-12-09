@@ -20,4 +20,8 @@ export class ProfileFacade {
     return this.userService.getBookedData();
   }
 
+  public updateProfileImg(value: string): Observable<boolean> {
+    return this.userService.updateImage(value);
+  }
+
 }
