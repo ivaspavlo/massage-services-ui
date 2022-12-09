@@ -1,7 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { DialogService } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
+import { takeUntil, switchMap } from 'rxjs/operators';
+import { DestroySubscriptions } from '@app/shared/classes';
+import { DialogService } from '@app/modules/ui/dialog';
 import { IUserProfile } from '../../interfaces/user-profile.interface';
 import { EditProfileModalComponent } from '../../modals/edit-profile-modal/edit-profile-modal.component';
 import { UploadImageModalComponent } from '../../modals/upload-image-modal/upload-image-modal.component';
@@ -14,7 +16,7 @@ import { ProfileFacade } from '../../profile.facade';
   styleUrls: ['./profile.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent extends DestroySubscriptions implements OnInit {
 
   public userProfile$: Observable<IUserProfile>;
   public bookedData$: Observable<any>;
@@ -23,7 +25,9 @@ export class ProfileComponent implements OnInit {
   constructor(
     private profileFacade: ProfileFacade,
     private dialogService: DialogService
-  ) { }
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
     this.userProfile$ = this.profileFacade.getProfileData();
@@ -35,7 +39,14 @@ export class ProfileComponent implements OnInit {
   }
 
   public onUploadPhoto(): void {
-    this.dialogService.open(UploadImageModalComponent);
+    this.dialogService.open(UploadImageModalComponent).afterClosed.pipe(
+      takeUntil(this.componentDestroyed$),
+      switchMap((imgBase64: string) => this.profileFacade.updateProfileImg(imgBase64))
+    ).subscribe((res: boolean) => {
+      if (res) {
+        this.userProfile$ = this.profileFacade.getProfileData();
+      }
+    });
   }
 
 }

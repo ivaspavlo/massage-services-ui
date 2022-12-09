@@ -6,16 +6,16 @@
 
     <h1 class="profile__title">{{'user.page-title' | translate}}</h1>
 
-    <div class="width-100 max-width-992 d-flex flex-column align-center">
+    <div *ngIf="(userProfile$ | async) as userProfile" class="width-100 max-width-992 d-flex flex-column align-center">
 
       <div class="user-data">
 
         <figure (click)="onUploadPhoto()" class="avatar">
           <i class="avatar__edit"></i>
-          <img src="/assets/img/png/mock-avatar.png" alt="Profile Image" class="avatar__img">
+          <img src="userProfile.image" alt="Profile Image" class="avatar__img">
         </figure>
-  
-        <div *ngIf="(userProfile$ | async) as userProfile" class="d-flex flex-column flex-lg-row flex-wrap flex-grow-1">
+
+        <div class="d-flex flex-column flex-lg-row flex-wrap flex-grow-1">
           <p class="data-item">
             <span class="data-item__title">Name:</span>
             <span>{{userProfile.firstName}} {{userProfile.lastName}}</span>
