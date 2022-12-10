@@ -6,13 +6,13 @@
 
     <h1 class="profile__title">{{'user.page-title' | translate}}</h1>
 
-    <div *ngIf="(userProfile$ | async) as userProfile" class="width-100 max-width-992 d-flex flex-column align-center">
+    <div *ngIf="(userProfile$ | async) as userProfile" class="width-100 max-width-992 px-rem-2 d-flex flex-column align-center">
 
       <div class="user-data">
 
         <figure (click)="onUploadPhoto()" class="avatar">
           <i class="avatar__edit"></i>
-          <img src="userProfile.image" alt="Profile Image" class="avatar__img">
+          <img [src]="userProfile.image" alt="Profile Image" class="avatar__img">
         </figure>
 
         <div class="d-flex flex-column flex-lg-row flex-wrap flex-grow-1">
@@ -40,8 +40,14 @@
 
       <div class="booked">
         <h3 class="font-28 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">{{'user.booking-upcomming' | translate}}</h3>
+        <div class="width-100 b-radius-4 overflow-hidden">
+          <div *ngFor="let item of (bookedData$ | async); let index = index;" app-table-row [ngClass]="{'app-row--even': index%2}" class="app-row">
+            <div app-table-data [data]="{ width: 50 }"><span class="px-rem-1">test1</span></div>
+            <div app-table-data [data]="{ width: 50 }"><span class="px-rem-1">test2</span></div>
+          </div>
+        </div>
       </div>
-    
+
       <div class="booked">
         <h3 class="font-28 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">{{'user.booking-history' | translate}}</h3>
         <div class="width-100 b-radius-4 overflow-hidden">
