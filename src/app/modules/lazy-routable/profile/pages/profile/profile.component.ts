@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { takeUntil, switchMap } from 'rxjs/operators';
@@ -24,7 +24,8 @@ export class ProfileComponent extends DestroySubscriptions implements OnInit {
 
   constructor(
     private profileFacade: ProfileFacade,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private cdr: ChangeDetectorRef
   ) {
     super();
   }
@@ -45,6 +46,7 @@ export class ProfileComponent extends DestroySubscriptions implements OnInit {
     ).subscribe((res: boolean) => {
       if (res) {
         this.userProfile$ = this.profileFacade.getProfileData();
+        this.cdr.markForCheck();
       }
     });
   }
