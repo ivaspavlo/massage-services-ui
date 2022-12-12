@@ -191,10 +191,18 @@
     }
   },
   "user": {
+    "page-title": "Мій аккаунт",
+    "edit-modal": "Редагувати аккаунт",
+    "booking-upcomming": "Майбутні масажи",
+    "booking-history": "Історія бронювань",
+    "save-changes": "Зберегти зміни",
+    "open-image": "Знайти фото",
+    "load-image": "Завантажити фото",
+    "load-image-plh": "Виберіть фото",
     "button": {
-      "profile": "Дані користувача",
+      "profile": "Аккаунт",
       "booking": "Бронювання",
-      "more": "Більше"
+      "more": "Ще"
     }
   }
 }
