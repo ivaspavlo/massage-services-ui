@@ -170,11 +170,16 @@
   border: 0;
   color: $grey-800;
   background-color: $primary-100;
-  &:hover {
+  &:hover:not(.app-row--accent) {
     color: $white;
     background-color: $primary-300;
   }
   &--even {
     background-color: $primary-200;
+  }
+  &--accent {
+    padding: 1rem 0;
+    font-size: 18px;
+    color: orange;
   }
 }

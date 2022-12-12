@@ -41,7 +41,7 @@
       <div class="booked">
         <h3 class="font-28 font-weight-800 mb-rem-1 spacing-px-1 color-grey-700">{{'user.booking-upcomming' | translate}}</h3>
         <div class="width-100 b-radius-4 overflow-hidden">
-          <div *ngFor="let item of (bookedData$ | async); let index = index;" app-table-row [ngClass]="{'app-row--even': index%2}" class="app-row">
+          <div *ngFor="let item of (bookedData$ | async); let first = first; let index = index;" app-table-row [ngClass]="{'app-row--even': index%2, 'app-row--accent': first}" class="app-row">
             <div app-table-data [data]="{ width: 50 }"><span class="px-rem-1">test1</span></div>
             <div app-table-data [data]="{ width: 50 }"><span class="px-rem-1">test2</span></div>
           </div>
