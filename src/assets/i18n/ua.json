@@ -196,9 +196,15 @@
     "booking-upcomming": "Майбутні масажи",
     "booking-history": "Історія бронювань",
     "save-changes": "Зберегти зміни",
-    "open-image": "Знайти фото",
-    "load-image": "Завантажити фото",
+    "open-image": "Open",
+    "load-image": "Upload",
     "load-image-plh": "Виберіть фото",
+    "info-block": {
+      "name": "Ім'я",
+      "email": "Пошта",
+      "birthday": "ДН",
+      "phone": "Телефон"
+    },
     "button": {
       "profile": "Аккаунт",
       "booking": "Бронювання",
