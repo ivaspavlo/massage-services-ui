@@ -1,9 +1,9 @@
 export interface IProfileFormValue {
-  name: string;
-  surname: string;
-  birthDate: Date;
+  firstName: string;
+  lastName: string;
+  birth: Date;
   email: string;
-  phoneNumber: string;
+  phone: string;
   password?: string;
   confirmPassword?: string;
 }

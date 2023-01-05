@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { takeUntil, switchMap } from 'rxjs/operators';
 import { DestroySubscriptions } from '@app/shared/classes';
 import { DialogService } from '@app/modules/ui/dialog';
-import { IUserProfile } from '../../interfaces/user-profile.interface';
+import { IUser } from '../../interfaces/user-profile.interface';
 import { EditProfileModalComponent } from '../../modals/edit-profile-modal/edit-profile-modal.component';
 import { UploadImageModalComponent } from '../../modals/upload-image-modal/upload-image-modal.component';
 import { ProfileFacade } from '../../profile.facade';
@@ -18,7 +18,7 @@ import { ProfileFacade } from '../../profile.facade';
 })
 export class ProfileComponent extends DestroySubscriptions implements OnInit {
 
-  public userProfile$: Observable<IUserProfile>;
+  public userProfile$: Observable<IUser>;
   public bookedData$: Observable<any>;
   public profileForm: FormGroup;
 

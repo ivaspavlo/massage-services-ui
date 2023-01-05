@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DialogConfig } from '@app/modules/ui/dialog';
 import { Observable } from 'rxjs';
-import { IUserProfile } from '../../interfaces';
+import { IUser } from '../../interfaces';
 
 
 @Component({
@@ -12,10 +12,10 @@ import { IUserProfile } from '../../interfaces';
 })
 export class EditProfileModalComponent implements OnInit {
 
-  public userProfile$: Observable<IUserProfile>;;
+  public userProfile$: Observable<IUser>;;
 
   constructor(
-    public config: DialogConfig,
+    public config: DialogConfig
   ) { }
 
   ngOnInit(): void {

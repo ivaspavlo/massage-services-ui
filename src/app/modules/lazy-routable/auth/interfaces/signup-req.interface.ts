@@ -1,9 +1,10 @@
-export interface IUser {
+export interface ISignupReq {
   firstName: string;
   lastName: string;
   email: string;
   phone: string;
   birth: string;
   isAdmin: boolean;
-  image: string;
+  password: string;
+  consent: boolean;
 }
