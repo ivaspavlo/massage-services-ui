@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IBookingSlot, IUserProfile } from '@app/interfaces';
+import { IBookingSlot, IUser } from '@app/interfaces';
 import { of, Observable } from 'rxjs';
 
 
@@ -85,8 +85,9 @@ const mockUserProfile = {
   firstName: 'Deaddy',
   lastName: 'Poolovich',
   email: 'deaddy_poolovich@ggg.com',
-  phoneNumber: 'some number',
-  birthDate: 'Tue Nov 22 2000 19:22:42',
+  phone: 'some number',
+  birth: 'Tue Nov 22 2000 19:22:42',
+  isAdmin: true,
   image: '/assets/img/png/mock-avatar.png'
 };
 
@@ -97,11 +98,11 @@ export class UserService {
 
   constructor() { }
 
-  public getUserProfileData(): Observable<IUserProfile> {
+  public getUserProfileData(): Observable<IUser> {
     return of(mockUserProfile);
   }
 
-  public updateUserProfileData(value: IUserProfile): Observable<IUserProfile> {
+  public updateUserProfileData(value: Partial<IUser>): Observable<IUser> {
     return of({
       ...mockUserProfile,
       image: '/assets/img/png/profile.png'

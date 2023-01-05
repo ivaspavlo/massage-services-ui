@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { API_URL } from '@env/environment';
-import { IUserProfile } from '@app/interfaces';
+import { IUser, ISignupReq } from '@app/interfaces';
 
 
 @Injectable({
@@ -15,8 +15,8 @@ export class AuthService {
     private http: HttpClient
   ) { }
   
-  public signup(data: any): Observable<IUserProfile> {
-    return this.http.post<IUserProfile>(`${API_URL}/auth/signup`, data);
+  public signup(data: ISignupReq): Observable<IUser> {
+    return this.http.post<IUser>(`${API_URL}/auth/signup`, data);
   }
 
 }

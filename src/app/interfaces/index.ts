@@ -9,3 +9,4 @@ export * from '@app/modules/ui/profile-form/interfaces';
 export * from '@app/modules/smart-partials/header/interfaces';
 export * from '@app/modules/lazy-routable/booking/interfaces';
 export * from '@app/modules/lazy-routable/profile/interfaces';
+export * from '@app/modules/lazy-routable/auth/interfaces';

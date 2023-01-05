@@ -6,9 +6,9 @@ import { DateValidators, PasswordValidators } from '@app/shared/validators';
 const formSettings = [
   { name: 'firstName', validators: [Validators.required] },
   { name: 'lastName', validators: [Validators.required] },
-  { name: 'birthDate', validators: [Validators.required, DateValidators.birthDate] },
+  { name: 'birth', validators: [Validators.required, DateValidators.birthDate] },
   { name: 'email', validators: [Validators.required, Validators.email] },
-  { name: 'phoneNumber', validators: [Validators.required, Validators.minLength(12)] },
+  { name: 'phone', validators: [Validators.required, Validators.minLength(12)] },
   { name: 'password', validators: [PasswordValidators.default] },
   { name: 'confirmPassword', validators: [PasswordValidators.default, PasswordValidators.passwordsEqual()] }
 ];
