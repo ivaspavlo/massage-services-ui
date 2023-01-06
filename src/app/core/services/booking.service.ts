@@ -159,9 +159,6 @@ export class BookingService {
       );
       return;
     }
-
-    
-
     if (this._isCartEmpty$.value) {
       this._isCartEmpty$.next(false);
     }
