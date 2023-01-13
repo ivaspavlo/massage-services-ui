@@ -25,10 +25,10 @@ interface IGiftOder {
   qty: number;
 }
 
-interface IProduct {
-  id: string;
-  title: string;
-  price: string;
-  subtitle?: string;
-  desc?: string;
-}
+// interface IProduct {
+//   id: string;
+//   title: string;
+//   price: string;
+//   subtitle?: string;
+//   desc?: string;
+// }

@@ -1,4 +1,4 @@
-import { MainContainerComponent } from './main-container.component';
+import { MainContainerComponent } from './main/main-container.component';
 
 
 export const PAGES = [
